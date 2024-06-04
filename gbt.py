@@ -6,6 +6,7 @@ import joblib
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
+from cfg import generate_control_flow_graphs
 
 # Directory paths
 java_project_dir = "path/to/java/project"
