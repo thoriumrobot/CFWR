@@ -21,7 +21,7 @@
             "type": "java",
             "name": "Debug on AWS",
             "request": "attach",
-            "hostName": "3.17.147.39", // Replace with your AWS IP or hostname
+            "hostName": "18.219.132.62", // Replace with your AWS IP or hostname
             "port": 5005 // Make sure this port is open on AWS and matches your JVM config for remote debugging
         }
     ]
