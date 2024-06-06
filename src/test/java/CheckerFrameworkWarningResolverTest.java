@@ -4,13 +4,13 @@ import com.github.javaparser.utils.SourceRoot;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -32,10 +32,11 @@ public class CheckerFrameworkWarningResolverTest {
     }
 
     @Test
-    public void testProcessWarnings() throws IOException {
+    public void testProcessWarnings(@TempDir Path tempDir) throws IOException {
         // Setup project root and warning file
-        Path projectRoot = Files.createTempDirectory("testProjectRoot");
-        Path warningsFilePath = Files.createTempFile("warnings", ".txt");
+        Path projectRoot = tempDir.resolve("testProjectRoot");
+        Files.createDirectories(projectRoot);
+        Path warningsFilePath = Files.createTempFile(tempDir, "warnings", ".txt");
 
         // Create sample Java file
         String javaFileContent = "package com.example;\n" +
@@ -53,12 +54,12 @@ public class CheckerFrameworkWarningResolverTest {
         Files.write(warningsFilePath, warningsContent.getBytes());
 
         // Run the CheckerFrameworkWarningResolver
-        String[] args = {projectRoot.toString(), warningsFilePath.toString()};
+        String[] args = {projectRoot.toString(), warningsFilePath.toString(), tempDir.toString()};
         CheckerFrameworkWarningResolver.main(args);
 
         // Verify the output
-        String expectedOutput = "com.example.TestClass#testField\n" +
-                                "com.example.TestClass#testMethod()\n";
-        assertEquals(expectedOutput, outputStreamCaptor.toString().trim() + "\n");
+        String expectedOutput = "./gradlew run --args='--outputDirectory \"tempDir\" --root \"" + projectRoot + "\" --targetFile \"" + javaFilePath + "\" --targetMethod \"com.example.TestClass#testField\"'\n" +
+                                "./gradlew run --args='--outputDirectory \"tempDir\" --root \"" + projectRoot + "\" --targetFile \"" + javaFilePath + "\" --targetMethod \"com.example.TestClass#testMethod()\"'\n";
+        assertEquals(expectedOutput.trim(), outputStreamCaptor.toString().trim());
     }
 }
