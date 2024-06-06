@@ -6,6 +6,7 @@ from torch_geometric.data import HeteroData
 from torch_geometric.loader import DataLoader
 import random
 import numpy as np
+from cfg import generate_control_flow_graphs
 
 # Define the HGT model
 class HGTModel(nn.Module):

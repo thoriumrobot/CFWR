@@ -18,14 +18,17 @@ import java.util.stream.Collectors;
 
 public class CheckerFrameworkWarningResolver {
 
+    static String resolverPath;
+
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.err.println("Usage: java CheckerFrameworkWarningResolver <projectRoot> <warningsFilePath>");
+            System.err.println("Usage: java CheckerFrameworkWarningResolver <projectRoot> <warningsFilePath> <resolverRoot>");
             return;
         }
 
         String projectRoot = args[0];
         String warningsFilePath = args[1];
+        resolverPath = args[2];
 
         try {
             JavaParser parser = new JavaParser();
@@ -89,11 +92,15 @@ public class CheckerFrameworkWarningResolver {
                                             if (member instanceof MethodDeclaration) {
                                                 MethodDeclaration method = (MethodDeclaration) member;
                                                 String methodName = method.getNameAsString() + "()";
-                                                System.out.println(qualifiedClassName + "#" + methodName);
+                                                String command = "./gradlew run --args='--outputDirectory \"" + getTempDir() + "\" --root \"" + projectRoot + "\" --targetFile \"" + filePath + "\" --targetMethod \"" + qualifiedClassName + "#" + methodName + "\"'";
+                                                System.out.println(command);
+                                                executeCommand(command, resolverPath + "specimin");
                                             } else if (member instanceof FieldDeclaration) {
                                                 FieldDeclaration field = (FieldDeclaration) member;
                                                 String fieldName = field.getVariables().get(0).getNameAsString();
-                                                System.out.println(qualifiedClassName + "#" + fieldName);
+                                                String command = "./gradlew run --args='--outputDirectory \"" + getTempDir() + "\" --root \"" + projectRoot + "\" --targetFile \"" + filePath + "\" --targetMethod \"" + qualifiedClassName + "#" + fieldName + "\"'";
+                                                System.out.println(command);
+                                                executeCommand(command, resolverPath + "specimin");
                                             }
                                         }
                                     }
@@ -105,6 +112,24 @@ public class CheckerFrameworkWarningResolver {
             }
         } catch (Exception e) {
             System.err.println("Error processing warning: " + warning);
+            e.printStackTrace();
+        }
+    }
+
+    private static String getTempDir() {
+        // Replace with logic to get or create a temporary directory
+        return "tempDir";
+    }
+
+    private static void executeCommand(String command, String workingDirectory) {
+        try {
+            ProcessBuilder processBuilder = new ProcessBuilder("sh", "-c", command);
+            processBuilder.directory(new java.io.File(workingDirectory));
+            Process process = processBuilder.start();
+            process.waitFor();
+            System.out.println("Command executed successfully: " + command);
+        } catch (IOException | InterruptedException e) {
+            System.err.println("Error executing command: " + command);
             e.printStackTrace();
         }
     }
