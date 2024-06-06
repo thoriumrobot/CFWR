@@ -23,7 +23,7 @@
 hs_err_pid*
 replay_pid*
 
-.vscode
+.vscode/
 target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
 target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
 target/surefire-reports/2024-06-04T17-12-21_477-jvmRun1.dump
