@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -53,8 +54,11 @@ public class CheckerFrameworkWarningResolverTest {
                                  "com/example/TestClass.java:4:5: some warning";
         Files.write(warningsFilePath, warningsContent.getBytes());
 
+        // Setup resolver path to be the root directory of the CheckerFrameworkWarningResolver project
+        Path resolverRootPath = Paths.get("").toAbsolutePath();
+
         // Run the CheckerFrameworkWarningResolver
-        String[] args = {projectRoot.toString(), warningsFilePath.toString(), tempDir.toString()};
+        String[] args = {projectRoot.toString(), warningsFilePath.toString(), resolverRootPath.toString()+"/"};
         CheckerFrameworkWarningResolver.main(args);
 
         // Verify the output
