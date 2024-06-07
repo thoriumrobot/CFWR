@@ -34,6 +34,8 @@ public class CheckerFrameworkWarningResolverTest {
 
     @Test
     public void testProcessWarnings(@TempDir Path tempDir) throws IOException {
+        CheckerFrameworkWarningResolver.executeCommandFlag = false; // Disable command execution
+        
         // Setup project root and warning file
         Path projectRoot = tempDir.resolve("testProjectRoot");
         Files.createDirectories(projectRoot);
