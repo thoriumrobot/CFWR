@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 public class CheckerFrameworkWarningResolver {
 
     static String resolverPath;
+    static boolean executeCommandFlag = true; // Add a flag to control command execution
 
     public static void main(String[] args) {
         if (args.length < 2) {
@@ -94,13 +95,17 @@ public class CheckerFrameworkWarningResolver {
                                                 String methodName = method.getNameAsString() + "()";
                                                 String command = "./gradlew run --args='--outputDirectory \"" + getTempDir() + "\" --root \"" + projectRoot + "\" --targetFile \"" + filePath + "\" --targetMethod \"" + qualifiedClassName + "#" + methodName + "\"'";
                                                 System.out.println(command);
-                                                executeCommand(command, resolverPath + "specimin");
+                                                if (executeCommandFlag) {
+                                                    executeCommand(command, resolverPath + "specimin");
+                                                }
                                             } else if (member instanceof FieldDeclaration) {
                                                 FieldDeclaration field = (FieldDeclaration) member;
                                                 String fieldName = field.getVariables().get(0).getNameAsString();
                                                 String command = "./gradlew run --args='--outputDirectory \"" + getTempDir() + "\" --root \"" + projectRoot + "\" --targetFile \"" + filePath + "\" --targetMethod \"" + qualifiedClassName + "#" + fieldName + "\"'";
                                                 System.out.println(command);
-                                                executeCommand(command, resolverPath + "specimin");
+                                                if (executeCommandFlag) {
+                                                    executeCommand(command, resolverPath + "specimin");
+                                                }
                                             }
                                         }
                                     }
