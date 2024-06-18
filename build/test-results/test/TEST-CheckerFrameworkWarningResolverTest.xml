@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CheckerFrameworkWarningResolverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-18T16:37:29" hostname="ip-172-31-18-82" time="0.27">
+  <properties/>
+  <testcase name="testProcessWarnings(Path)" classname="CheckerFrameworkWarningResolverTest" time="0.27"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
