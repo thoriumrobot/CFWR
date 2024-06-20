@@ -1,12 +1,18 @@
-Currently, this project reads the warnings from Checker Framework and calls Specimin on the right Field or Method.
+Currently, this project reads the warnings from Checker Framework and calls Specimin on the right field or method.
 
 Usage:
 
-./gradlew run -PappArgs="project-root warning-log-file CFWR-root"
+Replace ${...} with paths.
+
+project-root=...
+warning-log-file=...
+CFWR-root=...
+
+./gradlew run -PappArgs="${project-root} ${warning-log-file} ${CFWR-root}"
 
 OR
 
-mvn clean compile exec:java -Dexec.args="project-root warning-log-file CFWR-root"
+mvn clean compile exec:java -Dexec.args="${project-root} ${warning-log-file} ${CFWR-root}"
 
 Example:
 

@@ -3,9 +3,6 @@ plugins {
     id 'application'
 }
 
-group = 'mygroupid'
-version = '0.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
