@@ -1,13 +1,12 @@
-// TODO: all classes should be in some package
-
+// CheckerFrameworkWarningResolver.java
 import com.github.javaparser.JavaParser;
+import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.BodyDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
-import com.github.javaparser.ParseResult;
 import com.github.javaparser.utils.SourceRoot;
 
 import java.io.IOException;
@@ -18,44 +17,18 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-/**
- * A utility program that processes a list of warnings from the Checker Framework
- * that were generated on some target program and outputs (to the console) the field or method signature
- * of the nearest enclosing field/method for each warning location. The purpose of
- * the program is to take a list of warnings and then use Specimin to generate a slice
- * for each warning in the input list. Currently, the formatted Specimin output is shown.
- */
-
 public class CheckerFrameworkWarningResolver {
-
-    /**
-     * A pattern that matches the format of the warnings produced by the Checker Framework.
-     * It is intended to match lines like the following:
-     * TODO: an example
-     */
     private static final Pattern WARNING_PATTERN = Pattern.compile("^.*\\.java:\\d+:\\d+:.*$");
-    /**
-     * Primary entry point. Usage: java CheckerFrameworkWarningResolver <projectRoot> <warningsFilePath> <CFWRroot>.
-     * projectRoot and warningsFilePath are assumed to be absolute paths to the directory or text file.
-     *
-     * TODO: document how the user should produce the warnings file.
-     *
-     * Example: ./gradlew run -PappArgs="/home/ubuntu/naenv/checker-framework/checker/tests/index/ /home/ubuntu/naenv/checker-framework/index1.out /home/ubuntu/naenv/CFWR/"
-     * @param args command-line arguments
-     */
-
-    static String resolverPath;
-    static boolean executeCommandFlag = true; // Add a flag to control command execution
 
     public static void main(String[] args) {
-        if (args.length < 2) {
+        if (args.length < 3) {
             System.err.println("Usage: java CheckerFrameworkWarningResolver <projectRoot> <warningsFilePath> <resolverRoot>");
             return;
         }
 
         String projectRoot = args[0];
         String warningsFilePath = args[1];
-        resolverPath = args[2];
+        String resolverPath = args[2];
 
         try {
             JavaParser parser = new JavaParser();
@@ -67,27 +40,19 @@ public class CheckerFrameworkWarningResolver {
                     .collect(Collectors.toList());
 
             for (String warning : warnings) {
-                processWarning(warning, parseResults, projectRoot);
+                processWarning(warning, parseResults, projectRoot, resolverPath);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    /**
-     * Processes a single warning and prints the nearest enclosing method/field signature to that warning.
-     *
-     * @param warning the warning string
-     * @param parseResults the program that was being analyzed when the given warning was generated, parsed by JavaParser
-     * @param projectRoot the root of the target program's source tree TODO: why is this necessary?
-     */
-     private static void processWarning(String warning, List<ParseResult<CompilationUnit>> parseResults, String projectRoot) {
+    private static void processWarning(String warning, List<ParseResult<CompilationUnit>> parseResults, String projectRoot, String resolverPath) {
         try {
             String[] parts = warning.split(":");
             String fileName = parts[0].trim();
             int lineNumber = Integer.parseInt(parts[1].trim());
             int columnNumber = Integer.parseInt(parts[2].trim());
-            String warningType = parts[3].split(" ")[1].trim();
 
             Path filePath = Paths.get(projectRoot, fileName).normalize();
 
@@ -122,23 +87,24 @@ public class CheckerFrameworkWarningResolver {
                                             if (lineNumber == endLine && columnNumber > endColumn) {
                                                 continue;
                                             }
+                                            String command = "";
                                             if (member instanceof MethodDeclaration) {
                                                 MethodDeclaration method = (MethodDeclaration) member;
                                                 String methodName = method.getNameAsString() + "()";
-                                                String command = "./gradlew run --args='--outputDirectory \"" + getTempDir() + "\" --root \"" + projectRoot + "\" --targetFile \"" + filePath + "\" --targetMethod \"" + qualifiedClassName + "#" + methodName + "\"'";
-                                                System.out.println(command);
-                                                if (executeCommandFlag) {
-                                                    executeCommand(command, resolverPath + "specimin");
-                                                }
+                                                command = String.format(
+                                                        "./gradlew run --args='--outputDirectory \"tempDir\" --root \"%s\" --targetFile \"%s\" --targetMethod \"%s#%s\"'",
+                                                        projectRoot, filePath, qualifiedClassName, methodName
+                                                );
                                             } else if (member instanceof FieldDeclaration) {
                                                 FieldDeclaration field = (FieldDeclaration) member;
                                                 String fieldName = field.getVariables().get(0).getNameAsString();
-                                                String command = "./gradlew run --args='--outputDirectory \"" + getTempDir() + "\" --root \"" + projectRoot + "\" --targetFile \"" + filePath + "\" --targetMethod \"" + qualifiedClassName + "#" + fieldName + "\"'";
-                                                System.out.println(command);
-                                                if (executeCommandFlag) {
-                                                    executeCommand(command, resolverPath + "specimin");
-                                                }
+                                                command = String.format(
+                                                        "./gradlew run --args='--outputDirectory \"tempDir\" --root \"%s\" --targetFile \"%s\" --targetMethod \"%s#%s\"'",
+                                                        projectRoot, filePath, qualifiedClassName, fieldName
+                                                );
                                             }
+                                            System.out.println(command);
+                                            executeCommand(command, resolverPath + "specimin");
                                         }
                                     }
                                 }
@@ -151,11 +117,6 @@ public class CheckerFrameworkWarningResolver {
             System.err.println("Error processing warning: " + warning);
             e.printStackTrace();
         }
-    }
-
-    private static String getTempDir() {
-        // Replace with logic to get or create a temporary directory
-        return "tempDir";
     }
 
     private static void executeCommand(String command, String workingDirectory) {

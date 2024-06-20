@@ -1,6 +1,7 @@
+# cfg.py
 import networkx as nx
 from javalang.parse import parse
-from javalang.tree import MethodDeclaration, BlockStatement, Statement, LocalVariableDeclaration, Assignment
+from javalang.tree import MethodDeclaration, BlockStatement, LocalVariableDeclaration
 
 def parse_java_file(java_file_path):
     with open(java_file_path, 'r') as file:
@@ -8,26 +9,17 @@ def parse_java_file(java_file_path):
     return parse(java_code)
 
 def extract_method_blocks(parsed_java_code):
-    """
-    Extracts method blocks from parsed Java code.
-    """
     method_blocks = []
-    for path, node in parsed_java_code:
+    for _, node in parsed_java_code:
         if isinstance(node, MethodDeclaration):
             method_blocks.append(node)
     return method_blocks
 
 def create_cfg(method_block):
-    """
-    Create a control flow graph (CFG) for a given method block.
-    """
     cfg = nx.DiGraph()
     previous_node = None
 
     def add_statement_to_cfg(statement, parent_node):
-        """
-        Recursively add statements to the CFG.
-        """
         nonlocal cfg, previous_node
         statement_node = str(statement) + str(parent_node)
         cfg.add_node(statement_node, label=statement)
@@ -47,9 +39,6 @@ def create_cfg(method_block):
     return cfg
 
 def generate_control_flow_graphs(java_file_path):
-    """
-    Generate control flow graphs for a given Java file.
-    """
     parsed_java_code = parse_java_file(java_file_path)
     method_blocks = extract_method_blocks(parsed_java_code)
 
@@ -59,11 +48,3 @@ def generate_control_flow_graphs(java_file_path):
         cfgs.append(cfg)
     
     return cfgs
-
-# Example usage
-java_file_path = "path/to/your/java/file.java"
-cfgs = generate_control_flow_graphs(java_file_path)
-for i, cfg in enumerate(cfgs):
-    print(f"CFG for method {i}:")
-    print(cfg.nodes(data=True))
-    print(cfg.edges(data=True))

@@ -1,3 +1,4 @@
+# hgt.py
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -6,9 +7,7 @@ from torch_geometric.data import HeteroData
 from torch_geometric.loader import DataLoader
 import random
 import numpy as np
-from cfg import generate_control_flow_graphs
 
-# Define the HGT model
 class HGTModel(nn.Module):
     def __init__(self, hidden_channels, out_channels, num_heads, num_layers):
         super(HGTModel, self).__init__()
@@ -17,7 +16,7 @@ class HGTModel(nn.Module):
             conv = HGTConv(
                 in_channels=-1,
                 out_channels=hidden_channels,
-                metadata=data.metadata(),
+                metadata={'ast_node': ['type'], 'cfg': ['edge_index']},
                 num_heads=num_heads
             )
             self.convs.append(conv)
@@ -28,7 +27,6 @@ class HGTModel(nn.Module):
             x_dict = conv(x_dict, edge_index_dict)
         return self.fc(x_dict['ast_node'])
 
-# Define the reinforcement learning environment
 class IndexCheckerEnv:
     def __init__(self, model, data_loader, index_checker):
         self.model = model
@@ -36,36 +34,27 @@ class IndexCheckerEnv:
         self.index_checker = index_checker
 
     def reset(self):
-        self.current_data = random.choice(self.data_loader)
+        self.current_data = random.choice(list(self.data_loader))
         self.state = self.current_data.x_dict, self.current_data.edge_index_dict
+        self.current_data['annotations'] = []
         return self.state
 
     def step(self, action):
-        # Place annotation based on the action
         self.place_annotation(action)
-        
-        # Run Index Checker and get the number of warnings
+
         num_warnings = self.index_checker.run(self.current_data)
-        
-        # Reward is negative of number of warnings
         reward = -num_warnings
-        
-        # Check if done (all nodes annotated or no warnings left)
         done = self.check_done()
-        
-        # Get new state
         self.state = self.current_data.x_dict, self.current_data.edge_index_dict
         return self.state, reward, done
 
     def place_annotation(self, action):
-        # Implement this method to place the annotation on the node indicated by action
-        pass
+        annotation_location = self.current_data['ast_node'][action]
+        self.current_data['annotations'].append(annotation_location)
 
     def check_done(self):
-        # Implement this method to check if the episode is done
-        pass
+        return len(self.current_data['annotations']) >= len(self.current_data['ast_node'])
 
-# Define the agent
 class Agent:
     def __init__(self, model, env, lr=0.01):
         self.model = model
@@ -92,8 +81,6 @@ class Agent:
                 self.update_model(state, action, reward, next_state)
                 state = next_state
                 total_reward += reward
-            
-            # Save the best model
             if total_reward > best_reward:
                 best_reward = total_reward
                 torch.save(self.model.state_dict(), 'best_model.pth')
@@ -107,10 +94,9 @@ class Agent:
         loss.backward()
         self.optimizer.step()
 
-# Main training loop
 def main(data_loader, index_checker, num_episodes=100):
     hidden_channels = 64
-    out_channels = num_classes  # Define this based on your specific problem
+    out_channels = 2
     num_heads = 4
     num_layers = 3
     
@@ -120,10 +106,23 @@ def main(data_loader, index_checker, num_episodes=100):
     
     agent.train(num_episodes)
 
-# Assuming `data_loader` is a DataLoader object that provides batches of your augmented ASTs
-# and `index_checker` is an object with a `run` method that takes an AST and returns the number of warnings
+class MockDataLoader:
+    def __init__(self, data):
+        self.data = data
 
-# data_loader = ...
-# index_checker = ...
+    def __iter__(self):
+        return iter(self.data)
+
+class MockIndexChecker:
+    def run(self, data):
+        return len(data['annotations'])
+
+data_loader = MockDataLoader([
+    HeteroData(
+        x_dict={'ast_node': torch.randn(10, 64)},
+        edge_index_dict={'cfg': torch.tensor([[0, 1], [1, 2]])}
+    )
+])
+index_checker = MockIndexChecker()
 
 main(data_loader, index_checker)
