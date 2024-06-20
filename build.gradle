@@ -33,3 +33,10 @@ run {
 test {
     useJUnitPlatform()
 }
+
+// Combine all checks into a validate task
+task validate {
+    group = 'Verification'
+    description = 'Runs all validation tasks'
+    dependsOn 'build', 'test'
+}
