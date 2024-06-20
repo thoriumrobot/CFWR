@@ -1,4 +1,7 @@
-.gradle/*
+gradle/*
+!gradle/wrapper/
+!gradle/wrapper/gradle-wrapper.jar
+
 build/*
 
 # Compiled class file
