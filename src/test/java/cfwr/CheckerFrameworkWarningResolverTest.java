@@ -1,3 +1,7 @@
+package cfwr;
+
+import cfwr.CheckerFrameworkWarningResolver; // Added import statement
+
 import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.utils.SourceRoot;

@@ -1,4 +1,4 @@
-package com.example.cfwr;
+package cfwr;
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseResult;
@@ -7,12 +7,11 @@ import com.github.javaparser.Range;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.*;
 import com.github.javaparser.ast.Node;
-import com.github.javaparser.ast.expr.VariableDeclarationExpr;
+import com.github.javaparser.ast.body.VariableDeclarator; // Corrected import
 
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -25,7 +24,7 @@ import java.util.regex.Matcher;
  * to generate a slice for each warning in the input list.
  *
  * Usage:
- * java -cp <classpath> com.example.cfwr.CheckerFrameworkWarningResolver <projectRoot> <warningsFilePath> <resolverRoot>
+ * ./gradlew run -PappArgs="<projectRoot> <warningsFilePath> <resolverRoot>"
  *
  * Arguments:
  * - projectRoot: Absolute path to the root directory of the target Java project.
@@ -35,19 +34,19 @@ import java.util.regex.Matcher;
  * The warnings file should contain warnings in the standard format output by the Checker Framework.
  *
  * Example warning format:
- * /path/to/File.java:25:17: warning: [index] Possible out-of-bounds access
+ * /path/to/File.java:25:17: compiler.err.proc.messager: [index] Possible out-of-bounds access
  *
  * Example invocation:
- * java -cp build/classes/java/main com.example.cfwr.CheckerFrameworkWarningResolver /path/to/project /path/to/warnings.txt /path/to/CFWR
+ * ./gradlew run -PappArgs="/path/to/project /path/to/warnings.txt /path/to/CFWR"
  */
 public class CheckerFrameworkWarningResolver {
 
     /**
      * A pattern that matches the format of the warnings produced by the Checker Framework.
      * It is intended to match lines like the following:
-     * /path/to/File.java:25:17: warning: [index] Possible out-of-bounds access
+     * /path/to/File.java:25:17: compiler.err.proc.messager: [index] Possible out-of-bounds access
      */
-    private static final Pattern WARNING_PATTERN = Pattern.compile("^(.+\\.java):(\\d+):(\\d+): (warning|error): \\[(.+)\\] (.+)$");
+    private static final Pattern WARNING_PATTERN = Pattern.compile("^(.+\\.java):(\\d+):(\\d+):\\s*(compiler\\.(warn|err)\\.proc\\.messager):\\s*\\[(.+?)\\]\\s*(.*)$");
 
     static String resolverPath;
     static boolean executeCommandFlag = true; // Flag to control command execution
@@ -75,16 +74,16 @@ public class CheckerFrameworkWarningResolver {
                         String fileName = matcher.group(1).trim();
                         int lineNumber = Integer.parseInt(matcher.group(2).trim());
                         int columnNumber = Integer.parseInt(matcher.group(3).trim());
-                        String warningType = matcher.group(4).trim();
-                        String checkerName = matcher.group(5).trim();
-                        String message = matcher.group(6).trim();
+                        String compilerMessageType = matcher.group(4).trim();
+                        String checkerName = matcher.group(6).trim();
+                        String message = matcher.group(7).trim();
 
                         Path filePath = Paths.get(fileName);
                         if (!filePath.isAbsolute()) {
                             filePath = Paths.get(projectRoot).resolve(filePath).normalize();
                         }
 
-                        warnings.add(new Warning(filePath, lineNumber, columnNumber, warningType, checkerName, message));
+                        warnings.add(new Warning(filePath, lineNumber, columnNumber, compilerMessageType, checkerName, message));
                     } else {
                         System.err.println("Warning line does not match expected format: " + line);
                     }
@@ -150,7 +149,8 @@ public class CheckerFrameworkWarningResolver {
     }
 
     private static Optional<BodyDeclaration<?>> findEnclosingMember(CompilationUnit cu, Position position) {
-        List<BodyDeclaration<?>> bodyDeclarations = cu.findAll(BodyDeclaration.class);
+        // Adjusted the list to use raw type to avoid type inference issues
+        List<BodyDeclaration> bodyDeclarations = cu.findAll(BodyDeclaration.class);
 
         BodyDeclaration<?> closestMember = null;
         int smallestRange = Integer.MAX_VALUE;
@@ -206,17 +206,14 @@ public class CheckerFrameworkWarningResolver {
         }
 
         List<String> command = new ArrayList<>();
-        command.add("java");
-        command.add("-jar");
-        command.add("specimin.jar"); // Adjust path to specimin.jar if necessary
-        command.add("--outputDirectory");
-        command.add(outputDirectory);
-        command.add("--root");
-        command.add(root);
-        command.add("--targetFile");
-        command.add(targetFile);
-        command.add("--targetMethod");
-        command.add(targetMethod);
+        command.add("./gradlew");
+        command.add("run");
+        command.add("--args=" + String.join(" ",
+                "--outputDirectory", "\"" + outputDirectory + "\"",
+                "--root", "\"" + root + "\"",
+                "--targetFile", "\"" + targetFile + "\"",
+                "--targetMethod", "\"" + targetMethod + "\""
+        ));
 
         return command;
     }
@@ -314,22 +311,22 @@ public class CheckerFrameworkWarningResolver {
         Path filePath;
         int lineNumber;
         int columnNumber;
-        String warningType; // 'warning' or 'error'
+        String compilerMessageType; // 'compiler.warn.proc.messager' or 'compiler.err.proc.messager'
         String checkerName;
         String message;
 
-        Warning(Path filePath, int lineNumber, int columnNumber, String warningType, String checkerName, String message) {
+        Warning(Path filePath, int lineNumber, int columnNumber, String compilerMessageType, String checkerName, String message) {
             this.filePath = filePath;
             this.lineNumber = lineNumber;
             this.columnNumber = columnNumber;
-            this.warningType = warningType;
+            this.compilerMessageType = compilerMessageType;
             this.checkerName = checkerName;
             this.message = message;
         }
 
         @Override
         public String toString() {
-            return filePath + ":" + lineNumber + ":" + columnNumber + ": " + warningType + ": [" + checkerName + "] " + message;
+            return filePath + ":" + lineNumber + ":" + columnNumber + ": " + compilerMessageType + ": [" + checkerName + "] " + message;
         }
     }
 }
