@@ -6,14 +6,14 @@ import com.github.javaparser.Position;
 import com.github.javaparser.Range;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.*;
-import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.VariableDeclarator;
+import com.github.javaparser.ast.Node;
 
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A utility program that processes a list of warnings from the Checker Framework
@@ -48,7 +48,7 @@ public class CheckerFrameworkWarningResolver {
             JavaParser parser = new JavaParser();
             List<Warning> warnings = new ArrayList<>();
 
-            // Read all warnings from file
+            // Read all warnings from the file
             try (BufferedReader br = Files.newBufferedReader(Paths.get(warningsFilePath))) {
                 String line;
                 while ((line = br.readLine()) != null) {
@@ -66,8 +66,14 @@ public class CheckerFrameworkWarningResolver {
                             filePath = Paths.get(projectRoot).resolve(filePath).normalize();
                         }
 
-                        warnings.add(new Warning(filePath, lineNumber, columnNumber,
-                            compilerMessageType, checkerName, message));
+                        warnings.add(new Warning(
+                            filePath,
+                            lineNumber,
+                            columnNumber,
+                            compilerMessageType,
+                            checkerName,
+                            message
+                        ));
                     } else {
                         System.err.println(
                             "Warning line does not match expected format: " + line
@@ -107,9 +113,11 @@ public class CheckerFrameworkWarningResolver {
         }
     }
 
-    private static void processWarning(Warning warning,
-                                       Map<Path, CompilationUnit> compilationUnits,
-                                       String projectRoot) {
+    private static void processWarning(
+            Warning warning,
+            Map<Path, CompilationUnit> compilationUnits,
+            String projectRoot
+    ) {
         try {
             CompilationUnit compilationUnit = compilationUnits.get(warning.filePath);
             if (compilationUnit == null) {
@@ -118,19 +126,19 @@ public class CheckerFrameworkWarningResolver {
             }
 
             Position warningPosition = new Position(warning.lineNumber, warning.columnNumber);
-
-            Optional<BodyDeclaration<?>> enclosingMember = 
+            Optional<BodyDeclaration<?>> enclosingMember =
                 findEnclosingMember(compilationUnit, warningPosition);
 
             if (enclosingMember.isPresent()) {
-                List<String> command = buildSpeciminCommand(
-                    enclosingMember.get(), warning, projectRoot
-                );
+                List<String> command =
+                    buildSpeciminCommand(enclosingMember.get(), warning, projectRoot);
                 if (command != null) {
-                    // Print the command for illustration
-                    System.out.println(String.join(" ", command));
+                    System.out.println("Specimin command: " + String.join(" ", command));
                     if (executeCommandFlag) {
-                        executeCommand(command, resolverPath);
+                        // IMPORTANT: Now we execute in the specimin subdirectory
+                        // i.e. resolverPath/specimin
+                        String speciminDir = Paths.get(resolverPath, "specimin").toString();
+                        executeCommand(command, speciminDir);
                     }
                 }
             } else {
@@ -143,8 +151,10 @@ public class CheckerFrameworkWarningResolver {
         }
     }
 
-    private static Optional<BodyDeclaration<?>> findEnclosingMember(CompilationUnit cu,
-                                                                    Position position) {
+    private static Optional<BodyDeclaration<?>> findEnclosingMember(
+            CompilationUnit cu,
+            Position position
+    ) {
         // Find all body declarations
         List<BodyDeclaration> bodyDeclarations = cu.findAll(BodyDeclaration.class);
 
@@ -166,9 +176,11 @@ public class CheckerFrameworkWarningResolver {
         return Optional.ofNullable(closestMember);
     }
 
-    private static List<String> buildSpeciminCommand(BodyDeclaration<?> member,
-                                                     Warning warning,
-                                                     String projectRoot) throws IOException {
+    private static List<String> buildSpeciminCommand(
+            BodyDeclaration<?> member,
+            Warning warning,
+            String projectRoot
+    ) throws IOException {
         String outputDirectory = getTempDir();
         String root = projectRoot;
         String targetFile = warning.filePath.toString();
@@ -188,9 +200,10 @@ public class CheckerFrameworkWarningResolver {
 
         } else if (member instanceof FieldDeclaration) {
             FieldDeclaration field = (FieldDeclaration) member;
-            VariableDeclarator variable =
-                findVariableAtPosition(field,
-                    new Position(warning.lineNumber, warning.columnNumber));
+            VariableDeclarator variable = findVariableAtPosition(
+                field,
+                new Position(warning.lineNumber, warning.columnNumber)
+            );
             if (variable != null) {
                 String qualifiedClassName = getQualifiedClassName(field);
                 String fieldName = variable.getNameAsString();
@@ -208,7 +221,8 @@ public class CheckerFrameworkWarningResolver {
         List<String> command = new ArrayList<>();
         command.add("./gradlew");
         command.add("run");
-        // Build a single string for --args=, being cautious about quotes
+
+        // Build a single string for --args=, being cautious about quoting
         String argsStr = String.join(" ",
             "--outputDirectory", outputDirectory,
             "--root", root,
@@ -264,8 +278,10 @@ public class CheckerFrameworkWarningResolver {
         return signature.toString();
     }
 
-    private static VariableDeclarator findVariableAtPosition(FieldDeclaration field,
-                                                             Position position) {
+    private static VariableDeclarator findVariableAtPosition(
+            FieldDeclaration field,
+            Position position
+    ) {
         for (VariableDeclarator variable : field.getVariables()) {
             if (variable.getBegin().isPresent() && variable.getEnd().isPresent()) {
                 Range range = new Range(variable.getBegin().get(), variable.getEnd().get());
@@ -290,18 +306,21 @@ public class CheckerFrameworkWarningResolver {
             Process process = processBuilder.start();
 
             // Capture output
-            try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(process.getInputStream()))) {
+            try (BufferedReader reader =
+                     new BufferedReader(new InputStreamReader(process.getInputStream()))) {
                 String line;
-                while((line = reader.readLine()) != null) {
+                while ((line = reader.readLine()) != null) {
                     System.out.println(line);
                 }
             }
+
             int exitCode = process.waitFor();
             if (exitCode != 0) {
                 System.err.println("Command exited with code " + exitCode);
             } else {
-                System.out.println("Command executed successfully: " + String.join(" ", command));
+                System.out.println(
+                    "Command executed successfully: " + String.join(" ", command)
+                );
             }
         } catch (IOException | InterruptedException e) {
             System.err.println("Error executing command: " + String.join(" ", command));
