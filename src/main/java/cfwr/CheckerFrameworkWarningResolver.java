@@ -7,7 +7,7 @@ import com.github.javaparser.Range;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.*;
 import com.github.javaparser.ast.Node;
-import com.github.javaparser.ast.body.VariableDeclarator; // Corrected import
+import com.github.javaparser.ast.body.VariableDeclarator;
 
 import java.io.*;
 import java.nio.file.*;
@@ -20,40 +20,23 @@ import java.util.regex.Matcher;
  * generated on a target Java program and outputs the field or method signatures
  * of the nearest enclosing field/method for each warning location.
  *
- * The purpose of the program is to take a list of warnings and then use Specimin
- * to generate a slice for each warning in the input list.
- *
  * Usage:
  * ./gradlew run -PappArgs="<projectRoot> <warningsFilePath> <resolverRoot>"
- *
- * Arguments:
- * - projectRoot: Absolute path to the root directory of the target Java project.
- * - warningsFilePath: Absolute path to the file containing the Checker Framework warnings.
- * - resolverRoot: Absolute path to the root directory of this tool (CFWR).
- *
- * The warnings file should contain warnings in the standard format output by the Checker Framework.
- *
- * Example warning format:
- * /path/to/File.java:25:17: compiler.err.proc.messager: [index] Possible out-of-bounds access
- *
- * Example invocation:
- * ./gradlew run -PappArgs="/path/to/project /path/to/warnings.txt /path/to/CFWR"
  */
 public class CheckerFrameworkWarningResolver {
 
-    /**
-     * A pattern that matches the format of the warnings produced by the Checker Framework.
-     * It is intended to match lines like the following:
-     * /path/to/File.java:25:17: compiler.err.proc.messager: [index] Possible out-of-bounds access
-     */
-    private static final Pattern WARNING_PATTERN = Pattern.compile("^(.+\\.java):(\\d+):(\\d+):\\s*(compiler\\.(warn|err)\\.proc\\.messager):\\s*\\[(.+?)\\]\\s*(.*)$");
+    private static final Pattern WARNING_PATTERN = Pattern.compile(
+        "^(.+\\.java):(\\d+):(\\d+):\\s*(compiler\\.(warn|err)\\.proc\\.messager):\\s*\\[(.+?)\\]\\s*(.*)$"
+    );
 
     static String resolverPath;
     static boolean executeCommandFlag = true; // Flag to control command execution
 
     public static void main(String[] args) {
         if (args.length < 3) {
-            System.err.println("Usage: java CheckerFrameworkWarningResolver <projectRoot> <warningsFilePath> <resolverRoot>");
+            System.err.println(
+                "Usage: java CheckerFrameworkWarningResolver <projectRoot> <warningsFilePath> <resolverRoot>"
+            );
             return;
         }
 
@@ -63,9 +46,9 @@ public class CheckerFrameworkWarningResolver {
 
         try {
             JavaParser parser = new JavaParser();
-
             List<Warning> warnings = new ArrayList<>();
 
+            // Read all warnings from file
             try (BufferedReader br = Files.newBufferedReader(Paths.get(warningsFilePath))) {
                 String line;
                 while ((line = br.readLine()) != null) {
@@ -83,13 +66,17 @@ public class CheckerFrameworkWarningResolver {
                             filePath = Paths.get(projectRoot).resolve(filePath).normalize();
                         }
 
-                        warnings.add(new Warning(filePath, lineNumber, columnNumber, compilerMessageType, checkerName, message));
+                        warnings.add(new Warning(filePath, lineNumber, columnNumber,
+                            compilerMessageType, checkerName, message));
                     } else {
-                        System.err.println("Warning line does not match expected format: " + line);
+                        System.err.println(
+                            "Warning line does not match expected format: " + line
+                        );
                     }
                 }
             }
 
+            // Parse each unique file
             Set<Path> filesToParse = new HashSet<>();
             for (Warning warning : warnings) {
                 filesToParse.add(warning.filePath);
@@ -110,6 +97,7 @@ public class CheckerFrameworkWarningResolver {
                 }
             }
 
+            // Process each warning
             for (Warning warning : warnings) {
                 processWarning(warning, compilationUnits, projectRoot);
             }
@@ -119,7 +107,9 @@ public class CheckerFrameworkWarningResolver {
         }
     }
 
-    private static void processWarning(Warning warning, Map<Path, CompilationUnit> compilationUnits, String projectRoot) {
+    private static void processWarning(Warning warning,
+                                       Map<Path, CompilationUnit> compilationUnits,
+                                       String projectRoot) {
         try {
             CompilationUnit compilationUnit = compilationUnits.get(warning.filePath);
             if (compilationUnit == null) {
@@ -129,18 +119,23 @@ public class CheckerFrameworkWarningResolver {
 
             Position warningPosition = new Position(warning.lineNumber, warning.columnNumber);
 
-            Optional<BodyDeclaration<?>> enclosingMember = findEnclosingMember(compilationUnit, warningPosition);
+            Optional<BodyDeclaration<?>> enclosingMember = 
+                findEnclosingMember(compilationUnit, warningPosition);
 
             if (enclosingMember.isPresent()) {
-                List<String> command = buildSpeciminCommand(enclosingMember.get(), warning, projectRoot);
+                List<String> command = buildSpeciminCommand(
+                    enclosingMember.get(), warning, projectRoot
+                );
                 if (command != null) {
+                    // Print the command for illustration
                     System.out.println(String.join(" ", command));
                     if (executeCommandFlag) {
                         executeCommand(command, resolverPath);
                     }
                 }
             } else {
-                System.err.println("No enclosing member found for warning at " + warning.filePath + ":" + warning.lineNumber + ":" + warning.columnNumber);
+                System.err.println("No enclosing member found for warning at " +
+                    warning.filePath + ":" + warning.lineNumber + ":" + warning.columnNumber);
             }
         } catch (Exception e) {
             System.err.println("Error processing warning: " + warning);
@@ -148,8 +143,9 @@ public class CheckerFrameworkWarningResolver {
         }
     }
 
-    private static Optional<BodyDeclaration<?>> findEnclosingMember(CompilationUnit cu, Position position) {
-        // Adjusted the list to use raw type to avoid type inference issues
+    private static Optional<BodyDeclaration<?>> findEnclosingMember(CompilationUnit cu,
+                                                                    Position position) {
+        // Find all body declarations
         List<BodyDeclaration> bodyDeclarations = cu.findAll(BodyDeclaration.class);
 
         BodyDeclaration<?> closestMember = null;
@@ -158,10 +154,8 @@ public class CheckerFrameworkWarningResolver {
         for (BodyDeclaration<?> member : bodyDeclarations) {
             if (member.getBegin().isPresent() && member.getEnd().isPresent()) {
                 Range range = new Range(member.getBegin().get(), member.getEnd().get());
-
                 if (range.contains(position)) {
                     int rangeSize = range.getLineCount();
-
                     if (rangeSize < smallestRange) {
                         smallestRange = rangeSize;
                         closestMember = member;
@@ -169,11 +163,12 @@ public class CheckerFrameworkWarningResolver {
                 }
             }
         }
-
         return Optional.ofNullable(closestMember);
     }
 
-    private static List<String> buildSpeciminCommand(BodyDeclaration<?> member, Warning warning, String projectRoot) throws IOException {
+    private static List<String> buildSpeciminCommand(BodyDeclaration<?> member,
+                                                     Warning warning,
+                                                     String projectRoot) throws IOException {
         String outputDirectory = getTempDir();
         String root = projectRoot;
         String targetFile = warning.filePath.toString();
@@ -184,14 +179,18 @@ public class CheckerFrameworkWarningResolver {
             String qualifiedClassName = getQualifiedClassName(method);
             String methodSignature = getMethodSignature(method);
             targetMethod = qualifiedClassName + "#" + methodSignature;
+
         } else if (member instanceof ConstructorDeclaration) {
             ConstructorDeclaration constructor = (ConstructorDeclaration) member;
             String qualifiedClassName = getQualifiedClassName(constructor);
             String methodSignature = getConstructorSignature(constructor);
             targetMethod = qualifiedClassName + "#" + methodSignature;
+
         } else if (member instanceof FieldDeclaration) {
             FieldDeclaration field = (FieldDeclaration) member;
-            VariableDeclarator variable = findVariableAtPosition(field, new Position(warning.lineNumber, warning.columnNumber));
+            VariableDeclarator variable =
+                findVariableAtPosition(field,
+                    new Position(warning.lineNumber, warning.columnNumber));
             if (variable != null) {
                 String qualifiedClassName = getQualifiedClassName(field);
                 String fieldName = variable.getNameAsString();
@@ -200,6 +199,7 @@ public class CheckerFrameworkWarningResolver {
                 System.err.println("No variable found at position in field declaration");
                 return null;
             }
+
         } else {
             System.err.println("Unsupported member type: " + member.getClass().getSimpleName());
             return null;
@@ -208,40 +208,41 @@ public class CheckerFrameworkWarningResolver {
         List<String> command = new ArrayList<>();
         command.add("./gradlew");
         command.add("run");
-        command.add("--args=" + String.join(" ",
-                "--outputDirectory", "\"" + outputDirectory + "\"",
-                "--root", "\"" + root + "\"",
-                "--targetFile", "\"" + targetFile + "\"",
-                "--targetMethod", "\"" + targetMethod + "\""
-        ));
+        // Build a single string for --args=, being cautious about quotes
+        String argsStr = String.join(" ",
+            "--outputDirectory", outputDirectory,
+            "--root", root,
+            "--targetFile", targetFile,
+            "--targetMethod", targetMethod
+        );
+        command.add("--args=\"" + argsStr + "\"");
 
         return command;
     }
 
     private static String getQualifiedClassName(Node node) {
-        // Traverse up to find the enclosing ClassOrInterfaceDeclaration
-        Optional<ClassOrInterfaceDeclaration> classDecl = node.findAncestor(ClassOrInterfaceDeclaration.class);
+        Optional<ClassOrInterfaceDeclaration> classDecl =
+            node.findAncestor(ClassOrInterfaceDeclaration.class);
         if (classDecl.isPresent()) {
             String className = classDecl.get().getNameAsString();
-            // Get package name
             Optional<CompilationUnit> cu = node.findCompilationUnit();
-            String packageName = cu.flatMap(CompilationUnit::getPackageDeclaration)
-                    .map(pd -> pd.getNameAsString())
-                    .orElse("");
+            String packageName = cu
+                .flatMap(CompilationUnit::getPackageDeclaration)
+                .map(pd -> pd.getNameAsString())
+                .orElse("");
             if (!packageName.isEmpty()) {
                 return packageName + "." + className;
             } else {
                 return className;
             }
         } else {
-            return ""; // Or handle anonymous classes if necessary
+            return ""; 
         }
     }
 
     private static String getMethodSignature(MethodDeclaration method) {
         StringBuilder signature = new StringBuilder();
-        signature.append(method.getNameAsString());
-        signature.append("(");
+        signature.append(method.getNameAsString()).append("(");
         List<String> params = new ArrayList<>();
         for (Parameter param : method.getParameters()) {
             params.add(param.getType().asString());
@@ -253,8 +254,7 @@ public class CheckerFrameworkWarningResolver {
 
     private static String getConstructorSignature(ConstructorDeclaration constructor) {
         StringBuilder signature = new StringBuilder();
-        signature.append(constructor.getNameAsString());
-        signature.append("(");
+        signature.append(constructor.getNameAsString()).append("(");
         List<String> params = new ArrayList<>();
         for (Parameter param : constructor.getParameters()) {
             params.add(param.getType().asString());
@@ -264,7 +264,8 @@ public class CheckerFrameworkWarningResolver {
         return signature.toString();
     }
 
-    private static VariableDeclarator findVariableAtPosition(FieldDeclaration field, Position position) {
+    private static VariableDeclarator findVariableAtPosition(FieldDeclaration field,
+                                                             Position position) {
         for (VariableDeclarator variable : field.getVariables()) {
             if (variable.getBegin().isPresent() && variable.getEnd().isPresent()) {
                 Range range = new Range(variable.getBegin().get(), variable.getEnd().get());
@@ -289,12 +290,13 @@ public class CheckerFrameworkWarningResolver {
             Process process = processBuilder.start();
 
             // Capture output
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String line;
-            while((line = reader.readLine()) != null) {
-                System.out.println(line);
+            try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(process.getInputStream()))) {
+                String line;
+                while((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
             }
-
             int exitCode = process.waitFor();
             if (exitCode != 0) {
                 System.err.println("Command exited with code " + exitCode);
@@ -315,7 +317,8 @@ public class CheckerFrameworkWarningResolver {
         String checkerName;
         String message;
 
-        Warning(Path filePath, int lineNumber, int columnNumber, String compilerMessageType, String checkerName, String message) {
+        Warning(Path filePath, int lineNumber, int columnNumber,
+                String compilerMessageType, String checkerName, String message) {
             this.filePath = filePath;
             this.lineNumber = lineNumber;
             this.columnNumber = columnNumber;
@@ -326,7 +329,8 @@ public class CheckerFrameworkWarningResolver {
 
         @Override
         public String toString() {
-            return filePath + ":" + lineNumber + ":" + columnNumber + ": " + compilerMessageType + ": [" + checkerName + "] " + message;
+            return filePath + ":" + lineNumber + ":" + columnNumber + ": " +
+                compilerMessageType + ": [" + checkerName + "] " + message;
         }
     }
 }
