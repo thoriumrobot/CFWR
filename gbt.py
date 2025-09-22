@@ -209,18 +209,25 @@ for java_file_path in iter_java_files(slices_dir):
 all_X = np.array(all_X)
 all_y = np.array(all_y)
 
-# Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(all_X, all_y, test_size=0.2, random_state=42)
+# Guard against single-class or empty datasets
+unique_classes = np.unique(all_y) if all_y.size > 0 else []
+if all_y.size == 0 or unique_classes.size < 2:
+    print("GBT: Not enough class diversity to train (need >=2 classes). Skipping GBT training.")
+else:
+    # Stratified split to preserve class distribution
+    X_train, X_test, y_train, y_test = train_test_split(
+        all_X, all_y, test_size=0.2, random_state=42, stratify=all_y
+    )
 
-# Train the model
-model = train_model(X_train, y_train)
-accuracy = evaluate_model(model, X_test, y_test)
-print(f"Model accuracy: {accuracy}")
+    # Train the model
+    model = train_model(X_train, y_train)
+    accuracy = evaluate_model(model, X_test, y_test)
+    print(f"Model accuracy: {accuracy}")
 
-# Save the model if it's better than the previous best
-if accuracy > best_accuracy:
-    best_accuracy = accuracy
-    best_model = model
-    save_model(model, 1)
+    # Save the model if it's better than the previous best
+    if accuracy > best_accuracy:
+        best_accuracy = accuracy
+        best_model = model
+        save_model(model, 1)
 
-print(f"Best model accuracy: {best_accuracy}")
+    print(f"Best model accuracy: {best_accuracy}")

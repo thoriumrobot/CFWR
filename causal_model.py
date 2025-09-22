@@ -14,35 +14,50 @@ warnings.filterwarnings('ignore')
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.ensemble import GradientBoostingClassifier
-import dowhy
-from dowhy import CausalModel
+try:
+    from dowhy import CausalModel  # type: ignore
+    DOWHY_AVAILABLE = True
+except Exception:
+    CausalModel = None
+    DOWHY_AVAILABLE = False
+
+from cfg import generate_control_flow_graphs, save_cfgs
 
 # Directory paths
-cfg_output_dir = "cfg_output"  # Directory where CFGs are saved
-slices_dir = "slices"  # Directory containing Java code slices
-index_checker_path = "path/to/checker-framework/checker/dist/checker.jar"  # Replace with actual path
-models_dir = "models"  # Directory to save models
+cfg_output_dir = os.environ.get("CFG_OUTPUT_DIR", "cfg_output")
+slices_dir = os.environ.get("SLICES_DIR", "slices")
+index_checker_cp = os.environ.get("CHECKERFRAMEWORK_CP", "")
+models_dir = os.environ.get("MODELS_DIR", "models")
 
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
+
+def iter_java_files(root_dir):
+    for root, _, files in os.walk(root_dir):
+        for f in files:
+            if f.endswith('.java'):
+                yield os.path.join(root, f)
+
+def ensure_cfg(java_file):
+    base = os.path.splitext(os.path.basename(java_file))[0]
+    cfg_dir = os.path.join(cfg_output_dir, base)
+    if not os.path.exists(cfg_dir) or not any(name.endswith('.json') for name in os.listdir(cfg_dir)):
+        cfgs = generate_control_flow_graphs(java_file, cfg_output_dir)
+        save_cfgs(cfgs, cfg_dir)
 
 def load_data():
     """
     Load CFGs and prepare data for causal modeling.
     """
     data_records = []
-    for java_file in os.listdir(slices_dir):
-        if java_file.endswith(".java"):
-            java_file_path = os.path.join(slices_dir, java_file)
-            # Run Index Checker to get warnings
-            warnings_list = run_index_checker(java_file_path)
-            annotations = parse_warnings(warnings_list)
-            # Load CFGs
-            method_cfgs = load_cfgs(java_file_path)
-            for cfg_data in method_cfgs:
-                # Extract features and labels
-                records = extract_features_and_labels(cfg_data, annotations)
-                data_records.extend(records)
+    for java_file_path in iter_java_files(slices_dir):
+        ensure_cfg(java_file_path)
+        warnings_list = run_index_checker(java_file_path)
+        annotations = parse_warnings(warnings_list)
+        method_cfgs = load_cfgs(java_file_path)
+        for cfg_data in method_cfgs:
+            records = extract_features_and_labels(cfg_data, annotations)
+            data_records.extend(records)
     return pd.DataFrame(data_records)
 
 def run_index_checker(java_file):
@@ -50,12 +65,10 @@ def run_index_checker(java_file):
     Run the Checker Framework's Index Checker on the given Java file and capture warnings.
     """
     # Construct the command to run the Index Checker
-    command = [
-        'javac',
-        '-cp', index_checker_path,
-        '-processor', 'org.checkerframework.checker.index.IndexChecker',
-        java_file
-    ]
+    command = ['javac']
+    if index_checker_cp:
+        command += ['-cp', index_checker_cp]
+    command += ['-processor', 'org.checkerframework.checker.index.IndexChecker', java_file]
     result = subprocess.run(command, capture_output=True, text=True)
     warnings_output = result.stderr  # Warnings are typically output to stderr
     return warnings_output
@@ -162,32 +175,33 @@ def main():
         return
     # Preprocess data
     data = preprocess_data(data)
-    # Define causal model
-    model = define_causal_model(data)
-    # Identify causal effect
-    identified_estimand = model.identify_effect()
-    print("Identified estimand:")
-    print(identified_estimand)
-    # Estimate causal effect
-    estimate = model.estimate_effect(identified_estimand,
-                                     method_name="backdoor.propensity_score_matching")
-    print("Causal effect estimate:")
-    print(estimate)
-    # Refute the estimate
-    refute = model.refute_estimate(identified_estimand, estimate,
-                                   method_name="placebo_treatment_refuter")
-    print("Refutation result:")
-    print(refute)
+    if DOWHY_AVAILABLE:
+        # Define causal model
+        model = define_causal_model(data)
+        identified_estimand = model.identify_effect()
+        print("Identified estimand:")
+        print(identified_estimand)
+        estimate = model.estimate_effect(identified_estimand, method_name="backdoor.propensity_score_matching")
+        print("Causal effect estimate:")
+        print(estimate)
+        try:
+            refute = model.refute_estimate(identified_estimand, estimate, method_name="placebo_treatment_refuter")
+            print("Refutation result:")
+            print(refute)
+        except Exception:
+            pass
+    else:
+        print("DoWhy not available; skipping causal identification and estimation.")
     # Use the causal model to predict where annotations should be placed
-    data['predicted_annotation'] = predict_annotations(data)
+    data['predicted_annotation'], clf = predict_annotations(data)
     # Evaluate the model
     accuracy = accuracy_score(data['needs_annotation'], data['predicted_annotation'])
     f1 = f1_score(data['needs_annotation'], data['predicted_annotation'])
     print(f"Model accuracy: {accuracy:.4f}, F1-score: {f1:.4f}")
-    # Save the model
-    model_path = os.path.join(models_dir, 'causal_model.joblib')
-    joblib.dump(model, model_path)
-    print(f"Causal model saved at {model_path}")
+    # Save predictive classifier for inference
+    clf_path = os.path.join(models_dir, 'causal_clf.joblib')
+    joblib.dump(clf, clf_path)
+    print(f"Predictive classifier saved at {clf_path}")
 
 def preprocess_data(data):
     """
@@ -235,7 +249,7 @@ def predict_annotations(data):
     clf.fit(X_train, y_train)
     # Predict on the full dataset
     y_pred = clf.predict(X)
-    return y_pred
+    return y_pred, clf
 
 if __name__ == '__main__':
     main()

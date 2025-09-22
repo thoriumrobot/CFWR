@@ -60,6 +60,12 @@ Predictions:
                         --model_path /abs/path/to/models/model_iteration_1.joblib \
                         --out_path /abs/path/to/output/gbt_pred.json
 
+  # Causal model (classifier trained via causal_model.py)
+  python causal_model.py
+  python predict_causal.py --java_file /abs/path/to/slice.java \
+                           --model_path /abs/path/to/models/causal_clf.joblib \
+                           --out_path /abs/path/to/output/causal_pred.json
+
 End-to-end pipeline (manual control via flags):
 
   # Generate CFGs only
@@ -88,3 +94,12 @@ End-to-end pipeline (manual control via flags):
 
   # Bulk predictions over original projects
   python pipeline.py --steps predict-original --model all --original_root /home/ubuntu/original --predict_out_dir ./predictions_original
+
+Data augmentation (to expand dataset with irrelevant code):
+
+  # Create augmented variants of existing slices under slices_aug/
+  python pipeline.py --steps augment --slices_dir "$SLICES_DIR" --augmented_dir ./slices_aug --augment_variants 3
+
+  # Generate CFGs for augmented slices as well
+  python pipeline.py --steps cfg --slices_dir "$SLICES_DIR" --cfg_output_dir "$CFG_OUTPUT_DIR"
+

@@ -7,6 +7,7 @@ SLICES_DIR_DEFAULT = os.environ.get('SLICES_DIR', 'slices')
 CFG_OUTPUT_DIR_DEFAULT = os.environ.get('CFG_OUTPUT_DIR', 'cfg_output')
 MODELS_DIR_DEFAULT = os.environ.get('MODELS_DIR', 'models')
 ORIGINAL_DIR_DEFAULT = '/home/ubuntu/original'
+AUGMENTED_DIR_DEFAULT = os.environ.get('AUGMENTED_SLICES_DIR', 'slices_aug')
 
 
 def run(cmd, env=None):
@@ -77,7 +78,7 @@ def run_predict_over_original(model, original_root, models_dir, out_root):
 
 def main():
     parser = argparse.ArgumentParser(description='End-to-end pipeline for CFWR')
-    parser.add_argument('--steps', default='all', choices=['all','slice','cfg','train','predict','predict-original'], help='Which step to run')
+    parser.add_argument('--steps', default='all', choices=['all','slice','augment','cfg','train','predict','predict-original'], help='Which step to run')
     parser.add_argument('--model', default='all', choices=['all','hgt','gbt'], help='Which model(s) to train/predict')
     parser.add_argument('--slices_dir', default=SLICES_DIR_DEFAULT)
     parser.add_argument('--cfg_output_dir', default=CFG_OUTPUT_DIR_DEFAULT)
@@ -88,11 +89,14 @@ def main():
     parser.add_argument('--warnings_file', help='Warnings file for slicing (slice step)')
     parser.add_argument('--cfwr_root', default=os.getcwd(), help='CFWR root (slice step)')
     parser.add_argument('--original_root', default=ORIGINAL_DIR_DEFAULT, help='Original projects root for bulk prediction')
+    parser.add_argument('--augmented_dir', default=AUGMENTED_DIR_DEFAULT, help='Output directory for augmented slices')
+    parser.add_argument('--augment_variants', type=int, default=3, help='Variants per original slice for augmentation')
     args = parser.parse_args()
 
     os.makedirs(args.slices_dir, exist_ok=True)
     os.makedirs(args.cfg_output_dir, exist_ok=True)
     os.makedirs(args.models_dir, exist_ok=True)
+    os.makedirs(args.augmented_dir, exist_ok=True)
 
     if args.steps in ('slice','all'):
         if not args.project_root or not args.warnings_file:
@@ -102,6 +106,9 @@ def main():
 
     if args.steps in ('cfg','all'):
         run_cfg_generation(args.slices_dir, args.cfg_output_dir)
+        # Also generate CFGs for augmented slices if present
+        if os.path.isdir(args.augmented_dir):
+            run_cfg_generation(args.augmented_dir, args.cfg_output_dir)
 
     if args.steps in ('train','all'):
         run_train(args.model)
@@ -114,6 +121,9 @@ def main():
 
     if args.steps == 'predict-original':
         run_predict_over_original(args.model, args.original_root, args.models_dir, args.predict_out_dir)
+
+    if args.steps == 'augment':
+        run([sys.executable, 'augment_slices.py', '--slices_dir', args.slices_dir, '--out_dir', args.augmented_dir, '--variants_per_file', str(args.augment_variants)])
 
 
 if __name__ == '__main__':

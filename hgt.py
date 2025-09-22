@@ -6,7 +6,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch_geometric.nn import HGTConv
-from torch_geometric.data import HeteroData, DataLoader
+from torch_geometric.data import HeteroData
+from torch_geometric.loader import DataLoader
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
@@ -188,14 +189,16 @@ class HGTModel(nn.Module):
     def __init__(self, in_channels, hidden_channels, out_channels, num_heads, num_layers, metadata):
         super(HGTModel, self).__init__()
         self.convs = nn.ModuleList()
-        for _ in range(num_layers):
+        current_in = in_channels
+        for layer_idx in range(num_layers):
             conv = HGTConv(
-                in_channels=in_channels,
+                in_channels=current_in,
                 out_channels=hidden_channels,
                 metadata=metadata,
-                num_heads=num_heads
+                heads=num_heads
             )
             self.convs.append(conv)
+            current_in = hidden_channels
         self.fc = nn.Linear(hidden_channels, out_channels)
 
     def forward(self, x_dict, edge_index_dict):
