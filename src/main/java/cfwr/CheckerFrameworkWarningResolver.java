@@ -136,7 +136,8 @@ public class CheckerFrameworkWarningResolver {
                 if (command != null) {
                     System.out.println(String.join(" ", command));
                     if (executeCommandFlag) {
-                        executeCommand(command, resolverPath);
+                        // Execute within the specimin subdirectory
+                        executeCommand(command, Paths.get(resolverPath, "specimin").toString());
                     }
                 }
             } else {
@@ -174,28 +175,43 @@ public class CheckerFrameworkWarningResolver {
     }
 
     private static List<String> buildSpeciminCommand(BodyDeclaration<?> member, Warning warning, String projectRoot) throws IOException {
-        String outputDirectory = getTempDir();
+        String baseSlicesDir = System.getenv().getOrDefault("SLICES_DIR", "slices");
+        Path baseDirPath = Paths.get(baseSlicesDir).toAbsolutePath().normalize();
+        Files.createDirectories(baseDirPath);
+
         String root = projectRoot;
         String targetFile = warning.filePath.toString();
-        String targetMethod;
+        // Specimin expects targetFile paths relative to --root. If absolute and under root, relativize it.
+        try {
+            Path rootPath = Paths.get(root).toAbsolutePath().normalize();
+            Path targetPath = Paths.get(targetFile).toAbsolutePath().normalize();
+            if (targetPath.startsWith(rootPath)) {
+                targetFile = rootPath.relativize(targetPath).toString();
+            }
+        } catch (Exception ignored) { }
+        String targetMethodOrField;
 
+        String sliceNameComponent;
         if (member instanceof MethodDeclaration) {
             MethodDeclaration method = (MethodDeclaration) member;
             String qualifiedClassName = getQualifiedClassName(method);
             String methodSignature = getMethodSignature(method);
-            targetMethod = qualifiedClassName + "#" + methodSignature;
+            targetMethodOrField = qualifiedClassName + "#" + methodSignature;
+            sliceNameComponent = qualifiedClassName + "#" + methodSignature;
         } else if (member instanceof ConstructorDeclaration) {
             ConstructorDeclaration constructor = (ConstructorDeclaration) member;
             String qualifiedClassName = getQualifiedClassName(constructor);
             String methodSignature = getConstructorSignature(constructor);
-            targetMethod = qualifiedClassName + "#" + methodSignature;
+            targetMethodOrField = qualifiedClassName + "#" + methodSignature;
+            sliceNameComponent = qualifiedClassName + "#" + methodSignature;
         } else if (member instanceof FieldDeclaration) {
             FieldDeclaration field = (FieldDeclaration) member;
             VariableDeclarator variable = findVariableAtPosition(field, new Position(warning.lineNumber, warning.columnNumber));
             if (variable != null) {
                 String qualifiedClassName = getQualifiedClassName(field);
                 String fieldName = variable.getNameAsString();
-                targetMethod = qualifiedClassName + "#" + fieldName;
+                targetMethodOrField = qualifiedClassName + "#" + fieldName;
+                sliceNameComponent = qualifiedClassName + "#" + fieldName;
             } else {
                 System.err.println("No variable found at position in field declaration");
                 return null;
@@ -205,17 +221,46 @@ public class CheckerFrameworkWarningResolver {
             return null;
         }
 
+        String relativeTargetFile = targetFile;
+        try {
+            Path rootPath = Paths.get(root).toAbsolutePath().normalize();
+            Path targetPath = Paths.get(targetFile).toAbsolutePath().normalize();
+            if (targetPath.startsWith(rootPath)) {
+                relativeTargetFile = rootPath.relativize(targetPath).toString();
+            }
+        } catch (Exception ignored) { }
+
+        String safeSliceDirName = sanitizeSliceName(relativeTargetFile + "__" + sliceNameComponent);
+        Path outputPath = baseDirPath.resolve(safeSliceDirName);
+        Files.createDirectories(outputPath);
+        String outputDirectory = outputPath.toString();
+
         List<String> command = new ArrayList<>();
         command.add("./gradlew");
         command.add("run");
-        command.add("--args=" + String.join(" ",
-                "--outputDirectory", "\"" + outputDirectory + "\"",
-                "--root", "\"" + root + "\"",
-                "--targetFile", "\"" + targetFile + "\"",
-                "--targetMethod", "\"" + targetMethod + "\""
-        ));
+        String args;
+        if (member instanceof FieldDeclaration) {
+            args = String.join(" ",
+                    "--outputDirectory", "\"" + outputDirectory + "\"",
+                    "--root", "\"" + root + "\"",
+                    "--targetFile", "\"" + targetFile + "\"",
+                    "--targetField", "\"" + targetMethodOrField + "\""
+            );
+        } else {
+            args = String.join(" ",
+                    "--outputDirectory", "\"" + outputDirectory + "\"",
+                    "--root", "\"" + root + "\"",
+                    "--targetFile", "\"" + targetFile + "\"",
+                    "--targetMethod", "\"" + targetMethodOrField + "\""
+            );
+        }
+        command.add("--args=" + args);
 
         return command;
+    }
+
+    private static String sanitizeSliceName(String name) {
+        return name.replaceAll("[^A-Za-z0-9._-]", "_");
     }
 
     private static String getQualifiedClassName(Node node) {

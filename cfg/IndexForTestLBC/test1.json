@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "Throw(ClassCreator(arguments=[], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=Error, sub_type=None)))",
+      "line": 9
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    }
+  ]
+}

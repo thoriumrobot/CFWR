@@ -57,7 +57,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>CheckerFrameworkWarningResolver</mainClass>
+          <mainClass>cfwr.CheckerFrameworkWarningResolver</mainClass>
         </configuration>
       </plugin>
         <plugin>

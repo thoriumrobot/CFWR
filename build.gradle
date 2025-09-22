@@ -16,7 +16,7 @@ dependencies {
 }
 
 application {
-    mainClass = 'CheckerFrameworkWarningResolver'
+    mainClass = 'cfwr.CheckerFrameworkWarningResolver'
 }
 
 tasks.withType(JavaCompile) {

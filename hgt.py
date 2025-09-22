@@ -1,5 +1,7 @@
 import os
 import json
+import random
+import subprocess
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -8,38 +10,50 @@ from torch_geometric.data import HeteroData, DataLoader
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-from cfg import generate_control_flow_graphs
+from cfg import generate_control_flow_graphs, save_cfgs
+
+def ensure_cfg(java_file):
+    base = os.path.splitext(os.path.basename(java_file))[0]
+    out_dir = os.path.join(cfg_output_dir, base)
+    if not os.path.exists(out_dir) or not any(name.endswith('.json') for name in os.listdir(out_dir)):
+        cfgs = generate_control_flow_graphs(java_file, cfg_output_dir)
+        save_cfgs(cfgs, out_dir)
 
 # Directory paths
-cfg_output_dir = "cfg_output"  # Directory where CFGs are saved
-slices_dir = "slices"  # Directory containing Java code slices
-index_checker_path = "path/to/checker-framework/index.jar"  # Replace with actual path
-models_dir = "models"  # Directory to save models
+cfg_output_dir = os.environ.get("CFG_OUTPUT_DIR", "cfg_output")
+slices_dir = os.environ.get("SLICES_DIR", "slices")
+index_checker_cp = os.environ.get("CHECKERFRAMEWORK_CP", "")
+models_dir = os.environ.get("MODELS_DIR", "models")
 
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
 
 # Function to load CFGs and convert them into HeteroData objects
+def iter_java_files(root_dir):
+    for root, _, files in os.walk(root_dir):
+        for f in files:
+            if f.endswith(".java"):
+                yield os.path.join(root, f)
+
 def load_data():
     graphs = []
     labels = []
 
-    for java_file in os.listdir(slices_dir):
-        if java_file.endswith(".java"):
-            java_file_path = os.path.join(slices_dir, java_file)
-            # Run Index Checker to get warnings
-            warnings = run_index_checker(java_file_path)
-            annotations = parse_warnings(warnings)
-            # Load CFGs
-            method_cfgs = load_cfgs(java_file_path)
-            for cfg_data in method_cfgs:
-                # Create HeteroData object
-                data = create_heterodata(cfg_data)
-                if data is None:
-                    continue
-                # Label nodes based on warnings
-                label_nodes(data, cfg_data, annotations)
-                graphs.append(data)
+    for java_file_path in iter_java_files(slices_dir):
+        # Run Index Checker to get warnings
+        warnings = run_index_checker(java_file_path)
+        annotations = parse_warnings(warnings)
+        # Load CFGs
+        ensure_cfg(java_file_path)
+        method_cfgs = load_cfgs(java_file_path)
+        for cfg_data in method_cfgs:
+            # Create HeteroData object
+            data = create_heterodata(cfg_data)
+            if data is None:
+                continue
+            # Label nodes based on warnings
+            label_nodes(data, cfg_data, annotations)
+            graphs.append(data)
     return graphs
 
 def load_cfgs(java_file):
@@ -68,12 +82,11 @@ def run_index_checker(java_file):
     Run the Checker Framework's Index Checker on the given Java file and capture warnings.
     """
     # Construct the command to run the Index Checker
-    command = [
-        'javac',
-        '-cp', index_checker_path,
-        '-processor', 'org.checkerframework.checker.index.IndexChecker',
-        java_file
-    ]
+    cp = index_checker_cp
+    command = ['javac']
+    if cp:
+        command += ['-cp', cp]
+    command += ['-processor', 'org.checkerframework.checker.index.IndexChecker', java_file]
     result = subprocess.run(command, capture_output=True, text=True)
     warnings = result.stderr  # Warnings are typically output to stderr
     return warnings

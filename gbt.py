@@ -1,20 +1,19 @@
 import os
 import subprocess
 import json
-import networkx as nx
 import numpy as np
 import joblib
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
-from cfg import generate_control_flow_graphs
+from cfg import generate_control_flow_graphs, save_cfgs
 
 # Directory paths
-java_project_dir = "path/to/java/project"  # Replace with the actual path
-index_checker_path = "path/to/checker-framework/index.jar"  # Replace with the actual path
-slices_dir = "path/to/slices"  # Directory containing Java code slices
-cfg_output_dir = "cfg_output"  # Directory where CFGs are saved
-models_dir = "models"  # Directory to save models
+java_project_dir = os.environ.get("JAVA_PROJECT_DIR", "")
+index_checker_cp = os.environ.get("CHECKERFRAMEWORK_CP", "")
+slices_dir = os.environ.get("SLICES_DIR", "slices")
+cfg_output_dir = os.environ.get("CFG_OUTPUT_DIR", "cfg_output")
+models_dir = os.environ.get("MODELS_DIR", "models")
 
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
@@ -45,12 +44,10 @@ def run_index_checker(java_file):
     Run the Checker Framework's Index Checker on the given Java file and capture warnings.
     """
     # Construct the command to run the Index Checker
-    command = [
-        'javac',
-        '-cp', index_checker_path,
-        '-processor', 'org.checkerframework.checker.index.IndexChecker',
-        java_file
-    ]
+    command = ['javac']
+    if index_checker_cp:
+        command += ['-cp', index_checker_cp]
+    command += ['-processor', 'org.checkerframework.checker.index.IndexChecker', java_file]
     result = subprocess.run(command, capture_output=True, text=True)
     warnings = result.stderr  # Warnings are typically output to stderr
     return warnings
@@ -179,25 +176,34 @@ def evaluate_model(model, X_test, y_test):
 best_accuracy = 0
 best_model = None
 
+def iter_java_files(root_dir):
+    for root, _, files in os.walk(root_dir):
+        for f in files:
+            if f.endswith('.java'):
+                yield os.path.join(root, f)
+
 # Collect data from all slices
 all_X = []
 all_y = []
 
-for java_file in os.listdir(slices_dir):
-    if java_file.endswith(".java"):
-        java_file_path = os.path.join(slices_dir, java_file)
-        # Load CFGs
-        cfgs = load_cfgs(java_file_path)
-        if not cfgs:
-            continue
-        # Run Index Checker
-        warnings = run_index_checker(java_file_path)
-        # Parse warnings
-        annotations = parse_warnings(warnings)
-        # Prepare dataset
-        X, y = prepare_dataset(cfgs, annotations)
-        all_X.extend(X)
-        all_y.extend(y)
+for java_file_path in iter_java_files(slices_dir):
+    # Ensure CFGs exist
+    base = os.path.splitext(os.path.basename(java_file_path))[0]
+    out_dir = os.path.join(cfg_output_dir, base)
+    if not os.path.exists(out_dir) or not any(name.endswith('.json') for name in os.listdir(out_dir)):
+        cfgs_gen = generate_control_flow_graphs(java_file_path, cfg_output_dir)
+        save_cfgs(cfgs_gen, out_dir)
+    cfgs = load_cfgs(java_file_path)
+    if not cfgs:
+        continue
+    # Run Index Checker
+    warnings = run_index_checker(java_file_path)
+    # Parse warnings
+    annotations = parse_warnings(warnings)
+    # Prepare dataset
+    X, y = prepare_dataset(cfgs, annotations)
+    all_X.extend(X)
+    all_y.extend(y)
 
 # Convert to numpy arrays
 all_X = np.array(all_X)
