@@ -245,12 +245,13 @@ def process_statement(statement, cfg, current_node, source_lines):
         cfg.add_edge(current_node, var_node)
         return [var_node]
 
-    elif isinstance(statement, EmptyStatement):
+    elif statement is None or str(statement).strip() == '':
         # Empty statement
         return [current_node]
 
     else:
         # Other statements
+        print(f"Warning: Unknown statement type: {type(statement).__name__} - {statement}")
         stmt_node = f'Unknown({type(statement).__name__})'
         cfg.add_node(stmt_node, label=stmt_node, line=getattr(statement, 'position', None).line if getattr(statement, 'position', None) else None)
         cfg.add_edge(current_node, stmt_node)
