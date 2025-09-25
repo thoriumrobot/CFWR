@@ -1,0 +1,43 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "While(BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='x'), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=761L), operator=^), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operator=%))",
+      "line": 18
+    },
+    {
+      "id": 3,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"test17\"))",
+      "line": 19
+    },
+    {
+      "id": 4,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 22
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4
+    }
+  ]
+}

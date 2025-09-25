@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false))",
+      "line": 9
+    },
+    {
+      "id": 3,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_obj50)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Float, sub_type=None))",
+      "line": 10
+    },
+    {
+      "id": 4,
+      "label": "Break",
+      "line": 11
+    },
+    {
+      "id": 5,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=MemberReference(member=a, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), name=c1)], modifiers=set(), type=BasicType(dimensions=[None], name=int))",
+      "line": 14
+    },
+    {
+      "id": 6,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=[ElementValuePair(name=value, value=ElementArrayValue(values=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"c1\"), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"c1\")])), ElementValuePair(name=offset, value=ElementArrayValue(values=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"0\"), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"x\")]))], name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), name=z)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 16
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 1
+    }
+  ]
+}

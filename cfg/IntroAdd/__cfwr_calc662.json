@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_entry31)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Boolean, sub_type=None))",
+      "line": 84
+    },
+    {
+      "id": 3,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false))",
+      "line": 97
+    },
+    {
+      "id": 4,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operator=&&))",
+      "line": 86
+    },
+    {
+      "id": 5,
+      "label": "Try",
+      "line": 87
+    },
+    {
+      "id": 6,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operator=||))",
+      "line": 88
+    },
+    {
+      "id": 7,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false))",
+      "line": 89
+    },
+    {
+      "id": 8,
+      "label": "Catch(__cfwr_e32)",
+      "line": null
+    },
+    {
+      "id": 9,
+      "label": "Break",
+      "line": 102
+    },
+    {
+      "id": 10,
+      "label": "While(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='B'), operator=<<), operator=+))",
+      "line": 98
+    },
+    {
+      "id": 11,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true))",
+      "line": 99
+    },
+    {
+      "id": 12,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=942L))",
+      "line": 104
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 10
+    },
+    {
+      "source": 3,
+      "target": 12
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 9
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 8
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 9
+    }
+  ]
+}

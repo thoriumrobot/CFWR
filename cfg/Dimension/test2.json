@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i26, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=4), operator=<))",
+      "line": 7
+    },
+    {
+      "id": 3,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_elem6)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Character, sub_type=None))",
+      "line": 8
+    },
+    {
+      "id": 4,
+      "label": "Update(MemberReference(member=__cfwr_i26, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 7
+    },
+    {
+      "id": 5,
+      "label": "Assignment(expressionl=MemberReference(member=arrayField, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type==, value=ArrayCreator(dimensions=[MemberReference(member=expr, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])], initializer=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=String, sub_type=None)))",
+      "line": 11
+    },
+    {
+      "id": 6,
+      "label": "Assignment(expressionl=This(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[MemberReference(member=arrayField, postfix_operators=None, prefix_operators=None, qualifier=None, selectors=None), ArraySelector(index=MemberReference(member=expr, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]))]), type==, value=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"\"))",
+      "line": 12
+    },
+    {
+      "id": 7,
+      "label": "While(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=52.72), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=723), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operator=+), operator=^))",
+      "line": 14
+    },
+    {
+      "id": 8,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=438L), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operator=^), name=__cfwr_temp83)], modifiers=set(), type=BasicType(dimensions=[], name=long))",
+      "line": 15
+    },
+    {
+      "id": 9,
+      "label": "Break",
+      "line": 16
+    },
+    {
+      "id": 10,
+      "label": "Assignment(expressionl=This(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[MemberReference(member=arrayField, postfix_operators=None, prefix_operators=None, qualifier=None, selectors=None), ArraySelector(index=BinaryOperation(operandl=MemberReference(member=expr, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1), operator=-))]), type==, value=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"\"))",
+      "line": 18
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 2
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 10
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 10,
+      "target": 1
+    }
+  ]
+}

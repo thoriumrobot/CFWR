@@ -1,0 +1,109 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false))",
+      "line": 10
+    },
+    {
+      "id": 3,
+      "label": "If(BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=44.95f), operator=^), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operator=||))",
+      "line": 11
+    },
+    {
+      "id": 4,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_entry64)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Character, sub_type=None))",
+      "line": 12
+    },
+    {
+      "id": 5,
+      "label": "Break",
+      "line": 14
+    },
+    {
+      "id": 6,
+      "label": "If(BinaryOperation(operandl=MemberReference(member=num_values, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=length, postfix_operators=[], prefix_operators=[], qualifier=values, selectors=[]), operator===))",
+      "line": 17
+    },
+    {
+      "id": 7,
+      "label": "Assignment(expressionl=MemberReference(member=values, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type==, value=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 18
+    },
+    {
+      "id": 8,
+      "label": "MemberReference(member=num_values, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[])",
+      "line": 23
+    },
+    {
+      "id": 9,
+      "label": "Return(None)",
+      "line": 20
+    },
+    {
+      "id": 10,
+      "label": "Assignment(expressionl=MemberReference(member=values, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[ArraySelector(index=MemberReference(member=num_values, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]))]), type==, value=MemberReference(member=elt, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 22
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 6
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 10
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 1
+    },
+    {
+      "source": 10,
+      "target": 8
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_var98)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Object, sub_type=None))",
+      "line": 10
+    },
+    {
+      "id": 3,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\"), name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"1\")], member=parseInt, postfix_operators=[], prefix_operators=[], qualifier=Integer, selectors=[], type_arguments=None), name=a)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 13
+    },
+    {
+      "id": 4,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\"), name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"3\")], member=parseInt, postfix_operators=[], prefix_operators=[], qualifier=Integer, selectors=[], type_arguments=None), name=a3)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 15
+    },
+    {
+      "id": 5,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=2), name=b)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 16
+    },
+    {
+      "id": 6,
+      "label": "If(BinaryOperation(operandl=MemberReference(member=test, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=b, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=>=))",
+      "line": 17
+    },
+    {
+      "id": 7,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\"), name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=MemberReference(member=b, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), name=c)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 19
+    },
+    {
+      "id": 8,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\"), name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=MemberReference(member=b, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), name=c1)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 22
+    },
+    {
+      "id": 9,
+      "label": "If(BinaryOperation(operandl=MemberReference(member=a, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=b, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=>=))",
+      "line": 23
+    },
+    {
+      "id": 10,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=7), name=potato)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 24
+    },
+    {
+      "id": 11,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\"), name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=MemberReference(member=b, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), name=d)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 27
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 1
+    },
+    {
+      "source": 11,
+      "target": 1
+    }
+  ]
+}

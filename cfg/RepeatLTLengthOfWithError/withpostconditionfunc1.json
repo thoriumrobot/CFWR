@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i94, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1), operator=<))",
+      "line": 12
+    },
+    {
+      "id": 3,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_result54)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Integer, sub_type=None))",
+      "line": 13
+    },
+    {
+      "id": 4,
+      "label": "Update(MemberReference(member=__cfwr_i94, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 12
+    },
+    {
+      "id": 5,
+      "label": "Assignment(expressionl=MemberReference(member=v1, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type==, value=BinaryOperation(operandl=MethodInvocation(arguments=[], member=length, postfix_operators=[], prefix_operators=[], qualifier=value1, selectors=[], type_arguments=None), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=3), operator=-))",
+      "line": 16
+    },
+    {
+      "id": 6,
+      "label": "Assignment(expressionl=MemberReference(member=v2, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type==, value=BinaryOperation(operandl=MethodInvocation(arguments=[], member=length, postfix_operators=[], prefix_operators=[], qualifier=value2, selectors=[], type_arguments=None), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=3), operator=-))",
+      "line": 17
+    },
+    {
+      "id": 7,
+      "label": "Assignment(expressionl=MemberReference(member=v3, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type==, value=BinaryOperation(operandl=MethodInvocation(arguments=[], member=length, postfix_operators=[], prefix_operators=[], qualifier=value3, selectors=[], type_arguments=None), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=3), operator=-))",
+      "line": 18
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 2
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 1
+    }
+  ]
+}

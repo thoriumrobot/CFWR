@@ -1,0 +1,117 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "Try",
+      "line": 71
+    },
+    {
+      "id": 3,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operandr=BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=7.42), operator=/), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=43.29), operator=+), operator=&&))",
+      "line": 62
+    },
+    {
+      "id": 4,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='K'), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operator=/), operator=&&))",
+      "line": 63
+    },
+    {
+      "id": 5,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 78
+    },
+    {
+      "id": 6,
+      "label": "Catch(__cfwr_e81)",
+      "line": null
+    },
+    {
+      "id": 7,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false))",
+      "line": 70
+    },
+    {
+      "id": 8,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=86.41), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='Q'), operator=+), operator=>>), name=__cfwr_item77)], modifiers=set(), type=BasicType(dimensions=[], name=double))",
+      "line": 72
+    },
+    {
+      "id": 9,
+      "label": "Catch(__cfwr_e71)",
+      "line": null
+    },
+    {
+      "id": 10,
+      "label": "Break",
+      "line": 76
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 6
+    },
+    {
+      "source": 2,
+      "target": 8
+    },
+    {
+      "source": 2,
+      "target": 9
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 7
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 2
+    },
+    {
+      "source": 7,
+      "target": 5
+    },
+    {
+      "source": 8,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 10
+    }
+  ]
+}

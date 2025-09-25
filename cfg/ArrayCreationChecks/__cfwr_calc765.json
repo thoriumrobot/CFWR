@@ -1,0 +1,247 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false))",
+      "line": 69
+    },
+    {
+      "id": 3,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true))",
+      "line": 64
+    },
+    {
+      "id": 4,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operator=&&))",
+      "line": 62
+    },
+    {
+      "id": 5,
+      "label": "If(BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=61), operator=>>), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operator=||))",
+      "line": 63
+    },
+    {
+      "id": 6,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operator=||))",
+      "line": 65
+    },
+    {
+      "id": 7,
+      "label": "If(BinaryOperation(operandl=BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='T'), operator=*), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=70.22), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=930), operator=^), operator=+), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='z'), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='3'), operator=^), operator=&&))",
+      "line": 66
+    },
+    {
+      "id": 8,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i62, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=4), operator=<))",
+      "line": 67
+    },
+    {
+      "id": 9,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i15, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1), operator=<))",
+      "line": 68
+    },
+    {
+      "id": 10,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i34, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=10), operator=<))",
+      "line": 70
+    },
+    {
+      "id": 11,
+      "label": "Try",
+      "line": 73
+    },
+    {
+      "id": 12,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_data90)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Character, sub_type=None))",
+      "line": 74
+    },
+    {
+      "id": 13,
+      "label": "Catch(__cfwr_e81)",
+      "line": null
+    },
+    {
+      "id": 14,
+      "label": "Catch(__cfwr_e63)",
+      "line": null
+    },
+    {
+      "id": 15,
+      "label": "Catch(__cfwr_e67)",
+      "line": null
+    },
+    {
+      "id": 16,
+      "label": "Update(MemberReference(member=__cfwr_i34, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 70
+    },
+    {
+      "id": 17,
+      "label": "Break",
+      "line": 97
+    },
+    {
+      "id": 18,
+      "label": "Update(MemberReference(member=__cfwr_i15, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 68
+    },
+    {
+      "id": 19,
+      "label": "Update(MemberReference(member=__cfwr_i62, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 67
+    },
+    {
+      "id": 20,
+      "label": "Return(BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=753), operandr=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=4.04f), operator=+), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=55.88), operator=*))",
+      "line": 99
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 10
+    },
+    {
+      "source": 2,
+      "target": 18
+    },
+    {
+      "source": 2,
+      "target": 20
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6
+    },
+    {
+      "source": 3,
+      "target": 17
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 17
+    },
+    {
+      "source": 5,
+      "target": 3
+    },
+    {
+      "source": 5,
+      "target": 17
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 17
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 17
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 17
+    },
+    {
+      "source": 9,
+      "target": 2
+    },
+    {
+      "source": 9,
+      "target": 19
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 17
+    },
+    {
+      "source": 11,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 11,
+      "target": 13
+    },
+    {
+      "source": 11,
+      "target": 14
+    },
+    {
+      "source": 11,
+      "target": 15
+    },
+    {
+      "source": 12,
+      "target": 16
+    },
+    {
+      "source": 13,
+      "target": 16
+    },
+    {
+      "source": 14,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 10
+    },
+    {
+      "source": 18,
+      "target": 9
+    },
+    {
+      "source": 19,
+      "target": 8
+    }
+  ]
+}

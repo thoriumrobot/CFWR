@@ -1,0 +1,52 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "Try",
+      "line": 81
+    },
+    {
+      "id": 3,
+      "label": "Return(BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operator=-), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1.18), operandr=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=284L), operator=<<), operator=&))",
+      "line": 82
+    },
+    {
+      "id": 4,
+      "label": "Catch(__cfwr_e56)",
+      "line": null
+    },
+    {
+      "id": 5,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=3.55f))",
+      "line": 86
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false))",
+      "line": 16
+    },
+    {
+      "id": 3,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i58, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=3), operator=<))",
+      "line": 17
+    },
+    {
+      "id": 4,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operator=||))",
+      "line": 18
+    },
+    {
+      "id": 5,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=30.62f))",
+      "line": 19
+    },
+    {
+      "id": 6,
+      "label": "Update(MemberReference(member=__cfwr_i58, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 17
+    },
+    {
+      "id": 7,
+      "label": "Break",
+      "line": 27
+    },
+    {
+      "id": 8,
+      "label": "While(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=293L), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='u'), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operator=<<), operator=>>))",
+      "line": 25
+    },
+    {
+      "id": 9,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operandr=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=24.31f), operator=%), operator=&), name=__cfwr_entry75)], modifiers=set(), type=BasicType(dimensions=[], name=boolean))",
+      "line": 26
+    },
+    {
+      "id": 10,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=29.60), operator=-), name=__cfwr_var28)], modifiers=set(), type=BasicType(dimensions=[], name=float))",
+      "line": 29
+    },
+    {
+      "id": 11,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operator=||))",
+      "line": 30
+    },
+    {
+      "id": 12,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 33
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 8
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 7
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 3
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 7
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    }
+  ]
+}

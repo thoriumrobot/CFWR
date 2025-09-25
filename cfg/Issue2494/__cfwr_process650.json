@@ -1,0 +1,43 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false))",
+      "line": 21
+    },
+    {
+      "id": 3,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='s'))",
+      "line": 22
+    },
+    {
+      "id": 4,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true))",
+      "line": 25
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4
+    }
+  ]
+}

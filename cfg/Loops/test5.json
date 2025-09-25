@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operator=||))",
+      "line": 9
+    },
+    {
+      "id": 3,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=807))",
+      "line": 10
+    },
+    {
+      "id": 4,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), name=otherOffset)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 56
+    },
+    {
+      "id": 5,
+      "label": "While(MemberReference(member=flag, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 57
+    },
+    {
+      "id": 6,
+      "label": "Assignment(expressionl=MemberReference(member=otherOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type=+=, value=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1))",
+      "line": 58
+    },
+    {
+      "id": 7,
+      "label": "MemberReference(member=offset, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[])",
+      "line": 59
+    },
+    {
+      "id": 8,
+      "label": "Assignment(expressionl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type=+=, value=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1))",
+      "line": 60
+    },
+    {
+      "id": 9,
+      "label": "Assignment(expressionl=MemberReference(member=offset2, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type=+=, value=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 61
+    },
+    {
+      "id": 10,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=[ElementValuePair(name=value, value=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"#1\")), ElementValuePair(name=offset, value=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"-1000\"))], name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=MemberReference(member=otherOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), name=x)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 64
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 10
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 5
+    },
+    {
+      "source": 10,
+      "target": 1
+    }
+  ]
+}

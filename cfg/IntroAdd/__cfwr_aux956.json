@@ -1,0 +1,196 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false))",
+      "line": 61
+    },
+    {
+      "id": 3,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i44, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=9), operator=<))",
+      "line": 62
+    },
+    {
+      "id": 4,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i1, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=10), operator=<))",
+      "line": 63
+    },
+    {
+      "id": 5,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i74, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=2), operator=<))",
+      "line": 64
+    },
+    {
+      "id": 6,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i43, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1), operator=<))",
+      "line": 65
+    },
+    {
+      "id": 7,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i80, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=8), operator=<))",
+      "line": 66
+    },
+    {
+      "id": 8,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operator=||))",
+      "line": 67
+    },
+    {
+      "id": 9,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='j'), operator=/), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=80.85f), operator=|), operator=-), operator=||))",
+      "line": 68
+    },
+    {
+      "id": 10,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_var58)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Float, sub_type=None))",
+      "line": 69
+    },
+    {
+      "id": 11,
+      "label": "Update(MemberReference(member=__cfwr_i80, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 66
+    },
+    {
+      "id": 12,
+      "label": "Update(MemberReference(member=__cfwr_i43, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 65
+    },
+    {
+      "id": 13,
+      "label": "Update(MemberReference(member=__cfwr_i74, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 64
+    },
+    {
+      "id": 14,
+      "label": "Update(MemberReference(member=__cfwr_i1, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 63
+    },
+    {
+      "id": 15,
+      "label": "Update(MemberReference(member=__cfwr_i44, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 62
+    },
+    {
+      "id": 16,
+      "label": "Break",
+      "line": 79
+    },
+    {
+      "id": 17,
+      "label": "Return(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='N'), operator=<<))",
+      "line": 81
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 16
+    },
+    {
+      "source": 2,
+      "target": 17
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 16
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 15
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 14
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 13
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 12
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 11
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 7
+    },
+    {
+      "source": 12,
+      "target": 6
+    },
+    {
+      "source": 13,
+      "target": 5
+    },
+    {
+      "source": 14,
+      "target": 4
+    },
+    {
+      "source": 15,
+      "target": 3
+    }
+  ]
+}

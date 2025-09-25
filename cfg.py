@@ -9,15 +9,21 @@ def parse_java_file(java_file_path):
     """
     Parses a Java file and returns the Abstract Syntax Tree (AST).
     """
-    with open(java_file_path, 'r') as file:
-        java_code = file.read()
-    tree = parse(java_code)
-    return tree
+    try:
+        with open(java_file_path, 'r') as file:
+            java_code = file.read()
+        tree = parse(java_code)
+        return tree
+    except Exception as e:
+        print(f"Warning: Could not parse {java_file_path}: {e}")
+        return None
 
 def extract_method_declarations(parsed_java_code):
     """
     Extracts method declarations from the parsed Java code.
     """
+    if parsed_java_code is None:
+        return []
     method_declarations = []
     for _, node in parsed_java_code.filter(MethodDeclaration):
         method_declarations.append(node)
@@ -112,16 +118,18 @@ def process_statement(statement, cfg, current_node, source_lines):
 
     elif isinstance(statement, ForStatement):
         # Handle for loop
-        condition_node = f'For({statement.condition or ""})'
-        cfg.add_node(condition_node, label=f'For({statement.condition or ""})', line=getattr(statement, 'position', None).line if getattr(statement, 'position', None) else None)
+        condition_str = str(statement.control.condition) if statement.control and statement.control.condition else ""
+        condition_node = f'For({condition_str})'
+        cfg.add_node(condition_node, label=f'For({condition_str})', line=getattr(statement, 'position', None).line if getattr(statement, 'position', None) else None)
         cfg.add_edge(current_node, condition_node)
 
         # Process the body of the for loop
         body_last_nodes = process_statement(statement.body, cfg, condition_node, source_lines)
 
         # Handle loop updates
-        if statement.update:
-            update_node = f'Update({", ".join(map(str, statement.update))})'
+        if statement.control and statement.control.update:
+            update_str = ", ".join(map(str, statement.control.update)) if isinstance(statement.control.update, list) else str(statement.control.update)
+            update_node = f'Update({update_str})'
             cfg.add_node(update_node, label=update_node, line=getattr(statement, 'position', None).line if getattr(statement, 'position', None) else None)
             for node in body_last_nodes:
                 cfg.add_edge(node, update_node)
@@ -253,6 +261,8 @@ def generate_control_flow_graphs(java_file_path, output_base_dir='cfg_output'):
     Generates control flow graphs for a given Java file.
     """
     parsed_java_code = parse_java_file(java_file_path)
+    if parsed_java_code is None:
+        return []
     with open(java_file_path, 'r') as f:
         source_lines = f.readlines()
     method_declarations = extract_method_declarations(parsed_java_code)

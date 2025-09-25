@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "While(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=957L), operator=-))",
+      "line": 59
+    },
+    {
+      "id": 3,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_temp46)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Character, sub_type=None))",
+      "line": 60
+    },
+    {
+      "id": 4,
+      "label": "Break",
+      "line": 61
+    },
+    {
+      "id": 5,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='y'), name=__cfwr_var63)], modifiers=set(), type=BasicType(dimensions=[], name=char))",
+      "line": 63
+    },
+    {
+      "id": 6,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i6, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=5), operator=<))",
+      "line": 64
+    },
+    {
+      "id": 7,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i94, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=5), operator=<))",
+      "line": 65
+    },
+    {
+      "id": 8,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_result96)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Object, sub_type=None))",
+      "line": 66
+    },
+    {
+      "id": 9,
+      "label": "Update(MemberReference(member=__cfwr_i94, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 65
+    },
+    {
+      "id": 10,
+      "label": "Update(MemberReference(member=__cfwr_i6, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 64
+    },
+    {
+      "id": 11,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i99, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=3), operator=<))",
+      "line": 69
+    },
+    {
+      "id": 12,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 70
+    },
+    {
+      "id": 13,
+      "label": "Update(MemberReference(member=__cfwr_i99, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 69
+    },
+    {
+      "id": 14,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=6.01f))",
+      "line": 72
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 11
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 10
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 7
+    },
+    {
+      "source": 10,
+      "target": 6
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 11,
+      "target": 14
+    },
+    {
+      "source": 13,
+      "target": 11
+    }
+  ]
+}

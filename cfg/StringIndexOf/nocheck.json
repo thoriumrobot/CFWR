@@ -1,0 +1,183 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operator=&&))",
+      "line": 7
+    },
+    {
+      "id": 3,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i32, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=9), operator=<))",
+      "line": 8
+    },
+    {
+      "id": 4,
+      "label": "Try",
+      "line": 20
+    },
+    {
+      "id": 5,
+      "label": "While(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true))",
+      "line": 12
+    },
+    {
+      "id": 6,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i83, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=5), operator=<))",
+      "line": 13
+    },
+    {
+      "id": 7,
+      "label": "If(BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=215L), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='z'), operator=/), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), operator=||))",
+      "line": 14
+    },
+    {
+      "id": 8,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), name=__cfwr_result48)], modifiers=set(), type=BasicType(dimensions=[], name=boolean))",
+      "line": 15
+    },
+    {
+      "id": 9,
+      "label": "Update(MemberReference(member=__cfwr_i83, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 13
+    },
+    {
+      "id": 10,
+      "label": "Break",
+      "line": 25
+    },
+    {
+      "id": 11,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=174L))",
+      "line": 21
+    },
+    {
+      "id": 12,
+      "label": "Catch(__cfwr_e50)",
+      "line": null
+    },
+    {
+      "id": 13,
+      "label": "Catch(__cfwr_e96)",
+      "line": null
+    },
+    {
+      "id": 14,
+      "label": "Update(MemberReference(member=__cfwr_i32, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 8
+    },
+    {
+      "id": 15,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=MethodInvocation(arguments=[MemberReference(member=s, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])], member=indexOf, postfix_operators=[], prefix_operators=[], qualifier=l, selectors=[], type_arguments=None), name=i)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 33
+    },
+    {
+      "id": 16,
+      "label": "Return(BinaryOperation(operandl=MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=0), MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])], member=substring, postfix_operators=[], prefix_operators=[], qualifier=l, selectors=[], type_arguments=None), operandr=MethodInvocation(arguments=[BinaryOperation(operandl=MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MethodInvocation(arguments=[], member=length, postfix_operators=[], prefix_operators=[], qualifier=s, selectors=[], type_arguments=None), operator=+)], member=substring, postfix_operators=[], prefix_operators=[], qualifier=l, selectors=[], type_arguments=None), operator=+))",
+      "line": 34
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 15
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 15
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 11
+    },
+    {
+      "source": 4,
+      "target": 12
+    },
+    {
+      "source": 4,
+      "target": 13
+    },
+    {
+      "source": 5,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 4
+    },
+    {
+      "source": 5,
+      "target": 14
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 10
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 6
+    },
+    {
+      "source": 12,
+      "target": 10
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 3
+    },
+    {
+      "source": 15,
+      "target": 16
+    }
+  ]
+}

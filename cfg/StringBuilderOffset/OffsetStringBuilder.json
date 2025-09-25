@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "Try",
+      "line": 16
+    },
+    {
+      "id": 3,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 8
+    },
+    {
+      "id": 4,
+      "label": "Catch(__cfwr_e2)",
+      "line": null
+    },
+    {
+      "id": 5,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=ClassCreator(arguments=[], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=StringBuilder, sub_type=None)), name=stringBuilder)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=StringBuilder, sub_type=None))",
+      "line": 13
+    },
+    {
+      "id": 6,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=ArrayCreator(dimensions=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=10)], initializer=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=BasicType(dimensions=None, name=char)), name=chars)], modifiers=set(), type=BasicType(dimensions=[None], name=char))",
+      "line": 14
+    },
+    {
+      "id": 7,
+      "label": "While(BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value='f'), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=24L), operator=^), operandr=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=67.69), operandr=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=79.24), operator=|), operator=%))",
+      "line": 17
+    },
+    {
+      "id": 8,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=true), name=__cfwr_result45)], modifiers=set(), type=BasicType(dimensions=[], name=boolean))",
+      "line": 18
+    },
+    {
+      "id": 9,
+      "label": "Break",
+      "line": 19
+    },
+    {
+      "id": 10,
+      "label": "Catch(__cfwr_e65)",
+      "line": null
+    },
+    {
+      "id": 11,
+      "label": "MethodInvocation(arguments=[MemberReference(member=chars, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=5), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=7)], member=append, postfix_operators=[], prefix_operators=[], qualifier=stringBuilder, selectors=[], type_arguments=None)",
+      "line": 24
+    },
+    {
+      "id": 12,
+      "label": "MethodInvocation(arguments=[MemberReference(member=chars, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=5), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=4)], member=append, postfix_operators=[], prefix_operators=[], qualifier=stringBuilder, selectors=[], type_arguments=None)",
+      "line": 25
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4
+    },
+    {
+      "source": 2,
+      "target": 7
+    },
+    {
+      "source": 2,
+      "target": 10
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 2
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 11
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 1
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_entry68)], modifiers=set(), type=BasicType(dimensions=[], name=short))",
+      "line": 86
+    },
+    {
+      "id": 3,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=268L), name=__cfwr_elem74)], modifiers=set(), type=BasicType(dimensions=[], name=long))",
+      "line": 87
+    },
+    {
+      "id": 4,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), name=__cfwr_obj44)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Double, sub_type=None))",
+      "line": 88
+    },
+    {
+      "id": 5,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i81, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=2), operator=<))",
+      "line": 89
+    },
+    {
+      "id": 6,
+      "label": "Return(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=['-'], qualifier=None, selectors=[], value=2.48), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), operator=*))",
+      "line": 90
+    },
+    {
+      "id": 7,
+      "label": "Update(MemberReference(member=__cfwr_i81, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 89
+    },
+    {
+      "id": 8,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 92
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 5
+    }
+  ]
+}

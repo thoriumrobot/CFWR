@@ -231,3 +231,6 @@ else:
         save_model(model, 1)
 
     print(f"Best model accuracy: {best_accuracy}")
+
+if __name__ == "__main__":
+    main()

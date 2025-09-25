@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=false), name=__cfwr_obj31)], modifiers=set(), type=BasicType(dimensions=[], name=boolean))",
+      "line": 10
+    },
+    {
+      "id": 3,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=ElementArrayValue(values=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\")]), name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=BinaryOperation(operandl=MemberReference(member=a, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1), operator=-), name=c)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 13
+    },
+    {
+      "id": 4,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=ElementArrayValue(values=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\")]), name=LTEqLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=BinaryOperation(operandl=MemberReference(member=a, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1), operator=-), name=c1)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 15
+    },
+    {
+      "id": 5,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=ElementArrayValue(values=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\")]), name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=BinaryOperation(operandl=MemberReference(member=a, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=0), operator=-), name=d)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 17
+    },
+    {
+      "id": 6,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=ElementArrayValue(values=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\")]), name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=BinaryOperation(operandl=MemberReference(member=a, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=7), operator=-), name=e)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 19
+    },
+    {
+      "id": 7,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=ElementArrayValue(values=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\")]), name=LTLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=BinaryOperation(operandl=MemberReference(member=a, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=7), operator=-), name=f)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 21
+    },
+    {
+      "id": 8,
+      "label": "LocalVariableDeclaration(annotations=[Annotation(element=ElementArrayValue(values=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"arr\")]), name=LTEqLengthOf)], declarators=[VariableDeclarator(dimensions=[], initializer=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=7), name=j)], modifiers=set(), type=BasicType(dimensions=[], name=int))",
+      "line": 23
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 1
+    }
+  ]
+}

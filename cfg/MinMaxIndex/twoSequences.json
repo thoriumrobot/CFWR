@@ -1,0 +1,87 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i52, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=5), operator=<))",
+      "line": 10
+    },
+    {
+      "id": 3,
+      "label": "For(BinaryOperation(operandl=MemberReference(member=__cfwr_i97, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1), operator=<))",
+      "line": 11
+    },
+    {
+      "id": 4,
+      "label": "Return(Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 12
+    },
+    {
+      "id": 5,
+      "label": "Update(MemberReference(member=__cfwr_i97, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 11
+    },
+    {
+      "id": 6,
+      "label": "Update(MemberReference(member=__cfwr_i52, postfix_operators=['++'], prefix_operators=[], qualifier=, selectors=[]))",
+      "line": 10
+    },
+    {
+      "id": 7,
+      "label": "MethodInvocation(arguments=[MethodInvocation(arguments=[MemberReference(member=i1, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=i2, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])], member=max, postfix_operators=[], prefix_operators=[], qualifier=Math, selectors=[], type_arguments=None)], member=charAt, postfix_operators=[], prefix_operators=[], qualifier=str1, selectors=[], type_arguments=None)",
+      "line": 18
+    },
+    {
+      "id": 8,
+      "label": "MethodInvocation(arguments=[MethodInvocation(arguments=[MemberReference(member=i1, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=i2, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])], member=min, postfix_operators=[], prefix_operators=[], qualifier=Math, selectors=[], type_arguments=None)], member=charAt, postfix_operators=[], prefix_operators=[], qualifier=str1, selectors=[], type_arguments=None)",
+      "line": 19
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 7
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 3
+    },
+    {
+      "source": 6,
+      "target": 2
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 1
+    }
+  ]
+}
