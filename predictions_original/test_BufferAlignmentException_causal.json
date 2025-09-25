@@ -1,0 +1,18 @@
+[
+  {
+    "method": "addressOffset",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentException.java",
+    "pred_lines": [
+      66
+    ],
+    "scores": null
+  },
+  {
+    "method": "index",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentException.java",
+    "pred_lines": [
+      56
+    ],
+    "scores": null
+  }
+]

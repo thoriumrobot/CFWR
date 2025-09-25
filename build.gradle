@@ -37,6 +37,9 @@ dependencies {
 
   // Checker Framework jars (needed to compile CF test sources for WALA bytecode mode)
   implementation fileTree(dir: '/home/ubuntu/checker-framework-3.42.0/checker/dist', include: ['*.jar'])
+  
+  // javax.annotation-api (needed for @Nonnegative etc. in CF tests)
+  implementation 'javax.annotation:javax.annotation-api:1.3.2'
 
   // Your parser
   implementation 'com.github.javaparser:javaparser-core:3.26.2'

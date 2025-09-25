@@ -1,0 +1,213 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "If(MethodInvocation(arguments=[MemberReference(member=buffer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])], member=supportsAtomicOperations, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None))",
+      "line": 310
+    },
+    {
+      "id": 3,
+      "label": "MethodInvocation(arguments=[MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])], member=getLongVolatile, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None)",
+      "line": 312
+    },
+    {
+      "id": 4,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=MethodInvocation(arguments=[], member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), name=addressOffset)], modifiers={'final'}, type=BasicType(dimensions=[], name=long))",
+      "line": 315
+    },
+    {
+      "id": 5,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_INT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), MethodReference(expression=MemberReference(member=buffer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), method=MemberReference(member=getLongVolatile, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type_arguments=[])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 316
+    },
+    {
+      "id": 6,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_INT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Long, selectors=[])], member=putLongVolatile, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 317
+    },
+    {
+      "id": 7,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_INT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Long, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Long, selectors=[])], member=compareAndSetLong, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 318
+    },
+    {
+      "id": 8,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_INT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Long, selectors=[])], member=getAndAddLong, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 320
+    },
+    {
+      "id": 9,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_INT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Long, selectors=[])], member=getAndSetLong, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 321
+    },
+    {
+      "id": 10,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_INT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Long, selectors=[])], member=putLongRelease, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 322
+    },
+    {
+      "id": 11,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_INT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Long, selectors=[])], member=addLongRelease, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 323
+    },
+    {
+      "id": 12,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_SHORT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), MethodReference(expression=MemberReference(member=buffer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), method=MemberReference(member=getIntVolatile, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type_arguments=[])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 325
+    },
+    {
+      "id": 13,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_SHORT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Integer, selectors=[])], member=putIntVolatile, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 326
+    },
+    {
+      "id": 14,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_SHORT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Integer, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Integer, selectors=[])], member=compareAndSetInt, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 327
+    },
+    {
+      "id": 15,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_SHORT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Integer, selectors=[])], member=getAndAddInt, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 329
+    },
+    {
+      "id": 16,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_SHORT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Integer, selectors=[])], member=getAndSetInt, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 330
+    },
+    {
+      "id": 17,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_SHORT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Integer, selectors=[])], member=putIntRelease, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 331
+    },
+    {
+      "id": 18,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_SHORT, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Integer, selectors=[])], member=addIntRelease, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 332
+    },
+    {
+      "id": 19,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_BYTE, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), MethodReference(expression=MemberReference(member=buffer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), method=MemberReference(member=getShortVolatile, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type_arguments=[])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 334
+    },
+    {
+      "id": 20,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_BYTE, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Short, selectors=[])], member=putShortVolatile, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 335
+    },
+    {
+      "id": 21,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_BYTE, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), MethodReference(expression=MemberReference(member=buffer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), method=MemberReference(member=getCharVolatile, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type_arguments=[])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 337
+    },
+    {
+      "id": 22,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=MemberReference(member=offset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=MemberReference(member=SIZE_OF_BYTE, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), LambdaExpression(body=MethodInvocation(arguments=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=MAX_VALUE, postfix_operators=[], prefix_operators=[], qualifier=Character, selectors=[])], member=putCharVolatile, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), parameters=[MemberReference(member=i, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])])], member=assertUnaligned, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 338
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 1
+    }
+  ]
+}

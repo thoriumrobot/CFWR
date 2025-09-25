@@ -1,0 +1,28 @@
+[
+  {
+    "method": "verifyAlignment",
+    "file": "test_interceptor.java",
+    "pred_lines": [
+      176,
+      178
+    ],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.9999999004498606
+      },
+      {
+        "line": null,
+        "score": 0.9999999004498606
+      },
+      {
+        "line": 176,
+        "score": 0.9999999004498606
+      },
+      {
+        "line": 178,
+        "score": 0.9999999004498606
+      }
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "method": "onDiscovery",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgent.java",
+    "pred_lines": [],
+    "scores": null
+  },
+  {
+    "method": "onComplete",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgent.java",
+    "pred_lines": [],
+    "scores": null
+  },
+  {
+    "method": "onIgnored",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgent.java",
+    "pred_lines": [],
+    "scores": null
+  },
+  {
+    "method": "onTransformation",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgent.java",
+    "pred_lines": [],
+    "scores": null
+  },
+  {
+    "method": "premain",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgent.java",
+    "pred_lines": [
+      71
+    ],
+    "scores": null
+  },
+  {
+    "method": "agent",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgent.java",
+    "pred_lines": [
+      87,
+      91,
+      95,
+      107,
+      110
+    ],
+    "scores": null
+  },
+  {
+    "method": "removeTransformer",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgent.java",
+    "pred_lines": [
+      124,
+      126,
+      127,
+      128
+    ],
+    "scores": null
+  },
+  {
+    "method": "onError",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgent.java",
+    "pred_lines": [
+      166,
+      167
+    ],
+    "scores": null
+  },
+  {
+    "method": "agentmain",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgent.java",
+    "pred_lines": [
+      82
+    ],
+    "scores": null
+  }
+]

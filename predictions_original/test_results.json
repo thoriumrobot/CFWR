@@ -1,0 +1,27 @@
+{
+  "BufferAlignmentAgentTest.java": {
+    "hgt": true,
+    "gbt": true,
+    "causal": true
+  },
+  "BufferAlignmentInterceptor.java": {
+    "hgt": true,
+    "gbt": true,
+    "causal": true
+  },
+  "BufferAlignmentAgent.java": {
+    "hgt": true,
+    "gbt": true,
+    "causal": true
+  },
+  "BufferAlignmentException.java": {
+    "hgt": true,
+    "gbt": true,
+    "causal": true
+  },
+  "package-info.java": {
+    "hgt": true,
+    "gbt": true,
+    "causal": true
+  }
+}

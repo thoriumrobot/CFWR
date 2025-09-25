@@ -3,7 +3,7 @@ import json
 import argparse
 import numpy as np
 import joblib
-from gbt import load_cfgs, extract_node_features
+from gbt import load_cfgs, extract_features_from_cfg
 
 def main():
     parser = argparse.ArgumentParser()
@@ -17,37 +17,23 @@ def main():
     cfgs = load_cfgs(args.java_file)
     results = []
     for cfg_data in cfgs:
-        nodes = cfg_data['nodes']
-        edges = cfg_data['edges']
-        X = []
-        idx_to_line = []
-        for node in nodes:
-            feats = extract_node_features(node, cfg_data, edges)
-            if feats is None:
-                X.append(None)
-            else:
-                X.append(feats)
-            idx_to_line.append(node.get('line'))
-        # Predict only for nodes with features
-        valid_indices = [i for i, v in enumerate(X) if v is not None]
-        if valid_indices:
-            X_valid = np.array([X[i] for i in valid_indices])
-            pred_valid = model.predict(X_valid)
-            proba_valid = model.predict_proba(X_valid)[:, 1] if hasattr(model, 'predict_proba') else pred_valid
-        else:
-            pred_valid = np.array([])
-            proba_valid = np.array([])
-        # Rebuild full arrays
-        pred = np.zeros(len(X), dtype=int)
-        scores = np.zeros(len(X), dtype=float)
-        for j, i in enumerate(valid_indices):
-            pred[i] = int(pred_valid[j])
-            scores[i] = float(proba_valid[j])
+        # Extract features for the entire CFG
+        feats = extract_features_from_cfg(cfg_data)
+        if feats is None:
+            continue
+            
+        # Make prediction for the CFG
+        X = np.array([feats])
+        pred = model.predict(X)[0]
+        proba = model.predict_proba(X)[0, 1] if hasattr(model, 'predict_proba') else pred
+        
+        # For GBT, we predict at the CFG level, so we'll assign the same score to all nodes
+        nodes = cfg_data.get('nodes', [])
         results.append({
             'method': cfg_data.get('method_name'),
             'file': cfg_data.get('java_file'),
-            'pred_lines': [int(idx_to_line[i]) for i in range(len(pred)) if idx_to_line[i] is not None and pred[i] == 1],
-            'scores': [{ 'line': int(idx_to_line[i]) if idx_to_line[i] is not None else None, 'score': float(scores[i]) } for i in range(len(scores))]
+            'pred_lines': [int(node.get('line')) for node in nodes if node.get('line') is not None and pred == 1],
+            'scores': [{ 'line': int(node.get('line')) if node.get('line') is not None else None, 'score': float(proba) } for node in nodes]
         })
 
     with open(args.out_path, 'w') as f:

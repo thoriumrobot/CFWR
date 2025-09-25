@@ -1,0 +1,11 @@
+[
+  {
+    "method": "verifyAlignment",
+    "file": "test_interceptor.java",
+    "pred_lines": [
+      176,
+      178
+    ],
+    "scores": null
+  }
+]

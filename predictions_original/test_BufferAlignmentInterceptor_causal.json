@@ -1,0 +1,11 @@
+[
+  {
+    "method": "verifyAlignment",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentInterceptor.java",
+    "pred_lines": [
+      176,
+      178
+    ],
+    "scores": null
+  }
+]

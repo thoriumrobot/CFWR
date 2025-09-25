@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=256)], member=allocate, postfix_operators=[], prefix_operators=[], qualifier=ByteBuffer, selectors=[], type_arguments=None), name=nioBuffer)], modifiers={'final'}, type=ReferenceType(arguments=None, dimensions=[], name=ByteBuffer, sub_type=None))",
+      "line": 90
+    },
+    {
+      "id": 3,
+      "label": "MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1)], member=position, postfix_operators=[], prefix_operators=[], qualifier=nioBuffer, selectors=[], type_arguments=None)",
+      "line": 91
+    },
+    {
+      "id": 4,
+      "label": "LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=ClassCreator(arguments=[MethodInvocation(arguments=[], member=slice, postfix_operators=[], prefix_operators=[], qualifier=nioBuffer, selectors=[], type_arguments=None), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=2), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=128)], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=UnsafeBuffer, sub_type=None)), name=buffer)], modifiers={'final'}, type=ReferenceType(arguments=None, dimensions=[], name=UnsafeBuffer, sub_type=None))",
+      "line": 92
+    },
+    {
+      "id": 5,
+      "label": "MethodInvocation(arguments=[BinaryOperation(operandl=BinaryOperation(operandl=MethodInvocation(arguments=[], member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=4), operator=%), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=0), operator=!=)], member=assertTrue, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 93
+    },
+    {
+      "id": 6,
+      "label": "MethodInvocation(arguments=[MemberReference(member=buffer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=5), operandr=MemberReference(member=HEAP_BUFFER_ALIGNMENT_OFFSET, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+)], member=testUnsafeBuffer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 94
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 1
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "MethodInvocation(arguments=[ClassCreator(arguments=[MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=256)], member=allocateDirect, postfix_operators=[], prefix_operators=[], qualifier=ByteBuffer, selectors=[], type_arguments=None)], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=UnsafeBuffer, sub_type=None)), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=0)], member=testUnsafeBuffer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 100
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 1
+    }
+  ]
+}

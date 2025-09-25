@@ -1,0 +1,20 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    }
+  ]
+}

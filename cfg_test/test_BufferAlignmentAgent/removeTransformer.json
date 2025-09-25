@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "If(BinaryOperation(operandl=MemberReference(member=alignmentTransformer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null), operator=!=))",
+      "line": 124
+    },
+    {
+      "id": 3,
+      "label": "MethodInvocation(arguments=[MemberReference(member=instrumentation, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MemberReference(member=RETRANSFORMATION, postfix_operators=[], prefix_operators=[], qualifier=AgentBuilder.RedefinitionStrategy, selectors=[])], member=reset, postfix_operators=[], prefix_operators=[], qualifier=alignmentTransformer, selectors=[], type_arguments=None)",
+      "line": 126
+    },
+    {
+      "id": 4,
+      "label": "Assignment(expressionl=MemberReference(member=alignmentTransformer, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), type==, value=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 127
+    },
+    {
+      "id": 5,
+      "label": "Assignment(expressionl=MemberReference(member=instrumentation, postfix_operators=[], prefix_operators=[], qualifier=BufferAlignmentAgent, selectors=[]), type==, value=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=null))",
+      "line": 128
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 1
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 1
+    }
+  ]
+}

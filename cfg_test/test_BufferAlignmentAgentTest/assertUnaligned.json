@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "Try",
+      "line": 343
+    },
+    {
+      "id": 3,
+      "label": "MethodInvocation(arguments=[MemberReference(member=index, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])], member=accept, postfix_operators=[], prefix_operators=[], qualifier=methodUnderTest, selectors=[], type_arguments=None)",
+      "line": 345
+    },
+    {
+      "id": 4,
+      "label": "MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"BufferAlignmentException was not thrown\")], member=fail, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 347
+    },
+    {
+      "id": 5,
+      "label": "Catch(ex)",
+      "line": null
+    },
+    {
+      "id": 6,
+      "label": "MethodInvocation(arguments=[MemberReference(member=index, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MethodInvocation(arguments=[], member=index, postfix_operators=[], prefix_operators=[], qualifier=ex, selectors=[], type_arguments=None), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"wrong index\")], member=assertEquals, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 351
+    },
+    {
+      "id": 7,
+      "label": "MethodInvocation(arguments=[MemberReference(member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MethodInvocation(arguments=[], member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=ex, selectors=[], type_arguments=None), Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"wrong addressOffset\")], member=assertEquals, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[], type_arguments=None)",
+      "line": 352
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 1
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 1
+    }
+  ]
+}

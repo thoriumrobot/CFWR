@@ -1,0 +1,998 @@
+[
+  {
+    "method": "testUnsafeBufferFromSlicedDirectByteBufferWithOffset",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 116,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 117,
+        "score": 0.0
+      },
+      {
+        "line": 118,
+        "score": 0.0
+      },
+      {
+        "line": 119,
+        "score": 0.0
+      },
+      {
+        "line": 120,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testUnAlignedAtomicMethods",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 310,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 312,
+        "score": 0.0
+      },
+      {
+        "line": 315,
+        "score": 0.0
+      },
+      {
+        "line": 316,
+        "score": 0.0
+      },
+      {
+        "line": 317,
+        "score": 0.0
+      },
+      {
+        "line": 318,
+        "score": 0.0
+      },
+      {
+        "line": 320,
+        "score": 0.0
+      },
+      {
+        "line": 321,
+        "score": 0.0
+      },
+      {
+        "line": 322,
+        "score": 0.0
+      },
+      {
+        "line": 323,
+        "score": 0.0
+      },
+      {
+        "line": 325,
+        "score": 0.0
+      },
+      {
+        "line": 326,
+        "score": 0.0
+      },
+      {
+        "line": 327,
+        "score": 0.0
+      },
+      {
+        "line": 329,
+        "score": 0.0
+      },
+      {
+        "line": 330,
+        "score": 0.0
+      },
+      {
+        "line": 331,
+        "score": 0.0
+      },
+      {
+        "line": 332,
+        "score": 0.0
+      },
+      {
+        "line": 334,
+        "score": 0.0
+      },
+      {
+        "line": 335,
+        "score": 0.0
+      },
+      {
+        "line": 337,
+        "score": 0.0
+      },
+      {
+        "line": 338,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testUnsafeBufferFromDirectByteBuffer",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 100,
+        "score": 1.8720831032638927e-16
+      }
+    ]
+  },
+  {
+    "method": "testUnsafeBufferFromByteArray",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 60,
+        "score": 1.8720831032638927e-16
+      }
+    ]
+  },
+  {
+    "method": "testUnsafeBuffer",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 135,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 136,
+        "score": 0.0
+      },
+      {
+        "line": 137,
+        "score": 0.0
+      },
+      {
+        "line": 138,
+        "score": 0.0
+      },
+      {
+        "line": 139,
+        "score": 0.0
+      },
+      {
+        "line": 140,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testExpandableBuffer",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 126,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 127,
+        "score": 0.0
+      },
+      {
+        "line": 128,
+        "score": 0.0
+      },
+      {
+        "line": 129,
+        "score": 0.0
+      },
+      {
+        "line": 130,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testUnsafeBufferFromHeapByteBuffer",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 74,
+        "score": 1.8720831032638927e-16
+      }
+    ]
+  },
+  {
+    "method": "installAgent",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 48,
+        "score": 1.8720831032638927e-16
+      }
+    ]
+  },
+  {
+    "method": "testAlignedReadMethods",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 145,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 146,
+        "score": 0.0
+      },
+      {
+        "line": 147,
+        "score": 0.0
+      },
+      {
+        "line": 148,
+        "score": 0.0
+      },
+      {
+        "line": 150,
+        "score": 0.0
+      },
+      {
+        "line": 151,
+        "score": 0.0
+      },
+      {
+        "line": 152,
+        "score": 0.0
+      },
+      {
+        "line": 153,
+        "score": 0.0
+      },
+      {
+        "line": 155,
+        "score": 0.0
+      },
+      {
+        "line": 156,
+        "score": 0.0
+      },
+      {
+        "line": 157,
+        "score": 0.0
+      },
+      {
+        "line": 158,
+        "score": 0.0
+      },
+      {
+        "line": 161,
+        "score": 0.0
+      },
+      {
+        "line": 163,
+        "score": 0.0
+      },
+      {
+        "line": 164,
+        "score": 0.0
+      },
+      {
+        "line": 165,
+        "score": 0.0
+      },
+      {
+        "line": 166,
+        "score": 0.0
+      },
+      {
+        "line": 170,
+        "score": 0.0
+      },
+      {
+        "line": 171,
+        "score": 0.0
+      },
+      {
+        "line": 172,
+        "score": 0.0
+      },
+      {
+        "line": 173,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testUnAlignedReadMethods",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 178,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 180,
+        "score": 0.0
+      },
+      {
+        "line": 181,
+        "score": 0.0
+      },
+      {
+        "line": 182,
+        "score": 0.0
+      },
+      {
+        "line": 183,
+        "score": 0.0
+      },
+      {
+        "line": 184,
+        "score": 0.0
+      },
+      {
+        "line": 186,
+        "score": 0.0
+      },
+      {
+        "line": 187,
+        "score": 0.0
+      },
+      {
+        "line": 188,
+        "score": 0.0
+      },
+      {
+        "line": 189,
+        "score": 0.0
+      },
+      {
+        "line": 191,
+        "score": 0.0
+      },
+      {
+        "line": 192,
+        "score": 0.0
+      },
+      {
+        "line": 193,
+        "score": 0.0
+      },
+      {
+        "line": 194,
+        "score": 0.0
+      },
+      {
+        "line": 196,
+        "score": 0.0
+      },
+      {
+        "line": 197,
+        "score": 0.0
+      },
+      {
+        "line": 198,
+        "score": 0.0
+      },
+      {
+        "line": 199,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testAlignedAtomicMethods",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 277,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 279,
+        "score": 0.0
+      },
+      {
+        "line": 282,
+        "score": 0.0
+      },
+      {
+        "line": 283,
+        "score": 0.0
+      },
+      {
+        "line": 284,
+        "score": 0.0
+      },
+      {
+        "line": 285,
+        "score": 0.0
+      },
+      {
+        "line": 286,
+        "score": 0.0
+      },
+      {
+        "line": 287,
+        "score": 0.0
+      },
+      {
+        "line": 288,
+        "score": 0.0
+      },
+      {
+        "line": 290,
+        "score": 0.0
+      },
+      {
+        "line": 291,
+        "score": 0.0
+      },
+      {
+        "line": 292,
+        "score": 0.0
+      },
+      {
+        "line": 293,
+        "score": 0.0
+      },
+      {
+        "line": 294,
+        "score": 0.0
+      },
+      {
+        "line": 295,
+        "score": 0.0
+      },
+      {
+        "line": 296,
+        "score": 0.0
+      },
+      {
+        "line": 298,
+        "score": 0.0
+      },
+      {
+        "line": 299,
+        "score": 0.0
+      },
+      {
+        "line": 301,
+        "score": 0.0
+      },
+      {
+        "line": 302,
+        "score": 0.0
+      },
+      {
+        "line": 304,
+        "score": 0.0
+      },
+      {
+        "line": 305,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testUnsafeBufferFromSlicedHeapByteBufferWithOffset",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 90,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 91,
+        "score": 0.0
+      },
+      {
+        "line": 92,
+        "score": 0.0
+      },
+      {
+        "line": 93,
+        "score": 0.0
+      },
+      {
+        "line": 94,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testUnsafeBufferFromSlicedHeapByteBuffer",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 80,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 81,
+        "score": 0.0
+      },
+      {
+        "line": 82,
+        "score": 0.0
+      },
+      {
+        "line": 83,
+        "score": 0.0
+      },
+      {
+        "line": 84,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testUnsafeBufferFromByteArrayWithOffset",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 66,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 67,
+        "score": 0.0
+      },
+      {
+        "line": 68,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "removeAgent",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 54,
+        "score": 1.8720831032638927e-16
+      }
+    ]
+  },
+  {
+    "method": "testUnAlignedWriteMethods",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 240,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 243,
+        "score": 0.0
+      },
+      {
+        "line": 244,
+        "score": 0.0
+      },
+      {
+        "line": 245,
+        "score": 0.0
+      },
+      {
+        "line": 246,
+        "score": 0.0
+      },
+      {
+        "line": 247,
+        "score": 0.0
+      },
+      {
+        "line": 250,
+        "score": 0.0
+      },
+      {
+        "line": 251,
+        "score": 0.0
+      },
+      {
+        "line": 252,
+        "score": 0.0
+      },
+      {
+        "line": 253,
+        "score": 0.0
+      },
+      {
+        "line": 255,
+        "score": 0.0
+      },
+      {
+        "line": 256,
+        "score": 0.0
+      },
+      {
+        "line": 257,
+        "score": 0.0
+      },
+      {
+        "line": 258,
+        "score": 0.0
+      },
+      {
+        "line": 261,
+        "score": 0.0
+      },
+      {
+        "line": 262,
+        "score": 0.0
+      },
+      {
+        "line": 263,
+        "score": 0.0
+      },
+      {
+        "line": 265,
+        "score": 0.0
+      },
+      {
+        "line": 267,
+        "score": 0.0
+      },
+      {
+        "line": 268,
+        "score": 0.0
+      },
+      {
+        "line": 269,
+        "score": 0.0
+      },
+      {
+        "line": 271,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "assertUnaligned",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 343,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 345,
+        "score": 0.0
+      },
+      {
+        "line": 347,
+        "score": 0.0
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 351,
+        "score": 0.0
+      },
+      {
+        "line": 352,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "testUnsafeBufferFromSlicedDirectByteBuffer",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 106,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 107,
+        "score": 0.0
+      },
+      {
+        "line": 108,
+        "score": 0.0
+      },
+      {
+        "line": 109,
+        "score": 0.0
+      },
+      {
+        "line": 110,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "supportsAtomicOperations",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": 358,
+        "score": 1.8720831032638927e-16
+      }
+    ]
+  },
+  {
+    "method": "testAlignedWriteMethods",
+    "file": "/home/ubuntu/CFWR/test_BufferAlignmentAgentTest.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 204,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 205,
+        "score": 0.0
+      },
+      {
+        "line": 206,
+        "score": 0.0
+      },
+      {
+        "line": 207,
+        "score": 0.0
+      },
+      {
+        "line": 209,
+        "score": 0.0
+      },
+      {
+        "line": 210,
+        "score": 0.0
+      },
+      {
+        "line": 211,
+        "score": 0.0
+      },
+      {
+        "line": 212,
+        "score": 0.0
+      },
+      {
+        "line": 214,
+        "score": 0.0
+      },
+      {
+        "line": 215,
+        "score": 0.0
+      },
+      {
+        "line": 216,
+        "score": 0.0
+      },
+      {
+        "line": 217,
+        "score": 0.0
+      },
+      {
+        "line": 220,
+        "score": 0.0
+      },
+      {
+        "line": 222,
+        "score": 0.0
+      },
+      {
+        "line": 223,
+        "score": 0.0
+      },
+      {
+        "line": 224,
+        "score": 0.0
+      },
+      {
+        "line": 225,
+        "score": 0.0
+      },
+      {
+        "line": 226,
+        "score": 0.0
+      },
+      {
+        "line": 227,
+        "score": 0.0
+      },
+      {
+        "line": 228,
+        "score": 0.0
+      },
+      {
+        "line": 229,
+        "score": 0.0
+      },
+      {
+        "line": 233,
+        "score": 0.0
+      },
+      {
+        "line": 234,
+        "score": 0.0
+      },
+      {
+        "line": 235,
+        "score": 0.0
+      }
+    ]
+  }
+]

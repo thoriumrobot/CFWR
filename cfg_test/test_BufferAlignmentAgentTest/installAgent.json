@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"\"), MethodInvocation(arguments=[], member=install, postfix_operators=[], prefix_operators=[], qualifier=ByteBuddyAgent, selectors=[], type_arguments=None)], member=agentmain, postfix_operators=[], prefix_operators=[], qualifier=BufferAlignmentAgent, selectors=[], type_arguments=None)",
+      "line": 48
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 1
+    }
+  ]
+}

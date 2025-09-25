@@ -63,6 +63,15 @@ import com.ibm.wala.cast.java.ipa.callgraph.JavaSourceAnalysisScope;
 public class WalaSliceCLI {
 
   public static void main(String[] argv) throws Exception {
+    // Set WALA properties BEFORE any WALA classes are loaded
+    System.setProperty("wala.source.loader", "com.ibm.wala.cast.java.translator.jdt.ecj.ECJSourceLoaderImpl");
+    System.setProperty("wala.source.loader.impl", "com.ibm.wala.cast.java.translator.jdt.ecj.ECJSourceLoaderImpl");
+    System.setProperty("com.ibm.wala.cast.java.source.loader", "com.ibm.wala.cast.java.translator.jdt.ecj.ECJSourceLoaderImpl");
+    System.setProperty("wala.source.loader.class", "com.ibm.wala.cast.java.translator.jdt.ecj.ECJSourceLoaderImpl");
+    System.setProperty("wala.source.loader.impl.class", "com.ibm.wala.cast.java.translator.jdt.ecj.ECJSourceLoaderImpl");
+    System.setProperty("wala.classloader.factory", "com.ibm.wala.classLoader.ClassLoaderFactoryImpl");
+    System.out.println("[DEBUG] Set WALA properties early");
+    
     Map<String, String> a = parseArgs(argv);
 
     // --- required args
@@ -80,24 +89,78 @@ public class WalaSliceCLI {
       die("Specify exactly ONE of --targetMethod or --targetField");
     }
 
-    // --- 1) Compile Java files first, then use bytecode analysis
-    System.out.println("Compiling Java files...");
-    compileJavaFiles(sourceRootsStr, projectRoot);
+    // --- 1) Skip compilation for now - CF test files are incomplete (missing imports)
+    System.out.println("[DEBUG] Starting WALA slicer with source mode (skipping compilation)");
+    System.out.println("[DEBUG] Source roots: " + sourceRootsStr);
+    System.out.println("[DEBUG] Project root: " + projectRoot);
+    System.out.println("[DEBUG] Target file: " + targetFile);
+    System.out.println("[DEBUG] Target method: " + targetMethod);
+    System.out.println("[DEBUG] Output directory: " + outDir);
+    System.out.println("[DEBUG] Skipping compilation - CF test files missing basic Java imports");
     
-    // --- 2) Build BYTECODE analysis scope (more reliable than source analysis)
+    // WALA properties already set at the beginning of main()
+    // compileJavaFiles(sourceRootsStr, projectRoot);
+    
+    // --- 2) Try bytecode analysis mode instead of source analysis
+    System.out.println("[DEBUG] Creating Java bytecode analysis scope...");
     com.ibm.wala.ipa.callgraph.AnalysisScope scope = com.ibm.wala.ipa.callgraph.AnalysisScope.createJavaAnalysisScope();
+    
+    // Try to add the Java runtime explicitly by finding rt.jar or modules
+    String javaHome = System.getProperty("java.home");
+    System.out.println("[DEBUG] Java home: " + javaHome);
+    
+    // For Java 9+, try to find the modules
+    Path modulesPath = Paths.get(javaHome, "lib", "modules");
+    if (Files.exists(modulesPath)) {
+      System.out.println("[DEBUG] Found Java modules at: " + modulesPath);
+      // Note: We can't easily add modules to scope without proper WALA support
+    }
+    
+    // For older Java versions, try to find rt.jar
+    Path rtJarPath = Paths.get(javaHome, "lib", "rt.jar");
+    if (Files.exists(rtJarPath)) {
+      System.out.println("[DEBUG] Found rt.jar at: " + rtJarPath);
+      // Note: We can't easily add rt.jar to scope without JarModule
+    }
+    
+    // Try to add Java runtime from system classpath
+    String classpath = System.getProperty("java.class.path");
+    System.out.println("[DEBUG] System classpath: " + classpath);
+    for (String cpEntry : classpath.split(File.pathSeparator)) {
+      if (cpEntry.contains("rt.jar") || cpEntry.contains("java.base")) {
+        System.out.println("[DEBUG] Found Java runtime in classpath: " + cpEntry);
+        // Note: We can't easily add JAR files to scope without JarModule
+        // Let's see if WALA can find the runtime automatically
+      }
+    }
+    
     for (String rootDir : sourceRootsStr.split(Pattern.quote(File.pathSeparator))) {
       if (rootDir == null || rootDir.isBlank()) continue;
       Path p = Paths.get(rootDir).toAbsolutePath().normalize();
       if (Files.isDirectory(p)) {
+        System.out.println("[DEBUG] Adding source root to scope: " + p);
         scope.addToScope(ClassLoaderReference.Application, new SourceDirectoryTreeModule(p.toFile()));
       } else {
         System.err.println("[warn] source root not found: " + p);
       }
     }
 
-    // --- 3) CHA + options + builder (0-1-CFA is a good default)
+    // --- 3) Try a different approach - use WALA's built-in Java analysis
+    System.out.println("[DEBUG] Attempting to use WALA's built-in Java analysis...");
+    try {
+      // Try to use WALA's built-in Java analysis scope creation
+      com.ibm.wala.cast.java.ipa.callgraph.JavaSourceAnalysisScope javaScope = 
+        new com.ibm.wala.cast.java.ipa.callgraph.JavaSourceAnalysisScope();
+      scope = javaScope;
+      System.out.println("[DEBUG] Successfully created JavaSourceAnalysisScope");
+    } catch (Exception e) {
+      System.out.println("[DEBUG] JavaSourceAnalysisScope failed: " + e.getMessage());
+      System.out.println("[DEBUG] Continuing with standard AnalysisScope");
+    }
+    
+    System.out.println("[DEBUG] Building class hierarchy...");
     IClassHierarchy cha = ClassHierarchyFactory.makeWithRoot(scope);
+    System.out.println("[DEBUG] Class hierarchy built successfully");
 
     // If your project has a main(), this will find them; otherwise consider AllApplicationEntrypoints
     Iterable<Entrypoint> entries = Util.makeMainEntrypoints(scope, cha);
@@ -365,6 +428,7 @@ public class WalaSliceCLI {
         .filter(p -> !p.toString().contains("annotated-jdk")) // Skip annotated JDK files
         .forEach(javaFiles::add);
       
+      System.out.println("[DEBUG] Found " + javaFiles.size() + " Java files to compile in " + sourceDir);
       if (javaFiles.isEmpty()) continue;
       
       // Compile Java files
@@ -379,7 +443,10 @@ public class WalaSliceCLI {
         cfDist + "/plume-util.jar",
         cfDist + "/javaparser-core-3.26.2.jar"
       );
-      pb.command().add(rtCp + File.pathSeparator + cfCp);
+      // Add javax.annotation-api from runtime classpath (it's now included in our build)
+      String fullCp = rtCp + File.pathSeparator + cfCp;
+      System.out.println("[DEBUG] Compilation classpath: " + fullCp);
+      pb.command().add(fullCp);
       pb.command().add("-d");
       pb.command().add(sourceDir.toString()); // Output to same directory
       

@@ -1,0 +1,189 @@
+[
+  {
+    "method": "onError",
+    "file": "test_agrona.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 166,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 167,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "removeTransformer",
+    "file": "test_agrona.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 124,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 126,
+        "score": 0.0
+      },
+      {
+        "line": 127,
+        "score": 0.0
+      },
+      {
+        "line": 128,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "onDiscovery",
+    "file": "test_agrona.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 1.8720902501043852e-16
+      }
+    ]
+  },
+  {
+    "method": "premain",
+    "file": "test_agrona.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 71,
+        "score": 1.8720831032638927e-16
+      }
+    ]
+  },
+  {
+    "method": "agentmain",
+    "file": "test_agrona.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 82,
+        "score": 1.8720831032638927e-16
+      }
+    ]
+  },
+  {
+    "method": "onTransformation",
+    "file": "test_agrona.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 1.8720902501043852e-16
+      }
+    ]
+  },
+  {
+    "method": "agent",
+    "file": "test_agrona.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 87,
+        "score": 1.8720973969448777e-16
+      },
+      {
+        "line": 91,
+        "score": 0.0
+      },
+      {
+        "line": 95,
+        "score": 0.0
+      },
+      {
+        "line": 107,
+        "score": 0.0
+      },
+      {
+        "line": 110,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "onIgnored",
+    "file": "test_agrona.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 1.8720902501043852e-16
+      }
+    ]
+  },
+  {
+    "method": "onComplete",
+    "file": "test_agrona.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.00033164044725708663
+      },
+      {
+        "line": null,
+        "score": 1.8720902501043852e-16
+      }
+    ]
+  }
+]

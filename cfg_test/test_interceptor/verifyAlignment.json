@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "line": null
+    },
+    {
+      "id": 1,
+      "label": "Exit",
+      "line": null
+    },
+    {
+      "id": 2,
+      "label": "If(BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=0), operandr=BinaryOperation(operandl=BinaryOperation(operandl=MethodInvocation(arguments=[], member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None), operandr=MemberReference(member=index, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), operandr=BinaryOperation(operandl=MemberReference(member=SIZE_OF_CHAR, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=1), operator=-), operator=&), operator=!=))",
+      "line": 176
+    },
+    {
+      "id": 3,
+      "label": "Throw(ClassCreator(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value=\"Unaligned char access\"), MemberReference(member=index, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), MethodInvocation(arguments=[], member=addressOffset, postfix_operators=[], prefix_operators=[], qualifier=buffer, selectors=[], type_arguments=None)], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=BufferAlignmentException, sub_type=None)))",
+      "line": 178
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 1
+    }
+  ]
+}
