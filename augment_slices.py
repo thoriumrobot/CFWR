@@ -10,32 +10,16 @@ HEADER_COMMENT = """
  */
 """.strip()
 
-DUMMY_METHOD_TEMPLATES = [
-    """
-    private static int __cfwr_helper_{idx}(int x) {
-        int y = x;
-        for (int i = 0; i < 3; i++) { y += i; }
-        try { y += 0; } catch (Exception e) { y -= 0; }
-        return y - x;
-    }
-    """,
-    """
-    private static String __cfwr_str_{idx}(String s) {
-        if (s == null) { return ""; }
-        StringBuilder sb = new StringBuilder();
-        for (char c : s.toCharArray()) { if (c == '\\0') { break; } }
-        return sb.toString();
-    }
-    """,
-]
-
-IF_FALSE_BLOCK = """
-if (false) {
-    int __cfwr_a = 0;
-    int __cfwr_b = 1;
-    __cfwr_a += __cfwr_b;
-}
-""".strip()
+# Random data pools for generating varied code
+PRIMITIVE_TYPES = ['int', 'long', 'double', 'float', 'boolean', 'char', 'byte', 'short']
+REFERENCE_TYPES = ['String', 'Object', 'Integer', 'Long', 'Double', 'Float', 'Boolean', 'Character']
+ACCESS_MODIFIERS = ['private', 'public', 'protected', '']
+STATIC_MODIFIERS = ['static', '']
+METHOD_NAMES = ['helper', 'util', 'temp', 'aux', 'proc', 'func', 'calc', 'compute', 'process', 'handle']
+VARIABLE_NAMES = ['val', 'data', 'item', 'obj', 'result', 'temp', 'var', 'elem', 'node', 'entry']
+OPERATORS = ['+', '-', '*', '/', '%', '&', '|', '^', '<<', '>>']
+COMPARISON_OPS = ['==', '!=', '<', '>', '<=', '>=']
+LOGICAL_OPS = ['&&', '||']
 
 
 def find_class_insertion_point(src: str) -> int:
@@ -50,37 +34,164 @@ def insert_header_comment(src: str) -> str:
     return HEADER_COMMENT + "\n" + src
 
 
-def insert_dummy_methods(src: str, count: int) -> str:
+def generate_random_literal(type_name: str) -> str:
+    """Generate a random literal value for the given type."""
+    if type_name == 'int':
+        return str(random.randint(-1000, 1000))
+    elif type_name == 'long':
+        return str(random.randint(-1000, 1000)) + 'L'
+    elif type_name == 'double':
+        return f"{random.uniform(-100.0, 100.0):.2f}"
+    elif type_name == 'float':
+        return f"{random.uniform(-100.0, 100.0):.2f}f"
+    elif type_name == 'boolean':
+        return random.choice(['true', 'false'])
+    elif type_name == 'char':
+        return f"'{random.choice('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')}'"
+    elif type_name == 'String':
+        words = ['hello', 'world', 'test', 'data', 'value', 'temp', 'result', 'item']
+        return f'"{random.choice(words)}{random.randint(1, 99)}"'
+    else:
+        return 'null'
+
+
+def generate_random_expression(type_name: str, depth: int = 0) -> str:
+    """Generate a random expression of the given type."""
+    if depth > 2:  # Prevent infinite recursion
+        return generate_random_literal(type_name)
+    
+    if random.random() < 0.3 and depth < 2:  # 30% chance to create complex expression
+        if type_name in PRIMITIVE_TYPES:
+            op = random.choice(OPERATORS)
+            left_type = random.choice(PRIMITIVE_TYPES)
+            right_type = random.choice(PRIMITIVE_TYPES)
+            return f"({generate_random_expression(left_type, depth + 1)} {op} {generate_random_expression(right_type, depth + 1)})"
+    
+    return generate_random_literal(type_name)
+
+
+def generate_random_statement() -> str:
+    """Generate a random Java statement."""
+    stmt_type = random.choice(['assignment', 'if', 'for', 'while', 'try_catch', 'return'])
+    
+    if stmt_type == 'assignment':
+        var_type = random.choice(PRIMITIVE_TYPES + REFERENCE_TYPES)
+        var_name = f"__cfwr_{random.choice(VARIABLE_NAMES)}{random.randint(1, 99)}"
+        expr = generate_random_expression(var_type)
+        return f"        {var_type} {var_name} = {expr};"
+    
+    elif stmt_type == 'if':
+        condition = f"{generate_random_expression('boolean')} {random.choice(LOGICAL_OPS)} {generate_random_expression('boolean')}"
+        return f"""        if ({condition}) {{
+            {generate_random_statement().strip()}
+        }}"""
+    
+    elif stmt_type == 'for':
+        var_name = f"__cfwr_i{random.randint(1, 99)}"
+        limit = random.randint(1, 10)
+        return f"""        for (int {var_name} = 0; {var_name} < {limit}; {var_name}++) {{
+            {generate_random_statement().strip()}
+        }}"""
+    
+    elif stmt_type == 'while':
+        condition = generate_random_expression('boolean')
+        return f"""        while ({condition}) {{
+            {generate_random_statement().strip()}
+            break; // Prevent infinite loops
+        }}"""
+    
+    elif stmt_type == 'try_catch':
+        return f"""        try {{
+            {generate_random_statement().strip()}
+        }} catch (Exception __cfwr_e{random.randint(1, 99)}) {{
+            // ignore
+        }}"""
+    
+    elif stmt_type == 'return':
+        return_type = random.choice(PRIMITIVE_TYPES + REFERENCE_TYPES)
+        expr = generate_random_expression(return_type)
+        return f"        return {expr};"
+    
+    return "        // random statement"
+
+
+def generate_random_method() -> str:
+    """Generate a completely random Java method."""
+    access = random.choice(ACCESS_MODIFIERS)
+    static = random.choice(STATIC_MODIFIERS)
+    return_type = random.choice(PRIMITIVE_TYPES + REFERENCE_TYPES)
+    method_name = f"__cfwr_{random.choice(METHOD_NAMES)}{random.randint(1, 999)}"
+    
+    # Generate parameters
+    param_count = random.randint(0, 3)
+    params = []
+    for i in range(param_count):
+        param_type = random.choice(PRIMITIVE_TYPES + REFERENCE_TYPES)
+        param_name = f"__cfwr_p{i}"
+        params.append(f"{param_type} {param_name}")
+    
+    param_str = ", ".join(params)
+    
+    # Generate method body
+    stmt_count = random.randint(1, 4)
+    statements = []
+    for _ in range(stmt_count):
+        statements.append(generate_random_statement())
+    
+    # Add return statement if method has return type
+    if return_type != 'void':
+        statements.append(f"        return {generate_random_expression(return_type)};")
+    
+    body = "\n".join(statements)
+    
+    modifiers = f"{access} {static}".strip()
+    if modifiers:
+        modifiers += " "
+    
+    return f"""    {modifiers}{return_type} {method_name}({param_str}) {{
+{body}
+    }}"""
+
+
+def insert_random_methods(src: str, count: int) -> str:
+    """Insert random methods into the class."""
     insert_at = find_class_insertion_point(src)
     methods = []
     for i in range(count):
-        tmpl = random.choice(DUMMY_METHOD_TEMPLATES)
-        # Replace {idx} placeholder with random number
-        idx_value = random.randint(1000, 9999)
-        method_text = tmpl.replace('{idx}', str(idx_value))
-        methods.append(method_text)
+        methods.append(generate_random_method())
     addition = "\n".join(methods) + "\n"
     return src[:insert_at] + addition + src[insert_at:]
 
 
-def insert_if_false_blocks(src: str, blocks: int) -> str:
-    # Insert after method opening braces for first few methods
+def insert_random_statements(src: str, count: int) -> str:
+    """Insert random statements into existing methods."""
     out = src
     pattern = re.compile(r"(\)\s*\{)")
     matches = list(pattern.finditer(out))
-    # Insert up to 'blocks' occurrences
-    for m in matches[:blocks]:
+    
+    # Insert random statements into first few methods
+    for m in matches[:count]:
         idx = m.end()
-        out = out[:idx] + "\n" + IF_FALSE_BLOCK + "\n" + out[idx:]
+        random_stmt = generate_random_statement()
+        out = out[:idx] + "\n" + random_stmt + "\n" + out[idx:]
+    
     return out
 
 
 def augment_file(java_path: str, variant_idx: int) -> str:
     with open(java_path, 'r') as f:
         src = f.read()
+    
     src = insert_header_comment(src)
-    src = insert_dummy_methods(src, count=random.randint(1, 3))
-    src = insert_if_false_blocks(src, blocks=random.randint(1, 2))
+    
+    # Add random methods (1-3 methods)
+    method_count = random.randint(1, 3)
+    src = insert_random_methods(src, method_count)
+    
+    # Add random statements to existing methods (1-2 statements)
+    stmt_count = random.randint(1, 2)
+    src = insert_random_statements(src, stmt_count)
+    
     return src
 
 
@@ -104,14 +215,21 @@ def iter_java_files(root_dir: str):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--slices_dir', required=True)
-    parser.add_argument('--out_dir', required=True)
-    parser.add_argument('--variants_per_file', type=int, default=3)
+    parser = argparse.ArgumentParser(description='Generate random Java code augmentations for CFWR training data')
+    parser.add_argument('--slices_dir', required=True, help='Directory containing original slice files')
+    parser.add_argument('--out_dir', required=True, help='Output directory for augmented files')
+    parser.add_argument('--variants_per_file', type=int, default=3, help='Number of variants to generate per file')
+    parser.add_argument('--seed', type=int, default=42, help='Random seed for reproducible results')
+    parser.add_argument('--max_methods', type=int, default=3, help='Maximum number of random methods to add')
+    parser.add_argument('--max_statements', type=int, default=2, help='Maximum number of random statements to add')
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
-    random.seed(42)
+    random.seed(args.seed)
+
+    print(f"Generating random augmentations with seed {args.seed}")
+    print(f"Max methods per file: {args.max_methods}")
+    print(f"Max statements per file: {args.max_statements}")
 
     produced = []
     for java_file in iter_java_files(args.slices_dir):
@@ -120,6 +238,7 @@ def main():
             produced.append(out_path)
 
     print(f"Augmented {len(produced)} files into {args.out_dir}")
+    print("Each file now contains unique random Java code for better ML training diversity!")
 
 
 if __name__ == '__main__':
