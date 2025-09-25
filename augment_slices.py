@@ -55,7 +55,10 @@ def insert_dummy_methods(src: str, count: int) -> str:
     methods = []
     for i in range(count):
         tmpl = random.choice(DUMMY_METHOD_TEMPLATES)
-        methods.append(tmpl.format(idx=random.randint(1000, 9999)))
+        # Replace {idx} placeholder with random number
+        idx_value = random.randint(1000, 9999)
+        method_text = tmpl.replace('{idx}', str(idx_value))
+        methods.append(method_text)
     addition = "\n".join(methods) + "\n"
     return src[:insert_at] + addition + src[insert_at:]
 
