@@ -6,44 +6,41 @@ import org.checkerframework.checker.index.qual.*;
 public class ArrayAssignmentSameLen {
 
     void test3(int[] a, @LTLengthOf("#1") int i, @NonNegative int x) {
-if (false) {
-    int __cfwr_a = 0;
-    int __cfwr_b = 1;
-    __cfwr_a += __cfwr_b;
-}
+        while (false) {
+            Float __cfwr_obj50 = null;
+            break; // Prevent infinite loops
+        }
 
         int[] c1 = a;
-        @LTLengthOf(value = { "c1", "c1" }, offset = { "0
-if (false) {
-    int __cfwr_a = 0;
-    int __cfwr_b = 1;
-    __cfwr_a += __cfwr_b;
-}
-", "x" })
+        @LTLengthOf(value = { "c1", "c1" }, offset = { "0", "x" })
         int z = i;
     }
-
-    private static int __cfwr_helper_2876(int x) {
-        int y = x;
-        for (int i = 0; i < 3; i++) { y += i; }
-        try { y += 0; } catch (Exception e) { y -= 0; }
-        return y - x;
+    public Float __cfwr_compute647(Float __cfwr_p0) {
+        for (int __cfwr_i93 = 0; __cfwr_i93 < 6; __cfwr_i93++) {
+            if (false && true) {
+            if (false && false) {
+            Float __cfwr_node95 = null;
+        }
+        }
+        }
+        String __cfwr_obj36 = "test76";
+        return null;
     }
-    
-
-    private static String __cfwr_str_6573(String s) {
-        if (s == null) { return ""; }
-        StringBuilder sb = new StringBuilder();
-        for (char c : s.toCharArray()) { if (c == '\0') { break; } }
-        return sb.toString();
+    byte __cfwr_temp847() {
+        short __cfwr_obj75 = null;
+        return null;
     }
-    
-
-    private static int __cfwr_helper_5808(int x) {
-        int y = x;
-        for (int i = 0; i < 3; i++) { y += i; }
-        try { y += 0; } catch (Exception e) { y -= 0; }
-        return y - x;
+    private static String __cfwr_helper49(Character __cfwr_p0) {
+        for (int __cfwr_i71 = 0; __cfwr_i71 < 5; __cfwr_i71++) {
+            return (506 % (null & null));
+        }
+        try {
+            Integer __cfwr_entry8 = null;
+        } catch (Exception __cfwr_e60) {
+            // ignore
+        }
+        return (null / 864L);
+        byte __cfwr_node54 = null;
+        return "data49";
     }
-    
 }

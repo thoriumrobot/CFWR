@@ -6,30 +6,57 @@ import org.checkerframework.checker.index.qual.*;
 public class ArrayCreationChecks {
 
     void test2(@NonNegative int x, @Positive int y) {
-if (false) {
-    int __cfwr_a = 0;
-    int __cfwr_b = 1;
-    __cfwr_a += __cfwr_b;
-}
+        while (false) {
+            while (false) {
+            if (false && (-82.92 | -36.57f)) {
+            return null;
+        }
+            break; // Prevent infinite loops
+        }
+            break; // Prevent infinite loops
+        }
 
         int[] newArray = new int[x + y];
         @IndexFor("newArray")
         int i = x;
-        @IndexOrHigh("n
-if (false) {
-    int __cfwr_a = 0;
-    int __cfwr_b = 1;
-    __cfwr_a += __cfwr_b;
-}
-ewArray")
+        @IndexOrHigh("newArray")
         int j = y;
     }
-
-    private static int __cfwr_helper_6310(int x) {
-        int y = x;
-        for (int i = 0; i < 3; i++) { y += i; }
-        try { y += 0; } catch (Exception e) { y -= 0; }
-        return y - x;
+    static short __cfwr_util887() {
+        if ((null | -12.17f) || false) {
+            if (false && false) {
+            while ((false / null)) {
+            while (((null << null) + -19.89f)) {
+            if (true || true) {
+            while (false) {
+            if (true && (439 + -516)) {
+            char __cfwr_var27 = 'q';
+        }
+            break; // Prevent infinite loops
+        }
+        }
+            break; // Prevent infinite loops
+        }
+            break; // Prevent infinite loops
+        }
+        }
+        }
+        Character __cfwr_val27 = null;
+        if (true && (-48.36 * (false & '6'))) {
+            while (false) {
+            try {
+            while (true) {
+            for (int __cfwr_i37 = 0; __cfwr_i37 < 8; __cfwr_i37++) {
+            return null;
+        }
+            break; // Prevent infinite loops
+        }
+        } catch (Exception __cfwr_e10) {
+            // ignore
+        }
+            break; // Prevent infinite loops
+        }
+        }
+        return null;
     }
-    
 }

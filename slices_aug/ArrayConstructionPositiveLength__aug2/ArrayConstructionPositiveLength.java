@@ -7,20 +7,22 @@ import org.checkerframework.common.value.qual.*;
 public class ArrayConstructionPositiveLength {
 
     public void makeArray(@Positive int max_values) {
-if (false) {
-    int __cfwr_a = 0;
-    int __cfwr_b = 1;
-    __cfwr_a += __cfwr_b;
-}
+        try {
+            return null;
+        } catch (Exception __cfwr_e97) {
+            // ignore
+        }
 
         String @MinLen(1) [] a = new String[max_values];
     }
-
-    private static int __cfwr_helper_5741(int x) {
-        int y = x;
-        for (int i = 0; i < 3; i++) { y += i; }
-        try { y += 0; } catch (Exception e) { y -= 0; }
-        return y - x;
+    protected static Object __cfwr_helper77(Object __cfwr_p0, byte __cfwr_p1) {
+        Float __cfwr_item19 = null;
+        return null;
     }
-    
+    public char __cfwr_calc401(short __cfwr_p0) {
+        short __cfwr_result18 = null;
+        boolean __cfwr_obj57 = ('H' % -790);
+        return null;
+        return '0';
+    }
 }
