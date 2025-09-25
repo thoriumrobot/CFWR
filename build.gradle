@@ -20,14 +20,23 @@ dependencies {
   implementation 'com.ibm.wala:com.ibm.wala.cast.java:1.6.12'
 
   // ECJ front-end (source mode)
-  // (1.6.10 is the latest ecj wrapper on Maven Central right now; it’s OK to mix with 1.6.12 core)
+  // (1.6.10 is the latest ecj wrapper on Maven Central right now; it's OK to mix with 1.6.12 core)
   implementation 'com.ibm.wala:com.ibm.wala.cast.java.ecj:1.6.10'
 
   // Some environments still need Polyglot classes present even with ECJ. Include it to be safe.
-  implementation 'polyglot:polyglot:2.8.0'
+  // Use local Polyglot JAR files
+  implementation files('polyglot-2.8.0-src/lib/polyglot.jar')
+  implementation files('polyglot-2.8.0-src/lib/java_cup.jar')
+  implementation files('polyglot-2.8.0-src/lib/jflex.jar')
+  implementation files('polyglot-2.8.0-src/lib/ppg.jar')
+  implementation files('polyglot-2.8.0-src/lib/pth.jar')
+  implementation files('polyglot-2.8.0-src/lib/efg.jar')
 
   // Eclipse compiler (helps in some setups)
   implementation 'org.eclipse.jdt:ecj:3.33.0'
+
+  // Checker Framework jars (needed to compile CF test sources for WALA bytecode mode)
+  implementation fileTree(dir: '/home/ubuntu/checker-framework-3.42.0/checker/dist', include: ['*.jar'])
 
   // Your parser
   implementation 'com.github.javaparser:javaparser-core:3.26.2'

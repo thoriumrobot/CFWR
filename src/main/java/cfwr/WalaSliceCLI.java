@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
 import java.util.regex.Pattern;
+import java.util.Collections;
 
 import com.ibm.wala.types.ClassLoaderReference;
 import com.ibm.wala.classLoader.IBytecodeMethod;
@@ -79,8 +80,12 @@ public class WalaSliceCLI {
       die("Specify exactly ONE of --targetMethod or --targetField");
     }
 
-    // --- 1) Build SOURCE analysis scope (try to avoid polyglot dependency)
-    JavaSourceAnalysisScope scope = new JavaSourceAnalysisScope();
+    // --- 1) Compile Java files first, then use bytecode analysis
+    System.out.println("Compiling Java files...");
+    compileJavaFiles(sourceRootsStr, projectRoot);
+    
+    // --- 2) Build BYTECODE analysis scope (more reliable than source analysis)
+    com.ibm.wala.ipa.callgraph.AnalysisScope scope = com.ibm.wala.ipa.callgraph.AnalysisScope.createJavaAnalysisScope();
     for (String rootDir : sourceRootsStr.split(Pattern.quote(File.pathSeparator))) {
       if (rootDir == null || rootDir.isBlank()) continue;
       Path p = Paths.get(rootDir).toAbsolutePath().normalize();
@@ -91,9 +96,7 @@ public class WalaSliceCLI {
       }
     }
 
-    // --- 2) CHA + options + builder (0-1-CFA is a good default)
-    // Try to force WALA to use ECJ by setting system property
-    System.setProperty("wala.source.loader", "com.ibm.wala.cast.java.translator.jdt.ecj.ECJSourceLoaderImpl");
+    // --- 3) CHA + options + builder (0-1-CFA is a good default)
     IClassHierarchy cha = ClassHierarchyFactory.makeWithRoot(scope);
 
     // If your project has a main(), this will find them; otherwise consider AllApplicationEntrypoints
@@ -346,5 +349,61 @@ public class WalaSliceCLI {
     Path man = outDir.resolve("slice.manifest.txt");
     Files.createDirectories(outDir);
     Files.write(man, sm.manifest, StandardCharsets.UTF_8);
+  }
+
+  static void compileJavaFiles(String sourceRootsStr, Path projectRoot) throws IOException {
+    // Simple Java compilation using javac - only compile test files, skip annotated JDK
+    for (String rootDir : sourceRootsStr.split(Pattern.quote(File.pathSeparator))) {
+      if (rootDir == null || rootDir.isBlank()) continue;
+      Path sourceDir = Paths.get(rootDir).toAbsolutePath().normalize();
+      if (!Files.isDirectory(sourceDir)) continue;
+      
+      // Find Java files, but exclude annotated-jdk directory
+      List<Path> javaFiles = new ArrayList<>();
+      Files.walk(sourceDir)
+        .filter(p -> p.toString().endsWith(".java"))
+        .filter(p -> !p.toString().contains("annotated-jdk")) // Skip annotated JDK files
+        .forEach(javaFiles::add);
+      
+      if (javaFiles.isEmpty()) continue;
+      
+      // Compile Java files
+      ProcessBuilder pb = new ProcessBuilder("javac");
+      pb.command().add("-cp");
+      // Add runtime classpath plus Checker Framework jars
+      String rtCp = System.getProperty("java.class.path");
+      String cfDist = "/home/ubuntu/checker-framework-3.42.0/checker/dist";
+      String cfCp = String.join(File.pathSeparator,
+        cfDist + "/checker.jar",
+        cfDist + "/checker-qual.jar",
+        cfDist + "/plume-util.jar",
+        cfDist + "/javaparser-core-3.26.2.jar"
+      );
+      pb.command().add(rtCp + File.pathSeparator + cfCp);
+      pb.command().add("-d");
+      pb.command().add(sourceDir.toString()); // Output to same directory
+      
+      // Add all Java files
+      for (Path javaFile : javaFiles) {
+        pb.command().add(javaFile.toString());
+      }
+      
+      try {
+        Process proc = pb.start();
+        int exitCode = proc.waitFor();
+        if (exitCode != 0) {
+          System.err.println("Warning: Java compilation failed with exit code " + exitCode);
+          // Read error output
+          try (var reader = new java.io.BufferedReader(new java.io.InputStreamReader(proc.getErrorStream()))) {
+            reader.lines().forEach(System.err::println);
+          }
+        } else {
+          System.out.println("Successfully compiled " + javaFiles.size() + " Java files in " + sourceDir);
+        }
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw new IOException("Compilation interrupted", e);
+      }
+    }
   }
 }
