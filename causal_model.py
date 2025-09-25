@@ -61,11 +61,9 @@ def load_data():
     data_records = []
     for java_file_path in iter_java_files(slices_dir):
         ensure_cfg(java_file_path)
-        warnings_list = run_index_checker(java_file_path)
-        annotations = parse_warnings(warnings_list)
         method_cfgs = load_cfgs(java_file_path)
         for cfg_data in method_cfgs:
-            records = extract_features_and_labels(cfg_data, annotations)
+            records = extract_features_and_labels_synthetic(cfg_data)
             data_records.extend(records)
     return pd.DataFrame(data_records)
 
@@ -173,6 +171,69 @@ def extract_features_and_labels(cfg_data, annotations):
             features['needs_annotation'] = 1
         else:
             features['needs_annotation'] = 0
+        records.append(features)
+    return records
+
+def extract_features_and_labels_synthetic(cfg_data):
+    """
+    Extract features and synthetic labels from a CFG for causal modeling.
+    """
+    records = []
+    nodes = cfg_data['nodes']
+    edges = cfg_data['edges']
+    method_name = cfg_data['method_name']
+    java_file = cfg_data['java_file']
+    
+    # Calculate CFG complexity for synthetic labeling
+    node_labels = [node.get('label', '') for node in nodes]
+    complexity_score = (
+        len([label for label in node_labels if 'if' in label.lower()]) +
+        len([label for label in node_labels if 'for' in label.lower()]) +
+        len([label for label in node_labels if 'while' in label.lower()]) +
+        len([label for label in node_labels if 'switch' in label.lower()]) +
+        len([label for label in node_labels if 'try' in label.lower()])
+    )
+    
+    for node in nodes:
+        node_id = node['id']
+        label = node['label']
+        # Extract features from the node
+        features = {
+            'node_id': node_id,
+            'method_name': method_name,
+            'java_file': java_file,
+            'label_length': len(label),
+            'label': label,
+        }
+        # Degree features
+        in_degree = 0
+        out_degree = 0
+        for edge in edges:
+            if edge['target'] == node_id:
+                in_degree += 1
+            if edge['source'] == node_id:
+                out_degree += 1
+        features['in_degree'] = in_degree
+        features['out_degree'] = out_degree
+        # Line number (if available)
+        line_number = node.get('line', 0)
+        features['line_number'] = line_number
+        
+        # Synthetic label: nodes in complex CFGs are more likely to need annotations
+        # Also consider node-specific features
+        node_complexity = 0
+        label_lower = label.lower()
+        if 'if' in label_lower or 'for' in label_lower or 'while' in label_lower:
+            node_complexity += 2
+        if 'return' in label_lower:
+            node_complexity += 1
+        if 'assignment' in label_lower or '=' in label_lower:
+            node_complexity += 1
+            
+        # Combine CFG complexity and node complexity
+        total_complexity = complexity_score + node_complexity
+        features['needs_annotation'] = 1 if total_complexity > 3 else 0
+        
         records.append(features)
     return records
 
