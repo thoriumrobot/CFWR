@@ -1,6 +1,9 @@
+import org.checkerframework.checker.index.qual.*;
+import org.checkerframework.common.value.qual.*;
+
 public class ArrayConstructionPositiveLength {
 
-    void makeArray() {
-        throw new Error();
+    public void makeArray(@Positive int max_values) {
+        String @MinLen(1) [] a = new String[max_values];
     }
 }
