@@ -20,7 +20,7 @@ import java.util.regex.Matcher;
  * generated on a target Java program and outputs the field or method signatures
  * of the nearest enclosing field/method for each warning location.
  *
- * The purpose of the program is to take a list of warnings and then use Specimin
+ * The purpose of the program is to take a list of warnings and then use WALA
  * to generate a slice for each warning in the input list.
  *
  * Usage:
@@ -50,16 +50,28 @@ public class CheckerFrameworkWarningResolver {
 
     static String resolverPath;
     static boolean executeCommandFlag = true; // Flag to control command execution
+    static String slicerType = "wala"; // Default slicer type
+    static int speciminLogCount = 0; // limit debug samples
 
     public static void main(String[] args) {
         if (args.length < 3) {
-            System.err.println("Usage: java CheckerFrameworkWarningResolver <projectRoot> <warningsFilePath> <resolverRoot>");
+            System.err.println("Usage: java CheckerFrameworkWarningResolver <projectRoot> <warningsFilePath> <resolverRoot> [slicerType]");
+            System.err.println("  slicerType: 'wala' (default) or 'specimin'");
             return;
         }
 
         String projectRoot = args[0];
         String warningsFilePath = args[1];
         resolverPath = args[2];
+        
+        // Optional fourth argument for slicer type
+        if (args.length >= 4) {
+            slicerType = args[3].toLowerCase();
+            if (!slicerType.equals("wala") && !slicerType.equals("specimin")) {
+                System.err.println("Error: slicerType must be 'wala' or 'specimin', got: " + args[3]);
+                return;
+            }
+        }
 
         try {
             JavaParser parser = new JavaParser();
@@ -132,12 +144,21 @@ public class CheckerFrameworkWarningResolver {
             Optional<BodyDeclaration<?>> enclosingMember = findEnclosingMember(compilationUnit, warningPosition);
 
             if (enclosingMember.isPresent()) {
-                List<String> command = buildSpeciminCommand(enclosingMember.get(), warning, projectRoot);
+                List<String> command;
+                String workingDirectory;
+                
+                if ("specimin".equals(slicerType)) {
+                    command = buildSpeciminCommand(enclosingMember.get(), warning, projectRoot);
+                    workingDirectory = Paths.get(resolverPath, "specimin").toString();
+                } else {
+                    command = buildWalaSourceCommand(enclosingMember.get(), warning, projectRoot);
+                    workingDirectory = Paths.get(resolverPath).toString();
+                }
+                
                 if (command != null) {
-                    System.out.println(String.join(" ", command));
+                    System.out.println("Using " + slicerType.toUpperCase() + " slicer: " + String.join(" ", command));
                     if (executeCommandFlag) {
-                        // Execute within the specimin subdirectory
-                        executeCommand(command, Paths.get(resolverPath, "specimin").toString());
+                        executeCommand(command, workingDirectory);
                     }
                 }
             } else {
@@ -238,23 +259,94 @@ public class CheckerFrameworkWarningResolver {
         List<String> command = new ArrayList<>();
         command.add("./gradlew");
         command.add("run");
-        String args;
-        if (member instanceof FieldDeclaration) {
-            args = String.join(" ",
-                    "--outputDirectory", "\"" + outputDirectory + "\"",
-                    "--root", "\"" + root + "\"",
-                    "--targetFile", "\"" + targetFile + "\"",
-                    "--targetField", "\"" + targetMethodOrField + "\""
-            );
-        } else {
-            args = String.join(" ",
-                    "--outputDirectory", "\"" + outputDirectory + "\"",
-                    "--root", "\"" + root + "\"",
-                    "--targetFile", "\"" + targetFile + "\"",
-                    "--targetMethod", "\"" + targetMethodOrField + "\""
-            );
+
+        // Collect possible jarPath directories for Specimin context
+        // Priority: SPECIMIN_JARPATH (one or many dirs), then CHECKERFRAMEWORK_HOME/checker/dist, then dirs from CHECKERFRAMEWORK_CP
+        LinkedHashSet<String> jarPathDirs = new LinkedHashSet<>();
+
+        String speciminJarPath = System.getenv("SPECIMIN_JARPATH");
+        if (speciminJarPath != null && !speciminJarPath.isBlank()) {
+            for (String p : speciminJarPath.split(Pattern.quote(File.pathSeparator))) {
+                if (p != null && !p.isBlank() && Files.isDirectory(Paths.get(p))) {
+                    jarPathDirs.add(Paths.get(p).toAbsolutePath().normalize().toString());
+                }
+            }
         }
-        command.add("--args=" + args);
+
+        String cfHome = System.getenv("CHECKERFRAMEWORK_HOME");
+        if (cfHome != null && !cfHome.isBlank()) {
+            Path dist = Paths.get(cfHome, "checker", "dist").toAbsolutePath().normalize();
+            if (Files.isDirectory(dist)) jarPathDirs.add(dist.toString());
+            Path libs = Paths.get(cfHome, "checker", "build", "libs").toAbsolutePath().normalize();
+            if (Files.isDirectory(libs)) jarPathDirs.add(libs.toString());
+        }
+
+        String cfCp = System.getenv("CHECKERFRAMEWORK_CP");
+        if (cfCp != null && !cfCp.isBlank()) {
+            for (String cpEntry : cfCp.split(Pattern.quote(File.pathSeparator))) {
+                if (cpEntry == null || cpEntry.isBlank()) continue;
+                Path cpPath = Paths.get(cpEntry);
+                if (Files.isRegularFile(cpPath) && cpEntry.endsWith(".jar")) {
+                    Path parent = cpPath.getParent();
+                    if (parent != null && Files.isDirectory(parent)) {
+                        jarPathDirs.add(parent.toAbsolutePath().normalize().toString());
+                    }
+                } else if (Files.isDirectory(cpPath)) {
+                    jarPathDirs.add(cpPath.toAbsolutePath().normalize().toString());
+                }
+            }
+        }
+
+        // Build arguments list for Specimin
+        List<String> speciminArgs = new ArrayList<>();
+        speciminArgs.add("--outputDirectory");
+        speciminArgs.add(outputDirectory);
+        speciminArgs.add("--root");
+        speciminArgs.add(root);
+        speciminArgs.add("--targetFile");
+        speciminArgs.add(targetFile);
+        
+        if (member instanceof FieldDeclaration) {
+            speciminArgs.add("--targetField");
+            speciminArgs.add(targetMethodOrField);
+        } else {
+            speciminArgs.add("--targetMethod");
+            speciminArgs.add(targetMethodOrField);
+        }
+
+        // Append any jarPath directories gathered above
+        for (String dir : jarPathDirs) {
+            speciminArgs.add("--jarPath");
+            speciminArgs.add(dir);
+        }
+
+        // Join all arguments into a single string for --args, properly escaping
+        StringBuilder argsBuilder = new StringBuilder();
+        for (int i = 0; i < speciminArgs.size(); i++) {
+            if (i > 0) argsBuilder.append(" ");
+            String arg = speciminArgs.get(i);
+            // Quote arguments that contain spaces or special characters
+            if (arg.contains(" ") || arg.contains("(") || arg.contains(")") || arg.contains("#")) {
+                argsBuilder.append("\"").append(arg).append("\"");
+            } else {
+                argsBuilder.append(arg);
+            }
+        }
+        command.add("--args=" + argsBuilder.toString());
+
+        // Debug: print a few example commands and key params
+        try {
+            if (++speciminLogCount <= 3) {
+                String pretty = String.join(" ", command);
+                System.out.println("[debug] Specimin example cmd (" + speciminLogCount + "): " + pretty);
+                System.out.println("[debug]   root=" + root);
+                System.out.println("[debug]   targetFile(rel?)=" + relativeTargetFile + ", raw=" + targetFile);
+                System.out.println("[debug]   member=" + targetMethodOrField);
+                if (!jarPathDirs.isEmpty()) {
+                    System.out.println("[debug]   jarPath dirs=" + String.join(File.pathSeparator, jarPathDirs));
+                }
+            }
+        } catch (Exception ignore) {}
 
         return command;
     }
@@ -289,7 +381,11 @@ public class CheckerFrameworkWarningResolver {
         signature.append("(");
         List<String> params = new ArrayList<>();
         for (Parameter param : method.getParameters()) {
-            params.add(param.getType().asString());
+            // Strip annotations from parameter types for Specimin compatibility
+            String typeString = param.getType().asString();
+            // Remove annotations like @IndexFor("#1") from the type
+            typeString = typeString.replaceAll("@\\w+(\\([^)]*\\))?\\s*", "");
+            params.add(typeString.trim());
         }
         signature.append(String.join(",", params));
         signature.append(")");
@@ -302,7 +398,11 @@ public class CheckerFrameworkWarningResolver {
         signature.append("(");
         List<String> params = new ArrayList<>();
         for (Parameter param : constructor.getParameters()) {
-            params.add(param.getType().asString());
+            // Strip annotations from parameter types for Specimin compatibility
+            String typeString = param.getType().asString();
+            // Remove annotations like @IndexFor("#1") from the type
+            typeString = typeString.replaceAll("@\\w+(\\([^)]*\\))?\\s*", "");
+            params.add(typeString.trim());
         }
         signature.append(String.join(",", params));
         signature.append(")");
@@ -374,4 +474,85 @@ public class CheckerFrameworkWarningResolver {
             return filePath + ":" + lineNumber + ":" + columnNumber + ": " + compilerMessageType + ": [" + checkerName + "] " + message;
         }
     }
+
+    private static List<String> buildWalaSourceCommand(
+        BodyDeclaration<?> member, Warning warning, String projectRoot) throws IOException {
+
+        String baseSlicesDir = System.getenv().getOrDefault("SLICES_DIR", "slices");
+        Path baseDirPath = Paths.get(baseSlicesDir).toAbsolutePath().normalize();
+        Files.createDirectories(baseDirPath);
+
+        // Make targetFile relative to projectRoot when possible
+        String targetFile = warning.filePath.toString();
+        try {
+            Path rootPath = Paths.get(projectRoot).toAbsolutePath().normalize();
+            Path targetPath = Paths.get(targetFile).toAbsolutePath().normalize();
+            if (targetPath.startsWith(rootPath)) {
+                targetFile = rootPath.relativize(targetPath).toString();
+            }
+        } catch (Exception ignored) {}
+
+        // Compute a descriptive slice dir name
+        String sliceNameComponent;
+        String targetMemberFlagName;   // "--targetMethod" or "--targetField"
+        String targetMemberFlagValue;  // e.g., "com.foo.Bar#baz(int,String)" or "com.foo.Bar#QUX"
+
+        if (member instanceof MethodDeclaration) {
+            MethodDeclaration m = (MethodDeclaration) member;
+            sliceNameComponent = getQualifiedClassName(m) + "#" + getMethodSignature(m);
+            targetMemberFlagName  = "--targetMethod";
+            targetMemberFlagValue = sliceNameComponent;
+        } else if (member instanceof ConstructorDeclaration) {
+            ConstructorDeclaration c = (ConstructorDeclaration) member;
+            sliceNameComponent = getQualifiedClassName(c) + "#" + getConstructorSignature(c);
+            targetMemberFlagName  = "--targetMethod"; // constructors are methods for our CLI
+            targetMemberFlagValue = sliceNameComponent;
+        } else if (member instanceof FieldDeclaration) {
+            FieldDeclaration f = (FieldDeclaration) member;
+            VariableDeclarator v = findVariableAtPosition(f, new Position(warning.lineNumber, warning.columnNumber));
+            if (v == null) {
+                System.err.println("No variable found at position in field declaration");
+                return null;
+            }
+            sliceNameComponent = getQualifiedClassName(f) + "#" + v.getNameAsString();
+            targetMemberFlagName  = "--targetField";
+            targetMemberFlagValue = sliceNameComponent;
+        } else {
+            System.err.println("Unsupported member type: " + member.getClass().getSimpleName());
+            return null;
+        }
+
+        String safeSliceDirName = sanitizeSliceName(targetFile + "__" + sliceNameComponent);
+        Path outputPath = baseDirPath.resolve(safeSliceDirName);
+        Files.createDirectories(outputPath);
+        String outputDirectory = outputPath.toString();
+
+        // Heuristic source roots (adjust if you know them)
+        List<String> sourceRoots = new ArrayList<>();
+        Path root = Paths.get(projectRoot);
+        for (String p : new String[]{"src/main/java", "src/test/java", "src"}) {
+            Path candidate = root.resolve(p);
+            if (Files.isDirectory(candidate)) sourceRoots.add(candidate.toString());
+        }
+        if (sourceRoots.isEmpty()) sourceRoots.add(root.toString());
+        String joinedRoots = String.join(File.pathSeparator, sourceRoots);
+
+        // Path to the fat jar built by `./gradlew shadowJar`
+        // (shadow config sets name to build/libs/wala-slicer-all.jar)
+        Path fatJar = Paths.get(resolverPath, "build", "libs", "wala-slicer-all.jar");
+
+        List<String> cmd = new ArrayList<>();
+        cmd.add("java");
+        cmd.add("-jar");
+        cmd.add(fatJar.toString());
+        cmd.add("--sourceRoots"); cmd.add(joinedRoots);
+        cmd.add("--projectRoot"); cmd.add(projectRoot);
+        cmd.add("--targetFile");  cmd.add(targetFile);               // use RELATIVE path
+        cmd.add("--line");        cmd.add(Integer.toString(warning.lineNumber));
+        cmd.add("--output");      cmd.add(outputDirectory);
+        cmd.add(targetMemberFlagName); cmd.add(targetMemberFlagValue);
+
+        return cmd;
+    }
+
 }

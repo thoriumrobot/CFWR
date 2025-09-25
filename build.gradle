@@ -1,42 +1,109 @@
 plugins {
-    id 'java'
-    id 'application'
+  id 'java'
+  id 'application'
+  id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
-repositories {
-    mavenCentral()
+repositories { 
+  mavenCentral()
+  mavenLocal()  // For local polyglot dependency
 }
+
+java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
-    implementation 'com.github.javaparser:javaparser-core:3.23.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    testImplementation 'org.junit.platform:junit-platform-surefire-provider:1.3.2'
+  // --- Runtime deps for WALA source-mode slicing ---
+  implementation 'com.ibm.wala:com.ibm.wala.core:1.6.12'
+  implementation 'com.ibm.wala:com.ibm.wala.util:1.6.12'
+  implementation 'com.ibm.wala:com.ibm.wala.shrike:1.6.12'
+  implementation 'com.ibm.wala:com.ibm.wala.cast:1.6.12'
+  implementation 'com.ibm.wala:com.ibm.wala.cast.java:1.6.12'
+
+  // ECJ front-end (source mode)
+  // (1.6.10 is the latest ecj wrapper on Maven Central right now; it’s OK to mix with 1.6.12 core)
+  implementation 'com.ibm.wala:com.ibm.wala.cast.java.ecj:1.6.10'
+
+  // Some environments still need Polyglot classes present even with ECJ. Include it to be safe.
+  implementation 'polyglot:polyglot:2.8.0'
+
+  // Eclipse compiler (helps in some setups)
+  implementation 'org.eclipse.jdt:ecj:3.33.0'
+
+  // Your parser
+  implementation 'com.github.javaparser:javaparser-core:3.26.2'
+
+  // --- Tests (choose JUnit 5 or 4; here we use JUnit 5) ---
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.10.3'
 }
 
+test { useJUnitPlatform() }
+
+/**
+ * The 'application' plugin's default run target = your resolver
+ * so `./gradlew run -PappArgs="..."` still works for the resolver flow.
+ */
 application {
-    mainClass = 'cfwr.CheckerFrameworkWarningResolver'
+  mainClass = 'cfwr.CheckerFrameworkWarningResolver'
 }
 
-tasks.withType(JavaCompile) {
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
+/**
+ * Build a fat JAR for the WALA slicer CLI with the correct Main-Class.
+ * Output: build/libs/wala-slicer-all.jar
+ */
+// Build a fat JAR for the WALA slicer CLI with the correct Main-Class
+tasks.register('walaSlicerJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
+  group = 'build'
+  description = 'Build a fat JAR for the WALA slicer CLI'
+  archiveBaseName.set('wala-slicer')
+  archiveClassifier.set('all')
+  archiveVersion.set('') // nicer filename
+
+  from sourceSets.main.output
+  configurations = [project.configurations.runtimeClasspath]
+
+  // CRITICAL: keep ServiceLoader entries so WALA can discover ECJ loader, etc.
+  mergeServiceFiles {
+    include 'META-INF/services/*'
+  }
+
+  // Optional: some libs ship duplicate module-info; this avoids noise
+  exclude 'module-info.class'
+  exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA'
+
+  manifest { attributes 'Main-Class': 'cfwr.WalaSliceCLI' }
 }
 
-run {
-    if (project.hasProperty('appArgs')) {
-        args project.appArgs.split(' ')
-    }
+/**
+ * Optional convenience tasks to run either entrypoint without switching 'application.mainClass'
+ */
+
+// Run the WALA slicer CLI from Gradle (no jar needed)
+tasks.register('runWalaSlice', JavaExec) {
+  group = 'application'
+  description = 'Run the WALA-based slicer CLI'
+  classpath = sourceSets.main.runtimeClasspath
+  mainClass = 'cfwr.WalaSliceCLI'
+  if (project.hasProperty('args')) {
+    args project.property('args').toString().split('\\s+')
+  }
 }
 
-test {
-    useJUnitPlatform()
+// Run the resolver explicitly
+tasks.register('runResolver', JavaExec) {
+  group = 'application'
+  description = 'Run the CheckerFrameworkWarningResolver'
+  classpath = sourceSets.main.runtimeClasspath
+  mainClass = 'cfwr.CheckerFrameworkWarningResolver'
+  if (project.hasProperty('args')) {
+    args project.property('args').toString().split('\\s+')
+  }
 }
 
-// Combine all checks into a validate task
-task validate {
-    group = 'Verification'
-    description = 'Runs all validation tasks'
-    dependsOn 'build', 'test'
+/**
+ * Optional: keep your validate aggregate
+ */
+tasks.register('validate') {
+  group = 'Verification'
+  description = 'Runs build and tests'
+  dependsOn 'build', 'test'
 }

@@ -17,10 +17,27 @@ def run(cmd, env=None):
         sys.exit(res.returncode)
 
 
-def run_slicing(project_root, warnings_file, cfwr_root, slices_dir):
+def run_slicing(project_root, warnings_file, cfwr_root, slices_dir, slicer_type='wala'):
     env = os.environ.copy()
     env['SLICES_DIR'] = os.path.abspath(slices_dir)
-    run(['./gradlew', 'run', f"-PappArgs={project_root} {warnings_file} {cfwr_root}"], env=env)
+    # Ensure Specimin has access to CF jars if not already provided
+    try:
+        if slicer_type == 'specimin':
+            specimin_jarpath = env.get('SPECIMIN_JARPATH', '').strip()
+            if not specimin_jarpath:
+                candidate_dirs = [
+                    '/home/ubuntu/checker-framework-3.42.0/checker/dist',
+                    '/home/ubuntu/checker-framework/checker/dist',
+                    '/home/ubuntu/checker-framework/checker/build/libs',
+                ]
+                existing_dirs = [d for d in candidate_dirs if os.path.isdir(d)]
+                if existing_dirs:
+                    env['SPECIMIN_JARPATH'] = os.pathsep.join(existing_dirs)
+    except Exception:
+        pass
+    # Use runResolver task with proper argument handling
+    args_str = f"{project_root} {warnings_file} {cfwr_root} {slicer_type}"
+    run(['./gradlew', 'runResolver', f"-Pargs={args_str}"], env=env)
 
 
 def run_cfg_generation(slices_dir, cfg_output_dir):
@@ -91,6 +108,7 @@ def main():
     parser.add_argument('--original_root', default=ORIGINAL_DIR_DEFAULT, help='Original projects root for bulk prediction')
     parser.add_argument('--augmented_dir', default=AUGMENTED_DIR_DEFAULT, help='Output directory for augmented slices')
     parser.add_argument('--augment_variants', type=int, default=3, help='Variants per original slice for augmentation')
+    parser.add_argument('--slicer', default='wala', choices=['wala','specimin'], help='Slicer to use (wala or specimin)')
     args = parser.parse_args()
 
     os.makedirs(args.slices_dir, exist_ok=True)
@@ -102,7 +120,7 @@ def main():
         if not args.project_root or not args.warnings_file:
             print('Error: --project_root and --warnings_file are required for slice step')
             sys.exit(2)
-        run_slicing(args.project_root, args.warnings_file, args.cfwr_root, args.slices_dir)
+        run_slicing(args.project_root, args.warnings_file, args.cfwr_root, args.slices_dir, args.slicer)
 
     if args.steps in ('cfg','all'):
         run_cfg_generation(args.slices_dir, args.cfg_output_dir)

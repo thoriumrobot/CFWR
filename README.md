@@ -1,4 +1,4 @@
-Currently, this project reads the warnings from Checker Framework and calls Specimin on the right field or method.
+Currently, this project reads the warnings from the Checker Framework and calls a slicer (Specimin or WALA) on the right field or method. The slicer can be selected via a command-line argument.
 
 Setup:
 
@@ -21,7 +21,10 @@ project-root=...
 warning-log-file=...
 CFWR-root=...
 
-./gradlew run -PappArgs="${project-root} ${warning-log-file} ${CFWR-root}"
+./gradlew runResolver -Pargs="${project-root} ${warning-log-file} ${CFWR-root} [slicerType]"
+
+Where:
+- slicerType is optional and can be one of: "wala" (default) or "specimin".
 
 OR
 
@@ -29,11 +32,13 @@ mvn clean compile exec:java -Dexec.args="${project-root} ${warning-log-file} ${C
 
 Example:
 
-./gradlew run -PappArgs="/home/ubuntu/naenv/checker-framework/checker/tests/index/ /home/ubuntu/naenv/checker-framework/index1.out /home/ubuntu/naenv/CFWR/"
+# WALA slicer (default)
+./gradlew runResolver -Pargs="/home/ubuntu/checker-framework/checker/tests/index/ /home/ubuntu/CFWR/index1.out /home/ubuntu/CFWR wala"
 
-OR
+# Specimin slicer
+./gradlew runResolver -Pargs="/home/ubuntu/checker-framework/checker/tests/index/ /home/ubuntu/CFWR/index1.out /home/ubuntu/CFWR specimin"
 
-mvn clean compile exec:java -Dexec.args="/home/ubuntu/naenv/index_sub/ /home/ubuntu/naenv/checker-framework/index1.out /home/ubuntu/naenv/CFWR/"
+Note: The legacy "./gradlew run -PappArgs=..." form is still available but doesn't support robust quoting; prefer runResolver.
 
 Generating CFGs for slices and training:
 
@@ -83,10 +88,12 @@ End-to-end pipeline (manual control via flags):
 
   # Run slicing with CheckerFrameworkWarningResolver and save slices under SLICES_DIR
   export SLICES_DIR=/abs/path/to/slices
+  # Choose slicer via --slicer (wala or specimin); default is wala
   python pipeline.py --steps slice \
       --project_root /home/ubuntu/checker-framework/checker/tests/index/ \
       --warnings_file /home/ubuntu/CFWR/index1.out \
-      --cfwr_root /home/ubuntu/CFWR
+      --cfwr_root /home/ubuntu/CFWR \
+      --slicer specimin
 
   # Generate CFGs for all slices and train
   python pipeline.py --steps cfg --slices_dir "$SLICES_DIR" --cfg_output_dir "$CFG_OUTPUT_DIR"
