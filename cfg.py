@@ -231,6 +231,25 @@ def process_statement(statement, cfg, current_node, source_lines):
             # Merge paths from try and catches
             return try_last_nodes + catch_last_nodes
 
+    elif isinstance(statement, SwitchStatement):
+        # Handle switch statements
+        switch_node = f'Switch({statement.expression})'
+        cfg.add_node(switch_node, label=switch_node, line=getattr(statement, 'position', None).line if getattr(statement, 'position', None) else None)
+        cfg.add_edge(current_node, switch_node)
+
+        # Process each case
+        case_last_nodes = []
+        for case in statement.cases:
+            case_node = f'Case({case.case})'
+            cfg.add_node(case_node, label=case_node, line=getattr(case, 'position', None).line if getattr(case, 'position', None) else None)
+            cfg.add_edge(switch_node, case_node)
+            
+            # Process statements in this case
+            case_body_nodes = process_block_statements(case.statements, cfg, case_node, source_lines)
+            case_last_nodes.extend(case_body_nodes)
+
+        return case_last_nodes
+
     elif isinstance(statement, StatementExpression):
         # Expression statement
         expr_node = f'{statement.expression}'
