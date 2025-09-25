@@ -17,7 +17,11 @@ def run(cmd, env=None):
         sys.exit(res.returncode)
 
 
-def run_slicing(project_root, warnings_file, cfwr_root, slices_dir, slicer_type='wala'):
+def run_slicing(project_root, warnings_file, cfwr_root, base_slices_dir, slicer_type='wala'):
+    # Create slicer-specific directory
+    slices_dir = os.path.join(base_slices_dir, f"slices_{slicer_type}")
+    os.makedirs(slices_dir, exist_ok=True)
+    
     env = os.environ.copy()
     env['SLICES_DIR'] = os.path.abspath(slices_dir)
     # Ensure Specimin has access to CF jars if not already provided
@@ -121,12 +125,15 @@ def main():
             print('Error: --project_root and --warnings_file are required for slice step')
             sys.exit(2)
         run_slicing(args.project_root, args.warnings_file, args.cfwr_root, args.slices_dir, args.slicer)
+        # Update slices_dir to point to the slicer-specific directory
+        args.slices_dir = os.path.join(args.slices_dir, f"slices_{args.slicer}")
 
     if args.steps in ('cfg','all'):
         run_cfg_generation(args.slices_dir, args.cfg_output_dir)
         # Also generate CFGs for augmented slices if present
-        if os.path.isdir(args.augmented_dir):
-            run_cfg_generation(args.augmented_dir, args.cfg_output_dir)
+        augmented_dir = os.path.join(args.augmented_dir, f"slices_aug_{args.slicer}")
+        if os.path.isdir(augmented_dir):
+            run_cfg_generation(augmented_dir, args.cfg_output_dir)
 
     if args.steps in ('train','all'):
         run_train(args.model)
@@ -141,7 +148,10 @@ def main():
         run_predict_over_original(args.model, args.original_root, args.models_dir, args.predict_out_dir)
 
     if args.steps == 'augment':
-        run([sys.executable, 'augment_slices.py', '--slices_dir', args.slices_dir, '--out_dir', args.augmented_dir, '--variants_per_file', str(args.augment_variants)])
+        # Create slicer-specific augmented directory
+        augmented_dir = os.path.join(args.augmented_dir, f"slices_aug_{args.slicer}")
+        os.makedirs(augmented_dir, exist_ok=True)
+        run([sys.executable, 'augment_slices.py', '--slices_dir', args.slices_dir, '--out_dir', augmented_dir, '--variants_per_file', str(args.augment_variants)])
 
 
 if __name__ == '__main__':

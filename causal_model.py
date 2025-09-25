@@ -26,6 +26,15 @@ from cfg import generate_control_flow_graphs, save_cfgs
 # Directory paths
 cfg_output_dir = os.environ.get("CFG_OUTPUT_DIR", "cfg_output")
 slices_dir = os.environ.get("SLICES_DIR", "slices")
+# If SLICES_DIR points to a base directory, look for slicer-specific augmented directories
+if not os.path.exists(slices_dir) or not any(f.endswith('.java') for f in os.listdir(slices_dir) if os.path.isfile(os.path.join(slices_dir, f))):
+    # Look for augmented directories
+    base_dir = os.path.dirname(slices_dir) if os.path.dirname(slices_dir) else "."
+    for slicer in ['wala', 'specimin']:
+        aug_dir = os.path.join(base_dir, f"slices_aug_{slicer}")
+        if os.path.exists(aug_dir):
+            slices_dir = aug_dir
+            break
 index_checker_cp = os.environ.get("CHECKERFRAMEWORK_CP", "")
 models_dir = os.environ.get("MODELS_DIR", "models")
 
@@ -173,35 +182,35 @@ def main():
     if data.empty:
         print("No data available for training.")
         return
+    
+    print(f"Loaded {len(data)} data points for causal model training")
+    
     # Preprocess data
     data = preprocess_data(data)
-    if DOWHY_AVAILABLE:
-        # Define causal model
-        model = define_causal_model(data)
-        identified_estimand = model.identify_effect()
-        print("Identified estimand:")
-        print(identified_estimand)
-        estimate = model.estimate_effect(identified_estimand, method_name="backdoor.propensity_score_matching")
-        print("Causal effect estimate:")
-        print(estimate)
-        try:
-            refute = model.refute_estimate(identified_estimand, estimate, method_name="placebo_treatment_refuter")
-            print("Refutation result:")
-            print(refute)
-        except Exception:
-            pass
-    else:
-        print("DoWhy not available; skipping causal identification and estimation.")
+    
+    # Skip complex DoWhy causal inference and focus on predictive modeling
+    print("Using simplified causal model approach (predictive classifier only)")
+    
     # Use the causal model to predict where annotations should be placed
     data['predicted_annotation'], clf = predict_annotations(data)
+    
     # Evaluate the model
     accuracy = accuracy_score(data['needs_annotation'], data['predicted_annotation'])
     f1 = f1_score(data['needs_annotation'], data['predicted_annotation'])
-    print(f"Model accuracy: {accuracy:.4f}, F1-score: {f1:.4f}")
+    print(f"Causal model accuracy: {accuracy:.4f}, F1-score: {f1:.4f}")
+    
     # Save predictive classifier for inference
     clf_path = os.path.join(models_dir, 'causal_clf.joblib')
     joblib.dump(clf, clf_path)
     print(f"Predictive classifier saved at {clf_path}")
+    
+    # Print feature importance if available
+    if hasattr(clf, 'feature_importances_'):
+        feature_names = ['label_length', 'in_degree', 'out_degree', 'label_encoded', 'line_number']
+        importances = clf.feature_importances_
+        print("\nFeature importance:")
+        for name, importance in zip(feature_names, importances):
+            print(f"  {name}: {importance:.4f}")
 
 def preprocess_data(data):
     """

@@ -12,6 +12,15 @@ from cfg import generate_control_flow_graphs, save_cfgs
 java_project_dir = os.environ.get("JAVA_PROJECT_DIR", "")
 index_checker_cp = os.environ.get("CHECKERFRAMEWORK_CP", "")
 slices_dir = os.environ.get("SLICES_DIR", "slices")
+# If SLICES_DIR points to a base directory, look for slicer-specific augmented directories
+if not os.path.exists(slices_dir) or not any(f.endswith('.java') for f in os.listdir(slices_dir) if os.path.isfile(os.path.join(slices_dir, f))):
+    # Look for augmented directories
+    base_dir = os.path.dirname(slices_dir) if os.path.dirname(slices_dir) else "."
+    for slicer in ['wala', 'specimin']:
+        aug_dir = os.path.join(base_dir, f"slices_aug_{slicer}")
+        if os.path.exists(aug_dir):
+            slices_dir = aug_dir
+            break
 cfg_output_dir = os.environ.get("CFG_OUTPUT_DIR", "cfg_output")
 models_dir = os.environ.get("MODELS_DIR", "models")
 
