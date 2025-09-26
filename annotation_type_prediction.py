@@ -667,7 +667,6 @@ class ParameterFreeConfig:
         LowerBoundAnnotationType.POSITIVE.value,
         LowerBoundAnnotationType.NON_NEGATIVE.value,
         LowerBoundAnnotationType.GTEN_ONE.value,
-        LowerBoundAnnotationType.SEARCH_INDEX_BOTTOM.value,
     }
 
     @staticmethod

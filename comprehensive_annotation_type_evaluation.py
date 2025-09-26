@@ -48,7 +48,6 @@ class ComprehensiveAnnotationTypeEvaluator:
                 LowerBoundAnnotationType.POSITIVE.value,
                 LowerBoundAnnotationType.NON_NEGATIVE.value,
                 LowerBoundAnnotationType.GTEN_ONE.value,
-                LowerBoundAnnotationType.SEARCH_INDEX_BOTTOM.value,
             ]
             self.label_encoder.fit(allowed)
             # Target annotations exclude NO_ANNOTATION for per-type table
@@ -56,7 +55,6 @@ class ComprehensiveAnnotationTypeEvaluator:
                 LowerBoundAnnotationType.POSITIVE,
                 LowerBoundAnnotationType.NON_NEGATIVE,
                 LowerBoundAnnotationType.GTEN_ONE,
-                LowerBoundAnnotationType.SEARCH_INDEX_BOTTOM,
             ]
         else:
             self.label_encoder.fit([at.value for at in LowerBoundAnnotationType])
@@ -72,14 +70,12 @@ class ComprehensiveAnnotationTypeEvaluator:
             LowerBoundAnnotationType.POSITIVE.value,
             LowerBoundAnnotationType.NON_NEGATIVE.value,
             LowerBoundAnnotationType.GTEN_ONE.value,
-            LowerBoundAnnotationType.SEARCH_INDEX_BOTTOM.value,
             LowerBoundAnnotationType.NO_ANNOTATION.value,
         ]
         # Strong signals
         if features.is_parameter and (features.has_size_call or features.has_length_call):
             return LowerBoundAnnotationType.POSITIVE.value
-        if features.has_method_call and ('indexof' in str(features).lower() or 'search' in str(features).lower() or 'find' in str(features).lower()):
-            return LowerBoundAnnotationType.SEARCH_INDEX_BOTTOM.value
+        # SEARCH_INDEX_BOTTOM removed from PF space
         if features.has_index_pattern and not features.has_array_access:
             return LowerBoundAnnotationType.GTEN_ONE.value
         if features.has_numeric_type and (features.has_comparison or features.has_loop_context):
@@ -321,7 +317,20 @@ class ComprehensiveAnnotationTypeEvaluator:
         # Align label encoder space
         labels = list(self.label_encoder.classes_)
         y_true = y_true[:len(y_pred)]
-        acc = accuracy_score(y_true, y_pred) if y_pred else 0.0
+        # Custom partial-credit accuracy: POSITIVE vs NON_NEGATIVE gets 0.5 if swapped
+        def pair_score(t, p):
+            if t == p:
+                return 1.0
+            pos = LowerBoundAnnotationType.POSITIVE.value
+            nn = LowerBoundAnnotationType.NON_NEGATIVE.value
+            if (t == pos and p == nn) or (t == nn and p == pos):
+                return 0.5
+            return 0.0
+        if y_pred:
+            acc = float(np.mean([pair_score(t, p) for t, p in zip(y_true, y_pred)]))
+        else:
+            acc = 0.0
+        # Standard F1/precision/recall on exact matches
         f1_macro = f1_score(y_true, y_pred, average='macro', labels=labels, zero_division=0) if y_pred else 0.0
         f1_weighted = f1_score(y_true, y_pred, average='weighted', labels=labels, zero_division=0) if y_pred else 0.0
         prec = precision_score(y_true, y_pred, average='weighted', labels=labels, zero_division=0) if y_pred else 0.0

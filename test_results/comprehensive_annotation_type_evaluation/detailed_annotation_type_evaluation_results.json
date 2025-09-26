@@ -11,46 +11,33 @@
             "@GTENegativeOne": 0.2,
             "@NonNegative": 0.25,
             "@Positive": 0.0,
-            "@SearchIndexBottom": 0.0,
             "NO_ANNOTATION": 0.0
         },
         "annotation_type_f1_scores": {
             "@Positive": 0.0,
             "@NonNegative": 0.25,
-            "@GTENegativeOne": 0.2,
-            "@SearchIndexBottom": 0.0
+            "@GTENegativeOne": 0.2
         },
         "confusion_matrix": [
             [
                 10,
                 40,
                 0,
-                0,
                 0
             ],
             [
                 20,
                 10,
                 0,
-                0,
                 0
             ],
             [
                 20,
                 0,
                 0,
-                0,
                 0
             ],
             [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            [
-                0,
                 0,
                 0,
                 0,
@@ -61,7 +48,6 @@
             "@GTENegativeOne",
             "@NonNegative",
             "@Positive",
-            "@SearchIndexBottom",
             "NO_ANNOTATION"
         ],
         "classification_report": {
@@ -83,12 +69,6 @@
                 "f1-score": 0.0,
                 "support": 20.0
             },
-            "@SearchIndexBottom": {
-                "precision": 0.0,
-                "recall": 0.0,
-                "f1-score": 0.0,
-                "support": 0.0
-            },
             "NO_ANNOTATION": {
                 "precision": 0.0,
                 "recall": 0.0,
@@ -97,9 +77,9 @@
             },
             "accuracy": 0.2,
             "macro avg": {
-                "precision": 0.08,
-                "recall": 0.10666666666666666,
-                "f1-score": 0.09,
+                "precision": 0.1,
+                "recall": 0.13333333333333333,
+                "f1-score": 0.1125,
                 "support": 100.0
             },
             "weighted avg": {
@@ -1224,20 +1204,17 @@
             "@GTENegativeOne": 0.0,
             "@NonNegative": 0.46153846153846156,
             "@Positive": 0.0,
-            "@SearchIndexBottom": 0.0,
             "NO_ANNOTATION": 0.0
         },
         "annotation_type_f1_scores": {
             "@Positive": 0.0,
             "@NonNegative": 0.46153846153846156,
-            "@GTENegativeOne": 0.0,
-            "@SearchIndexBottom": 0.0
+            "@GTENegativeOne": 0.0
         },
         "confusion_matrix": [
             [
                 0,
                 50,
-                0,
                 0,
                 0
             ],
@@ -1245,25 +1222,15 @@
                 0,
                 30,
                 0,
-                0,
                 0
             ],
             [
                 0,
                 20,
                 0,
-                0,
                 0
             ],
             [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            [
-                0,
                 0,
                 0,
                 0,
@@ -1274,7 +1241,6 @@
             "@GTENegativeOne",
             "@NonNegative",
             "@Positive",
-            "@SearchIndexBottom",
             "NO_ANNOTATION"
         ],
         "classification_report": {
@@ -1296,12 +1262,6 @@
                 "f1-score": 0.0,
                 "support": 20.0
             },
-            "@SearchIndexBottom": {
-                "precision": 0.0,
-                "recall": 0.0,
-                "f1-score": 0.0,
-                "support": 0.0
-            },
             "NO_ANNOTATION": {
                 "precision": 0.0,
                 "recall": 0.0,
@@ -1310,9 +1270,9 @@
             },
             "accuracy": 0.3,
             "macro avg": {
-                "precision": 0.06,
-                "recall": 0.2,
-                "f1-score": 0.09230769230769231,
+                "precision": 0.075,
+                "recall": 0.25,
+                "f1-score": 0.11538461538461539,
                 "support": 100.0
             },
             "weighted avg": {
@@ -1332,7 +1292,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
@@ -1343,7 +1303,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
@@ -1354,7 +1314,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_3.json",
@@ -1365,7 +1325,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
@@ -1376,7 +1336,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
@@ -1387,7 +1347,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
@@ -1398,7 +1358,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
@@ -1409,7 +1369,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
@@ -1420,7 +1380,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
@@ -1431,7 +1391,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
@@ -1442,7 +1402,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
@@ -1453,7 +1413,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
@@ -1464,7 +1424,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
@@ -1475,7 +1435,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
@@ -1486,7 +1446,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
@@ -1497,7 +1457,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
@@ -1508,7 +1468,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_7.json",
@@ -1519,7 +1479,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
@@ -1530,7 +1490,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
@@ -1541,7 +1501,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
@@ -1552,7 +1512,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
@@ -1563,7 +1523,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
@@ -1574,7 +1534,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
@@ -1585,7 +1545,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
@@ -1596,7 +1556,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
@@ -1607,7 +1567,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
@@ -1618,7 +1578,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
@@ -1629,7 +1589,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
@@ -1640,7 +1600,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
@@ -1651,7 +1611,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
@@ -1662,7 +1622,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_2.json",
@@ -1673,7 +1633,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
@@ -1684,7 +1644,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
@@ -1695,7 +1655,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
@@ -1706,7 +1666,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
@@ -1717,7 +1677,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
@@ -1728,7 +1688,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
@@ -1739,7 +1699,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
@@ -1750,7 +1710,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
@@ -1761,7 +1721,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
@@ -1772,7 +1732,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
@@ -1783,7 +1743,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
@@ -1794,7 +1754,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
@@ -1805,7 +1765,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
@@ -1816,7 +1776,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_6.json",
@@ -1827,7 +1787,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
@@ -1838,7 +1798,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
@@ -1849,7 +1809,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_8.json",
@@ -1860,7 +1820,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
@@ -1871,7 +1831,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
@@ -1882,7 +1842,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
@@ -1893,7 +1853,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
@@ -1904,7 +1864,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
@@ -1915,7 +1875,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
@@ -1926,7 +1886,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
@@ -1937,7 +1897,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
@@ -1948,7 +1908,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_0.json",
@@ -1959,7 +1919,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
@@ -1970,7 +1930,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
@@ -1981,7 +1941,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
@@ -1992,7 +1952,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
@@ -2003,7 +1963,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
@@ -2014,7 +1974,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
@@ -2025,7 +1985,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
@@ -2036,7 +1996,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
@@ -2047,7 +2007,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
@@ -2058,7 +2018,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
@@ -2069,7 +2029,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
@@ -2080,7 +2040,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
@@ -2091,7 +2051,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
@@ -2102,7 +2062,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_4.json",
@@ -2113,7 +2073,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
@@ -2124,7 +2084,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
@@ -2135,7 +2095,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
@@ -2146,7 +2106,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
@@ -2157,7 +2117,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
@@ -2168,7 +2128,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_1.json",
@@ -2179,7 +2139,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
@@ -2190,7 +2150,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
@@ -2201,7 +2161,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
@@ -2212,7 +2172,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
@@ -2223,7 +2183,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
@@ -2234,7 +2194,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
@@ -2245,7 +2205,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
@@ -2256,7 +2216,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
@@ -2267,7 +2227,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
@@ -2278,7 +2238,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5902144908905029
+                "prediction_confidence": 0.7121923565864563
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
@@ -2289,7 +2249,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6294909715652466
+                "prediction_confidence": 0.7593260407447815
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
@@ -2300,7 +2260,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
@@ -2311,7 +2271,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
@@ -2322,7 +2282,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_5.json",
@@ -2333,7 +2293,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
@@ -2344,7 +2304,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.589875340461731
+                "prediction_confidence": 0.7488097548484802
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
@@ -2355,7 +2315,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.627383291721344
+                "prediction_confidence": 0.7520321607589722
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_9.json",
@@ -2366,7 +2326,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5977765321731567
+                "prediction_confidence": 0.7227046489715576
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
@@ -2377,7 +2337,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5450690984725952
+                "prediction_confidence": 0.733109712600708
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
@@ -2388,7 +2348,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6060953140258789
+                "prediction_confidence": 0.740558385848999
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
@@ -2399,7 +2359,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.5663430690765381
+                "prediction_confidence": 0.7327051758766174
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
@@ -2410,7 +2370,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6751623153686523
+                "prediction_confidence": 0.7849864959716797
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
@@ -2421,7 +2381,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.6177029609680176
+                "prediction_confidence": 0.7490009665489197
             }
         ]
     },
@@ -2437,20 +2397,17 @@
             "@GTENegativeOne": 0.0,
             "@NonNegative": 0.46153846153846156,
             "@Positive": 0.0,
-            "@SearchIndexBottom": 0.0,
             "NO_ANNOTATION": 0.0
         },
         "annotation_type_f1_scores": {
             "@Positive": 0.0,
             "@NonNegative": 0.46153846153846156,
-            "@GTENegativeOne": 0.0,
-            "@SearchIndexBottom": 0.0
+            "@GTENegativeOne": 0.0
         },
         "confusion_matrix": [
             [
                 0,
                 50,
-                0,
                 0,
                 0
             ],
@@ -2458,25 +2415,15 @@
                 0,
                 30,
                 0,
-                0,
                 0
             ],
             [
                 0,
                 20,
                 0,
-                0,
                 0
             ],
             [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            [
-                0,
                 0,
                 0,
                 0,
@@ -2487,7 +2434,6 @@
             "@GTENegativeOne",
             "@NonNegative",
             "@Positive",
-            "@SearchIndexBottom",
             "NO_ANNOTATION"
         ],
         "classification_report": {
@@ -2509,12 +2455,6 @@
                 "f1-score": 0.0,
                 "support": 20.0
             },
-            "@SearchIndexBottom": {
-                "precision": 0.0,
-                "recall": 0.0,
-                "f1-score": 0.0,
-                "support": 0.0
-            },
             "NO_ANNOTATION": {
                 "precision": 0.0,
                 "recall": 0.0,
@@ -2523,9 +2463,9 @@
             },
             "accuracy": 0.3,
             "macro avg": {
-                "precision": 0.06,
-                "recall": 0.2,
-                "f1-score": 0.09230769230769231,
+                "precision": 0.075,
+                "recall": 0.25,
+                "f1-score": 0.11538461538461539,
                 "support": 100.0
             },
             "weighted avg": {
@@ -2545,7 +2485,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
@@ -2556,7 +2496,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
@@ -2567,7 +2507,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_3.json",
@@ -2578,7 +2518,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
@@ -2589,7 +2529,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
@@ -2600,7 +2540,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
@@ -2611,7 +2551,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
@@ -2622,7 +2562,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
@@ -2633,7 +2573,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
@@ -2644,7 +2584,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
@@ -2655,7 +2595,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
@@ -2666,7 +2606,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
@@ -2677,7 +2617,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
@@ -2688,7 +2628,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
@@ -2699,7 +2639,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
@@ -2710,7 +2650,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
@@ -2721,7 +2661,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_7.json",
@@ -2732,7 +2672,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
@@ -2743,7 +2683,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
@@ -2754,7 +2694,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
@@ -2765,7 +2705,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
@@ -2776,7 +2716,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
@@ -2787,7 +2727,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
@@ -2798,7 +2738,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
@@ -2809,7 +2749,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
@@ -2820,7 +2760,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
@@ -2831,7 +2771,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
@@ -2842,7 +2782,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
@@ -2853,7 +2793,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
@@ -2864,7 +2804,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
@@ -2875,7 +2815,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_2.json",
@@ -2886,7 +2826,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
@@ -2897,7 +2837,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
@@ -2908,7 +2848,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
@@ -2919,7 +2859,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
@@ -2930,7 +2870,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
@@ -2941,7 +2881,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
@@ -2952,7 +2892,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
@@ -2963,7 +2903,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
@@ -2974,7 +2914,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
@@ -2985,7 +2925,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
@@ -2996,7 +2936,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
@@ -3007,7 +2947,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
@@ -3018,7 +2958,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
@@ -3029,7 +2969,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_6.json",
@@ -3040,7 +2980,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
@@ -3051,7 +2991,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
@@ -3062,7 +3002,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_8.json",
@@ -3073,7 +3013,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
@@ -3084,7 +3024,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
@@ -3095,7 +3035,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
@@ -3106,7 +3046,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
@@ -3117,7 +3057,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
@@ -3128,7 +3068,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
@@ -3139,7 +3079,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
@@ -3150,7 +3090,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
@@ -3161,7 +3101,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_0.json",
@@ -3172,7 +3112,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
@@ -3183,7 +3123,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
@@ -3194,7 +3134,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
@@ -3205,7 +3145,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
@@ -3216,7 +3156,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
@@ -3227,7 +3167,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
@@ -3238,7 +3178,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
@@ -3249,7 +3189,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
@@ -3260,7 +3200,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
@@ -3271,7 +3211,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
@@ -3282,7 +3222,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
@@ -3293,7 +3233,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
@@ -3304,7 +3244,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
@@ -3315,7 +3255,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_4.json",
@@ -3326,7 +3266,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
@@ -3337,7 +3277,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
@@ -3348,7 +3288,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
@@ -3359,7 +3299,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
@@ -3370,7 +3310,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
@@ -3381,7 +3321,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_1.json",
@@ -3392,7 +3332,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
@@ -3403,7 +3343,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
@@ -3414,7 +3354,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
@@ -3425,7 +3365,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
@@ -3436,7 +3376,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
@@ -3447,7 +3387,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
@@ -3458,7 +3398,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
@@ -3469,7 +3409,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
@@ -3480,7 +3420,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
@@ -3491,7 +3431,7 @@
                 "node_label": "MethodDecl: diff(int a, int b)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.49890419840812683
+                "prediction_confidence": 0.6340395212173462
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
@@ -3502,7 +3442,7 @@
                 "node_label": "Statement: int result = a - b",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.599619448184967
+                "prediction_confidence": 0.6718614101409912
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
@@ -3513,7 +3453,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
@@ -3524,7 +3464,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
@@ -3535,7 +3475,7 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_5.json",
@@ -3546,7 +3486,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
@@ -3557,7 +3497,7 @@
                 "node_label": "MethodDecl: process(List items, int startIndex)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8372695446014404
+                "prediction_confidence": 0.8694115877151489
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
@@ -3568,7 +3508,7 @@
                 "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.9366419911384583
+                "prediction_confidence": 0.9316026568412781
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_9.json",
@@ -3579,7 +3519,7 @@
                 "node_label": "MethodDecl: createBuffer(int size)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.695096492767334
+                "prediction_confidence": 0.7268946170806885
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
@@ -3590,7 +3530,7 @@
                 "node_label": "MethodDecl: getOrNull(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7079704999923706
+                "prediction_confidence": 0.777652382850647
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
@@ -3601,7 +3541,7 @@
                 "node_label": "MethodCall: int index = items.indexOf(t)",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7994607090950012
+                "prediction_confidence": 0.8235345482826233
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
@@ -3612,7 +3552,7 @@
                 "node_label": "MethodDecl: find(List items, String t)",
                 "actual_annotation_type": "@Positive",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7413551211357117
+                "prediction_confidence": 0.8176560401916504
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
@@ -3623,7 +3563,7 @@
                 "node_label": "Statement: int index = -1",
                 "actual_annotation_type": "@GTENegativeOne",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.7249730825424194
+                "prediction_confidence": 0.7798049449920654
             },
             {
                 "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
@@ -3634,43 +3574,39 @@
                 "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
                 "actual_annotation_type": "@NonNegative",
                 "predicted_annotation_type": "@NonNegative",
-                "prediction_confidence": 0.8752674460411072
+                "prediction_confidence": 0.8942411541938782
             }
         ]
     },
     "SGCFGNet": {
         "model": "SGCFGNet",
         "accuracy": 0.4,
-        "f1_score_macro": 0.16666666666666666,
-        "f1_score_weighted": 0.31666666666666665,
-        "precision": 0.6,
-        "recall": 0.4,
+        "f1_score_macro": 0.125,
+        "f1_score_weighted": 0.15,
+        "precision": 0.1,
+        "recall": 0.3,
         "support": 100,
         "per_class_f1": {
-            "@GTENegativeOne": 0.3333333333333333,
+            "@GTENegativeOne": 0.0,
             "@NonNegative": 0.5,
             "@Positive": 0.0,
-            "@SearchIndexBottom": 0.0,
             "NO_ANNOTATION": 0.0
         },
         "annotation_type_f1_scores": {
-            "@GTENegativeOne": 0.3333333333333333,
+            "@GTENegativeOne": 0.0,
             "@NonNegative": 0.5,
-            "@Positive": 0.0,
-            "@SearchIndexBottom": 0.0
+            "@Positive": 0.0
         },
         "confusion_matrix": [
             [
-                10,
+                0,
                 40,
                 0,
-                0,
-                0
+                10
             ],
             [
                 0,
                 30,
-                0,
                 0,
                 0
             ],
@@ -3678,18 +3614,9 @@
                 0,
                 20,
                 0,
-                0,
                 0
             ],
             [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            [
-                0,
                 0,
                 0,
                 0,
@@ -3700,14 +3627,13 @@
             "@GTENegativeOne",
             "@NonNegative",
             "@Positive",
-            "@SearchIndexBottom",
             "NO_ANNOTATION"
         ],
         "classification_report": {
             "@GTENegativeOne": {
-                "precision": 1.0,
-                "recall": 0.2,
-                "f1-score": 0.3333333333333333,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
                 "support": 50.0
             },
             "@NonNegative": {
@@ -3722,29 +3648,23 @@
                 "f1-score": 0.0,
                 "support": 20.0
             },
-            "@SearchIndexBottom": {
-                "precision": 0.0,
-                "recall": 0.0,
-                "f1-score": 0.0,
-                "support": 0.0
-            },
             "NO_ANNOTATION": {
                 "precision": 0.0,
                 "recall": 0.0,
                 "f1-score": 0.0,
                 "support": 0.0
             },
-            "accuracy": 0.4,
+            "accuracy": 0.3,
             "macro avg": {
-                "precision": 0.26666666666666666,
-                "recall": 0.24,
-                "f1-score": 0.16666666666666666,
+                "precision": 0.08333333333333333,
+                "recall": 0.25,
+                "f1-score": 0.125,
                 "support": 100.0
             },
             "weighted avg": {
-                "precision": 0.6,
-                "recall": 0.4,
-                "f1-score": 0.31666666666666665,
+                "precision": 0.1,
+                "recall": 0.3,
+                "f1-score": 0.15,
                 "support": 100.0
             }
         },
