@@ -1,8 +1,8 @@
 # CFWR Annotation Placement System
 
-This document provides a comprehensive guide to the CFWR annotation placement system, which places relevant annotations on predicted locations for Java projects with full support for the Lower Bound Checker's multiple annotations.
+This document provides a guide to the CFWR annotation placement system, which places relevant annotations on predicted locations for Java projects with support for the Lower Bound Checker's multiple annotations.
 
-## 🎯 **Overview**
+## Overview
 
 The annotation placement system consists of three main components:
 
@@ -10,15 +10,15 @@ The annotation placement system consists of three main components:
 2. **`predict_and_annotate.py`** - Integrated prediction and annotation pipeline  
 3. **Enhanced annotation support** - Extended annotation types including Lower Bound Checker
 
-## 📋 **Features**
+## Features
 
-### **✅ Comprehensive Annotation Support**
+### **Comprehensive Annotation Support**
 - **Nullness Checker**: `@NonNull`, `@Nullable`, `@PolyNull`, `@MonotonicNonNull`
 - **Index Checker**: `@IndexFor`, `@IndexOrLow`, `@IndexOrHigh`, `@LowerBound`, `@UpperBound`
 - **Lower Bound Checker**: `@MinLen`, `@ArrayLen`, `@LTEqLengthOf`, `@GTLengthOf`, `@LengthOf`, `@Positive`, `@NonNegative`
 - **Additional Annotations**: `@SameLen`, `@CapacityFor`, `@HasSubsequence`
 
-### **✅ Intelligent Placement Strategies**
+### **Intelligent Placement Strategies**
 - **Variable Declaration**: Places annotations before variable declarations
 - **Method Parameters**: Annotates method parameters inline
 - **Method Return Types**: Annotates return types
@@ -26,17 +26,17 @@ The annotation placement system consists of three main components:
 - **Array Access**: Special handling for array-related annotations
 - **Loop Variables**: Context-aware loop variable annotations
 
-### **✅ Multiple Annotation Support**
+### **Multiple Annotation Support**
 - Places multiple annotations at the same location when appropriate
 - Avoids duplicate annotations
 - Context-aware annotation selection
 
-### **✅ Pipeline Integration**
+### **Pipeline Integration**
 - Seamlessly integrates with existing CFWR prediction pipeline
 - Uses dataflow-augmented CFGs for better predictions
 - Supports all three model types (HGT, GBT, Causal)
 
-## 🚀 **Quick Start**
+## Quick Start
 
 ### **1. Basic Annotation Placement**
 
@@ -65,7 +65,7 @@ python predict_and_annotate.py \
 python test_annotation_placement.py
 ```
 
-## 📁 **File Structure**
+## File Structure
 
 ```
 CFWR/
@@ -76,7 +76,7 @@ CFWR/
 └── ANNOTATION_PLACEMENT_GUIDE.md # This documentation
 ```
 
-## 🔧 **Detailed Usage**
+## Detailed Usage
 
 ### **Core Annotation Placement Script**
 
@@ -224,7 +224,7 @@ String[] items = getItems();
 String[] items = getItems();
 ```
 
-## 📊 **Validation and Reporting**
+## Validation and Reporting
 
 ### **Automatic Validation**
 
@@ -303,7 +303,7 @@ python place_annotations.py --skip_validation
 }
 ```
 
-## 🏗️ **Architecture**
+## Architecture
 
 ### **Core Classes**
 
@@ -331,7 +331,7 @@ python place_annotations.py --skip_validation
 5. **Array Access**: `@MinLen(0) int[] array;`
 6. **Loop Variable**: `@NonNegative @LTLengthOf("#1") for (int i = ...)`
 
-## 🔍 **Lower Bound Checker Integration**
+## Lower Bound Checker Integration
 
 ### **Supported Annotations**
 
@@ -367,7 +367,7 @@ public void resize(@Positive int newSize) {
 private int capacity;
 ```
 
-## 🧪 **Testing**
+## Testing
 
 ### **Test Categories**
 
@@ -407,12 +407,12 @@ python predict_and_annotate.py --project_root /path/to/test/project --output_dir
 
 ### **Scalability**
 
-- ✅ Handles projects with thousands of files
-- ✅ Processes hundreds of predictions efficiently  
-- ✅ Memory-efficient file processing
-- ✅ Parallel model execution support
+- Handles projects with thousands of files
+- Processes hundreds of predictions efficiently  
+- Memory-efficient file processing
+- Parallel model execution support
 
-## 🔧 **Customization**
+## Customization
 
 ### **Adding New Annotation Types**
 
@@ -446,19 +446,19 @@ def _format_annotations_for_strategy(self, annotations, strategy, lines, line_nu
 ### **Common Issues**
 
 #### **No Annotations Placed**
-- ✅ Check prediction file format
-- ✅ Verify file paths are correct
-- ✅ Ensure target files exist and are readable
+- Check prediction file format
+- Verify file paths are correct
+- Ensure target files exist and are readable
 
 #### **Validation Errors**
-- ✅ Check Checker Framework installation
-- ✅ Verify classpath configuration
-- ✅ Ensure Java source compatibility
+- Check Checker Framework installation
+- Verify classpath configuration
+- Ensure Java source compatibility
 
 #### **Performance Issues**
-- ✅ Use smaller batch sizes for large projects
-- ✅ Skip validation for initial testing
-- ✅ Process files in parallel (future enhancement)
+- Use smaller batch sizes for large projects
+- Skip validation for initial testing
+- Process files in parallel (future enhancement)
 
 ### **Debug Mode**
 
@@ -468,7 +468,7 @@ export CFWR_DEBUG=1
 python place_annotations.py --project_root /path/to/project --predictions_file predictions.json --output_dir /path/to/output
 ```
 
-## 🚀 **Future Enhancements**
+## Future Enhancements
 
 ### **Planned Features**
 

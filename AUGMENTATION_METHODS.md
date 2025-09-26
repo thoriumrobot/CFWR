@@ -2,7 +2,7 @@
 
 ## Overview
 
-The CFWR (Checker Framework Warning Resolver) project implements sophisticated data augmentation techniques to generate diverse training data for machine learning models. The augmentation system creates syntactically correct Java code variations while preserving the original Checker Framework annotations and logic that are essential for training.
+The CFWR (Checker Framework Warning Resolver) project implements data augmentation techniques to generate diverse training data for machine learning models. The augmentation system creates syntactically correct Java code variations while preserving the original Checker Framework annotations and logic that are essential for training.
 
 ## Core Philosophy
 
@@ -10,18 +10,18 @@ The augmentation approach is designed to:
 - **Preserve Semantic Meaning**: Original Checker Framework logic remains intact
 - **Generate True Variety**: Each augmentation produces genuinely unique code
 - **Maintain Syntactic Correctness**: All generated code compiles successfully
-- **Enhance ML Training**: Provide diverse patterns for robust model learning
+- **Enhance ML Training**: Provide diverse patterns for model learning
 
 ## Augmentation Methods
 
 ### 1. Random Method Generation (`generate_random_method()`)
 
-**Purpose**: Creates completely new Java methods with random signatures and implementations.
+**Purpose**: Creates new Java methods with random signatures and implementations.
 
 **Components**:
 - **Access Modifiers**: Randomly selects from `private`, `public`, `protected`, or no modifier
 - **Static Modifiers**: Randomly includes or omits `static` keyword
-- **Return Types**: Chooses from all Java primitive types (`int`, `long`, `double`, `float`, `boolean`, `char`, `byte`, `short`) and reference types (`String`, `Object`, `Integer`, `Long`, `Double`, `Float`, `Boolean`, `Character`)
+- **Return Types**: Chooses from Java primitive types (`int`, `long`, `double`, `float`, `boolean`, `char`, `byte`, `short`) and reference types (`String`, `Object`, `Integer`, `Long`, `Double`, `Float`, `Boolean`, `Character`)
 - **Method Names**: Generates unique names using pattern `__cfwr_{method_type}{random_number}` where method types include `helper`, `util`, `temp`, `aux`, `proc`, `func`, `calc`, `compute`, `process`, `handle`
 - **Parameters**: Randomly generates 0-3 parameters with random types and names following pattern `__cfwr_p{index}`
 - **Method Body**: Creates 1-4 random statements plus appropriate return statement
@@ -278,4 +278,4 @@ public class ArrayTest {
 
 ## Conclusion
 
-The CFWR augmentation system provides a sophisticated approach to generating diverse training data while maintaining the integrity of Checker Framework-specific code. By combining random generation with syntactic correctness and semantic preservation, it creates an ideal environment for training robust machine learning models that can handle the complexity and variety of real-world Java code with type annotations.
+The CFWR augmentation system provides an approach to generating diverse training data while maintaining the integrity of Checker Framework-specific code. By combining random generation with syntactic correctness and semantic preservation, it creates an environment for training machine learning models that can handle the complexity and variety of real-world Java code with type annotations.

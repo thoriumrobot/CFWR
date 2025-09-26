@@ -1,10 +1,10 @@
 # Checker Framework Warning Resolver (CFWR)
 
-A comprehensive machine learning pipeline for predicting Checker Framework annotation placements in Java code. The system uses Checker Framework warnings to generate code slices, converts them to dataflow-augmented Control Flow Graphs (CFGs), and trains multiple ML models to predict where annotations should be placed.
+A machine learning pipeline for predicting Checker Framework annotation placements in Java code. The system uses Checker Framework warnings to generate code slices, converts them to dataflow-augmented Control Flow Graphs (CFGs), and trains multiple ML models to predict where annotations should be placed.
 
-## 🎯 **Overview**
+## Overview
 
-CFWR implements a complete end-to-end pipeline that:
+CFWR implements an end-to-end pipeline that:
 
 1. **Analyzes** Checker Framework warnings from Java projects
 2. **Slices** code using Checker Framework slicer (default), Specimin, or WALA slicers
@@ -12,23 +12,23 @@ CFWR implements a complete end-to-end pipeline that:
 4. **Converts** slices to dataflow-augmented Control Flow Graphs (CFGs) for structural analysis
 5. **Trains** three different ML models: HGT, GBT, and Causal models
 6. **Predicts** annotation placements using AST-based analysis
-7. **Places** annotations exactly where they should be, not approximately
+7. **Places** annotations using AST-based analysis
 
-## ✨ **Key Features**
+## Key Features
 
-### **🔧 Best Practices Defaults**
+### **Best Practices Defaults**
 - **Augmented slices by default**: Training scripts automatically use augmented slices
 - **Dataflow-augmented CFGs**: CFGs include dataflow information by default
 - **Checker Framework slicer**: Uses CF slicer as default for better quality
 
-### **🚀 Comprehensive Support**
+### **Support**
 - **All Checker Framework annotations**: Including Lower Bound Checker annotations
 - **Multiple slicers**: Checker Framework (default), Specimin, WALA
 - **Three ML models**: HGT, GBT, and Causal models
 - **Flexible prediction**: Individual files, directories, or entire projects
-- **Reinforcement Learning**: Advanced RL training with Checker Framework feedback
+- **Reinforcement Learning**: RL training with Checker Framework feedback
 
-## 🏗️ **Architecture**
+## Architecture
 
 ### **Core Components**
 
@@ -44,13 +44,13 @@ CFWR Pipeline
 
 ### **Placement System**
 
-- **`perfect_annotation_placement.py`**: Core placement engine
+- **`annotation_placement.py`**: Core placement engine
 - **`place_annotations.py`**: Main annotation placement script
 - **`predict_and_annotate.py`**: Integrated prediction and placement pipeline
-- **AST-based analysis**: Precise code structure understanding
-- **Context-aware strategies**: Intelligent placement based on code context
+- **AST-based analysis**: Code structure understanding
+- **Context-aware strategies**: Placement based on code context
 
-## 🚀 **Quick Start**
+## Quick Start
 
 ### **Prerequisites**
 
@@ -84,14 +84,14 @@ CFWR Pipeline
    ./gradlew build
    ```
 
-## 📖 **Usage**
+## Usage
 
-### **🎯 Complete Integrated Pipeline (Recommended)**
+### **Complete Integrated Pipeline**
 
-The easiest way to use CFWR is through the integrated pipeline that handles everything automatically:
+The integrated pipeline handles the workflow automatically:
 
 ```bash
-# Complete pipeline: slice → augment → train → predict → place annotations
+# Pipeline: slice → augment → train → predict → place annotations
 python predict_and_annotate.py \
   --project_root /path/to/java/project \
   --output_dir /path/to/output \
@@ -99,13 +99,13 @@ python predict_and_annotate.py \
 ```
 
 This single command:
-- ✅ Generates slices using Checker Framework slicer (default)
-- ✅ Augments slices automatically (default behavior)
-- ✅ Creates dataflow-augmented CFGs (default)
-- ✅ Trains all three models
-- ✅ Places annotations (default)
+- Generates slices using Checker Framework slicer (default)
+- Augments slices automatically (default behavior)
+- Creates dataflow-augmented CFGs (default)
+- Trains all three models
+- Places annotations (default)
 
-### **🔧 Individual Components**
+### **Individual Components**
 
 #### **1. Annotation Placement Only**
 
@@ -158,7 +158,7 @@ python predict_causal.py \
   --out_path predictions_causal.json
 ```
 
-### **🎛️ Advanced Options**
+### **Advanced Options**
 
 #### **Perfect vs Approximate Placement**
 
@@ -216,13 +216,13 @@ python predict_and_annotate.py \
   --use_original_slices
 ```
 
-## 🧠 **Model Details**
+## Model Details
 
 ### **Node-Level Processing (Refactored)**
 
-All models have been refactored to work at the **finest level (node-level)** with **semantic filtering** to ensure annotations are only placed before methods, fields, and parameters.
+All models have been refactored to work at the **node-level** with **semantic filtering** to ensure annotations are only placed before methods, fields, and parameters.
 
-#### **🎯 Key Improvements:**
+#### **Key Improvements:**
 - **Consistent Granularity**: All models now process at node-level for comparable results
 - **Semantic Filtering**: Only methods, fields, parameters, and variables are considered for annotation
 - **Higher Precision**: Eliminates noise from control flow nodes
@@ -236,7 +236,7 @@ All models have been refactored to work at the **finest level (node-level)** wit
 - **Best for**: Complex control flow patterns and structural relationships
 - **Features**: Uses dataflow edges for better graph representation
 - **Annotation Targets**: Methods, fields, parameters, variables
-- **Performance**: High accuracy with perfect confidence scores (1.000)
+- **Performance**: High accuracy with confidence scores (1.000)
 
 ### **GBT (Gradient Boosting Trees)**
 - **Type**: Ensemble learning
@@ -246,7 +246,7 @@ All models have been refactored to work at the **finest level (node-level)** wit
 - **Best for**: Fast predictions with interpretable feature importance
 - **Features**: Enhanced with node-level dataflow features, control flow complexity
 - **Annotation Targets**: Methods, fields, parameters, variables
-- **Performance**: Strong consensus with HGT, perfect confidence on detected targets
+- **Performance**: Strong consensus with HGT, high confidence on detected targets
 
 ### **Causal Model**
 - **Type**: Neural network classifier
@@ -258,11 +258,11 @@ All models have been refactored to work at the **finest level (node-level)** wit
 - **Annotation Targets**: Methods, fields, parameters, variables
 - **Performance**: Conservative approach with moderate confidence, fewer false positives
 
-## 🎯 **Node-Level Model Refactoring**
+## Node-Level Model Refactoring
 
 ### **Semantic Annotation Targeting**
 
-The CFWR system has been enhanced with **node-level semantic filtering** to ensure annotations are only placed before semantically meaningful elements:
+The CFWR system includes **node-level semantic filtering** to ensure annotations are only placed before semantically meaningful elements:
 
 #### **📍 Valid Annotation Targets:**
 - **Methods**: Method declarations and constructors
@@ -270,7 +270,7 @@ The CFWR system has been enhanced with **node-level semantic filtering** to ensu
 - **Parameters**: Method and constructor parameters
 - **Variables**: Local variable declarations
 
-#### **🔧 Technical Implementation:**
+#### **Technical Implementation:**
 
 **NodeClassifier Class:**
 ```python
@@ -294,7 +294,7 @@ def is_annotation_target(node: Dict) -> bool:
     return False
 ```
 
-#### **📊 Node-Level Results:**
+#### **Node-Level Results:**
 
 **Annotation Target Analysis:**
 | Method | Total Nodes | Annotation Targets | Target Types |
@@ -304,14 +304,14 @@ def is_annotation_target(node: Dict) -> bool:
 | `simpleMethod` | 3 | 0 | none |
 | `multiVariableMethod` | 10 | 4 | 4 variables |
 
-## 📊 **Node-Level Semantic Annotation Models: F1 Score Evaluation**
+## Node-Level Semantic Annotation Models: F1 Score Evaluation
 
-The **Node-Level Semantic Annotation Models** have been comprehensively evaluated using F1 scores on a **statistically significant dataset** with proper train/test split, ensuring robust performance validation across enterprise-level code complexity.
+The **Node-Level Semantic Annotation Models** have been evaluated using F1 scores on a **statistically significant dataset** with proper train/test split, ensuring performance validation across enterprise-level code complexity.
 
 ### **Enhanced Dataset Characteristics**
 - **Size**: **800 methods** across 100 Java classes (4× larger than previous)
-- **Complexity Levels**: Simple, medium, complex, very complex, extreme, enterprise, legacy
-- **Statistical Significance**: ✅ **STRONG** (≥800 samples)
+- **Complexity Levels**: Simple, medium, complex, very complex, enterprise, legacy
+- **Statistical Significance**: Strong (≥800 samples)
 - **Train/Test Split**: 80% training (640 methods) / 20% testing (160 methods)
 - **Real-World Patterns**: Enterprise-level complexity with nested loops, exception handling, validation logic
 
@@ -319,11 +319,11 @@ The **Node-Level Semantic Annotation Models** have been comprehensively evaluate
 
 | Model | Training Accuracy | Prediction Rate | F1 Score | Precision | Recall | Training Time | Status |
 |-------|------------------|----------------|----------|-----------|--------|---------------|---------|
-| **Node-Level HGT** | **1.000** | **100%** | **1.000** | **1.000** | **1.000** | 0.703s | 🏆 **Perfect Performance** |
-| **Node-Level GBT** | 0.750 | 0% | **0.000** | 0.000 | 0.000 | 0.038s | 🔧 **Class Diversity Issues** |
-| **Node-Level Causal** | **1.000** | **100%** | **1.000** | **1.000** | **1.000** | 0.023s | 🥈 **Perfect Performance** |
+| **Node-Level HGT** | **1.000** | **100%** | **1.000** | **1.000** | **1.000** | 0.703s | High Performance |
+| **Node-Level GBT** | 0.750 | 0% | **0.000** | 0.000 | 0.000 | 0.038s | Class Diversity Issues |
+| **Node-Level Causal** | **1.000** | **100%** | **1.000** | **1.000** | **1.000** | 0.023s | High Performance |
 
-**Note**: F1 scores calculated on 80 test samples with proper train/test split. HGT and Causal models achieve perfect classification performance.
+**Note**: F1 scores calculated on 160 test samples with proper train/test split. HGT and Causal models achieve high classification performance.
 
 ### **Technically Sound Model Architecture**
 
@@ -331,8 +331,8 @@ The **Node-Level Semantic Annotation Models** have been comprehensively evaluate
 - **Architecture**: Graph neural network with heterogeneous node processing
 - **Processing Granularity**: Individual CFG nodes with semantic classification
 - **Features**: Dataflow-augmented control flow graphs with node-level attention
-- **Strengths**: Perfect prediction accuracy, handles complex control flow patterns
-- **Use Case**: Production systems requiring high accuracy
+- **Strengths**: High prediction accuracy, handles complex control flow patterns
+- **Use Case**: Production systems requiring good accuracy
 
 #### **Node-Level Gradient Boosting Trees (Node-GBT)**  
 - **Architecture**: Ensemble learning with node-level feature extraction
@@ -345,7 +345,7 @@ The **Node-Level Semantic Annotation Models** have been comprehensively evaluate
 - **Architecture**: Neural network with causal feature learning
 - **Processing Granularity**: Node-level causal relationship modeling
 - **Features**: Causal flow analysis, variable dependencies, semantic context
-- **Strengths**: High accuracy (97.5%), fast training, robust predictions
+- **Strengths**: Good accuracy (97.5%), fast training, reliable predictions
 - **Use Case**: Understanding causal relationships in annotation placement
 
 ### **Challenging Enterprise-Level Test Cases**
@@ -393,14 +393,14 @@ public boolean validateComplexInput(List<String> data0, Optional<String> config1
 ### **Difficult Case Analysis**
 
 #### **HGT Model Challenging Cases:**
-- **Deeply Nested Loops**: Successfully identifies annotation targets within complex nested structures
-- **Exception Handling**: Accurately places annotations around try-catch blocks
-- **Multiple Variable Dependencies**: Handles complex dataflow relationships
+- **Deeply Nested Loops**: Identifies annotation targets within complex nested structures
+- **Exception Handling**: Places annotations around try-catch blocks
+- **Multiple Variable Dependencies**: Handles dataflow relationships
 
 #### **Causal Model Challenging Cases:**
 - **Variable Lifecycle Tracking**: Traces variable dependencies across method scope
 - **Conditional Logic**: Identifies annotation needs based on control flow paths
-- **Method Parameter Validation**: Correctly targets parameter validation code
+- **Method Parameter Validation**: Targets parameter validation code
 
 #### **GBT Model Known Issues:**
 - **Class Imbalance**: Synthetic labeling creates unbalanced training data
@@ -409,31 +409,31 @@ public boolean validateComplexInput(List<String> data0, Optional<String> config1
 
 ### **Statistical Validation & Real-World Readiness**
 
-#### **📈 Statistical Rigor**
-- **Sample Size**: 800 methods provides **exceptional statistical power**
+#### **Statistical Rigor**
+- **Sample Size**: 800 methods provides strong statistical power
 - **Effect Size**: Large effect sizes observed in successful models (Cohen's d > 0.8)
 - **Confidence Intervals**: 95% CI for HGT accuracy: [0.92, 1.00]
 - **Cross-Validation**: Consistent performance across different train/test splits
 
-#### **🏭 Enterprise Applicability**
+#### **Enterprise Applicability**
 - **Scalability**: Models handle enterprise codebases (tested up to 800 methods)
 - **Performance**: Sub-second training times suitable for CI/CD integration
-- **Accuracy**: Production-ready accuracy levels (>95%) for HGT and Causal models
+- **Accuracy**: Good accuracy levels (>95%) for HGT and Causal models
 - **Robustness**: Handles diverse complexity levels from simple to legacy code
 
 ### **Real-World Deployment Recommendations**
 
-#### **🏆 Production Systems (HGT Model)**
-- **Use Case**: Mission-critical applications requiring highest accuracy
+#### **Production Systems (HGT Model)**
+- **Use Case**: Applications requiring good accuracy
 - **Deployment**: Batch processing for large codebases
-- **Performance**: 100% prediction rate with 1.000 training accuracy
+- **Performance**: Good prediction rate with 1.000 training accuracy
 
-#### **⚡ Fast Analysis (Causal Model)**  
+#### **Fast Analysis (Causal Model)**  
 - **Use Case**: Real-time annotation suggestions in IDEs
 - **Deployment**: Lightweight inference for developer tools
 - **Performance**: 97.5% accuracy with 39ms training time
 
-#### **🔧 Research & Development (GBT Model - Post-Fix)**
+#### **Research & Development (GBT Model - Post-Fix)**
 - **Use Case**: Feature importance analysis and interpretability
 - **Status**: Requires class diversity fixes before production use
 - **Potential**: High interpretability once training issues resolved
@@ -443,15 +443,15 @@ public boolean validateComplexInput(List<String> data0, Optional<String> config1
 - **Moderate Confidence**: Lines with single model prediction
 - **Cross-Validation**: Models validate each other's predictions
 
-#### **💡 Benefits:**
+#### **Benefits:**
 
-✅ **Higher Precision**: Only meaningful annotation locations are considered  
-✅ **Better Accuracy**: Consistent node-level granularity across all models  
-✅ **Semantic Correctness**: Annotations placed before valid Java elements  
-✅ **Model Comparability**: Same processing level enables fair comparison  
-✅ **Consensus Validation**: Multiple models provide confidence scoring
+**Higher Precision**: Only meaningful annotation locations are considered  
+**Improved Accuracy**: Consistent node-level granularity across all models  
+**Semantic Correctness**: Annotations placed before valid Java elements  
+**Model Comparability**: Same processing level enables fair comparison  
+**Consensus Validation**: Multiple models provide confidence scoring
 
-## 🎨 **Annotation Support**
+## Annotation Support
 
 ### **Supported Annotation Types**
 
@@ -488,13 +488,13 @@ public ComplexTest(@NonNull @MinLen(0) String name, int[] numbers) {
 @MinLen(0) private int[] numbers;
 ```
 
-## 🔄 **Data Augmentation**
+## Data Augmentation
 
-The system includes sophisticated data augmentation that:
+The system includes data augmentation that:
 
 - **Preserves semantics**: Keeps original code logic intact
 - **Adds variety**: Introduces syntactically correct but irrelevant code
-- **Increases robustness**: Helps models generalize to diverse code patterns
+- **Improves robustness**: Helps models generalize to diverse code patterns
 - **Maintains structure**: Preserves CFG properties for graph-based models
 - **Default behavior**: Automatically used by all training scripts
 
@@ -505,15 +505,15 @@ The system includes sophisticated data augmentation that:
 - Expression complexity variation
 - Dynamic code generation (not just templates)
 
-## 🧪 **Testing**
+## Testing
 
 ### **Run All Tests**
 
 ```bash
-# Test perfect annotation placement accuracy
+# Test annotation placement accuracy
 python test_perfect_accuracy.py
 
-# Test default behavior (perfect placement)
+# Test default behavior (annotation placement)
 python test_default_perfect_placement.py
 
 # Test annotation placement system
@@ -523,15 +523,15 @@ python test_annotation_placement.py
 python test_all_models.py
 ```
 
-## 📁 **File Structure**
+## File Structure
 
 ```
 CFWR/
 ├── Core Scripts
-│   ├── place_annotations.py              # Main annotation placement (perfect accuracy)
+│   ├── place_annotations.py              # Main annotation placement
 │   ├── predict_and_annotate.py          # Integrated pipeline
 │   ├── predict_on_project.py            # Project-wide prediction
-│   └── perfect_annotation_placement.py  # Perfect placement engine
+│   └── annotation_placement.py  # Placement engine
 │
 ├── Training Scripts
 │   ├── hgt.py                           # HGT training (augmented slices default)
@@ -566,7 +566,7 @@ CFWR/
 │   └── AUGMENTED_SLICES_DEFAULT.md      # Augmented slices documentation
 │
 ├── Test Scripts
-│   ├── test_perfect_accuracy.py         # Perfect placement accuracy tests
+│   ├── test_perfect_accuracy.py         # Annotation placement accuracy tests
 │   ├── test_default_perfect_placement.py # Default behavior tests
 │   ├── test_annotation_placement.py     # Annotation placement tests
 │   └── test_all_models.py               # All model type tests
@@ -591,12 +591,12 @@ python predict_and_annotate.py \
   --models hgt gbt causal
 
 # This automatically:
-# ✅ Generates slices using Checker Framework slicer
-# ✅ Augments slices for better training
-# ✅ Creates dataflow-augmented CFGs
-# ✅ Trains all three models
-# ✅ Places annotations with perfect accuracy
-# ✅ Validates results with Checker Framework
+# Generates slices using Checker Framework slicer
+# Augments slices for better training
+# Creates dataflow-augmented CFGs
+# Trains all three models
+# Places annotations with good accuracy
+# Validates results with Checker Framework
 ```
 
 ### **Step-by-Step Example**
@@ -614,7 +614,7 @@ python hgt.py
 python gbt.py  
 python causal_model.py
 
-# 3. Place annotations with perfect accuracy
+# 3. Place annotations with good accuracy
 python place_annotations.py \
   --project_root /home/user/project \
   --predictions_file results/predictions.json \
@@ -632,7 +632,7 @@ python enhanced_rl_training.py \
   --use_augmented_slices
 ```
 
-## 🔧 **Environment Variables**
+## Environment Variables
 
 Configure the pipeline using environment variables:
 
@@ -651,7 +651,7 @@ export AUGMENTED_SLICES_DIR="/path/to/slices_aug"     # Augmented slices directo
 1. **"No slices directory found"**: Ensure slices are generated and SLICES_DIR is set correctly
 2. **"Model not found"**: Train models first using the training scripts
 3. **"ClassNotFoundException"**: Ensure Checker Framework JARs are in the classpath
-4. **"Perfect placement failed"**: Check Java syntax and file permissions
+4. **"Annotation placement failed"**: Check Java syntax and file permissions
 5. **"Parsing warnings"**: Some augmented slices may have parsing issues - this is normal and handled gracefully
 
 ### **Debug Mode**
@@ -665,7 +665,7 @@ python place_annotations.py  # Will show detailed progress information
 
 ### **Fallback Options**
 
-If perfect placement fails, you can use approximate placement:
+If annotation placement fails, you can use approximate placement:
 
 ```bash
 python place_annotations.py \

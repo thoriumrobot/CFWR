@@ -1,8 +1,8 @@
 # CFWR Best Practices Defaults
 
-This document outlines the best practices that are now the default behavior throughout the CFWR codebase.
+This document outlines the practices that are now the default behavior throughout the CFWR codebase.
 
-## 🎯 **Core Best Practices**
+## Core Best Practices
 
 ### **1. Augmented Slices as Default**
 - **Training**: All training scripts prefer augmented slices over original slices
@@ -29,7 +29,7 @@ This document outlines the best practices that are now the default behavior thro
 - **Data Flow**: Seamless data flow from slicing to prediction
 - **Benefit**: Ensures consistency between training and inference
 
-## 📁 **Updated Files**
+## Updated Files
 
 ### **Prediction Scripts**
 - `predict_hgt.py` - HGT predictions with best practices defaults
@@ -52,7 +52,7 @@ This document outlines the best practices that are now the default behavior thro
 - `rl_training.py` - Basic RL training with best practices
 - `rl_pipeline.py` - RL pipeline with best practices defaults
 
-## 🔧 **Command-Line Options**
+## Command-Line Options
 
 ### **Default Behavior (Best Practices)**
 ```bash
@@ -79,7 +79,7 @@ python predict_hgt.py --use_original_slices --model_path model.pth --out_path pr
 python predict_on_project.py --use_original_slices --project_root /path/to/project --output_dir /path/to/output
 ```
 
-## 🏗️ **Architecture Benefits**
+## Architecture Benefits
 
 ### **1. Consistency**
 - All scripts use the same defaults
@@ -101,7 +101,7 @@ python predict_on_project.py --use_original_slices --project_root /path/to/proje
 - Consistent integration points
 - Clear separation of concerns
 
-## 📊 **Data Flow**
+## Data Flow
 
 ```
 Java Files → Checker Framework Slicer → Slices
@@ -115,7 +115,7 @@ Dataflow-Augmented CFGs → Model Training → Trained Models
 Trained Models + Dataflow-Augmented CFGs → Predictions
 ```
 
-## 🎯 **Key Features**
+## Key Features
 
 ### **Dataflow Information**
 - Variables of the same name are connected with dataflow edges
@@ -133,7 +133,7 @@ Trained Models + Dataflow-Augmented CFGs → Predictions
 - Consistent data formats across components
 - Easy to extend and modify
 
-## 🔍 **Verification**
+## Verification
 
 To verify that best practices are being used:
 
@@ -161,7 +161,7 @@ If you have existing scripts that don't use best practices:
 3. **Update documentation** to reflect new defaults
 4. **Test with new defaults** to ensure compatibility
 
-## 🚀 **Future Enhancements**
+## Future Enhancements
 
 The best practices framework is designed to be extensible:
 
