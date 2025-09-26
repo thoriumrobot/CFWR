@@ -130,24 +130,72 @@ def parse_warnings(warnings_output):
 def extract_features_from_cfg(cfg_data):
     """
     Extract features from a CFG for machine learning.
+    Now includes dataflow information.
     """
     try:
         # Basic graph features
         nodes = cfg_data.get('nodes', [])
         edges = cfg_data.get('edges', [])
+        control_edges = cfg_data.get('control_edges', [])
+        dataflow_edges = cfg_data.get('dataflow_edges', [])
         
         # Extract node labels
         node_labels = [node.get('label', '') for node in nodes if isinstance(node, dict)]
         
+        # Count different types of statements
+        if_count = len([label for label in node_labels if 'if' in label.lower()])
+        for_count = len([label for label in node_labels if 'for' in label.lower()])
+        while_count = len([label for label in node_labels if 'while' in label.lower()])
+        try_count = len([label for label in node_labels if 'try' in label.lower()])
+        switch_count = len([label for label in node_labels if 'switch' in label.lower()])
+        return_count = len([label for label in node_labels if 'return' in label.lower()])
+        
+        # Dataflow-specific features
+        dataflow_count = len(dataflow_edges)
+        control_count = len(control_edges)
+        
+        # Variable usage patterns
+        variables_used = set()
+        for edge in dataflow_edges:
+            if 'variable' in edge:
+                variables_used.add(edge['variable'])
+        unique_variables = len(variables_used)
+        
+        # Dataflow density (dataflow edges per node)
+        dataflow_density = dataflow_count / len(nodes) if len(nodes) > 0 else 0
+        
+        # Control flow complexity
+        control_density = control_count / len(nodes) if len(nodes) > 0 else 0
+        
+        # Mixed connectivity (nodes with both control and dataflow edges)
+        nodes_with_control = set()
+        nodes_with_dataflow = set()
+        
+        for edge in control_edges:
+            nodes_with_control.add(edge['source'])
+            nodes_with_control.add(edge['target'])
+        
+        for edge in dataflow_edges:
+            nodes_with_dataflow.add(edge['source'])
+            nodes_with_dataflow.add(edge['target'])
+        
+        mixed_nodes = len(nodes_with_control.intersection(nodes_with_dataflow))
+        
         features = [
             len(nodes),  # Number of nodes
-            len(edges),  # Number of edges
-            len([label for label in node_labels if 'if' in label.lower()]),  # Number of if statements
-            len([label for label in node_labels if 'for' in label.lower()]),  # Number of for loops
-            len([label for label in node_labels if 'while' in label.lower()]),  # Number of while loops
-            len([label for label in node_labels if 'try' in label.lower()]),  # Number of try blocks
-            len([label for label in node_labels if 'switch' in label.lower()]),  # Number of switch statements
-            len([label for label in node_labels if 'return' in label.lower()]),  # Number of return statements
+            len(edges),  # Number of total edges
+            if_count,  # Number of if statements
+            for_count,  # Number of for loops
+            while_count,  # Number of while loops
+            try_count,  # Number of try blocks
+            switch_count,  # Number of switch statements
+            return_count,  # Number of return statements
+            dataflow_count,  # Number of dataflow edges
+            control_count,  # Number of control flow edges
+            unique_variables,  # Number of unique variables
+            dataflow_density,  # Dataflow density
+            control_density,  # Control flow density
+            mixed_nodes,  # Nodes with both control and dataflow edges
         ]
         
         return features

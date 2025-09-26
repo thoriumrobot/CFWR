@@ -204,10 +204,13 @@ def extract_features_and_labels(cfg_data, annotations):
 def extract_features_and_labels_synthetic(cfg_data):
     """
     Extract features and synthetic labels from a CFG for causal modeling.
+    Now includes dataflow information.
     """
     records = []
     nodes = cfg_data['nodes']
-    edges = cfg_data['edges']
+    edges = cfg_data.get('edges', [])
+    control_edges = cfg_data.get('control_edges', [])
+    dataflow_edges = cfg_data.get('dataflow_edges', [])
     method_name = cfg_data['method_name']
     java_file = cfg_data['java_file']
     
@@ -221,6 +224,10 @@ def extract_features_and_labels_synthetic(cfg_data):
         len([label for label in node_labels if 'try' in label.lower()])
     )
     
+    # Calculate dataflow complexity
+    dataflow_complexity = len(dataflow_edges)
+    control_complexity = len(control_edges)
+    
     for node in nodes:
         node_id = node['id']
         label = node['label']
@@ -232,22 +239,47 @@ def extract_features_and_labels_synthetic(cfg_data):
             'label_length': len(label),
             'label': label,
         }
-        # Degree features
-        in_degree = 0
-        out_degree = 0
-        for edge in edges:
+        
+        # Control flow degree features
+        control_in_degree = 0
+        control_out_degree = 0
+        for edge in control_edges:
             if edge['target'] == node_id:
-                in_degree += 1
+                control_in_degree += 1
             if edge['source'] == node_id:
-                out_degree += 1
+                control_out_degree += 1
+        
+        # Dataflow degree features
+        dataflow_in_degree = 0
+        dataflow_out_degree = 0
+        variables_used = set()
+        for edge in dataflow_edges:
+            if edge['target'] == node_id:
+                dataflow_in_degree += 1
+                if 'variable' in edge:
+                    variables_used.add(edge['variable'])
+            if edge['source'] == node_id:
+                dataflow_out_degree += 1
+                if 'variable' in edge:
+                    variables_used.add(edge['variable'])
+        
+        # Legacy degree features (for backward compatibility)
+        in_degree = control_in_degree + dataflow_in_degree
+        out_degree = control_out_degree + dataflow_out_degree
+        
         features['in_degree'] = in_degree
         features['out_degree'] = out_degree
+        features['control_in_degree'] = control_in_degree
+        features['control_out_degree'] = control_out_degree
+        features['dataflow_in_degree'] = dataflow_in_degree
+        features['dataflow_out_degree'] = dataflow_out_degree
+        features['variables_used'] = len(variables_used)
+        
         # Line number (if available)
         line_number = node.get('line', 0)
         features['line_number'] = line_number
         
-        # Synthetic label: nodes in complex CFGs are more likely to need annotations
-        # Also consider node-specific features
+        # Synthetic label: nodes in complex CFGs with dataflow are more likely to need annotations
         node_complexity = 0
         label_lower = label.lower()
         if 'if' in label_lower or 'for' in label_lower or 'while' in label_lower:
@@ -256,10 +288,14 @@ def extract_features_and_labels_synthetic(cfg_data):
             node_complexity += 1
         if 'assignment' in label_lower or '=' in label_lower:
             node_complexity += 1
-            
-        # Combine CFG complexity and node complexity
-        total_complexity = complexity_score + node_complexity
-        features['needs_annotation'] = 1 if total_complexity > 3 else 0
+        
+        # Dataflow complexity bonus
+        if dataflow_in_degree > 0 or dataflow_out_degree > 0:
+            node_complexity += 1
+        
+        # Combine CFG complexity, dataflow complexity, and node complexity
+        total_complexity = complexity_score + dataflow_complexity + node_complexity
+        features['needs_annotation'] = 1 if total_complexity > 4 else 0
         
         records.append(features)
     return records
@@ -294,7 +330,8 @@ def main():
     
     # Print feature importance if available
     if hasattr(clf, 'feature_importances_'):
-        feature_names = ['label_length', 'in_degree', 'out_degree', 'label_encoded', 'line_number']
+        feature_names = ['label_length', 'in_degree', 'out_degree', 'control_in_degree', 'control_out_degree', 
+                        'dataflow_in_degree', 'dataflow_out_degree', 'variables_used', 'label_encoded', 'line_number']
         importances = clf.feature_importances_
         print("\nFeature importance:")
         for name, importance in zip(feature_names, importances):
@@ -334,16 +371,24 @@ def define_causal_model(data):
 def predict_annotations(data):
     """
     Use the causal model to predict where annotations should be placed.
+    Now includes dataflow features.
     """
-    # Features used for prediction
-    features = ['label_length', 'in_degree', 'out_degree', 'label_encoded', 'line_number']
-    X = data[features]
+    # Features used for prediction (including dataflow features)
+    features = ['label_length', 'in_degree', 'out_degree', 'control_in_degree', 'control_out_degree', 
+                'dataflow_in_degree', 'dataflow_out_degree', 'variables_used', 'label_encoded', 'line_number']
+    
+    # Filter features that exist in the data
+    available_features = [f for f in features if f in data.columns]
+    X = data[available_features]
     y = data['needs_annotation']
+    
     # Split data
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    
     # Train a classifier
     clf = GradientBoostingClassifier()
     clf.fit(X_train, y_train)
+    
     # Predict on the full dataset
     y_pred = clf.predict(X)
     return y_pred, clf

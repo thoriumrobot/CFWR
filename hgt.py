@@ -154,20 +154,34 @@ def parse_warnings(warnings):
 def create_heterodata(cfg_data):
     """
     Convert CFG data into a HeteroData object for PyTorch Geometric.
+    Now handles both control flow and dataflow edges as different edge types.
     """
     data = HeteroData()
     nodes = cfg_data['nodes']
-    edges = cfg_data['edges']
+    
+    # Get both control and dataflow edges
+    control_edges = cfg_data.get('control_edges', [])
+    dataflow_edges = cfg_data.get('dataflow_edges', [])
+    
+    # Fallback to general edges if specific edge types not available
+    if not control_edges and not dataflow_edges:
+        edges = cfg_data.get('edges', [])
+        control_edges = edges  # Treat all as control edges for backward compatibility
 
-    # Create node features (e.g., label encoding)
+    # Create node features (e.g., label encoding, node type)
     node_features = []
     node_labels = []
     node_indices = {}
     for node in nodes:
         node_id = node['id']
         label = node['label']
-        # Simple feature: length of label
+        node_type = node.get('node_type', 'control')
+        
+        # Enhanced features: label length, node type encoding
         feature = [len(label)]
+        # Add node type encoding (0 for control, 1 for dataflow if we had such nodes)
+        feature.append(0 if node_type == 'control' else 1)
+        
         node_features.append(feature)
         node_indices[node_id] = len(node_indices)
         # Initialize labels to 0 (no annotation)
@@ -179,19 +193,48 @@ def create_heterodata(cfg_data):
     data['node'].x = torch.tensor(node_features, dtype=torch.float)
     data['node'].y = torch.tensor(node_labels, dtype=torch.long)
 
-    # Create edge index
-    edge_index = [[], []]
-    for edge in edges:
+    # Create control flow edge index
+    control_edge_index = [[], []]
+    for edge in control_edges:
         source = node_indices.get(edge['source'])
         target = node_indices.get(edge['target'])
         if source is not None and target is not None:
-            edge_index[0].append(source)
-            edge_index[1].append(target)
+            control_edge_index[0].append(source)
+            control_edge_index[1].append(target)
 
-    if not edge_index[0]:
+    # Create dataflow edge index
+    dataflow_edge_index = [[], []]
+    for edge in dataflow_edges:
+        source = node_indices.get(edge['source'])
+        target = node_indices.get(edge['target'])
+        if source is not None and target is not None:
+            dataflow_edge_index[0].append(source)
+            dataflow_edge_index[1].append(target)
+
+    # Add edge indices for different edge types
+    if control_edge_index[0]:
+        data['node', 'control_flow', 'node'].edge_index = torch.tensor(control_edge_index, dtype=torch.long)
+    
+    if dataflow_edge_index[0]:
+        data['node', 'dataflow', 'node'].edge_index = torch.tensor(dataflow_edge_index, dtype=torch.long)
+    
+    # For backward compatibility, also add general edges
+    all_edges = control_edges + dataflow_edges
+    general_edge_index = [[], []]
+    for edge in all_edges:
+        source = node_indices.get(edge['source'])
+        target = node_indices.get(edge['target'])
+        if source is not None and target is not None:
+            general_edge_index[0].append(source)
+            general_edge_index[1].append(target)
+    
+    if general_edge_index[0]:
+        data['node', 'to', 'node'].edge_index = torch.tensor(general_edge_index, dtype=torch.long)
+
+    # Check if we have any edges at all
+    if not control_edge_index[0] and not dataflow_edge_index[0] and not general_edge_index[0]:
         return None  # Skip if no edges
 
-    data['node', 'to', 'node'].edge_index = torch.tensor(edge_index, dtype=torch.long)
     return data
 
 def label_nodes(data, cfg_data, annotations):
