@@ -26,15 +26,42 @@ from cfg import generate_control_flow_graphs, save_cfgs
 # Directory paths
 cfg_output_dir = os.environ.get("CFG_OUTPUT_DIR", "cfg_output")
 slices_dir = os.environ.get("SLICES_DIR", "slices")
-# If SLICES_DIR points to a base directory, look for slicer-specific augmented directories
-if not os.path.exists(slices_dir) or not any(f.endswith('.java') for f in os.listdir(slices_dir) if os.path.isfile(os.path.join(slices_dir, f))):
-    # Look for augmented directories
+
+# Default behavior: Use augmented slices if available, otherwise fall back to regular slices
+def find_best_slices_directory():
+    """Find the best available slices directory, preferring augmented slices."""
+    # First, check if SLICES_DIR is explicitly set and contains Java files
+    if os.path.exists(slices_dir) and any(f.endswith('.java') for f in os.listdir(slices_dir) if os.path.isfile(os.path.join(slices_dir, f))):
+        return slices_dir
+    
+    # Look for augmented slices directories (preferred)
     base_dir = os.path.dirname(slices_dir) if os.path.dirname(slices_dir) else "."
-    for slicer in ['wala', 'specimin']:
+    for slicer in ['specimin', 'wala']:  # Prefer specimin since it's working
         aug_dir = os.path.join(base_dir, f"slices_aug_{slicer}")
-        if os.path.exists(aug_dir):
-            slices_dir = aug_dir
-            break
+        if os.path.exists(aug_dir) and any(f.endswith('.java') for f in os.listdir(aug_dir) if os.path.isfile(os.path.join(aug_dir, f))):
+            print(f"Using augmented slices from: {aug_dir}")
+            return aug_dir
+    
+    # Look for general augmented slices directory
+    aug_dir = os.path.join(base_dir, "slices_aug")
+    if os.path.exists(aug_dir) and any(f.endswith('.java') for f in os.listdir(aug_dir) if os.path.isfile(os.path.join(aug_dir, f))):
+        print(f"Using augmented slices from: {aug_dir}")
+        return aug_dir
+    
+    # Fall back to regular slices
+    if os.path.exists(slices_dir):
+        print(f"Using regular slices from: {slices_dir}")
+        return slices_dir
+    
+    # Last resort: look for any slices directory
+    for potential_dir in ["slices", "slices_specimin", "slices_wala"]:
+        if os.path.exists(potential_dir) and any(f.endswith('.java') for f in os.listdir(potential_dir) if os.path.isfile(os.path.join(potential_dir, f))):
+            print(f"Using slices from: {potential_dir}")
+            return potential_dir
+    
+    raise FileNotFoundError("No slices directory found with Java files")
+
+slices_dir = find_best_slices_directory()
 index_checker_cp = os.environ.get("CHECKERFRAMEWORK_CP", "")
 models_dir = os.environ.get("MODELS_DIR", "models")
 

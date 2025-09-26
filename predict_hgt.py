@@ -14,17 +14,42 @@ def load_graphs_for_file(java_file, cfg_output_dir):
             graphs.append((cfg_data, data))
     return graphs
 
+def load_graphs_for_directory(slices_dir, cfg_output_dir):
+    """Load graphs for all Java files in a directory (for project-based prediction)."""
+    graphs = []
+    for root, dirs, files in os.walk(slices_dir):
+        for file in files:
+            if file.endswith('.java'):
+                java_file = os.path.join(root, file)
+                file_graphs = load_graphs_for_file(java_file, cfg_output_dir)
+                graphs.extend(file_graphs)
+    return graphs
+
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--java_file', required=True, help='Path to a Java slice to predict on')
+    parser = argparse.ArgumentParser(description='Run HGT predictions on Java files or slices')
+    parser.add_argument('--java_file', help='Path to a Java slice to predict on')
+    parser.add_argument('--slices_dir', help='Path to directory containing Java slices (for project-based prediction)')
     parser.add_argument('--model_path', required=True, help='Path to trained HGT model .pth')
     parser.add_argument('--out_path', required=True, help='Path to write predictions JSON')
     parser.add_argument('--cfg_output_dir', default=os.environ.get('CFG_OUTPUT_DIR', 'cfg_output'))
     args = parser.parse_args()
 
-    graphs = load_graphs_for_file(args.java_file, args.cfg_output_dir)
+    # Validate arguments
+    if not args.java_file and not args.slices_dir:
+        parser.error("Either --java_file or --slices_dir must be specified")
+    if args.java_file and args.slices_dir:
+        parser.error("Cannot specify both --java_file and --slices_dir")
+
+    # Load graphs
+    if args.java_file:
+        graphs = load_graphs_for_file(args.java_file, args.cfg_output_dir)
+        print(f"Loaded {len(graphs)} graphs from {args.java_file}")
+    else:
+        graphs = load_graphs_for_directory(args.slices_dir, args.cfg_output_dir)
+        print(f"Loaded {len(graphs)} graphs from {args.slices_dir}")
+
     if not graphs:
-        print('No graphs found for file')
+        print('No graphs found')
         return
 
     # Build model metadata from first graph
