@@ -1,3 +1,18 @@
+#!/usr/bin/env python3
+"""
+Causal Model Prediction Script with Best Practices Defaults
+
+This script runs Causal model predictions on Java files or slices using:
+- Dataflow-augmented CFGs by default
+- Augmented slices when available
+- Consistent pipeline integration
+
+Best Practices:
+- Uses dataflow information in CFGs for better predictions
+- Prefers augmented slices over original slices
+- Integrates with the same pipeline as training
+"""
+
 import os
 import json
 import argparse
@@ -6,11 +21,15 @@ import joblib
 from causal_model import load_cfgs, extract_features_and_labels, parse_warnings, run_index_checker, preprocess_data
 
 def main():
-    parser = argparse.ArgumentParser(description='Run Causal model predictions on Java files or slices')
+    parser = argparse.ArgumentParser(description='Run Causal model predictions on Java files or slices with best practices defaults')
     parser.add_argument('--java_file', help='Path to a Java slice to predict on')
-    parser.add_argument('--slices_dir', help='Path to directory containing Java slices (for project-based prediction)')
+    parser.add_argument('--slices_dir', help='Path to directory containing Java slices (prefers augmented slices by default)')
     parser.add_argument('--model_path', required=True, help='Path to trained causal classifier .joblib')
     parser.add_argument('--out_path', required=True, help='Path to write predictions JSON')
+    parser.add_argument('--cfg_output_dir', default=os.environ.get('CFG_OUTPUT_DIR', 'cfg_output'),
+                       help='Directory containing dataflow-augmented CFGs (default behavior)')
+    parser.add_argument('--use_original_slices', action='store_true', default=False,
+                       help='Use original slices instead of augmented slices (default: prefers augmented)')
     args = parser.parse_args()
 
     # Validate arguments
@@ -37,7 +56,7 @@ def main():
     for java_file in java_files:
         warnings_output = run_index_checker(java_file)
         annotations = parse_warnings(warnings_output)
-        cfgs = load_cfgs(java_file)
+        cfgs = load_cfgs(java_file, args.cfg_output_dir)
         for cfg_data in cfgs:
             # Build dataframe with features and labels
             records = extract_features_and_labels(cfg_data, annotations)

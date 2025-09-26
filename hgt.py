@@ -1,3 +1,19 @@
+#!/usr/bin/env python3
+"""
+HGT Training Script with Best Practices Defaults
+
+This script trains Heterogeneous Graph Transformer models using:
+- Dataflow-augmented CFGs by default
+- Augmented slices as default training data
+- Enhanced graph features including dataflow information
+
+Best Practices:
+- Uses dataflow edges for better graph representation
+- Prefers augmented slices for improved model generalization
+- Integrates seamlessly with prediction pipeline
+- Maintains consistency across training and inference
+"""
+
 import os
 import json
 import random
@@ -93,10 +109,13 @@ def load_data():
             graphs.append(data)
     return graphs
 
-def load_cfgs(java_file):
+def load_cfgs(java_file, cfg_output_dir=None):
     """
     Load the saved CFGs for a given Java file.
     """
+    if cfg_output_dir is None:
+        cfg_output_dir = os.environ.get("CFG_OUTPUT_DIR", "cfg_output")
+    
     method_cfgs = []
     java_file_name = os.path.splitext(os.path.basename(java_file))[0]
     cfg_dir = os.path.join(cfg_output_dir, java_file_name)
@@ -196,8 +215,8 @@ def create_heterodata(cfg_data):
     # Create control flow edge index
     control_edge_index = [[], []]
     for edge in control_edges:
-        source = node_indices.get(edge['source'])
-        target = node_indices.get(edge['target'])
+        source = node_indices.get(edge.get('source', edge.get('from')))
+        target = node_indices.get(edge.get('target', edge.get('to')))
         if source is not None and target is not None:
             control_edge_index[0].append(source)
             control_edge_index[1].append(target)
@@ -205,34 +224,29 @@ def create_heterodata(cfg_data):
     # Create dataflow edge index
     dataflow_edge_index = [[], []]
     for edge in dataflow_edges:
-        source = node_indices.get(edge['source'])
-        target = node_indices.get(edge['target'])
+        source = node_indices.get(edge.get('source', edge.get('from')))
+        target = node_indices.get(edge.get('target', edge.get('to')))
         if source is not None and target is not None:
             dataflow_edge_index[0].append(source)
             dataflow_edge_index[1].append(target)
 
-    # Add edge indices for different edge types
-    if control_edge_index[0]:
-        data['node', 'control_flow', 'node'].edge_index = torch.tensor(control_edge_index, dtype=torch.long)
-    
-    if dataflow_edge_index[0]:
-        data['node', 'dataflow', 'node'].edge_index = torch.tensor(dataflow_edge_index, dtype=torch.long)
-    
-    # For backward compatibility, also add general edges
+    # Combine all edges into a single edge type for HGT compatibility
+    # This treats both control flow and dataflow edges as the same type
     all_edges = control_edges + dataflow_edges
-    general_edge_index = [[], []]
+    combined_edge_index = [[], []]
     for edge in all_edges:
-        source = node_indices.get(edge['source'])
-        target = node_indices.get(edge['target'])
+        source = node_indices.get(edge.get('source', edge.get('from')))
+        target = node_indices.get(edge.get('target', edge.get('to')))
         if source is not None and target is not None:
-            general_edge_index[0].append(source)
-            general_edge_index[1].append(target)
+            combined_edge_index[0].append(source)
+            combined_edge_index[1].append(target)
     
-    if general_edge_index[0]:
-        data['node', 'to', 'node'].edge_index = torch.tensor(general_edge_index, dtype=torch.long)
+    # Use the standard edge type that HGT expects
+    if combined_edge_index[0]:
+        data['node', 'to', 'node'].edge_index = torch.tensor(combined_edge_index, dtype=torch.long)
 
     # Check if we have any edges at all
-    if not control_edge_index[0] and not dataflow_edge_index[0] and not general_edge_index[0]:
+    if not combined_edge_index[0]:
         return None  # Skip if no edges
 
     return data

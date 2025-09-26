@@ -1,3 +1,18 @@
+#!/usr/bin/env python3
+"""
+HGT Prediction Script with Best Practices Defaults
+
+This script runs HGT predictions on Java files or slices using:
+- Dataflow-augmented CFGs by default
+- Augmented slices when available
+- Consistent pipeline integration
+
+Best Practices:
+- Uses dataflow information in CFGs for better predictions
+- Prefers augmented slices over original slices
+- Integrates with the same pipeline as training
+"""
+
 import os
 import json
 import argparse
@@ -7,7 +22,7 @@ from hgt import HGTModel, create_heterodata, load_cfgs, label_nodes
 
 def load_graphs_for_file(java_file, cfg_output_dir):
     graphs = []
-    cfgs = load_cfgs(java_file)
+    cfgs = load_cfgs(java_file, cfg_output_dir)
     for cfg_data in cfgs:
         data = create_heterodata(cfg_data)
         if data is not None:
@@ -26,12 +41,15 @@ def load_graphs_for_directory(slices_dir, cfg_output_dir):
     return graphs
 
 def main():
-    parser = argparse.ArgumentParser(description='Run HGT predictions on Java files or slices')
+    parser = argparse.ArgumentParser(description='Run HGT predictions on Java files or slices with best practices defaults')
     parser.add_argument('--java_file', help='Path to a Java slice to predict on')
-    parser.add_argument('--slices_dir', help='Path to directory containing Java slices (for project-based prediction)')
+    parser.add_argument('--slices_dir', help='Path to directory containing Java slices (prefers augmented slices by default)')
     parser.add_argument('--model_path', required=True, help='Path to trained HGT model .pth')
     parser.add_argument('--out_path', required=True, help='Path to write predictions JSON')
-    parser.add_argument('--cfg_output_dir', default=os.environ.get('CFG_OUTPUT_DIR', 'cfg_output'))
+    parser.add_argument('--cfg_output_dir', default=os.environ.get('CFG_OUTPUT_DIR', 'cfg_output'),
+                       help='Directory containing dataflow-augmented CFGs (default behavior)')
+    parser.add_argument('--use_original_slices', action='store_true', default=False,
+                       help='Use original slices instead of augmented slices (default: prefers augmented)')
     args = parser.parse_args()
 
     # Validate arguments

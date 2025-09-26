@@ -1,3 +1,20 @@
+#!/usr/bin/env python3
+"""
+Data Augmentation Script with Best Practices Defaults
+
+This script augments Java slices with:
+- Truly random, syntactically correct Java code
+- Dynamic generation of methods, statements, and expressions
+- Enhanced diversity for better model training
+
+Best Practices:
+- Generates syntactically correct Java code
+- Uses random data pools for variety
+- Maintains code structure and readability
+- Provides configurable randomness levels
+- Integrates seamlessly with training pipeline
+"""
+
 import os
 import re
 import argparse

@@ -1,3 +1,19 @@
+#!/usr/bin/env python3
+"""
+GBT Training Script with Best Practices Defaults
+
+This script trains Gradient Boosting Tree models using:
+- Dataflow-augmented CFGs by default
+- Augmented slices as default training data
+- Enhanced features including dataflow information
+
+Best Practices:
+- Uses dataflow features for better model performance
+- Prefers augmented slices for improved generalization
+- Integrates seamlessly with prediction pipeline
+- Maintains consistency across training and inference
+"""
+
 import os
 import subprocess
 import json
@@ -54,10 +70,13 @@ models_dir = os.environ.get("MODELS_DIR", "models")
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
 
-def load_cfgs(java_file):
+def load_cfgs(java_file, cfg_output_dir=None):
     """
     Load the saved CFGs for a given Java file.
     """
+    if cfg_output_dir is None:
+        cfg_output_dir = os.environ.get("CFG_OUTPUT_DIR", "cfg_output")
+    
     method_cfgs = []
     java_file_name = os.path.splitext(os.path.basename(java_file))[0]
     cfg_dir = os.path.join(cfg_output_dir, java_file_name)

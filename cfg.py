@@ -1,3 +1,19 @@
+#!/usr/bin/env python3
+"""
+CFG Generation Script with Best Practices Defaults
+
+This script generates Control Flow Graphs (CFGs) with:
+- Dataflow information by default
+- Enhanced edge types for control vs dataflow
+- Consistent integration with training and prediction pipelines
+
+Best Practices:
+- Always includes dataflow edges connecting variables of the same name
+- Uses different edge types for control flow vs dataflow
+- Maintains consistency with model training requirements
+- Provides comprehensive graph information for better predictions
+"""
+
 import networkx as nx
 import javalang
 import json
