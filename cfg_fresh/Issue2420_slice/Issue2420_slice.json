@@ -1,0 +1,302 @@
+{
+  "method_name": "Issue2420_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "static void str(String argStr) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "if (argStr.isEmpty()) {",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "return;",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "}",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "if (argStr == \"abc\") {",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "return;",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "}",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "// :: error: (argument)",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "char c = \"abc\".charAt(argStr.length() - 1);",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "// :: error: (argument)",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "char c2 = \"abc\".charAt(argStr.length());",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "}",
+      "line": 12,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "argStr"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "if"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "argStr"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "return"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "abc"
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "argStr"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "error"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "argument"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "char"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "abc"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "charAt"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "argStr"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "length"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "argStr"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "if"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "argStr"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "return"
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "abc"
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "argStr"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "error"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "argument"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "char"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "abc"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "charAt"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "argStr"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "length"
+    }
+  ]
+}

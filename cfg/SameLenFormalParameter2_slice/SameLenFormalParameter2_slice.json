@@ -1,0 +1,80 @@
+{
+  "method_name": "SameLenFormalParameter2_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void client(Object[] myvals, int[] mymods) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "// :: error: (argument)",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "lib(myvals, mymods);",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "}",
+      "line": 4,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "myvals"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "mymods"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "myvals"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "mymods"
+    }
+  ]
+}

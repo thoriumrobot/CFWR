@@ -1,0 +1,59 @@
+{
+  "method_name": "ShiftRightAverage_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "// :: error: (assignment)",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "@LTLengthOf(\"a\") int h = ((i + 1) + j) >> 1;",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "}",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "}",
+      "line": 4,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "dataflow_edges": []
+}

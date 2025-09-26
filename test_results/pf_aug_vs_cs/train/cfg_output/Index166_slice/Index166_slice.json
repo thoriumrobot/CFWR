@@ -1,0 +1,84 @@
+{
+  "method_name": "Index166_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public void testMethodInvocation() {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "requiresIndex(\"012345\", 5);",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "// :: error: (argument)",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "requiresIndex(\"012345\", 6);",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "}",
+      "line": 5,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "requiresIndex"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "requiresIndex"
+    }
+  ]
+}

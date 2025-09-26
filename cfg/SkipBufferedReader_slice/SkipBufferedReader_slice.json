@@ -1,0 +1,146 @@
+{
+  "method_name": "SkipBufferedReader_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public static void method() throws IOException {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "// :: error: (argument)",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "bufferedReader.skip(-1);",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "bufferedReader.skip(1);",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "}",
+      "line": 8,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "bufferedReader"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "bufferedReader"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "skip"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "bufferedReader"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "bufferedReader"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "skip"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "method_name": "LessThanDec_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "private static @IndexOrLow(\"#1\") @LessThan(\"#4\") int lastIndexOf(",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "short[] array, short target, @IndexOrHigh(\"#1\") int start, @IndexOrHigh(\"#1\") int end) {",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "for (int i = end - 1; i >= start; i--) {",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "if (array[i] == target) {",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "return i;",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "}",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "}",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "return -1;",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "}",
+      "line": 9,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "end"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "start"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "array"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "target"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "i"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "return"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "end"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "start"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "array"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "target"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "i"
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "return"
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "method_name": "NotEnoughOffsets_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void badParam(",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "// :: error: (different.length.sequences.offsets)",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "@LTLengthOf(",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "value = {\"a\", \"b\"},",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "offset = {\"c\"})",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "int x) {}",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "void badParam2(",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "// :: error: (different.length.sequences.offsets)",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "@LTLengthOf(",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "value = {\"a\"},",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "offset = {\"c\", \"d\"})",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "int x) {}",
+      "line": 13,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "void"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "different"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "length"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "sequences"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "offsets"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "value"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "a"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 11,
+      "variable": "offset"
+    },
+    {
+      "source": 4,
+      "target": 11,
+      "variable": "c"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 12,
+      "variable": "x"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "void"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "different"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "length"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "sequences"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "offsets"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "value"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "a"
+    },
+    {
+      "source": 4,
+      "target": 11,
+      "variable": "offset"
+    },
+    {
+      "source": 4,
+      "target": 11,
+      "variable": "c"
+    },
+    {
+      "source": 5,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 12,
+      "variable": "x"
+    }
+  ]
+}

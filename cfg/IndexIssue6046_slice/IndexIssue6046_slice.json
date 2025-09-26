@@ -1,0 +1,302 @@
+{
+  "method_name": "IndexIssue6046_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "@SuppressWarnings(\"unchecked\")",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "public static <K, V extends Record, R extends Record>",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "Collector<R, ?, Map<K, Result<V>>> intoResultGroups(",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "Function<? super R, ? extends K> keyMapper) {",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "return Collectors.groupingBy(",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "keyMapper,",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "LinkedHashMap::new,",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "Collector.<R, Result<V>[], Result<V>>of(",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "// :: error:  (array.access.unsafe.high.constant)",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "() -> new Result[1], (x, r) -> {}, (r1, r2) -> r1, r -> r[0]));",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "}",
+      "line": 12,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "R"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "K"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "V"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "extends"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "R"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "K"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "Collector"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "Result"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "V"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "keyMapper"
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "variable": "R"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "new"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "Result"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "R"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "K"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "V"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "extends"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "R"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "K"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "Collector"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "Result"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "V"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "keyMapper"
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "variable": "R"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "new"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "Result"
+    }
+  ]
+}

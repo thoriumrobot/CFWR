@@ -99,7 +99,8 @@ def load_data():
         # Load CFGs
         ensure_cfg(java_file_path)
         method_cfgs = load_cfgs(java_file_path)
-        for cfg_data in method_cfgs:
+        for cfg_entry in method_cfgs:
+            cfg_data = cfg_entry.get('data', cfg_entry)
             # Create HeteroData object
             data = create_heterodata(cfg_data)
             if data is None:

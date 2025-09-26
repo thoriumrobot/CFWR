@@ -1,0 +1,144 @@
+{
+  "method_name": "ShiftRight_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void negative(Object[] a, @LTLengthOf(value = \"#1\", offset = \"100\") int i) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "// Not true for some negative i",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "// :: error: (assignment)",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "@LTLengthOf(value = \"#1\", offset = \"100\") int q = i >> 2;",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "}",
+      "line": 5,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "negative"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "value"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "offset"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "negative"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "value"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "offset"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "i"
+    }
+  ]
+}

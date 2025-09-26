@@ -1,0 +1,364 @@
+{
+  "method_name": "IndexOrLowTests_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void test() {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "if (index != -1) {",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "array[index] = 1;",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "}",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "@IndexOrHigh(\"array\") int y = index + 1;",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "// :: error: (array.access.unsafe.high)",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "array[y] = 1;",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "if (y < array.length) {",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "array[y] = 1;",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "}",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "// :: error: (assignment)",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "index = array.length;",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "}",
+      "line": 15,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "index"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "if"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "array"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "index"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "array"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "y"
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "variable": "index"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "array"
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "variable": "error"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "y"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "array"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "array"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "y"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "length"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "array"
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "index"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "if"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "array"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "index"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "array"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "y"
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "variable": "index"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "array"
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "variable": "error"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "y"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "array"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "array"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "y"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "length"
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "array"
+    }
+  ]
+}

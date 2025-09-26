@@ -1,0 +1,184 @@
+{
+  "method_name": "Polymorphic2_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void testUpperBound2(@LTLengthOf(\"array1\") int a, @LTEqLengthOf(\"array1\") int b) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "@LTEqLengthOf(\"array1\") int z = mergeUpperBound(a, b);",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "// :: error: (assignment)",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "@LTLengthOf(\"array1\") int zz = mergeUpperBound(a, b);",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "}",
+      "line": 5,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "array1"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "b"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "array1"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "mergeUpperBound"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "b"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "array1"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "b"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "array1"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "mergeUpperBound"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "b"
+    }
+  ]
+}

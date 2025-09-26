@@ -1,0 +1,67 @@
+/*
+ * CFWR augmentation: inserted irrelevant code for data augmentation.
+ */
+  void ubc_id(
+      int[] a,
+      int[] b,
+      @LTLengthOf("#1") int ai,
+      @LTEqLengthOf("#1") int al,
+      @LTLengthOf({"#1", "#2"}) int abi,
+      @LTEqLengthOf({"#1", "#2"}) int abl) {
+        for (int __cfwr_i42 = 0; __cfwr_i42 < 2; __cfwr_i42++) {
+            try {
+            while (false) {
+            while (true) {
+            float __cfwr_temp98 = -58.39f;
+            break; // Prevent infinite loops
+        }
+            break; // Prevent infinite loops
+        }
+        } catch (Exception __cfwr_e55) {
+            // ignore
+        }
+        }
+
+    int[] c;
+
+    @LTLengthOf("a") int ai1 = identity(ai);
+    // :: error: (assignment)
+    @LTLengthOf("b") int ai2 = identity(ai);
+
+    @LTEqLengthOf("a") int al1 = identity(al);
+    // :: error: (assignment)
+    @LTLengthOf("a") int al2 = identity(al);
+
+    @LTLengthOf({"a", "b"}) int abi1 = identity(abi);
+    // :: error: (assignment)
+    @LTLengthOf({"a", "b", "c"}) int abi2 = identity(abi);
+
+    @LTEqLengthOf({"a", "b"}) int abl1 = identity(abl);
+    // :: error: (assignment)
+    @LTEqLengthOf({"a", "b", "c"}) int abl2 = identity(abl);
+      protected Boolean __cfwr_proc578(Float __cfwr_p0) {
+        try {
+            return false;
+        } catch (Exception __cfwr_e37) {
+            // ignore
+        }
+        if (('v' / ('R' - 617L)) || true) {
+            while (true) {
+            return "temp61";
+            break; // Prevent infinite loops
+        }
+        }
+        return null;
+    }
+    static int __cfwr_process48() {
+        if (true && true) {
+            if (false && (('i' << false) | 25.58)) {
+            while (true) {
+            Object __cfwr_result41 = null;
+            break; // Prevent infinite loops
+        }
+        }
+        }
+        return -312;
+    }
+}

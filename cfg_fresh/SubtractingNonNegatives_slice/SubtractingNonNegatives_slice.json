@@ -1,0 +1,240 @@
+{
+  "method_name": "SubtractingNonNegatives_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "@SuppressWarnings(\"lowerbound\")",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "void test(int[] a, @Positive int y) {",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "@LTLengthOf(\"a\") int x = a.length - 1;",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "@LTLengthOf(",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "value = {\"a\", \"a\"},",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "offset = {\"0\", \"y\"})",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "int z = x - y;",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "a[z + y] = 0;",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "}",
+      "line": 9,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "variable": "y"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "variable": "x"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "a"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "y"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "z"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "y"
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "variable": "y"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "variable": "x"
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "a"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "y"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "z"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "y"
+    }
+  ]
+}

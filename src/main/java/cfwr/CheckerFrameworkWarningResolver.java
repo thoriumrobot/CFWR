@@ -69,8 +69,8 @@ public class CheckerFrameworkWarningResolver {
         // Optional fourth argument for slicer type
         if (args.length >= 4) {
             slicerType = args[3].toLowerCase();
-            if (!slicerType.equals("wala") && !slicerType.equals("specimin") && !slicerType.equals("cf")) {
-                System.err.println("Error: slicerType must be 'cf' (default), 'wala', or 'specimin', got: " + args[3]);
+            if (!slicerType.equals("wala") && !slicerType.equals("specimin") && !slicerType.equals("cf") && !slicerType.equals("soot")) {
+                System.err.println("Error: slicerType must be 'cf' (default), 'wala', 'specimin', or 'soot', got: " + args[3]);
                 return;
             }
         }
@@ -155,6 +155,9 @@ public class CheckerFrameworkWarningResolver {
                 } else if ("wala".equals(slicerType)) {
                     command = buildWalaSourceCommand(enclosingMember.get(), warning, projectRoot);
                     workingDirectory = Paths.get(resolverPath).toString();
+                } else if ("soot".equals(slicerType)) {
+                    command = buildSootCommand(enclosingMember.get(), warning, projectRoot);
+                    workingDirectory = Paths.get(resolverPath).toString();
                 } else { // "cf" Checker Framework CFG Builder (default)
                     command = buildCheckerFrameworkCommand(projectRoot);
                     // Run CF slicer in the project root so it can scan files when only warnings/output are given
@@ -169,6 +172,20 @@ public class CheckerFrameworkWarningResolver {
                 }
             } else {
                 System.err.println("No enclosing member found for warning at " + warning.filePath + ":" + warning.lineNumber + ":" + warning.columnNumber);
+                // File-level fallback for soot: produce a minimal slice to avoid blank outputs
+                if ("soot".equals(slicerType)) {
+                    try {
+                        List<String> fallback = buildSootFileLevelFallback(warning, projectRoot);
+                        if (fallback != null) {
+                            System.out.println("[fallback] Using SOOT file-level slice: " + String.join(" ", fallback));
+                            if (executeCommandFlag) {
+                                executeCommand(fallback, Paths.get(resolverPath).toString());
+                            }
+                        }
+                    } catch (Exception ef) {
+                        System.err.println("Fallback failed: " + ef.getMessage());
+                    }
+                }
             }
         } catch (Exception e) {
             System.err.println("Error processing warning: " + warning);
@@ -202,7 +219,8 @@ public class CheckerFrameworkWarningResolver {
     }
 
     private static List<String> buildSpeciminCommand(BodyDeclaration<?> member, Warning warning, String projectRoot) throws IOException {
-        String baseSlicesDir = System.getenv().getOrDefault("SLICES_DIR", "slices");
+        String baseSlicesDir = System.getenv().getOrDefault("SLICES_DIR_SOOT",
+                System.getenv().getOrDefault("SLICES_DIR", "slices"));
         Path baseDirPath = Paths.get(baseSlicesDir).toAbsolutePath().normalize();
         Files.createDirectories(baseDirPath);
 
@@ -512,7 +530,8 @@ public class CheckerFrameworkWarningResolver {
     private static List<String> buildWalaSourceCommand(
         BodyDeclaration<?> member, Warning warning, String projectRoot) throws IOException {
 
-        String baseSlicesDir = System.getenv().getOrDefault("SLICES_DIR", "slices");
+        String baseSlicesDir = System.getenv().getOrDefault("SLICES_DIR_SOOT",
+                System.getenv().getOrDefault("SLICES_DIR", "slices"));
         Path baseDirPath = Paths.get(baseSlicesDir).toAbsolutePath().normalize();
         Files.createDirectories(baseDirPath);
 
@@ -585,6 +604,126 @@ public class CheckerFrameworkWarningResolver {
         cmd.add("--line");        cmd.add(Integer.toString(warning.lineNumber));
         cmd.add("--output");      cmd.add(outputDirectory);
         cmd.add(targetMemberFlagName); cmd.add(targetMemberFlagValue);
+
+        return cmd;
+    }
+
+    private static List<String> buildSootCommand(
+        BodyDeclaration<?> member, Warning warning, String projectRoot) throws IOException {
+
+        String baseSlicesDir = System.getenv().getOrDefault("SLICES_DIR", "slices");
+        Path baseDirPath = Paths.get(baseSlicesDir).toAbsolutePath().normalize();
+        Files.createDirectories(baseDirPath);
+
+        String targetFile = warning.filePath.toString();
+        try {
+            Path rootPath = Paths.get(projectRoot).toAbsolutePath().normalize();
+            Path targetPath = Paths.get(targetFile).toAbsolutePath().normalize();
+            if (targetPath.startsWith(rootPath)) {
+                targetFile = rootPath.relativize(targetPath).toString();
+            }
+        } catch (Exception ignored) {}
+
+        String sliceNameComponent;
+        if (member instanceof MethodDeclaration) {
+            MethodDeclaration m = (MethodDeclaration) member;
+            sliceNameComponent = getQualifiedClassName(m) + "#" + getMethodSignature(m);
+        } else if (member instanceof ConstructorDeclaration) {
+            ConstructorDeclaration c = (ConstructorDeclaration) member;
+            sliceNameComponent = getQualifiedClassName(c) + "#" + getConstructorSignature(c);
+        } else if (member instanceof FieldDeclaration) {
+            FieldDeclaration f = (FieldDeclaration) member;
+            VariableDeclarator v = findVariableAtPosition(f, new Position(warning.lineNumber, warning.columnNumber));
+            if (v == null) {
+                System.err.println("No variable found at position in field declaration");
+                return null;
+            }
+            sliceNameComponent = getQualifiedClassName(f) + "#" + v.getNameAsString();
+        } else {
+            System.err.println("Unsupported member type: " + member.getClass().getSimpleName());
+            return null;
+        }
+
+        String safeSliceDirName = sanitizeSliceName(targetFile + "__" + sliceNameComponent);
+        Path outputPath = baseDirPath.resolve(safeSliceDirName);
+        Files.createDirectories(outputPath);
+        String outputDirectory = outputPath.toString();
+
+        // Two ways to run: external CLI or java -jar
+        String sootCli = System.getenv("SOOT_SLICE_CLI"); // e.g., /path/to/soot-slicer.sh
+        String sootJar = System.getenv("SOOT_JAR");       // e.g., /path/to/soot-slicer-all.jar
+        String vineflowerJar = System.getenv("VINEFLOWER_JAR"); // optional
+
+        List<String> cmd = new ArrayList<>();
+        if (sootCli != null && !sootCli.isBlank()) {
+            cmd.add(sootCli);
+        } else if (sootJar != null && !sootJar.isBlank()) {
+            cmd.add("java");
+            cmd.add("-jar");
+            cmd.add(sootJar);
+        } else {
+            System.err.println("SOOT slicer not configured. Set SOOT_SLICE_CLI or SOOT_JAR.");
+            return null;
+        }
+
+        // Generic arguments we expect a Soot-based slicer to take (placeholders):
+        // --projectRoot, --targetFile, --line, --output, and optionally --decompiler <vineflower.jar>
+        cmd.add("--projectRoot"); cmd.add(projectRoot);
+        cmd.add("--targetFile");  cmd.add(targetFile);
+        cmd.add("--line");        cmd.add(Integer.toString(warning.lineNumber));
+        cmd.add("--output");      cmd.add(outputDirectory);
+        cmd.add("--member");      cmd.add(sliceNameComponent);
+        if (vineflowerJar != null && !vineflowerJar.isBlank()) {
+            cmd.add("--decompiler");
+            cmd.add(vineflowerJar);
+        }
+
+        return cmd;
+    }
+
+    private static List<String> buildSootFileLevelFallback(Warning warning, String projectRoot) throws IOException {
+        String baseSlicesDir = System.getenv().getOrDefault("SLICES_DIR", "slices");
+        Path baseDirPath = Paths.get(baseSlicesDir).toAbsolutePath().normalize();
+        Files.createDirectories(baseDirPath);
+
+        String targetFile = warning.filePath.toString();
+        try {
+            Path rootPath = Paths.get(projectRoot).toAbsolutePath().normalize();
+            Path targetPath = Paths.get(targetFile).toAbsolutePath().normalize();
+            if (targetPath.startsWith(rootPath)) {
+                targetFile = rootPath.relativize(targetPath).toString();
+            }
+        } catch (Exception ignored) {}
+
+        String safeSliceDirName = sanitizeSliceName(targetFile + "__file_level");
+        Path outputPath = baseDirPath.resolve(safeSliceDirName);
+        Files.createDirectories(outputPath);
+
+        String sootCli = System.getenv("SOOT_SLICE_CLI");
+        String sootJar = System.getenv("SOOT_JAR");
+        String vineflowerJar = System.getenv("VINEFLOWER_JAR");
+
+        List<String> cmd = new ArrayList<>();
+        if (sootCli != null && !sootCli.isBlank()) {
+            cmd.add(sootCli);
+        } else if (sootJar != null && !sootJar.isBlank()) {
+            cmd.add("java");
+            cmd.add("-jar");
+            cmd.add(sootJar);
+        } else {
+            System.err.println("SOOT slicer not configured. Set SOOT_SLICE_CLI or SOOT_JAR.");
+            return null;
+        }
+
+        cmd.add("--projectRoot"); cmd.add(projectRoot);
+        cmd.add("--targetFile");  cmd.add(targetFile);
+        cmd.add("--line");        cmd.add(Integer.toString(warning.lineNumber));
+        cmd.add("--output");      cmd.add(outputPath.toString());
+        cmd.add("--member");      cmd.add("file_level");
+        if (vineflowerJar != null && !vineflowerJar.isBlank()) {
+            cmd.add("--decompiler");
+            cmd.add(vineflowerJar);
+        }
 
         return cmd;
     }

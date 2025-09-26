@@ -1,0 +1,848 @@
+{
+  "method_name": "Dimension_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "*",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "* This code is free software; you can redistribute it and/or modify it",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "* under the terms of the GNU General Public License version 2 only, as",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "* published by the Free Software Foundation.  Oracle designates this",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "* particular file as subject to the \"Classpath\" exception as provided",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "* by Oracle in the LICENSE file that accompanied this code.",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "*",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "* This code is distributed in the hope that it will be useful, but WITHOUT",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "* ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "* FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "* version 2 for more details (a copy is included in the LICENSE file that",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "* accompanied this code).",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "*",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "* You should have received a copy of the GNU General Public License version",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "* 2 along with this work; if not, write to the Free Software Foundation,",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "* Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "*",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "* Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "* or visit www.oracle.com if you need additional information or have any",
+      "line": 19,
+      "node_type": "stmt"
+    },
+    {
+      "id": 19,
+      "label": "* questions.",
+      "line": 20,
+      "node_type": "stmt"
+    },
+    {
+      "id": 20,
+      "label": "*/",
+      "line": 21,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "variable": "code"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "This"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "is"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "it"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "or"
+    },
+    {
+      "source": 1,
+      "target": 18,
+      "variable": "you"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "the"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "as"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "of"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "GNU"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "General"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "Public"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "License"
+    },
+    {
+      "source": 2,
+      "target": 10,
+      "variable": "version"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "the"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "by"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "Oracle"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "this"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "Free"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "Software"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "Foundation"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "the"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "file"
+    },
+    {
+      "source": 4,
+      "target": 14,
+      "variable": "to"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "code"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "in"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "the"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "that"
+    },
+    {
+      "source": 5,
+      "target": 10,
+      "variable": "LICENSE"
+    },
+    {
+      "source": 5,
+      "target": 10,
+      "variable": "file"
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "variable": "accompanied"
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "variable": "this"
+    },
+    {
+      "source": 5,
+      "target": 17,
+      "variable": "Oracle"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "the"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "is"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "in"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "that"
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "variable": "code"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "the"
+    },
+    {
+      "source": 8,
+      "target": 13,
+      "variable": "of"
+    },
+    {
+      "source": 8,
+      "target": 18,
+      "variable": "or"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "the"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "GNU"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "General"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "Public"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "License"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "a"
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "copy"
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "the"
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "version"
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "variable": "this"
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "variable": "the"
+    },
+    {
+      "source": 13,
+      "target": 18,
+      "variable": "have"
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "variable": "if"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "USA"
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 5,
+      "variable": "code"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "This"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "is"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "it"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "or"
+    },
+    {
+      "source": 1,
+      "target": 18,
+      "variable": "you"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "the"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "as"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "of"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "GNU"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "General"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "Public"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "License"
+    },
+    {
+      "source": 2,
+      "target": 10,
+      "variable": "version"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "the"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "by"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "Oracle"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "this"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "Free"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "Software"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "Foundation"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "the"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "file"
+    },
+    {
+      "source": 4,
+      "target": 14,
+      "variable": "to"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "code"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "in"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "the"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "that"
+    },
+    {
+      "source": 5,
+      "target": 10,
+      "variable": "LICENSE"
+    },
+    {
+      "source": 5,
+      "target": 10,
+      "variable": "file"
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "variable": "accompanied"
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "variable": "this"
+    },
+    {
+      "source": 5,
+      "target": 17,
+      "variable": "Oracle"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "the"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "is"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "in"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "that"
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "variable": "code"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "the"
+    },
+    {
+      "source": 8,
+      "target": 13,
+      "variable": "of"
+    },
+    {
+      "source": 8,
+      "target": 18,
+      "variable": "or"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "the"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "GNU"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "General"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "Public"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "License"
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "a"
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "copy"
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "the"
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "variable": "version"
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "variable": "this"
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "variable": "the"
+    },
+    {
+      "source": 13,
+      "target": 18,
+      "variable": "have"
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "variable": "if"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "USA"
+    }
+  ]
+}

@@ -1,0 +1,418 @@
+{
+  "method_name": "IndexForTestLBC_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void callTest1(int x) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "test1(0);",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "test1(1);",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "test1(2);",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "test1(array.length);",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "// :: error: (argument)",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "test1(array.length - 1);",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "if (array.length > x) {",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "// :: error: (argument)",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "test1(x);",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "}",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "if (array.length == x) {",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "test1(x);",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "}",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "}",
+      "line": 16,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "x"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "test1"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "test1"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "test1"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "test1"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "array"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "length"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "error"
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "argument"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "array"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "length"
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "variable": "test1"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "x"
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "variable": "if"
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "variable": "array"
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "variable": "length"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 12,
+      "variable": "x"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "test1"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "variable": "x"
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "x"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "test1"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "test1"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "test1"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "test1"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "array"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "length"
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "error"
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "argument"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "array"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "length"
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "variable": "test1"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "x"
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "variable": "if"
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "variable": "array"
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "variable": "length"
+    },
+    {
+      "source": 9,
+      "target": 12,
+      "variable": "x"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "test1"
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "variable": "x"
+    }
+  ]
+}

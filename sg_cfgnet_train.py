@@ -13,11 +13,17 @@ logger = logging.getLogger(__name__)
 
 def load_cfg_dir(cfg_dir: str) -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
-    for fn in os.listdir(cfg_dir):
-        if fn.endswith('.json'):
-            with open(os.path.join(cfg_dir, fn), 'r') as f:
-                cfg = json.load(f)
-            items.append({'file': fn, 'method': cfg.get('method_name', 'm'), 'data': cfg})
+    for root, _, files in os.walk(cfg_dir):
+        for fn in files:
+            if not fn.endswith('.json'):
+                continue
+            path = os.path.join(root, fn)
+            try:
+                with open(path, 'r') as f:
+                    cfg = json.load(f)
+                items.append({'file': path, 'method': cfg.get('method_name', 'm'), 'data': cfg})
+            except Exception as e:
+                logger.warning(f"Failed to load {path}: {e}")
     return items
 
 

@@ -1,0 +1,8 @@
+{
+  "pf_classes": [
+    "NO_ANNOTATION",
+    "@Positive",
+    "@NonNegative",
+    "@GTENegativeOne"
+  ]
+}

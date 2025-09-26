@@ -1,0 +1,304 @@
+{
+  "method_name": "SLSubtyping_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void subtype(int @SameLen(\"#2\") [] a, int[] b) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "int @SameLen({\"a\", \"b\"}) [] c = a;",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "// :: error: (assignment)",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "int @SameLen(\"c\") [] q = {1, 2};",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "int @SameLen(\"c\") [] d = q;",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "// :: error: (assignment)",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "int @SameLen(\"f\") [] e = a;",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "}",
+      "line": 10,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "SameLen"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "b"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "SameLen"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "c"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "error"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "assignment"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "SameLen"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "c"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "q"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "SameLen"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "SameLen"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "b"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "SameLen"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "c"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "error"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "assignment"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "SameLen"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "c"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "q"
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "SameLen"
+    }
+  ]
+}

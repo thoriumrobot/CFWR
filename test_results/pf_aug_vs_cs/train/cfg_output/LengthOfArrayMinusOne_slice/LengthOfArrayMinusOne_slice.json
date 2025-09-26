@@ -1,0 +1,186 @@
+{
+  "method_name": "LengthOfArrayMinusOne_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void test(int[] arr) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "// :: error: (array.access.unsafe.low)",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "int i = arr[arr.length - 1];",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "if (arr.length > 0) {",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "int j = arr[arr.length - 1];",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "}",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "}",
+      "line": 8,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "arr"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "arr"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "length"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "arr"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "length"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "arr"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "arr"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "length"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "arr"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "length"
+    }
+  ]
+}

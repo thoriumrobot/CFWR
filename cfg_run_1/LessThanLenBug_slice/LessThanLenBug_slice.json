@@ -1,0 +1,178 @@
+{
+  "method_name": "LessThanLenBug_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public static void m1(int[] shorter) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "int[] longer = new int[4 * shorter.length];",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "// :: error: (assignment)",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "@LTLengthOf(\"longer\") int x = shorter.length;",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "int i = longer[x];",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "}",
+      "line": 6,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "shorter"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "longer"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "shorter"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "length"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "longer"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "x"
+    },
+    {
+      "source": 4,
+      "target": 5
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "shorter"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "longer"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "shorter"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "length"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "longer"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "x"
+    }
+  ]
+}

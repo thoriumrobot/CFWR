@@ -1,0 +1,310 @@
+{
+  "method_name": "RandomTest_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void test() {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "Random rand = new Random();",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "int[] a = new int[8];",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "// :: error: (anno.on.irrelevant)",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "@LTLengthOf(\"a\") double d1 = Math.random() * a.length;",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "@LTLengthOf(\"a\") int deref = (int) (Math.random() * a.length);",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "@LTLengthOf(\"a\") int deref2 = (int) (rand.nextDouble() * a.length);",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "@LTLengthOf(\"a\") int deref3 = rand.nextInt(a.length);",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "}",
+      "line": 9,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "new"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "rand"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "a"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "Math"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "random"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "length"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "a"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "length"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "a"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "rand"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "length"
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "new"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "rand"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "a"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "Math"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "random"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "length"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "a"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "length"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "a"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "rand"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "length"
+    }
+  ]
+}

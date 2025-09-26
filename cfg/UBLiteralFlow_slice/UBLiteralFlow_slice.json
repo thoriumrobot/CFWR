@@ -1,0 +1,8180 @@
+{
+  "method_name": "UBLiteralFlow_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "private static @IndexOrLow(\"#1\") int lineStartIndexPartial(",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "String s, @GTENegativeOne int lineStart) {",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "int result;",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "result = -1;",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "} else {",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "result = lineStart;",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "}",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "return result;",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "}",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "private static @LTLengthOf(\"#1\") int lineStartIndexPartial2(",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "String s, @GTENegativeOne int lineStart) {",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "int result;",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "result = -1;",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "} else {",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "result = lineStart;",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "}",
+      "line": 19,
+      "node_type": "stmt"
+    },
+    {
+      "id": 19,
+      "label": "return result;",
+      "line": 20,
+      "node_type": "stmt"
+    },
+    {
+      "id": 20,
+      "label": "}",
+      "line": 21,
+      "node_type": "stmt"
+    },
+    {
+      "id": 21,
+      "label": "",
+      "line": 22,
+      "node_type": "stmt"
+    },
+    {
+      "id": 22,
+      "label": "private static @LTLengthOf(value = \"#1\", offset = \"1\") int lineStartIndexPartial3(",
+      "line": 23,
+      "node_type": "stmt"
+    },
+    {
+      "id": 23,
+      "label": "String s, @GTENegativeOne int lineStart) {",
+      "line": 24,
+      "node_type": "stmt"
+    },
+    {
+      "id": 24,
+      "label": "int result;",
+      "line": 25,
+      "node_type": "stmt"
+    },
+    {
+      "id": 25,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 26,
+      "node_type": "stmt"
+    },
+    {
+      "id": 26,
+      "label": "result = -1;",
+      "line": 27,
+      "node_type": "stmt"
+    },
+    {
+      "id": 27,
+      "label": "} else {",
+      "line": 28,
+      "node_type": "stmt"
+    },
+    {
+      "id": 28,
+      "label": "result = lineStart;",
+      "line": 29,
+      "node_type": "stmt"
+    },
+    {
+      "id": 29,
+      "label": "}",
+      "line": 30,
+      "node_type": "stmt"
+    },
+    {
+      "id": 30,
+      "label": "// :: error: (return)",
+      "line": 31,
+      "node_type": "stmt"
+    },
+    {
+      "id": 31,
+      "label": "return result;",
+      "line": 32,
+      "node_type": "stmt"
+    },
+    {
+      "id": 32,
+      "label": "}",
+      "line": 33,
+      "node_type": "stmt"
+    },
+    {
+      "id": 33,
+      "label": "",
+      "line": 34,
+      "node_type": "stmt"
+    },
+    {
+      "id": 34,
+      "label": "private static @LTLengthOf(value = \"#1\", offset = \"-1\") int lineStartIndexPartial4(",
+      "line": 35,
+      "node_type": "stmt"
+    },
+    {
+      "id": 35,
+      "label": "String s, @GTENegativeOne int lineStart) {",
+      "line": 36,
+      "node_type": "stmt"
+    },
+    {
+      "id": 36,
+      "label": "int result;",
+      "line": 37,
+      "node_type": "stmt"
+    },
+    {
+      "id": 37,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 38,
+      "node_type": "stmt"
+    },
+    {
+      "id": 38,
+      "label": "result = -1;",
+      "line": 39,
+      "node_type": "stmt"
+    },
+    {
+      "id": 39,
+      "label": "} else {",
+      "line": 40,
+      "node_type": "stmt"
+    },
+    {
+      "id": 40,
+      "label": "result = lineStart;",
+      "line": 41,
+      "node_type": "stmt"
+    },
+    {
+      "id": 41,
+      "label": "}",
+      "line": 42,
+      "node_type": "stmt"
+    },
+    {
+      "id": 42,
+      "label": "return result;",
+      "line": 43,
+      "node_type": "stmt"
+    },
+    {
+      "id": 43,
+      "label": "}",
+      "line": 44,
+      "node_type": "stmt"
+    },
+    {
+      "id": 44,
+      "label": "",
+      "line": 45,
+      "node_type": "stmt"
+    },
+    {
+      "id": 45,
+      "label": "/**",
+      "line": 46,
+      "node_type": "stmt"
+    },
+    {
+      "id": 46,
+      "label": "* Given a string, return the index of the start of a line, after {@code start}.",
+      "line": 47,
+      "node_type": "stmt"
+    },
+    {
+      "id": 47,
+      "label": "*",
+      "line": 48,
+      "node_type": "stmt"
+    },
+    {
+      "id": 48,
+      "label": "* @param s the string in which to find the start of a line",
+      "line": 49,
+      "node_type": "stmt"
+    },
+    {
+      "id": 49,
+      "label": "* @param start the index at which to start looking for the start of a line",
+      "line": 50,
+      "node_type": "stmt"
+    },
+    {
+      "id": 50,
+      "label": "* @return the index of the start of a line, or -1 if no such exists",
+      "line": 51,
+      "node_type": "stmt"
+    },
+    {
+      "id": 51,
+      "label": "*/",
+      "line": 52,
+      "node_type": "stmt"
+    },
+    {
+      "id": 52,
+      "label": "private static @IndexOrLow(\"#1\") int lineStartIndex(String s, int start) {",
+      "line": 53,
+      "node_type": "stmt"
+    },
+    {
+      "id": 53,
+      "label": "if (s.length() == 0) {",
+      "line": 54,
+      "node_type": "stmt"
+    },
+    {
+      "id": 54,
+      "label": "return -1;",
+      "line": 55,
+      "node_type": "stmt"
+    },
+    {
+      "id": 55,
+      "label": "}",
+      "line": 56,
+      "node_type": "stmt"
+    },
+    {
+      "id": 56,
+      "label": "if (start == 0) {",
+      "line": 57,
+      "node_type": "stmt"
+    },
+    {
+      "id": 57,
+      "label": "// It doesn't make sense to call this routine with 0, but return 0 anyway.",
+      "line": 58,
+      "node_type": "stmt"
+    },
+    {
+      "id": 58,
+      "label": "return 0;",
+      "line": 59,
+      "node_type": "stmt"
+    },
+    {
+      "id": 59,
+      "label": "}",
+      "line": 60,
+      "node_type": "stmt"
+    },
+    {
+      "id": 60,
+      "label": "if (start > s.length()) {",
+      "line": 61,
+      "node_type": "stmt"
+    },
+    {
+      "id": 61,
+      "label": "return -1;",
+      "line": 62,
+      "node_type": "stmt"
+    },
+    {
+      "id": 62,
+      "label": "}",
+      "line": 63,
+      "node_type": "stmt"
+    },
+    {
+      "id": 63,
+      "label": "// possible line terminators:  \"\\n\", \"\\r\\n\", \"\\r\".",
+      "line": 64,
+      "node_type": "stmt"
+    },
+    {
+      "id": 64,
+      "label": "int newlinePos = s.indexOf(\"\\n\", start - 1);",
+      "line": 65,
+      "node_type": "stmt"
+    },
+    {
+      "id": 65,
+      "label": "int afterNewline = (newlinePos == -1) ? Integer.MAX_VALUE : newlinePos + 1;",
+      "line": 66,
+      "node_type": "stmt"
+    },
+    {
+      "id": 66,
+      "label": "int returnPos1 = s.indexOf(\"\\r\\n\", start - 2);",
+      "line": 67,
+      "node_type": "stmt"
+    },
+    {
+      "id": 67,
+      "label": "int returnPos2 = s.indexOf(\"\\r\", start - 1);",
+      "line": 68,
+      "node_type": "stmt"
+    },
+    {
+      "id": 68,
+      "label": "int afterReturn1 = (returnPos1 == -1) ? Integer.MAX_VALUE : returnPos1 + 2;",
+      "line": 69,
+      "node_type": "stmt"
+    },
+    {
+      "id": 69,
+      "label": "int afterReturn2 = (returnPos2 == -1) ? Integer.MAX_VALUE : returnPos2 + 1;",
+      "line": 70,
+      "node_type": "stmt"
+    },
+    {
+      "id": 70,
+      "label": "int lineStart = Math.min(afterNewline, Math.min(afterReturn1, afterReturn2));",
+      "line": 71,
+      "node_type": "stmt"
+    },
+    {
+      "id": 71,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 72,
+      "node_type": "stmt"
+    },
+    {
+      "id": 72,
+      "label": "return -1;",
+      "line": 73,
+      "node_type": "stmt"
+    },
+    {
+      "id": 73,
+      "label": "} else {",
+      "line": 74,
+      "node_type": "stmt"
+    },
+    {
+      "id": 74,
+      "label": "return lineStart;",
+      "line": 75,
+      "node_type": "stmt"
+    },
+    {
+      "id": 75,
+      "label": "}",
+      "line": 76,
+      "node_type": "stmt"
+    },
+    {
+      "id": 76,
+      "label": "}",
+      "line": 77,
+      "node_type": "stmt"
+    },
+    {
+      "id": 77,
+      "label": "",
+      "line": 78,
+      "node_type": "stmt"
+    },
+    {
+      "id": 78,
+      "label": "/**",
+      "line": 79,
+      "node_type": "stmt"
+    },
+    {
+      "id": 79,
+      "label": "* Given a string, return the index of the start of a line, after {@code start}.",
+      "line": 80,
+      "node_type": "stmt"
+    },
+    {
+      "id": 80,
+      "label": "*",
+      "line": 81,
+      "node_type": "stmt"
+    },
+    {
+      "id": 81,
+      "label": "* @param s the string in which to find the start of a line",
+      "line": 82,
+      "node_type": "stmt"
+    },
+    {
+      "id": 82,
+      "label": "* @param start the index at which to start looking for the start of a line",
+      "line": 83,
+      "node_type": "stmt"
+    },
+    {
+      "id": 83,
+      "label": "* @return the index of the start of a line, or -1 if no such exists",
+      "line": 84,
+      "node_type": "stmt"
+    },
+    {
+      "id": 84,
+      "label": "*/",
+      "line": 85,
+      "node_type": "stmt"
+    },
+    {
+      "id": 85,
+      "label": "private static @LTLengthOf(\"#1\") int lineStartIndex2(String s, int start) {",
+      "line": 86,
+      "node_type": "stmt"
+    },
+    {
+      "id": 86,
+      "label": "if (s.length() == 0) {",
+      "line": 87,
+      "node_type": "stmt"
+    },
+    {
+      "id": 87,
+      "label": "return -1;",
+      "line": 88,
+      "node_type": "stmt"
+    },
+    {
+      "id": 88,
+      "label": "}",
+      "line": 89,
+      "node_type": "stmt"
+    },
+    {
+      "id": 89,
+      "label": "if (start == 0) {",
+      "line": 90,
+      "node_type": "stmt"
+    },
+    {
+      "id": 90,
+      "label": "// It doesn't make sense to call this routine with 0, but return 0 anyway.",
+      "line": 91,
+      "node_type": "stmt"
+    },
+    {
+      "id": 91,
+      "label": "return 0;",
+      "line": 92,
+      "node_type": "stmt"
+    },
+    {
+      "id": 92,
+      "label": "}",
+      "line": 93,
+      "node_type": "stmt"
+    },
+    {
+      "id": 93,
+      "label": "if (start > s.length()) {",
+      "line": 94,
+      "node_type": "stmt"
+    },
+    {
+      "id": 94,
+      "label": "return -1;",
+      "line": 95,
+      "node_type": "stmt"
+    },
+    {
+      "id": 95,
+      "label": "}",
+      "line": 96,
+      "node_type": "stmt"
+    },
+    {
+      "id": 96,
+      "label": "// possible line terminators:  \"\\n\", \"\\r\\n\", \"\\r\".",
+      "line": 97,
+      "node_type": "stmt"
+    },
+    {
+      "id": 97,
+      "label": "int newlinePos = s.indexOf(\"\\n\", start - 1);",
+      "line": 98,
+      "node_type": "stmt"
+    },
+    {
+      "id": 98,
+      "label": "int afterNewline = (newlinePos == -1) ? Integer.MAX_VALUE : newlinePos + 1;",
+      "line": 99,
+      "node_type": "stmt"
+    },
+    {
+      "id": 99,
+      "label": "int returnPos1 = s.indexOf(\"\\r\\n\", start - 2);",
+      "line": 100,
+      "node_type": "stmt"
+    },
+    {
+      "id": 100,
+      "label": "int returnPos2 = s.indexOf(\"\\r\", start - 1);",
+      "line": 101,
+      "node_type": "stmt"
+    },
+    {
+      "id": 101,
+      "label": "int afterReturn1 = (returnPos1 == -1) ? Integer.MAX_VALUE : returnPos1 + 2;",
+      "line": 102,
+      "node_type": "stmt"
+    },
+    {
+      "id": 102,
+      "label": "int afterReturn2 = (returnPos2 == -1) ? Integer.MAX_VALUE : returnPos2 + 1;",
+      "line": 103,
+      "node_type": "stmt"
+    },
+    {
+      "id": 103,
+      "label": "int lineStart = Math.min(afterNewline, Math.min(afterReturn1, afterReturn2));",
+      "line": 104,
+      "node_type": "stmt"
+    },
+    {
+      "id": 104,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 105,
+      "node_type": "stmt"
+    },
+    {
+      "id": 105,
+      "label": "return -1;",
+      "line": 106,
+      "node_type": "stmt"
+    },
+    {
+      "id": 106,
+      "label": "} else {",
+      "line": 107,
+      "node_type": "stmt"
+    },
+    {
+      "id": 107,
+      "label": "return lineStart;",
+      "line": 108,
+      "node_type": "stmt"
+    },
+    {
+      "id": 108,
+      "label": "}",
+      "line": 109,
+      "node_type": "stmt"
+    },
+    {
+      "id": 109,
+      "label": "}",
+      "line": 110,
+      "node_type": "stmt"
+    },
+    {
+      "id": 110,
+      "label": "",
+      "line": 111,
+      "node_type": "stmt"
+    },
+    {
+      "id": 111,
+      "label": "/**",
+      "line": 112,
+      "node_type": "stmt"
+    },
+    {
+      "id": 112,
+      "label": "* Given a string, return the index of the start of a line, after {@code start}.",
+      "line": 113,
+      "node_type": "stmt"
+    },
+    {
+      "id": 113,
+      "label": "*",
+      "line": 114,
+      "node_type": "stmt"
+    },
+    {
+      "id": 114,
+      "label": "* @param s the string in which to find the start of a line",
+      "line": 115,
+      "node_type": "stmt"
+    },
+    {
+      "id": 115,
+      "label": "* @param start the index at which to start looking for the start of a line",
+      "line": 116,
+      "node_type": "stmt"
+    },
+    {
+      "id": 116,
+      "label": "* @return the index of the start of a line, or -1 if no such exists",
+      "line": 117,
+      "node_type": "stmt"
+    },
+    {
+      "id": 117,
+      "label": "*/",
+      "line": 118,
+      "node_type": "stmt"
+    },
+    {
+      "id": 118,
+      "label": "private static @LTLengthOf(value = \"#1\", offset = \"1\") int lineStartIndex3(String s, int start) {",
+      "line": 119,
+      "node_type": "stmt"
+    },
+    {
+      "id": 119,
+      "label": "if (s.length() == 0) {",
+      "line": 120,
+      "node_type": "stmt"
+    },
+    {
+      "id": 120,
+      "label": "// :: error: (return)",
+      "line": 121,
+      "node_type": "stmt"
+    },
+    {
+      "id": 121,
+      "label": "return -1;",
+      "line": 122,
+      "node_type": "stmt"
+    },
+    {
+      "id": 122,
+      "label": "}",
+      "line": 123,
+      "node_type": "stmt"
+    },
+    {
+      "id": 123,
+      "label": "if (start == 0) {",
+      "line": 124,
+      "node_type": "stmt"
+    },
+    {
+      "id": 124,
+      "label": "// It doesn't make sense to call this routine with 0, but return 0 anyway.",
+      "line": 125,
+      "node_type": "stmt"
+    },
+    {
+      "id": 125,
+      "label": "// :: error: (return)",
+      "line": 126,
+      "node_type": "stmt"
+    },
+    {
+      "id": 126,
+      "label": "return 0;",
+      "line": 127,
+      "node_type": "stmt"
+    },
+    {
+      "id": 127,
+      "label": "}",
+      "line": 128,
+      "node_type": "stmt"
+    },
+    {
+      "id": 128,
+      "label": "if (start > s.length()) {",
+      "line": 129,
+      "node_type": "stmt"
+    },
+    {
+      "id": 129,
+      "label": "return -1;",
+      "line": 130,
+      "node_type": "stmt"
+    },
+    {
+      "id": 130,
+      "label": "}",
+      "line": 131,
+      "node_type": "stmt"
+    },
+    {
+      "id": 131,
+      "label": "// possible line terminators:  \"\\n\", \"\\r\\n\", \"\\r\".",
+      "line": 132,
+      "node_type": "stmt"
+    },
+    {
+      "id": 132,
+      "label": "int newlinePos = s.indexOf(\"\\n\", start - 1);",
+      "line": 133,
+      "node_type": "stmt"
+    },
+    {
+      "id": 133,
+      "label": "int afterNewline = (newlinePos == -1) ? Integer.MAX_VALUE : newlinePos + 1;",
+      "line": 134,
+      "node_type": "stmt"
+    },
+    {
+      "id": 134,
+      "label": "int returnPos1 = s.indexOf(\"\\r\\n\", start - 2);",
+      "line": 135,
+      "node_type": "stmt"
+    },
+    {
+      "id": 135,
+      "label": "int returnPos2 = s.indexOf(\"\\r\", start - 1);",
+      "line": 136,
+      "node_type": "stmt"
+    },
+    {
+      "id": 136,
+      "label": "int afterReturn1 = (returnPos1 == -1) ? Integer.MAX_VALUE : returnPos1 + 2;",
+      "line": 137,
+      "node_type": "stmt"
+    },
+    {
+      "id": 137,
+      "label": "int afterReturn2 = (returnPos2 == -1) ? Integer.MAX_VALUE : returnPos2 + 1;",
+      "line": 138,
+      "node_type": "stmt"
+    },
+    {
+      "id": 138,
+      "label": "int lineStart = Math.min(afterNewline, Math.min(afterReturn1, afterReturn2));",
+      "line": 139,
+      "node_type": "stmt"
+    },
+    {
+      "id": 139,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 140,
+      "node_type": "stmt"
+    },
+    {
+      "id": 140,
+      "label": "return -1;",
+      "line": 141,
+      "node_type": "stmt"
+    },
+    {
+      "id": 141,
+      "label": "} else {",
+      "line": 142,
+      "node_type": "stmt"
+    },
+    {
+      "id": 142,
+      "label": "// :: error: (return)",
+      "line": 143,
+      "node_type": "stmt"
+    },
+    {
+      "id": 143,
+      "label": "return lineStart;",
+      "line": 144,
+      "node_type": "stmt"
+    },
+    {
+      "id": 144,
+      "label": "}",
+      "line": 145,
+      "node_type": "stmt"
+    },
+    {
+      "id": 145,
+      "label": "}",
+      "line": 146,
+      "node_type": "stmt"
+    },
+    {
+      "id": 146,
+      "label": "",
+      "line": 147,
+      "node_type": "stmt"
+    },
+    {
+      "id": 147,
+      "label": "/**",
+      "line": 148,
+      "node_type": "stmt"
+    },
+    {
+      "id": 148,
+      "label": "* Given a string, return the index of the start of a line, after {@code start}.",
+      "line": 149,
+      "node_type": "stmt"
+    },
+    {
+      "id": 149,
+      "label": "*",
+      "line": 150,
+      "node_type": "stmt"
+    },
+    {
+      "id": 150,
+      "label": "* @param s the string in which to find the start of a line",
+      "line": 151,
+      "node_type": "stmt"
+    },
+    {
+      "id": 151,
+      "label": "* @param start the index at which to start looking for the start of a line",
+      "line": 152,
+      "node_type": "stmt"
+    },
+    {
+      "id": 152,
+      "label": "* @return the index of the start of a line, or -1 if no such exists",
+      "line": 153,
+      "node_type": "stmt"
+    },
+    {
+      "id": 153,
+      "label": "*/",
+      "line": 154,
+      "node_type": "stmt"
+    },
+    {
+      "id": 154,
+      "label": "private static @LTLengthOf(value = \"#1\", offset = \"-1\") int lineStartIndex4(String s, int start) {",
+      "line": 155,
+      "node_type": "stmt"
+    },
+    {
+      "id": 155,
+      "label": "if (s.length() == 0) {",
+      "line": 156,
+      "node_type": "stmt"
+    },
+    {
+      "id": 156,
+      "label": "return -1;",
+      "line": 157,
+      "node_type": "stmt"
+    },
+    {
+      "id": 157,
+      "label": "}",
+      "line": 158,
+      "node_type": "stmt"
+    },
+    {
+      "id": 158,
+      "label": "if (start == 0) {",
+      "line": 159,
+      "node_type": "stmt"
+    },
+    {
+      "id": 159,
+      "label": "// It doesn't make sense to call this routine with 0, but return 0 anyway.",
+      "line": 160,
+      "node_type": "stmt"
+    },
+    {
+      "id": 160,
+      "label": "return 0;",
+      "line": 161,
+      "node_type": "stmt"
+    },
+    {
+      "id": 161,
+      "label": "}",
+      "line": 162,
+      "node_type": "stmt"
+    },
+    {
+      "id": 162,
+      "label": "if (start > s.length()) {",
+      "line": 163,
+      "node_type": "stmt"
+    },
+    {
+      "id": 163,
+      "label": "return -1;",
+      "line": 164,
+      "node_type": "stmt"
+    },
+    {
+      "id": 164,
+      "label": "}",
+      "line": 165,
+      "node_type": "stmt"
+    },
+    {
+      "id": 165,
+      "label": "// possible line terminators:  \"\\n\", \"\\r\\n\", \"\\r\".",
+      "line": 166,
+      "node_type": "stmt"
+    },
+    {
+      "id": 166,
+      "label": "int newlinePos = s.indexOf(\"\\n\", start - 1);",
+      "line": 167,
+      "node_type": "stmt"
+    },
+    {
+      "id": 167,
+      "label": "int afterNewline = (newlinePos == -1) ? Integer.MAX_VALUE : newlinePos + 1;",
+      "line": 168,
+      "node_type": "stmt"
+    },
+    {
+      "id": 168,
+      "label": "int returnPos1 = s.indexOf(\"\\r\\n\", start - 2);",
+      "line": 169,
+      "node_type": "stmt"
+    },
+    {
+      "id": 169,
+      "label": "int returnPos2 = s.indexOf(\"\\r\", start - 1);",
+      "line": 170,
+      "node_type": "stmt"
+    },
+    {
+      "id": 170,
+      "label": "int afterReturn1 = (returnPos1 == -1) ? Integer.MAX_VALUE : returnPos1 + 2;",
+      "line": 171,
+      "node_type": "stmt"
+    },
+    {
+      "id": 171,
+      "label": "int afterReturn2 = (returnPos2 == -1) ? Integer.MAX_VALUE : returnPos2 + 1;",
+      "line": 172,
+      "node_type": "stmt"
+    },
+    {
+      "id": 172,
+      "label": "int lineStart = Math.min(afterNewline, Math.min(afterReturn1, afterReturn2));",
+      "line": 173,
+      "node_type": "stmt"
+    },
+    {
+      "id": 173,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 174,
+      "node_type": "stmt"
+    },
+    {
+      "id": 174,
+      "label": "return -1;",
+      "line": 175,
+      "node_type": "stmt"
+    },
+    {
+      "id": 175,
+      "label": "} else {",
+      "line": 176,
+      "node_type": "stmt"
+    },
+    {
+      "id": 176,
+      "label": "return lineStart;",
+      "line": 177,
+      "node_type": "stmt"
+    },
+    {
+      "id": 177,
+      "label": "}",
+      "line": 178,
+      "node_type": "stmt"
+    },
+    {
+      "id": 178,
+      "label": "}",
+      "line": 179,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 11,
+      "variable": "private"
+    },
+    {
+      "source": 0,
+      "target": 11,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 52,
+      "variable": "IndexOrLow"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "lineStart"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "s"
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "variable": "String"
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "result"
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "lineStart"
+    },
+    {
+      "source": 3,
+      "target": 12,
+      "variable": "s"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "if"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "length"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "result"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 16,
+      "variable": "else"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "result"
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "variable": "lineStart"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 13,
+      "variable": "result"
+    },
+    {
+      "source": 8,
+      "target": 19,
+      "variable": "return"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 11,
+      "target": 22,
+      "variable": "private"
+    },
+    {
+      "source": 11,
+      "target": 22,
+      "variable": "static"
+    },
+    {
+      "source": 11,
+      "target": 22,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "variable": "int"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "lineStart"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "s"
+    },
+    {
+      "source": 12,
+      "target": 23,
+      "variable": "String"
+    },
+    {
+      "source": 12,
+      "target": 23,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "result"
+    },
+    {
+      "source": 13,
+      "target": 22,
+      "variable": "int"
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 17,
+      "variable": "lineStart"
+    },
+    {
+      "source": 14,
+      "target": 23,
+      "variable": "s"
+    },
+    {
+      "source": 14,
+      "target": 25,
+      "variable": "if"
+    },
+    {
+      "source": 14,
+      "target": 25,
+      "variable": "length"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "result"
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 16,
+      "target": 27,
+      "variable": "else"
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "result"
+    },
+    {
+      "source": 17,
+      "target": 23,
+      "variable": "lineStart"
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 19,
+      "target": 24,
+      "variable": "result"
+    },
+    {
+      "source": 19,
+      "target": 30,
+      "variable": "return"
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 22,
+      "target": 23,
+      "variable": "int"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "private"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "static"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "value"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "offset"
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 23,
+      "target": 24,
+      "variable": "int"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "lineStart"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "s"
+    },
+    {
+      "source": 23,
+      "target": 35,
+      "variable": "String"
+    },
+    {
+      "source": 23,
+      "target": 35,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 24,
+      "target": 26,
+      "variable": "result"
+    },
+    {
+      "source": 24,
+      "target": 34,
+      "variable": "int"
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 25,
+      "target": 28,
+      "variable": "lineStart"
+    },
+    {
+      "source": 25,
+      "target": 35,
+      "variable": "s"
+    },
+    {
+      "source": 25,
+      "target": 37,
+      "variable": "if"
+    },
+    {
+      "source": 25,
+      "target": 37,
+      "variable": "length"
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 26,
+      "target": 28,
+      "variable": "result"
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 27,
+      "target": 39,
+      "variable": "else"
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 28,
+      "target": 31,
+      "variable": "result"
+    },
+    {
+      "source": 28,
+      "target": 35,
+      "variable": "lineStart"
+    },
+    {
+      "source": 29,
+      "target": 30
+    },
+    {
+      "source": 30,
+      "target": 31
+    },
+    {
+      "source": 30,
+      "target": 31,
+      "variable": "return"
+    },
+    {
+      "source": 30,
+      "target": 120,
+      "variable": "error"
+    },
+    {
+      "source": 31,
+      "target": 32
+    },
+    {
+      "source": 31,
+      "target": 36,
+      "variable": "result"
+    },
+    {
+      "source": 31,
+      "target": 42,
+      "variable": "return"
+    },
+    {
+      "source": 32,
+      "target": 33
+    },
+    {
+      "source": 33,
+      "target": 34
+    },
+    {
+      "source": 34,
+      "target": 35
+    },
+    {
+      "source": 34,
+      "target": 35,
+      "variable": "int"
+    },
+    {
+      "source": 34,
+      "target": 52,
+      "variable": "private"
+    },
+    {
+      "source": 34,
+      "target": 52,
+      "variable": "static"
+    },
+    {
+      "source": 34,
+      "target": 85,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 34,
+      "target": 118,
+      "variable": "value"
+    },
+    {
+      "source": 34,
+      "target": 118,
+      "variable": "offset"
+    },
+    {
+      "source": 35,
+      "target": 36
+    },
+    {
+      "source": 35,
+      "target": 36,
+      "variable": "int"
+    },
+    {
+      "source": 35,
+      "target": 37,
+      "variable": "lineStart"
+    },
+    {
+      "source": 35,
+      "target": 37,
+      "variable": "s"
+    },
+    {
+      "source": 35,
+      "target": 52,
+      "variable": "String"
+    },
+    {
+      "source": 36,
+      "target": 37
+    },
+    {
+      "source": 36,
+      "target": 38,
+      "variable": "result"
+    },
+    {
+      "source": 36,
+      "target": 52,
+      "variable": "int"
+    },
+    {
+      "source": 37,
+      "target": 38
+    },
+    {
+      "source": 37,
+      "target": 40,
+      "variable": "lineStart"
+    },
+    {
+      "source": 37,
+      "target": 48,
+      "variable": "s"
+    },
+    {
+      "source": 37,
+      "target": 50,
+      "variable": "if"
+    },
+    {
+      "source": 37,
+      "target": 53,
+      "variable": "length"
+    },
+    {
+      "source": 38,
+      "target": 39
+    },
+    {
+      "source": 38,
+      "target": 40,
+      "variable": "result"
+    },
+    {
+      "source": 39,
+      "target": 40
+    },
+    {
+      "source": 39,
+      "target": 73,
+      "variable": "else"
+    },
+    {
+      "source": 40,
+      "target": 41
+    },
+    {
+      "source": 40,
+      "target": 42,
+      "variable": "result"
+    },
+    {
+      "source": 40,
+      "target": 70,
+      "variable": "lineStart"
+    },
+    {
+      "source": 41,
+      "target": 42
+    },
+    {
+      "source": 42,
+      "target": 43
+    },
+    {
+      "source": 42,
+      "target": 46,
+      "variable": "return"
+    },
+    {
+      "source": 43,
+      "target": 44
+    },
+    {
+      "source": 44,
+      "target": 45
+    },
+    {
+      "source": 45,
+      "target": 46
+    },
+    {
+      "source": 46,
+      "target": 47
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "the"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "string"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "start"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "of"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "a"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "line"
+    },
+    {
+      "source": 46,
+      "target": 49,
+      "variable": "index"
+    },
+    {
+      "source": 46,
+      "target": 50,
+      "variable": "return"
+    },
+    {
+      "source": 46,
+      "target": 79,
+      "variable": "Given"
+    },
+    {
+      "source": 46,
+      "target": 79,
+      "variable": "after"
+    },
+    {
+      "source": 46,
+      "target": 79,
+      "variable": "code"
+    },
+    {
+      "source": 47,
+      "target": 48
+    },
+    {
+      "source": 48,
+      "target": 49
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "param"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "start"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "the"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "which"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "to"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "of"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "a"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "line"
+    },
+    {
+      "source": 48,
+      "target": 52,
+      "variable": "s"
+    },
+    {
+      "source": 48,
+      "target": 79,
+      "variable": "string"
+    },
+    {
+      "source": 48,
+      "target": 81,
+      "variable": "in"
+    },
+    {
+      "source": 48,
+      "target": 81,
+      "variable": "find"
+    },
+    {
+      "source": 49,
+      "target": 50
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "the"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "index"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "of"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "start"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "a"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "line"
+    },
+    {
+      "source": 49,
+      "target": 57,
+      "variable": "to"
+    },
+    {
+      "source": 49,
+      "target": 81,
+      "variable": "param"
+    },
+    {
+      "source": 49,
+      "target": 81,
+      "variable": "which"
+    },
+    {
+      "source": 49,
+      "target": 82,
+      "variable": "at"
+    },
+    {
+      "source": 49,
+      "target": 82,
+      "variable": "looking"
+    },
+    {
+      "source": 49,
+      "target": 82,
+      "variable": "for"
+    },
+    {
+      "source": 50,
+      "target": 51
+    },
+    {
+      "source": 50,
+      "target": 52,
+      "variable": "start"
+    },
+    {
+      "source": 50,
+      "target": 53,
+      "variable": "if"
+    },
+    {
+      "source": 50,
+      "target": 54,
+      "variable": "return"
+    },
+    {
+      "source": 50,
+      "target": 63,
+      "variable": "line"
+    },
+    {
+      "source": 50,
+      "target": 79,
+      "variable": "a"
+    },
+    {
+      "source": 50,
+      "target": 79,
+      "variable": "the"
+    },
+    {
+      "source": 50,
+      "target": 79,
+      "variable": "index"
+    },
+    {
+      "source": 50,
+      "target": 79,
+      "variable": "of"
+    },
+    {
+      "source": 50,
+      "target": 83,
+      "variable": "or"
+    },
+    {
+      "source": 50,
+      "target": 83,
+      "variable": "no"
+    },
+    {
+      "source": 50,
+      "target": 83,
+      "variable": "such"
+    },
+    {
+      "source": 50,
+      "target": 83,
+      "variable": "exists"
+    },
+    {
+      "source": 51,
+      "target": 52
+    },
+    {
+      "source": 52,
+      "target": 53
+    },
+    {
+      "source": 52,
+      "target": 53,
+      "variable": "s"
+    },
+    {
+      "source": 52,
+      "target": 56,
+      "variable": "start"
+    },
+    {
+      "source": 52,
+      "target": 64,
+      "variable": "int"
+    },
+    {
+      "source": 52,
+      "target": 85,
+      "variable": "private"
+    },
+    {
+      "source": 52,
+      "target": 85,
+      "variable": "static"
+    },
+    {
+      "source": 52,
+      "target": 85,
+      "variable": "String"
+    },
+    {
+      "source": 53,
+      "target": 54
+    },
+    {
+      "source": 53,
+      "target": 56,
+      "variable": "if"
+    },
+    {
+      "source": 53,
+      "target": 60,
+      "variable": "s"
+    },
+    {
+      "source": 53,
+      "target": 60,
+      "variable": "length"
+    },
+    {
+      "source": 54,
+      "target": 55
+    },
+    {
+      "source": 54,
+      "target": 57,
+      "variable": "return"
+    },
+    {
+      "source": 55,
+      "target": 56
+    },
+    {
+      "source": 56,
+      "target": 57
+    },
+    {
+      "source": 56,
+      "target": 60,
+      "variable": "if"
+    },
+    {
+      "source": 56,
+      "target": 60,
+      "variable": "start"
+    },
+    {
+      "source": 57,
+      "target": 58
+    },
+    {
+      "source": 57,
+      "target": 58,
+      "variable": "return"
+    },
+    {
+      "source": 57,
+      "target": 81,
+      "variable": "to"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "It"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "doesn"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "t"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "make"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "sense"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "call"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "this"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "routine"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "with"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "but"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "anyway"
+    },
+    {
+      "source": 58,
+      "target": 59
+    },
+    {
+      "source": 58,
+      "target": 61,
+      "variable": "return"
+    },
+    {
+      "source": 59,
+      "target": 60
+    },
+    {
+      "source": 60,
+      "target": 61
+    },
+    {
+      "source": 60,
+      "target": 64,
+      "variable": "s"
+    },
+    {
+      "source": 60,
+      "target": 64,
+      "variable": "start"
+    },
+    {
+      "source": 60,
+      "target": 71,
+      "variable": "if"
+    },
+    {
+      "source": 60,
+      "target": 71,
+      "variable": "length"
+    },
+    {
+      "source": 61,
+      "target": 62
+    },
+    {
+      "source": 61,
+      "target": 72,
+      "variable": "return"
+    },
+    {
+      "source": 62,
+      "target": 63
+    },
+    {
+      "source": 63,
+      "target": 64
+    },
+    {
+      "source": 63,
+      "target": 64,
+      "variable": "n"
+    },
+    {
+      "source": 63,
+      "target": 66,
+      "variable": "r"
+    },
+    {
+      "source": 63,
+      "target": 79,
+      "variable": "line"
+    },
+    {
+      "source": 63,
+      "target": 96,
+      "variable": "possible"
+    },
+    {
+      "source": 63,
+      "target": 96,
+      "variable": "terminators"
+    },
+    {
+      "source": 64,
+      "target": 65
+    },
+    {
+      "source": 64,
+      "target": 65,
+      "variable": "int"
+    },
+    {
+      "source": 64,
+      "target": 65,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "s"
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "indexOf"
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "n"
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "start"
+    },
+    {
+      "source": 65,
+      "target": 66
+    },
+    {
+      "source": 65,
+      "target": 66,
+      "variable": "int"
+    },
+    {
+      "source": 65,
+      "target": 68,
+      "variable": "Integer"
+    },
+    {
+      "source": 65,
+      "target": 68,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 65,
+      "target": 70,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 65,
+      "target": 97,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 66,
+      "target": 67
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "int"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "s"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "indexOf"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "r"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "start"
+    },
+    {
+      "source": 66,
+      "target": 68,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 66,
+      "target": 96,
+      "variable": "n"
+    },
+    {
+      "source": 67,
+      "target": 68
+    },
+    {
+      "source": 67,
+      "target": 68,
+      "variable": "int"
+    },
+    {
+      "source": 67,
+      "target": 69,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 67,
+      "target": 71,
+      "variable": "s"
+    },
+    {
+      "source": 67,
+      "target": 79,
+      "variable": "start"
+    },
+    {
+      "source": 67,
+      "target": 96,
+      "variable": "r"
+    },
+    {
+      "source": 67,
+      "target": 97,
+      "variable": "indexOf"
+    },
+    {
+      "source": 68,
+      "target": 69
+    },
+    {
+      "source": 68,
+      "target": 69,
+      "variable": "int"
+    },
+    {
+      "source": 68,
+      "target": 69,
+      "variable": "Integer"
+    },
+    {
+      "source": 68,
+      "target": 69,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 68,
+      "target": 70,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 68,
+      "target": 99,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 69,
+      "target": 70
+    },
+    {
+      "source": 69,
+      "target": 70,
+      "variable": "int"
+    },
+    {
+      "source": 69,
+      "target": 70,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 69,
+      "target": 98,
+      "variable": "Integer"
+    },
+    {
+      "source": 69,
+      "target": 98,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 69,
+      "target": 100,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 70,
+      "target": 71
+    },
+    {
+      "source": 70,
+      "target": 71,
+      "variable": "lineStart"
+    },
+    {
+      "source": 70,
+      "target": 85,
+      "variable": "int"
+    },
+    {
+      "source": 70,
+      "target": 98,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 70,
+      "target": 101,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 70,
+      "target": 102,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 70,
+      "target": 103,
+      "variable": "Math"
+    },
+    {
+      "source": 70,
+      "target": 103,
+      "variable": "min"
+    },
+    {
+      "source": 71,
+      "target": 72
+    },
+    {
+      "source": 71,
+      "target": 74,
+      "variable": "lineStart"
+    },
+    {
+      "source": 71,
+      "target": 81,
+      "variable": "s"
+    },
+    {
+      "source": 71,
+      "target": 83,
+      "variable": "if"
+    },
+    {
+      "source": 71,
+      "target": 86,
+      "variable": "length"
+    },
+    {
+      "source": 72,
+      "target": 73
+    },
+    {
+      "source": 72,
+      "target": 74,
+      "variable": "return"
+    },
+    {
+      "source": 73,
+      "target": 74
+    },
+    {
+      "source": 73,
+      "target": 106,
+      "variable": "else"
+    },
+    {
+      "source": 74,
+      "target": 75
+    },
+    {
+      "source": 74,
+      "target": 79,
+      "variable": "return"
+    },
+    {
+      "source": 74,
+      "target": 103,
+      "variable": "lineStart"
+    },
+    {
+      "source": 75,
+      "target": 76
+    },
+    {
+      "source": 76,
+      "target": 77
+    },
+    {
+      "source": 77,
+      "target": 78
+    },
+    {
+      "source": 78,
+      "target": 79
+    },
+    {
+      "source": 79,
+      "target": 80
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "the"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "string"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "start"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "of"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "a"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "line"
+    },
+    {
+      "source": 79,
+      "target": 82,
+      "variable": "index"
+    },
+    {
+      "source": 79,
+      "target": 83,
+      "variable": "return"
+    },
+    {
+      "source": 79,
+      "target": 112,
+      "variable": "Given"
+    },
+    {
+      "source": 79,
+      "target": 112,
+      "variable": "after"
+    },
+    {
+      "source": 79,
+      "target": 112,
+      "variable": "code"
+    },
+    {
+      "source": 80,
+      "target": 81
+    },
+    {
+      "source": 81,
+      "target": 82
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "param"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "start"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "the"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "which"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "to"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "of"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "a"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "line"
+    },
+    {
+      "source": 81,
+      "target": 85,
+      "variable": "s"
+    },
+    {
+      "source": 81,
+      "target": 112,
+      "variable": "string"
+    },
+    {
+      "source": 81,
+      "target": 114,
+      "variable": "in"
+    },
+    {
+      "source": 81,
+      "target": 114,
+      "variable": "find"
+    },
+    {
+      "source": 82,
+      "target": 83
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "the"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "index"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "of"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "start"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "a"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "line"
+    },
+    {
+      "source": 82,
+      "target": 90,
+      "variable": "to"
+    },
+    {
+      "source": 82,
+      "target": 114,
+      "variable": "param"
+    },
+    {
+      "source": 82,
+      "target": 114,
+      "variable": "which"
+    },
+    {
+      "source": 82,
+      "target": 115,
+      "variable": "at"
+    },
+    {
+      "source": 82,
+      "target": 115,
+      "variable": "looking"
+    },
+    {
+      "source": 82,
+      "target": 115,
+      "variable": "for"
+    },
+    {
+      "source": 83,
+      "target": 84
+    },
+    {
+      "source": 83,
+      "target": 85,
+      "variable": "start"
+    },
+    {
+      "source": 83,
+      "target": 86,
+      "variable": "if"
+    },
+    {
+      "source": 83,
+      "target": 87,
+      "variable": "return"
+    },
+    {
+      "source": 83,
+      "target": 96,
+      "variable": "line"
+    },
+    {
+      "source": 83,
+      "target": 112,
+      "variable": "a"
+    },
+    {
+      "source": 83,
+      "target": 112,
+      "variable": "the"
+    },
+    {
+      "source": 83,
+      "target": 112,
+      "variable": "index"
+    },
+    {
+      "source": 83,
+      "target": 112,
+      "variable": "of"
+    },
+    {
+      "source": 83,
+      "target": 116,
+      "variable": "or"
+    },
+    {
+      "source": 83,
+      "target": 116,
+      "variable": "no"
+    },
+    {
+      "source": 83,
+      "target": 116,
+      "variable": "such"
+    },
+    {
+      "source": 83,
+      "target": 116,
+      "variable": "exists"
+    },
+    {
+      "source": 84,
+      "target": 85
+    },
+    {
+      "source": 85,
+      "target": 86
+    },
+    {
+      "source": 85,
+      "target": 86,
+      "variable": "s"
+    },
+    {
+      "source": 85,
+      "target": 89,
+      "variable": "start"
+    },
+    {
+      "source": 85,
+      "target": 97,
+      "variable": "int"
+    },
+    {
+      "source": 85,
+      "target": 118,
+      "variable": "private"
+    },
+    {
+      "source": 85,
+      "target": 118,
+      "variable": "static"
+    },
+    {
+      "source": 85,
+      "target": 118,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 85,
+      "target": 118,
+      "variable": "String"
+    },
+    {
+      "source": 86,
+      "target": 87
+    },
+    {
+      "source": 86,
+      "target": 89,
+      "variable": "if"
+    },
+    {
+      "source": 86,
+      "target": 93,
+      "variable": "s"
+    },
+    {
+      "source": 86,
+      "target": 93,
+      "variable": "length"
+    },
+    {
+      "source": 87,
+      "target": 88
+    },
+    {
+      "source": 87,
+      "target": 90,
+      "variable": "return"
+    },
+    {
+      "source": 88,
+      "target": 89
+    },
+    {
+      "source": 89,
+      "target": 90
+    },
+    {
+      "source": 89,
+      "target": 93,
+      "variable": "if"
+    },
+    {
+      "source": 89,
+      "target": 93,
+      "variable": "start"
+    },
+    {
+      "source": 90,
+      "target": 91
+    },
+    {
+      "source": 90,
+      "target": 91,
+      "variable": "return"
+    },
+    {
+      "source": 90,
+      "target": 114,
+      "variable": "to"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "It"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "doesn"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "t"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "make"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "sense"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "call"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "this"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "routine"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "with"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "but"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "anyway"
+    },
+    {
+      "source": 91,
+      "target": 92
+    },
+    {
+      "source": 91,
+      "target": 94,
+      "variable": "return"
+    },
+    {
+      "source": 92,
+      "target": 93
+    },
+    {
+      "source": 93,
+      "target": 94
+    },
+    {
+      "source": 93,
+      "target": 97,
+      "variable": "s"
+    },
+    {
+      "source": 93,
+      "target": 97,
+      "variable": "start"
+    },
+    {
+      "source": 93,
+      "target": 104,
+      "variable": "if"
+    },
+    {
+      "source": 93,
+      "target": 104,
+      "variable": "length"
+    },
+    {
+      "source": 94,
+      "target": 95
+    },
+    {
+      "source": 94,
+      "target": 105,
+      "variable": "return"
+    },
+    {
+      "source": 95,
+      "target": 96
+    },
+    {
+      "source": 96,
+      "target": 97
+    },
+    {
+      "source": 96,
+      "target": 97,
+      "variable": "n"
+    },
+    {
+      "source": 96,
+      "target": 99,
+      "variable": "r"
+    },
+    {
+      "source": 96,
+      "target": 112,
+      "variable": "line"
+    },
+    {
+      "source": 96,
+      "target": 131,
+      "variable": "possible"
+    },
+    {
+      "source": 96,
+      "target": 131,
+      "variable": "terminators"
+    },
+    {
+      "source": 97,
+      "target": 98
+    },
+    {
+      "source": 97,
+      "target": 98,
+      "variable": "int"
+    },
+    {
+      "source": 97,
+      "target": 98,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 97,
+      "target": 99,
+      "variable": "s"
+    },
+    {
+      "source": 97,
+      "target": 99,
+      "variable": "indexOf"
+    },
+    {
+      "source": 97,
+      "target": 99,
+      "variable": "n"
+    },
+    {
+      "source": 97,
+      "target": 99,
+      "variable": "start"
+    },
+    {
+      "source": 98,
+      "target": 99
+    },
+    {
+      "source": 98,
+      "target": 99,
+      "variable": "int"
+    },
+    {
+      "source": 98,
+      "target": 101,
+      "variable": "Integer"
+    },
+    {
+      "source": 98,
+      "target": 101,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 98,
+      "target": 103,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 98,
+      "target": 132,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 99,
+      "target": 100
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "int"
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "s"
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "indexOf"
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "r"
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "start"
+    },
+    {
+      "source": 99,
+      "target": 101,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 99,
+      "target": 131,
+      "variable": "n"
+    },
+    {
+      "source": 100,
+      "target": 101
+    },
+    {
+      "source": 100,
+      "target": 101,
+      "variable": "int"
+    },
+    {
+      "source": 100,
+      "target": 102,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 100,
+      "target": 104,
+      "variable": "s"
+    },
+    {
+      "source": 100,
+      "target": 112,
+      "variable": "start"
+    },
+    {
+      "source": 100,
+      "target": 131,
+      "variable": "r"
+    },
+    {
+      "source": 100,
+      "target": 132,
+      "variable": "indexOf"
+    },
+    {
+      "source": 101,
+      "target": 102
+    },
+    {
+      "source": 101,
+      "target": 102,
+      "variable": "int"
+    },
+    {
+      "source": 101,
+      "target": 102,
+      "variable": "Integer"
+    },
+    {
+      "source": 101,
+      "target": 102,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 101,
+      "target": 103,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 101,
+      "target": 134,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 102,
+      "target": 103
+    },
+    {
+      "source": 102,
+      "target": 103,
+      "variable": "int"
+    },
+    {
+      "source": 102,
+      "target": 103,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 102,
+      "target": 133,
+      "variable": "Integer"
+    },
+    {
+      "source": 102,
+      "target": 133,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 102,
+      "target": 135,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 103,
+      "target": 104
+    },
+    {
+      "source": 103,
+      "target": 104,
+      "variable": "lineStart"
+    },
+    {
+      "source": 103,
+      "target": 118,
+      "variable": "int"
+    },
+    {
+      "source": 103,
+      "target": 133,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 103,
+      "target": 136,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 103,
+      "target": 137,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 103,
+      "target": 138,
+      "variable": "Math"
+    },
+    {
+      "source": 103,
+      "target": 138,
+      "variable": "min"
+    },
+    {
+      "source": 104,
+      "target": 105
+    },
+    {
+      "source": 104,
+      "target": 107,
+      "variable": "lineStart"
+    },
+    {
+      "source": 104,
+      "target": 114,
+      "variable": "s"
+    },
+    {
+      "source": 104,
+      "target": 116,
+      "variable": "if"
+    },
+    {
+      "source": 104,
+      "target": 119,
+      "variable": "length"
+    },
+    {
+      "source": 105,
+      "target": 106
+    },
+    {
+      "source": 105,
+      "target": 107,
+      "variable": "return"
+    },
+    {
+      "source": 106,
+      "target": 107
+    },
+    {
+      "source": 106,
+      "target": 141,
+      "variable": "else"
+    },
+    {
+      "source": 107,
+      "target": 108
+    },
+    {
+      "source": 107,
+      "target": 112,
+      "variable": "return"
+    },
+    {
+      "source": 107,
+      "target": 138,
+      "variable": "lineStart"
+    },
+    {
+      "source": 108,
+      "target": 109
+    },
+    {
+      "source": 109,
+      "target": 110
+    },
+    {
+      "source": 110,
+      "target": 111
+    },
+    {
+      "source": 111,
+      "target": 112
+    },
+    {
+      "source": 112,
+      "target": 113
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "the"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "string"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "start"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "of"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "a"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "line"
+    },
+    {
+      "source": 112,
+      "target": 115,
+      "variable": "index"
+    },
+    {
+      "source": 112,
+      "target": 116,
+      "variable": "return"
+    },
+    {
+      "source": 112,
+      "target": 148,
+      "variable": "Given"
+    },
+    {
+      "source": 112,
+      "target": 148,
+      "variable": "after"
+    },
+    {
+      "source": 112,
+      "target": 148,
+      "variable": "code"
+    },
+    {
+      "source": 113,
+      "target": 114
+    },
+    {
+      "source": 114,
+      "target": 115
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "param"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "start"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "the"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "which"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "to"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "of"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "a"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "line"
+    },
+    {
+      "source": 114,
+      "target": 118,
+      "variable": "s"
+    },
+    {
+      "source": 114,
+      "target": 148,
+      "variable": "string"
+    },
+    {
+      "source": 114,
+      "target": 150,
+      "variable": "in"
+    },
+    {
+      "source": 114,
+      "target": 150,
+      "variable": "find"
+    },
+    {
+      "source": 115,
+      "target": 116
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "the"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "index"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "of"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "start"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "a"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "line"
+    },
+    {
+      "source": 115,
+      "target": 124,
+      "variable": "to"
+    },
+    {
+      "source": 115,
+      "target": 150,
+      "variable": "param"
+    },
+    {
+      "source": 115,
+      "target": 150,
+      "variable": "which"
+    },
+    {
+      "source": 115,
+      "target": 151,
+      "variable": "at"
+    },
+    {
+      "source": 115,
+      "target": 151,
+      "variable": "looking"
+    },
+    {
+      "source": 115,
+      "target": 151,
+      "variable": "for"
+    },
+    {
+      "source": 116,
+      "target": 117
+    },
+    {
+      "source": 116,
+      "target": 118,
+      "variable": "start"
+    },
+    {
+      "source": 116,
+      "target": 119,
+      "variable": "if"
+    },
+    {
+      "source": 116,
+      "target": 120,
+      "variable": "return"
+    },
+    {
+      "source": 116,
+      "target": 131,
+      "variable": "line"
+    },
+    {
+      "source": 116,
+      "target": 148,
+      "variable": "a"
+    },
+    {
+      "source": 116,
+      "target": 148,
+      "variable": "the"
+    },
+    {
+      "source": 116,
+      "target": 148,
+      "variable": "index"
+    },
+    {
+      "source": 116,
+      "target": 148,
+      "variable": "of"
+    },
+    {
+      "source": 116,
+      "target": 152,
+      "variable": "or"
+    },
+    {
+      "source": 116,
+      "target": 152,
+      "variable": "no"
+    },
+    {
+      "source": 116,
+      "target": 152,
+      "variable": "such"
+    },
+    {
+      "source": 116,
+      "target": 152,
+      "variable": "exists"
+    },
+    {
+      "source": 117,
+      "target": 118
+    },
+    {
+      "source": 118,
+      "target": 119
+    },
+    {
+      "source": 118,
+      "target": 119,
+      "variable": "s"
+    },
+    {
+      "source": 118,
+      "target": 123,
+      "variable": "start"
+    },
+    {
+      "source": 118,
+      "target": 132,
+      "variable": "int"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "private"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "static"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "value"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "offset"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "String"
+    },
+    {
+      "source": 119,
+      "target": 120
+    },
+    {
+      "source": 119,
+      "target": 123,
+      "variable": "if"
+    },
+    {
+      "source": 119,
+      "target": 128,
+      "variable": "s"
+    },
+    {
+      "source": 119,
+      "target": 128,
+      "variable": "length"
+    },
+    {
+      "source": 120,
+      "target": 121
+    },
+    {
+      "source": 120,
+      "target": 121,
+      "variable": "return"
+    },
+    {
+      "source": 120,
+      "target": 125,
+      "variable": "error"
+    },
+    {
+      "source": 121,
+      "target": 122
+    },
+    {
+      "source": 121,
+      "target": 124,
+      "variable": "return"
+    },
+    {
+      "source": 122,
+      "target": 123
+    },
+    {
+      "source": 123,
+      "target": 124
+    },
+    {
+      "source": 123,
+      "target": 128,
+      "variable": "if"
+    },
+    {
+      "source": 123,
+      "target": 128,
+      "variable": "start"
+    },
+    {
+      "source": 124,
+      "target": 125
+    },
+    {
+      "source": 124,
+      "target": 125,
+      "variable": "return"
+    },
+    {
+      "source": 124,
+      "target": 150,
+      "variable": "to"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "It"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "doesn"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "t"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "make"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "sense"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "call"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "this"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "routine"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "with"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "but"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "anyway"
+    },
+    {
+      "source": 125,
+      "target": 126
+    },
+    {
+      "source": 125,
+      "target": 126,
+      "variable": "return"
+    },
+    {
+      "source": 125,
+      "target": 142,
+      "variable": "error"
+    },
+    {
+      "source": 126,
+      "target": 127
+    },
+    {
+      "source": 126,
+      "target": 129,
+      "variable": "return"
+    },
+    {
+      "source": 127,
+      "target": 128
+    },
+    {
+      "source": 128,
+      "target": 129
+    },
+    {
+      "source": 128,
+      "target": 132,
+      "variable": "s"
+    },
+    {
+      "source": 128,
+      "target": 132,
+      "variable": "start"
+    },
+    {
+      "source": 128,
+      "target": 139,
+      "variable": "if"
+    },
+    {
+      "source": 128,
+      "target": 139,
+      "variable": "length"
+    },
+    {
+      "source": 129,
+      "target": 130
+    },
+    {
+      "source": 129,
+      "target": 140,
+      "variable": "return"
+    },
+    {
+      "source": 130,
+      "target": 131
+    },
+    {
+      "source": 131,
+      "target": 132
+    },
+    {
+      "source": 131,
+      "target": 132,
+      "variable": "n"
+    },
+    {
+      "source": 131,
+      "target": 134,
+      "variable": "r"
+    },
+    {
+      "source": 131,
+      "target": 148,
+      "variable": "line"
+    },
+    {
+      "source": 131,
+      "target": 165,
+      "variable": "possible"
+    },
+    {
+      "source": 131,
+      "target": 165,
+      "variable": "terminators"
+    },
+    {
+      "source": 132,
+      "target": 133
+    },
+    {
+      "source": 132,
+      "target": 133,
+      "variable": "int"
+    },
+    {
+      "source": 132,
+      "target": 133,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "s"
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "indexOf"
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "n"
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "start"
+    },
+    {
+      "source": 133,
+      "target": 134
+    },
+    {
+      "source": 133,
+      "target": 134,
+      "variable": "int"
+    },
+    {
+      "source": 133,
+      "target": 136,
+      "variable": "Integer"
+    },
+    {
+      "source": 133,
+      "target": 136,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 133,
+      "target": 138,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 133,
+      "target": 166,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 134,
+      "target": 135
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "int"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "s"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "indexOf"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "r"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "start"
+    },
+    {
+      "source": 134,
+      "target": 136,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 134,
+      "target": 165,
+      "variable": "n"
+    },
+    {
+      "source": 135,
+      "target": 136
+    },
+    {
+      "source": 135,
+      "target": 136,
+      "variable": "int"
+    },
+    {
+      "source": 135,
+      "target": 137,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 135,
+      "target": 139,
+      "variable": "s"
+    },
+    {
+      "source": 135,
+      "target": 148,
+      "variable": "start"
+    },
+    {
+      "source": 135,
+      "target": 165,
+      "variable": "r"
+    },
+    {
+      "source": 135,
+      "target": 166,
+      "variable": "indexOf"
+    },
+    {
+      "source": 136,
+      "target": 137
+    },
+    {
+      "source": 136,
+      "target": 137,
+      "variable": "int"
+    },
+    {
+      "source": 136,
+      "target": 137,
+      "variable": "Integer"
+    },
+    {
+      "source": 136,
+      "target": 137,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 136,
+      "target": 138,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 136,
+      "target": 168,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 137,
+      "target": 138
+    },
+    {
+      "source": 137,
+      "target": 138,
+      "variable": "int"
+    },
+    {
+      "source": 137,
+      "target": 138,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 137,
+      "target": 167,
+      "variable": "Integer"
+    },
+    {
+      "source": 137,
+      "target": 167,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 137,
+      "target": 169,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 138,
+      "target": 139
+    },
+    {
+      "source": 138,
+      "target": 139,
+      "variable": "lineStart"
+    },
+    {
+      "source": 138,
+      "target": 154,
+      "variable": "int"
+    },
+    {
+      "source": 138,
+      "target": 167,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 138,
+      "target": 170,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 138,
+      "target": 171,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 138,
+      "target": 172,
+      "variable": "Math"
+    },
+    {
+      "source": 138,
+      "target": 172,
+      "variable": "min"
+    },
+    {
+      "source": 139,
+      "target": 140
+    },
+    {
+      "source": 139,
+      "target": 143,
+      "variable": "lineStart"
+    },
+    {
+      "source": 139,
+      "target": 150,
+      "variable": "s"
+    },
+    {
+      "source": 139,
+      "target": 152,
+      "variable": "if"
+    },
+    {
+      "source": 139,
+      "target": 155,
+      "variable": "length"
+    },
+    {
+      "source": 140,
+      "target": 141
+    },
+    {
+      "source": 140,
+      "target": 142,
+      "variable": "return"
+    },
+    {
+      "source": 141,
+      "target": 142
+    },
+    {
+      "source": 141,
+      "target": 175,
+      "variable": "else"
+    },
+    {
+      "source": 142,
+      "target": 143
+    },
+    {
+      "source": 142,
+      "target": 143,
+      "variable": "return"
+    },
+    {
+      "source": 143,
+      "target": 144
+    },
+    {
+      "source": 143,
+      "target": 148,
+      "variable": "return"
+    },
+    {
+      "source": 143,
+      "target": 172,
+      "variable": "lineStart"
+    },
+    {
+      "source": 144,
+      "target": 145
+    },
+    {
+      "source": 145,
+      "target": 146
+    },
+    {
+      "source": 146,
+      "target": 147
+    },
+    {
+      "source": 147,
+      "target": 148
+    },
+    {
+      "source": 148,
+      "target": 149
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "the"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "string"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "start"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "of"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "a"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "line"
+    },
+    {
+      "source": 148,
+      "target": 151,
+      "variable": "index"
+    },
+    {
+      "source": 148,
+      "target": 152,
+      "variable": "return"
+    },
+    {
+      "source": 149,
+      "target": 150
+    },
+    {
+      "source": 150,
+      "target": 151
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "param"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "start"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "the"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "which"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "to"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "of"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "a"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "line"
+    },
+    {
+      "source": 150,
+      "target": 154,
+      "variable": "s"
+    },
+    {
+      "source": 151,
+      "target": 152
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "the"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "index"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "of"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "start"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "a"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "line"
+    },
+    {
+      "source": 151,
+      "target": 159,
+      "variable": "to"
+    },
+    {
+      "source": 152,
+      "target": 153
+    },
+    {
+      "source": 152,
+      "target": 154,
+      "variable": "start"
+    },
+    {
+      "source": 152,
+      "target": 155,
+      "variable": "if"
+    },
+    {
+      "source": 152,
+      "target": 156,
+      "variable": "return"
+    },
+    {
+      "source": 152,
+      "target": 165,
+      "variable": "line"
+    },
+    {
+      "source": 153,
+      "target": 154
+    },
+    {
+      "source": 154,
+      "target": 155
+    },
+    {
+      "source": 154,
+      "target": 155,
+      "variable": "s"
+    },
+    {
+      "source": 154,
+      "target": 158,
+      "variable": "start"
+    },
+    {
+      "source": 154,
+      "target": 166,
+      "variable": "int"
+    },
+    {
+      "source": 155,
+      "target": 156
+    },
+    {
+      "source": 155,
+      "target": 158,
+      "variable": "if"
+    },
+    {
+      "source": 155,
+      "target": 162,
+      "variable": "s"
+    },
+    {
+      "source": 155,
+      "target": 162,
+      "variable": "length"
+    },
+    {
+      "source": 156,
+      "target": 157
+    },
+    {
+      "source": 156,
+      "target": 159,
+      "variable": "return"
+    },
+    {
+      "source": 157,
+      "target": 158
+    },
+    {
+      "source": 158,
+      "target": 159
+    },
+    {
+      "source": 158,
+      "target": 162,
+      "variable": "if"
+    },
+    {
+      "source": 158,
+      "target": 162,
+      "variable": "start"
+    },
+    {
+      "source": 159,
+      "target": 160
+    },
+    {
+      "source": 159,
+      "target": 160,
+      "variable": "return"
+    },
+    {
+      "source": 160,
+      "target": 161
+    },
+    {
+      "source": 160,
+      "target": 163,
+      "variable": "return"
+    },
+    {
+      "source": 161,
+      "target": 162
+    },
+    {
+      "source": 162,
+      "target": 163
+    },
+    {
+      "source": 162,
+      "target": 166,
+      "variable": "s"
+    },
+    {
+      "source": 162,
+      "target": 166,
+      "variable": "start"
+    },
+    {
+      "source": 162,
+      "target": 173,
+      "variable": "if"
+    },
+    {
+      "source": 162,
+      "target": 173,
+      "variable": "length"
+    },
+    {
+      "source": 163,
+      "target": 164
+    },
+    {
+      "source": 163,
+      "target": 174,
+      "variable": "return"
+    },
+    {
+      "source": 164,
+      "target": 165
+    },
+    {
+      "source": 165,
+      "target": 166
+    },
+    {
+      "source": 165,
+      "target": 166,
+      "variable": "n"
+    },
+    {
+      "source": 165,
+      "target": 168,
+      "variable": "r"
+    },
+    {
+      "source": 166,
+      "target": 167
+    },
+    {
+      "source": 166,
+      "target": 167,
+      "variable": "int"
+    },
+    {
+      "source": 166,
+      "target": 167,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 166,
+      "target": 168,
+      "variable": "s"
+    },
+    {
+      "source": 166,
+      "target": 168,
+      "variable": "indexOf"
+    },
+    {
+      "source": 166,
+      "target": 168,
+      "variable": "n"
+    },
+    {
+      "source": 166,
+      "target": 168,
+      "variable": "start"
+    },
+    {
+      "source": 167,
+      "target": 168
+    },
+    {
+      "source": 167,
+      "target": 168,
+      "variable": "int"
+    },
+    {
+      "source": 167,
+      "target": 170,
+      "variable": "Integer"
+    },
+    {
+      "source": 167,
+      "target": 170,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 167,
+      "target": 172,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 168,
+      "target": 169
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "int"
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "s"
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "indexOf"
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "r"
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "start"
+    },
+    {
+      "source": 168,
+      "target": 170,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 169,
+      "target": 170
+    },
+    {
+      "source": 169,
+      "target": 170,
+      "variable": "int"
+    },
+    {
+      "source": 169,
+      "target": 171,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 169,
+      "target": 173,
+      "variable": "s"
+    },
+    {
+      "source": 170,
+      "target": 171
+    },
+    {
+      "source": 170,
+      "target": 171,
+      "variable": "int"
+    },
+    {
+      "source": 170,
+      "target": 171,
+      "variable": "Integer"
+    },
+    {
+      "source": 170,
+      "target": 171,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 170,
+      "target": 172,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 171,
+      "target": 172
+    },
+    {
+      "source": 171,
+      "target": 172,
+      "variable": "int"
+    },
+    {
+      "source": 171,
+      "target": 172,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 172,
+      "target": 173
+    },
+    {
+      "source": 172,
+      "target": 173,
+      "variable": "lineStart"
+    },
+    {
+      "source": 173,
+      "target": 174
+    },
+    {
+      "source": 173,
+      "target": 176,
+      "variable": "lineStart"
+    },
+    {
+      "source": 174,
+      "target": 175
+    },
+    {
+      "source": 174,
+      "target": 176,
+      "variable": "return"
+    },
+    {
+      "source": 175,
+      "target": 176
+    },
+    {
+      "source": 176,
+      "target": 177
+    },
+    {
+      "source": 177,
+      "target": 178
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 29,
+      "target": 30
+    },
+    {
+      "source": 30,
+      "target": 31
+    },
+    {
+      "source": 31,
+      "target": 32
+    },
+    {
+      "source": 32,
+      "target": 33
+    },
+    {
+      "source": 33,
+      "target": 34
+    },
+    {
+      "source": 34,
+      "target": 35
+    },
+    {
+      "source": 35,
+      "target": 36
+    },
+    {
+      "source": 36,
+      "target": 37
+    },
+    {
+      "source": 37,
+      "target": 38
+    },
+    {
+      "source": 38,
+      "target": 39
+    },
+    {
+      "source": 39,
+      "target": 40
+    },
+    {
+      "source": 40,
+      "target": 41
+    },
+    {
+      "source": 41,
+      "target": 42
+    },
+    {
+      "source": 42,
+      "target": 43
+    },
+    {
+      "source": 43,
+      "target": 44
+    },
+    {
+      "source": 44,
+      "target": 45
+    },
+    {
+      "source": 45,
+      "target": 46
+    },
+    {
+      "source": 46,
+      "target": 47
+    },
+    {
+      "source": 47,
+      "target": 48
+    },
+    {
+      "source": 48,
+      "target": 49
+    },
+    {
+      "source": 49,
+      "target": 50
+    },
+    {
+      "source": 50,
+      "target": 51
+    },
+    {
+      "source": 51,
+      "target": 52
+    },
+    {
+      "source": 52,
+      "target": 53
+    },
+    {
+      "source": 53,
+      "target": 54
+    },
+    {
+      "source": 54,
+      "target": 55
+    },
+    {
+      "source": 55,
+      "target": 56
+    },
+    {
+      "source": 56,
+      "target": 57
+    },
+    {
+      "source": 57,
+      "target": 58
+    },
+    {
+      "source": 58,
+      "target": 59
+    },
+    {
+      "source": 59,
+      "target": 60
+    },
+    {
+      "source": 60,
+      "target": 61
+    },
+    {
+      "source": 61,
+      "target": 62
+    },
+    {
+      "source": 62,
+      "target": 63
+    },
+    {
+      "source": 63,
+      "target": 64
+    },
+    {
+      "source": 64,
+      "target": 65
+    },
+    {
+      "source": 65,
+      "target": 66
+    },
+    {
+      "source": 66,
+      "target": 67
+    },
+    {
+      "source": 67,
+      "target": 68
+    },
+    {
+      "source": 68,
+      "target": 69
+    },
+    {
+      "source": 69,
+      "target": 70
+    },
+    {
+      "source": 70,
+      "target": 71
+    },
+    {
+      "source": 71,
+      "target": 72
+    },
+    {
+      "source": 72,
+      "target": 73
+    },
+    {
+      "source": 73,
+      "target": 74
+    },
+    {
+      "source": 74,
+      "target": 75
+    },
+    {
+      "source": 75,
+      "target": 76
+    },
+    {
+      "source": 76,
+      "target": 77
+    },
+    {
+      "source": 77,
+      "target": 78
+    },
+    {
+      "source": 78,
+      "target": 79
+    },
+    {
+      "source": 79,
+      "target": 80
+    },
+    {
+      "source": 80,
+      "target": 81
+    },
+    {
+      "source": 81,
+      "target": 82
+    },
+    {
+      "source": 82,
+      "target": 83
+    },
+    {
+      "source": 83,
+      "target": 84
+    },
+    {
+      "source": 84,
+      "target": 85
+    },
+    {
+      "source": 85,
+      "target": 86
+    },
+    {
+      "source": 86,
+      "target": 87
+    },
+    {
+      "source": 87,
+      "target": 88
+    },
+    {
+      "source": 88,
+      "target": 89
+    },
+    {
+      "source": 89,
+      "target": 90
+    },
+    {
+      "source": 90,
+      "target": 91
+    },
+    {
+      "source": 91,
+      "target": 92
+    },
+    {
+      "source": 92,
+      "target": 93
+    },
+    {
+      "source": 93,
+      "target": 94
+    },
+    {
+      "source": 94,
+      "target": 95
+    },
+    {
+      "source": 95,
+      "target": 96
+    },
+    {
+      "source": 96,
+      "target": 97
+    },
+    {
+      "source": 97,
+      "target": 98
+    },
+    {
+      "source": 98,
+      "target": 99
+    },
+    {
+      "source": 99,
+      "target": 100
+    },
+    {
+      "source": 100,
+      "target": 101
+    },
+    {
+      "source": 101,
+      "target": 102
+    },
+    {
+      "source": 102,
+      "target": 103
+    },
+    {
+      "source": 103,
+      "target": 104
+    },
+    {
+      "source": 104,
+      "target": 105
+    },
+    {
+      "source": 105,
+      "target": 106
+    },
+    {
+      "source": 106,
+      "target": 107
+    },
+    {
+      "source": 107,
+      "target": 108
+    },
+    {
+      "source": 108,
+      "target": 109
+    },
+    {
+      "source": 109,
+      "target": 110
+    },
+    {
+      "source": 110,
+      "target": 111
+    },
+    {
+      "source": 111,
+      "target": 112
+    },
+    {
+      "source": 112,
+      "target": 113
+    },
+    {
+      "source": 113,
+      "target": 114
+    },
+    {
+      "source": 114,
+      "target": 115
+    },
+    {
+      "source": 115,
+      "target": 116
+    },
+    {
+      "source": 116,
+      "target": 117
+    },
+    {
+      "source": 117,
+      "target": 118
+    },
+    {
+      "source": 118,
+      "target": 119
+    },
+    {
+      "source": 119,
+      "target": 120
+    },
+    {
+      "source": 120,
+      "target": 121
+    },
+    {
+      "source": 121,
+      "target": 122
+    },
+    {
+      "source": 122,
+      "target": 123
+    },
+    {
+      "source": 123,
+      "target": 124
+    },
+    {
+      "source": 124,
+      "target": 125
+    },
+    {
+      "source": 125,
+      "target": 126
+    },
+    {
+      "source": 126,
+      "target": 127
+    },
+    {
+      "source": 127,
+      "target": 128
+    },
+    {
+      "source": 128,
+      "target": 129
+    },
+    {
+      "source": 129,
+      "target": 130
+    },
+    {
+      "source": 130,
+      "target": 131
+    },
+    {
+      "source": 131,
+      "target": 132
+    },
+    {
+      "source": 132,
+      "target": 133
+    },
+    {
+      "source": 133,
+      "target": 134
+    },
+    {
+      "source": 134,
+      "target": 135
+    },
+    {
+      "source": 135,
+      "target": 136
+    },
+    {
+      "source": 136,
+      "target": 137
+    },
+    {
+      "source": 137,
+      "target": 138
+    },
+    {
+      "source": 138,
+      "target": 139
+    },
+    {
+      "source": 139,
+      "target": 140
+    },
+    {
+      "source": 140,
+      "target": 141
+    },
+    {
+      "source": 141,
+      "target": 142
+    },
+    {
+      "source": 142,
+      "target": 143
+    },
+    {
+      "source": 143,
+      "target": 144
+    },
+    {
+      "source": 144,
+      "target": 145
+    },
+    {
+      "source": 145,
+      "target": 146
+    },
+    {
+      "source": 146,
+      "target": 147
+    },
+    {
+      "source": 147,
+      "target": 148
+    },
+    {
+      "source": 148,
+      "target": 149
+    },
+    {
+      "source": 149,
+      "target": 150
+    },
+    {
+      "source": 150,
+      "target": 151
+    },
+    {
+      "source": 151,
+      "target": 152
+    },
+    {
+      "source": 152,
+      "target": 153
+    },
+    {
+      "source": 153,
+      "target": 154
+    },
+    {
+      "source": 154,
+      "target": 155
+    },
+    {
+      "source": 155,
+      "target": 156
+    },
+    {
+      "source": 156,
+      "target": 157
+    },
+    {
+      "source": 157,
+      "target": 158
+    },
+    {
+      "source": 158,
+      "target": 159
+    },
+    {
+      "source": 159,
+      "target": 160
+    },
+    {
+      "source": 160,
+      "target": 161
+    },
+    {
+      "source": 161,
+      "target": 162
+    },
+    {
+      "source": 162,
+      "target": 163
+    },
+    {
+      "source": 163,
+      "target": 164
+    },
+    {
+      "source": 164,
+      "target": 165
+    },
+    {
+      "source": 165,
+      "target": 166
+    },
+    {
+      "source": 166,
+      "target": 167
+    },
+    {
+      "source": 167,
+      "target": 168
+    },
+    {
+      "source": 168,
+      "target": 169
+    },
+    {
+      "source": 169,
+      "target": 170
+    },
+    {
+      "source": 170,
+      "target": 171
+    },
+    {
+      "source": 171,
+      "target": 172
+    },
+    {
+      "source": 172,
+      "target": 173
+    },
+    {
+      "source": 173,
+      "target": 174
+    },
+    {
+      "source": 174,
+      "target": 175
+    },
+    {
+      "source": 175,
+      "target": 176
+    },
+    {
+      "source": 176,
+      "target": 177
+    },
+    {
+      "source": 177,
+      "target": 178
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 11,
+      "variable": "private"
+    },
+    {
+      "source": 0,
+      "target": 11,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 52,
+      "variable": "IndexOrLow"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "lineStart"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "s"
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "variable": "String"
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "result"
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "lineStart"
+    },
+    {
+      "source": 3,
+      "target": 12,
+      "variable": "s"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "if"
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "variable": "length"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "result"
+    },
+    {
+      "source": 5,
+      "target": 16,
+      "variable": "else"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "result"
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "variable": "lineStart"
+    },
+    {
+      "source": 8,
+      "target": 13,
+      "variable": "result"
+    },
+    {
+      "source": 8,
+      "target": 19,
+      "variable": "return"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 11,
+      "target": 22,
+      "variable": "private"
+    },
+    {
+      "source": 11,
+      "target": 22,
+      "variable": "static"
+    },
+    {
+      "source": 11,
+      "target": 22,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "variable": "int"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "lineStart"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "s"
+    },
+    {
+      "source": 12,
+      "target": 23,
+      "variable": "String"
+    },
+    {
+      "source": 12,
+      "target": 23,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "result"
+    },
+    {
+      "source": 13,
+      "target": 22,
+      "variable": "int"
+    },
+    {
+      "source": 14,
+      "target": 17,
+      "variable": "lineStart"
+    },
+    {
+      "source": 14,
+      "target": 23,
+      "variable": "s"
+    },
+    {
+      "source": 14,
+      "target": 25,
+      "variable": "if"
+    },
+    {
+      "source": 14,
+      "target": 25,
+      "variable": "length"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "result"
+    },
+    {
+      "source": 16,
+      "target": 27,
+      "variable": "else"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "result"
+    },
+    {
+      "source": 17,
+      "target": 23,
+      "variable": "lineStart"
+    },
+    {
+      "source": 19,
+      "target": 24,
+      "variable": "result"
+    },
+    {
+      "source": 19,
+      "target": 30,
+      "variable": "return"
+    },
+    {
+      "source": 22,
+      "target": 23,
+      "variable": "int"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "private"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "static"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "value"
+    },
+    {
+      "source": 22,
+      "target": 34,
+      "variable": "offset"
+    },
+    {
+      "source": 23,
+      "target": 24,
+      "variable": "int"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "lineStart"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "s"
+    },
+    {
+      "source": 23,
+      "target": 35,
+      "variable": "String"
+    },
+    {
+      "source": 23,
+      "target": 35,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 24,
+      "target": 26,
+      "variable": "result"
+    },
+    {
+      "source": 24,
+      "target": 34,
+      "variable": "int"
+    },
+    {
+      "source": 25,
+      "target": 28,
+      "variable": "lineStart"
+    },
+    {
+      "source": 25,
+      "target": 35,
+      "variable": "s"
+    },
+    {
+      "source": 25,
+      "target": 37,
+      "variable": "if"
+    },
+    {
+      "source": 25,
+      "target": 37,
+      "variable": "length"
+    },
+    {
+      "source": 26,
+      "target": 28,
+      "variable": "result"
+    },
+    {
+      "source": 27,
+      "target": 39,
+      "variable": "else"
+    },
+    {
+      "source": 28,
+      "target": 31,
+      "variable": "result"
+    },
+    {
+      "source": 28,
+      "target": 35,
+      "variable": "lineStart"
+    },
+    {
+      "source": 30,
+      "target": 31,
+      "variable": "return"
+    },
+    {
+      "source": 30,
+      "target": 120,
+      "variable": "error"
+    },
+    {
+      "source": 31,
+      "target": 36,
+      "variable": "result"
+    },
+    {
+      "source": 31,
+      "target": 42,
+      "variable": "return"
+    },
+    {
+      "source": 34,
+      "target": 35,
+      "variable": "int"
+    },
+    {
+      "source": 34,
+      "target": 52,
+      "variable": "private"
+    },
+    {
+      "source": 34,
+      "target": 52,
+      "variable": "static"
+    },
+    {
+      "source": 34,
+      "target": 85,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 34,
+      "target": 118,
+      "variable": "value"
+    },
+    {
+      "source": 34,
+      "target": 118,
+      "variable": "offset"
+    },
+    {
+      "source": 35,
+      "target": 36,
+      "variable": "int"
+    },
+    {
+      "source": 35,
+      "target": 37,
+      "variable": "lineStart"
+    },
+    {
+      "source": 35,
+      "target": 37,
+      "variable": "s"
+    },
+    {
+      "source": 35,
+      "target": 52,
+      "variable": "String"
+    },
+    {
+      "source": 36,
+      "target": 38,
+      "variable": "result"
+    },
+    {
+      "source": 36,
+      "target": 52,
+      "variable": "int"
+    },
+    {
+      "source": 37,
+      "target": 40,
+      "variable": "lineStart"
+    },
+    {
+      "source": 37,
+      "target": 48,
+      "variable": "s"
+    },
+    {
+      "source": 37,
+      "target": 50,
+      "variable": "if"
+    },
+    {
+      "source": 37,
+      "target": 53,
+      "variable": "length"
+    },
+    {
+      "source": 38,
+      "target": 40,
+      "variable": "result"
+    },
+    {
+      "source": 39,
+      "target": 73,
+      "variable": "else"
+    },
+    {
+      "source": 40,
+      "target": 42,
+      "variable": "result"
+    },
+    {
+      "source": 40,
+      "target": 70,
+      "variable": "lineStart"
+    },
+    {
+      "source": 42,
+      "target": 46,
+      "variable": "return"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "the"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "string"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "start"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "of"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "a"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "line"
+    },
+    {
+      "source": 46,
+      "target": 49,
+      "variable": "index"
+    },
+    {
+      "source": 46,
+      "target": 50,
+      "variable": "return"
+    },
+    {
+      "source": 46,
+      "target": 79,
+      "variable": "Given"
+    },
+    {
+      "source": 46,
+      "target": 79,
+      "variable": "after"
+    },
+    {
+      "source": 46,
+      "target": 79,
+      "variable": "code"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "param"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "start"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "the"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "which"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "to"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "of"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "a"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "variable": "line"
+    },
+    {
+      "source": 48,
+      "target": 52,
+      "variable": "s"
+    },
+    {
+      "source": 48,
+      "target": 79,
+      "variable": "string"
+    },
+    {
+      "source": 48,
+      "target": 81,
+      "variable": "in"
+    },
+    {
+      "source": 48,
+      "target": 81,
+      "variable": "find"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "the"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "index"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "of"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "start"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "a"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "variable": "line"
+    },
+    {
+      "source": 49,
+      "target": 57,
+      "variable": "to"
+    },
+    {
+      "source": 49,
+      "target": 81,
+      "variable": "param"
+    },
+    {
+      "source": 49,
+      "target": 81,
+      "variable": "which"
+    },
+    {
+      "source": 49,
+      "target": 82,
+      "variable": "at"
+    },
+    {
+      "source": 49,
+      "target": 82,
+      "variable": "looking"
+    },
+    {
+      "source": 49,
+      "target": 82,
+      "variable": "for"
+    },
+    {
+      "source": 50,
+      "target": 52,
+      "variable": "start"
+    },
+    {
+      "source": 50,
+      "target": 53,
+      "variable": "if"
+    },
+    {
+      "source": 50,
+      "target": 54,
+      "variable": "return"
+    },
+    {
+      "source": 50,
+      "target": 63,
+      "variable": "line"
+    },
+    {
+      "source": 50,
+      "target": 79,
+      "variable": "a"
+    },
+    {
+      "source": 50,
+      "target": 79,
+      "variable": "the"
+    },
+    {
+      "source": 50,
+      "target": 79,
+      "variable": "index"
+    },
+    {
+      "source": 50,
+      "target": 79,
+      "variable": "of"
+    },
+    {
+      "source": 50,
+      "target": 83,
+      "variable": "or"
+    },
+    {
+      "source": 50,
+      "target": 83,
+      "variable": "no"
+    },
+    {
+      "source": 50,
+      "target": 83,
+      "variable": "such"
+    },
+    {
+      "source": 50,
+      "target": 83,
+      "variable": "exists"
+    },
+    {
+      "source": 52,
+      "target": 53,
+      "variable": "s"
+    },
+    {
+      "source": 52,
+      "target": 56,
+      "variable": "start"
+    },
+    {
+      "source": 52,
+      "target": 64,
+      "variable": "int"
+    },
+    {
+      "source": 52,
+      "target": 85,
+      "variable": "private"
+    },
+    {
+      "source": 52,
+      "target": 85,
+      "variable": "static"
+    },
+    {
+      "source": 52,
+      "target": 85,
+      "variable": "String"
+    },
+    {
+      "source": 53,
+      "target": 56,
+      "variable": "if"
+    },
+    {
+      "source": 53,
+      "target": 60,
+      "variable": "s"
+    },
+    {
+      "source": 53,
+      "target": 60,
+      "variable": "length"
+    },
+    {
+      "source": 54,
+      "target": 57,
+      "variable": "return"
+    },
+    {
+      "source": 56,
+      "target": 60,
+      "variable": "if"
+    },
+    {
+      "source": 56,
+      "target": 60,
+      "variable": "start"
+    },
+    {
+      "source": 57,
+      "target": 58,
+      "variable": "return"
+    },
+    {
+      "source": 57,
+      "target": 81,
+      "variable": "to"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "It"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "doesn"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "t"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "make"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "sense"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "call"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "this"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "routine"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "with"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "but"
+    },
+    {
+      "source": 57,
+      "target": 90,
+      "variable": "anyway"
+    },
+    {
+      "source": 58,
+      "target": 61,
+      "variable": "return"
+    },
+    {
+      "source": 60,
+      "target": 64,
+      "variable": "s"
+    },
+    {
+      "source": 60,
+      "target": 64,
+      "variable": "start"
+    },
+    {
+      "source": 60,
+      "target": 71,
+      "variable": "if"
+    },
+    {
+      "source": 60,
+      "target": 71,
+      "variable": "length"
+    },
+    {
+      "source": 61,
+      "target": 72,
+      "variable": "return"
+    },
+    {
+      "source": 63,
+      "target": 64,
+      "variable": "n"
+    },
+    {
+      "source": 63,
+      "target": 66,
+      "variable": "r"
+    },
+    {
+      "source": 63,
+      "target": 79,
+      "variable": "line"
+    },
+    {
+      "source": 63,
+      "target": 96,
+      "variable": "possible"
+    },
+    {
+      "source": 63,
+      "target": 96,
+      "variable": "terminators"
+    },
+    {
+      "source": 64,
+      "target": 65,
+      "variable": "int"
+    },
+    {
+      "source": 64,
+      "target": 65,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "s"
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "indexOf"
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "n"
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "start"
+    },
+    {
+      "source": 65,
+      "target": 66,
+      "variable": "int"
+    },
+    {
+      "source": 65,
+      "target": 68,
+      "variable": "Integer"
+    },
+    {
+      "source": 65,
+      "target": 68,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 65,
+      "target": 70,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 65,
+      "target": 97,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "int"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "s"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "indexOf"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "r"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "variable": "start"
+    },
+    {
+      "source": 66,
+      "target": 68,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 66,
+      "target": 96,
+      "variable": "n"
+    },
+    {
+      "source": 67,
+      "target": 68,
+      "variable": "int"
+    },
+    {
+      "source": 67,
+      "target": 69,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 67,
+      "target": 71,
+      "variable": "s"
+    },
+    {
+      "source": 67,
+      "target": 79,
+      "variable": "start"
+    },
+    {
+      "source": 67,
+      "target": 96,
+      "variable": "r"
+    },
+    {
+      "source": 67,
+      "target": 97,
+      "variable": "indexOf"
+    },
+    {
+      "source": 68,
+      "target": 69,
+      "variable": "int"
+    },
+    {
+      "source": 68,
+      "target": 69,
+      "variable": "Integer"
+    },
+    {
+      "source": 68,
+      "target": 69,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 68,
+      "target": 70,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 68,
+      "target": 99,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 69,
+      "target": 70,
+      "variable": "int"
+    },
+    {
+      "source": 69,
+      "target": 70,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 69,
+      "target": 98,
+      "variable": "Integer"
+    },
+    {
+      "source": 69,
+      "target": 98,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 69,
+      "target": 100,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 70,
+      "target": 71,
+      "variable": "lineStart"
+    },
+    {
+      "source": 70,
+      "target": 85,
+      "variable": "int"
+    },
+    {
+      "source": 70,
+      "target": 98,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 70,
+      "target": 101,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 70,
+      "target": 102,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 70,
+      "target": 103,
+      "variable": "Math"
+    },
+    {
+      "source": 70,
+      "target": 103,
+      "variable": "min"
+    },
+    {
+      "source": 71,
+      "target": 74,
+      "variable": "lineStart"
+    },
+    {
+      "source": 71,
+      "target": 81,
+      "variable": "s"
+    },
+    {
+      "source": 71,
+      "target": 83,
+      "variable": "if"
+    },
+    {
+      "source": 71,
+      "target": 86,
+      "variable": "length"
+    },
+    {
+      "source": 72,
+      "target": 74,
+      "variable": "return"
+    },
+    {
+      "source": 73,
+      "target": 106,
+      "variable": "else"
+    },
+    {
+      "source": 74,
+      "target": 79,
+      "variable": "return"
+    },
+    {
+      "source": 74,
+      "target": 103,
+      "variable": "lineStart"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "the"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "string"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "start"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "of"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "a"
+    },
+    {
+      "source": 79,
+      "target": 81,
+      "variable": "line"
+    },
+    {
+      "source": 79,
+      "target": 82,
+      "variable": "index"
+    },
+    {
+      "source": 79,
+      "target": 83,
+      "variable": "return"
+    },
+    {
+      "source": 79,
+      "target": 112,
+      "variable": "Given"
+    },
+    {
+      "source": 79,
+      "target": 112,
+      "variable": "after"
+    },
+    {
+      "source": 79,
+      "target": 112,
+      "variable": "code"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "param"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "start"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "the"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "which"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "to"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "of"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "a"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "variable": "line"
+    },
+    {
+      "source": 81,
+      "target": 85,
+      "variable": "s"
+    },
+    {
+      "source": 81,
+      "target": 112,
+      "variable": "string"
+    },
+    {
+      "source": 81,
+      "target": 114,
+      "variable": "in"
+    },
+    {
+      "source": 81,
+      "target": 114,
+      "variable": "find"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "the"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "index"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "of"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "start"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "a"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "variable": "line"
+    },
+    {
+      "source": 82,
+      "target": 90,
+      "variable": "to"
+    },
+    {
+      "source": 82,
+      "target": 114,
+      "variable": "param"
+    },
+    {
+      "source": 82,
+      "target": 114,
+      "variable": "which"
+    },
+    {
+      "source": 82,
+      "target": 115,
+      "variable": "at"
+    },
+    {
+      "source": 82,
+      "target": 115,
+      "variable": "looking"
+    },
+    {
+      "source": 82,
+      "target": 115,
+      "variable": "for"
+    },
+    {
+      "source": 83,
+      "target": 85,
+      "variable": "start"
+    },
+    {
+      "source": 83,
+      "target": 86,
+      "variable": "if"
+    },
+    {
+      "source": 83,
+      "target": 87,
+      "variable": "return"
+    },
+    {
+      "source": 83,
+      "target": 96,
+      "variable": "line"
+    },
+    {
+      "source": 83,
+      "target": 112,
+      "variable": "a"
+    },
+    {
+      "source": 83,
+      "target": 112,
+      "variable": "the"
+    },
+    {
+      "source": 83,
+      "target": 112,
+      "variable": "index"
+    },
+    {
+      "source": 83,
+      "target": 112,
+      "variable": "of"
+    },
+    {
+      "source": 83,
+      "target": 116,
+      "variable": "or"
+    },
+    {
+      "source": 83,
+      "target": 116,
+      "variable": "no"
+    },
+    {
+      "source": 83,
+      "target": 116,
+      "variable": "such"
+    },
+    {
+      "source": 83,
+      "target": 116,
+      "variable": "exists"
+    },
+    {
+      "source": 85,
+      "target": 86,
+      "variable": "s"
+    },
+    {
+      "source": 85,
+      "target": 89,
+      "variable": "start"
+    },
+    {
+      "source": 85,
+      "target": 97,
+      "variable": "int"
+    },
+    {
+      "source": 85,
+      "target": 118,
+      "variable": "private"
+    },
+    {
+      "source": 85,
+      "target": 118,
+      "variable": "static"
+    },
+    {
+      "source": 85,
+      "target": 118,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 85,
+      "target": 118,
+      "variable": "String"
+    },
+    {
+      "source": 86,
+      "target": 89,
+      "variable": "if"
+    },
+    {
+      "source": 86,
+      "target": 93,
+      "variable": "s"
+    },
+    {
+      "source": 86,
+      "target": 93,
+      "variable": "length"
+    },
+    {
+      "source": 87,
+      "target": 90,
+      "variable": "return"
+    },
+    {
+      "source": 89,
+      "target": 93,
+      "variable": "if"
+    },
+    {
+      "source": 89,
+      "target": 93,
+      "variable": "start"
+    },
+    {
+      "source": 90,
+      "target": 91,
+      "variable": "return"
+    },
+    {
+      "source": 90,
+      "target": 114,
+      "variable": "to"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "It"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "doesn"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "t"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "make"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "sense"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "call"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "this"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "routine"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "with"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "but"
+    },
+    {
+      "source": 90,
+      "target": 124,
+      "variable": "anyway"
+    },
+    {
+      "source": 91,
+      "target": 94,
+      "variable": "return"
+    },
+    {
+      "source": 93,
+      "target": 97,
+      "variable": "s"
+    },
+    {
+      "source": 93,
+      "target": 97,
+      "variable": "start"
+    },
+    {
+      "source": 93,
+      "target": 104,
+      "variable": "if"
+    },
+    {
+      "source": 93,
+      "target": 104,
+      "variable": "length"
+    },
+    {
+      "source": 94,
+      "target": 105,
+      "variable": "return"
+    },
+    {
+      "source": 96,
+      "target": 97,
+      "variable": "n"
+    },
+    {
+      "source": 96,
+      "target": 99,
+      "variable": "r"
+    },
+    {
+      "source": 96,
+      "target": 112,
+      "variable": "line"
+    },
+    {
+      "source": 96,
+      "target": 131,
+      "variable": "possible"
+    },
+    {
+      "source": 96,
+      "target": 131,
+      "variable": "terminators"
+    },
+    {
+      "source": 97,
+      "target": 98,
+      "variable": "int"
+    },
+    {
+      "source": 97,
+      "target": 98,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 97,
+      "target": 99,
+      "variable": "s"
+    },
+    {
+      "source": 97,
+      "target": 99,
+      "variable": "indexOf"
+    },
+    {
+      "source": 97,
+      "target": 99,
+      "variable": "n"
+    },
+    {
+      "source": 97,
+      "target": 99,
+      "variable": "start"
+    },
+    {
+      "source": 98,
+      "target": 99,
+      "variable": "int"
+    },
+    {
+      "source": 98,
+      "target": 101,
+      "variable": "Integer"
+    },
+    {
+      "source": 98,
+      "target": 101,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 98,
+      "target": 103,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 98,
+      "target": 132,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "int"
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "s"
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "indexOf"
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "r"
+    },
+    {
+      "source": 99,
+      "target": 100,
+      "variable": "start"
+    },
+    {
+      "source": 99,
+      "target": 101,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 99,
+      "target": 131,
+      "variable": "n"
+    },
+    {
+      "source": 100,
+      "target": 101,
+      "variable": "int"
+    },
+    {
+      "source": 100,
+      "target": 102,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 100,
+      "target": 104,
+      "variable": "s"
+    },
+    {
+      "source": 100,
+      "target": 112,
+      "variable": "start"
+    },
+    {
+      "source": 100,
+      "target": 131,
+      "variable": "r"
+    },
+    {
+      "source": 100,
+      "target": 132,
+      "variable": "indexOf"
+    },
+    {
+      "source": 101,
+      "target": 102,
+      "variable": "int"
+    },
+    {
+      "source": 101,
+      "target": 102,
+      "variable": "Integer"
+    },
+    {
+      "source": 101,
+      "target": 102,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 101,
+      "target": 103,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 101,
+      "target": 134,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 102,
+      "target": 103,
+      "variable": "int"
+    },
+    {
+      "source": 102,
+      "target": 103,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 102,
+      "target": 133,
+      "variable": "Integer"
+    },
+    {
+      "source": 102,
+      "target": 133,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 102,
+      "target": 135,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 103,
+      "target": 104,
+      "variable": "lineStart"
+    },
+    {
+      "source": 103,
+      "target": 118,
+      "variable": "int"
+    },
+    {
+      "source": 103,
+      "target": 133,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 103,
+      "target": 136,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 103,
+      "target": 137,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 103,
+      "target": 138,
+      "variable": "Math"
+    },
+    {
+      "source": 103,
+      "target": 138,
+      "variable": "min"
+    },
+    {
+      "source": 104,
+      "target": 107,
+      "variable": "lineStart"
+    },
+    {
+      "source": 104,
+      "target": 114,
+      "variable": "s"
+    },
+    {
+      "source": 104,
+      "target": 116,
+      "variable": "if"
+    },
+    {
+      "source": 104,
+      "target": 119,
+      "variable": "length"
+    },
+    {
+      "source": 105,
+      "target": 107,
+      "variable": "return"
+    },
+    {
+      "source": 106,
+      "target": 141,
+      "variable": "else"
+    },
+    {
+      "source": 107,
+      "target": 112,
+      "variable": "return"
+    },
+    {
+      "source": 107,
+      "target": 138,
+      "variable": "lineStart"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "the"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "string"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "start"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "of"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "a"
+    },
+    {
+      "source": 112,
+      "target": 114,
+      "variable": "line"
+    },
+    {
+      "source": 112,
+      "target": 115,
+      "variable": "index"
+    },
+    {
+      "source": 112,
+      "target": 116,
+      "variable": "return"
+    },
+    {
+      "source": 112,
+      "target": 148,
+      "variable": "Given"
+    },
+    {
+      "source": 112,
+      "target": 148,
+      "variable": "after"
+    },
+    {
+      "source": 112,
+      "target": 148,
+      "variable": "code"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "param"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "start"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "the"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "which"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "to"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "of"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "a"
+    },
+    {
+      "source": 114,
+      "target": 115,
+      "variable": "line"
+    },
+    {
+      "source": 114,
+      "target": 118,
+      "variable": "s"
+    },
+    {
+      "source": 114,
+      "target": 148,
+      "variable": "string"
+    },
+    {
+      "source": 114,
+      "target": 150,
+      "variable": "in"
+    },
+    {
+      "source": 114,
+      "target": 150,
+      "variable": "find"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "the"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "index"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "of"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "start"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "a"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "variable": "line"
+    },
+    {
+      "source": 115,
+      "target": 124,
+      "variable": "to"
+    },
+    {
+      "source": 115,
+      "target": 150,
+      "variable": "param"
+    },
+    {
+      "source": 115,
+      "target": 150,
+      "variable": "which"
+    },
+    {
+      "source": 115,
+      "target": 151,
+      "variable": "at"
+    },
+    {
+      "source": 115,
+      "target": 151,
+      "variable": "looking"
+    },
+    {
+      "source": 115,
+      "target": 151,
+      "variable": "for"
+    },
+    {
+      "source": 116,
+      "target": 118,
+      "variable": "start"
+    },
+    {
+      "source": 116,
+      "target": 119,
+      "variable": "if"
+    },
+    {
+      "source": 116,
+      "target": 120,
+      "variable": "return"
+    },
+    {
+      "source": 116,
+      "target": 131,
+      "variable": "line"
+    },
+    {
+      "source": 116,
+      "target": 148,
+      "variable": "a"
+    },
+    {
+      "source": 116,
+      "target": 148,
+      "variable": "the"
+    },
+    {
+      "source": 116,
+      "target": 148,
+      "variable": "index"
+    },
+    {
+      "source": 116,
+      "target": 148,
+      "variable": "of"
+    },
+    {
+      "source": 116,
+      "target": 152,
+      "variable": "or"
+    },
+    {
+      "source": 116,
+      "target": 152,
+      "variable": "no"
+    },
+    {
+      "source": 116,
+      "target": 152,
+      "variable": "such"
+    },
+    {
+      "source": 116,
+      "target": 152,
+      "variable": "exists"
+    },
+    {
+      "source": 118,
+      "target": 119,
+      "variable": "s"
+    },
+    {
+      "source": 118,
+      "target": 123,
+      "variable": "start"
+    },
+    {
+      "source": 118,
+      "target": 132,
+      "variable": "int"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "private"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "static"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "value"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "offset"
+    },
+    {
+      "source": 118,
+      "target": 154,
+      "variable": "String"
+    },
+    {
+      "source": 119,
+      "target": 123,
+      "variable": "if"
+    },
+    {
+      "source": 119,
+      "target": 128,
+      "variable": "s"
+    },
+    {
+      "source": 119,
+      "target": 128,
+      "variable": "length"
+    },
+    {
+      "source": 120,
+      "target": 121,
+      "variable": "return"
+    },
+    {
+      "source": 120,
+      "target": 125,
+      "variable": "error"
+    },
+    {
+      "source": 121,
+      "target": 124,
+      "variable": "return"
+    },
+    {
+      "source": 123,
+      "target": 128,
+      "variable": "if"
+    },
+    {
+      "source": 123,
+      "target": 128,
+      "variable": "start"
+    },
+    {
+      "source": 124,
+      "target": 125,
+      "variable": "return"
+    },
+    {
+      "source": 124,
+      "target": 150,
+      "variable": "to"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "It"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "doesn"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "t"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "make"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "sense"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "call"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "this"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "routine"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "with"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "but"
+    },
+    {
+      "source": 124,
+      "target": 159,
+      "variable": "anyway"
+    },
+    {
+      "source": 125,
+      "target": 126,
+      "variable": "return"
+    },
+    {
+      "source": 125,
+      "target": 142,
+      "variable": "error"
+    },
+    {
+      "source": 126,
+      "target": 129,
+      "variable": "return"
+    },
+    {
+      "source": 128,
+      "target": 132,
+      "variable": "s"
+    },
+    {
+      "source": 128,
+      "target": 132,
+      "variable": "start"
+    },
+    {
+      "source": 128,
+      "target": 139,
+      "variable": "if"
+    },
+    {
+      "source": 128,
+      "target": 139,
+      "variable": "length"
+    },
+    {
+      "source": 129,
+      "target": 140,
+      "variable": "return"
+    },
+    {
+      "source": 131,
+      "target": 132,
+      "variable": "n"
+    },
+    {
+      "source": 131,
+      "target": 134,
+      "variable": "r"
+    },
+    {
+      "source": 131,
+      "target": 148,
+      "variable": "line"
+    },
+    {
+      "source": 131,
+      "target": 165,
+      "variable": "possible"
+    },
+    {
+      "source": 131,
+      "target": 165,
+      "variable": "terminators"
+    },
+    {
+      "source": 132,
+      "target": 133,
+      "variable": "int"
+    },
+    {
+      "source": 132,
+      "target": 133,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "s"
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "indexOf"
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "n"
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "start"
+    },
+    {
+      "source": 133,
+      "target": 134,
+      "variable": "int"
+    },
+    {
+      "source": 133,
+      "target": 136,
+      "variable": "Integer"
+    },
+    {
+      "source": 133,
+      "target": 136,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 133,
+      "target": 138,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 133,
+      "target": 166,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "int"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "s"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "indexOf"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "r"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "variable": "start"
+    },
+    {
+      "source": 134,
+      "target": 136,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 134,
+      "target": 165,
+      "variable": "n"
+    },
+    {
+      "source": 135,
+      "target": 136,
+      "variable": "int"
+    },
+    {
+      "source": 135,
+      "target": 137,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 135,
+      "target": 139,
+      "variable": "s"
+    },
+    {
+      "source": 135,
+      "target": 148,
+      "variable": "start"
+    },
+    {
+      "source": 135,
+      "target": 165,
+      "variable": "r"
+    },
+    {
+      "source": 135,
+      "target": 166,
+      "variable": "indexOf"
+    },
+    {
+      "source": 136,
+      "target": 137,
+      "variable": "int"
+    },
+    {
+      "source": 136,
+      "target": 137,
+      "variable": "Integer"
+    },
+    {
+      "source": 136,
+      "target": 137,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 136,
+      "target": 138,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 136,
+      "target": 168,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 137,
+      "target": 138,
+      "variable": "int"
+    },
+    {
+      "source": 137,
+      "target": 138,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 137,
+      "target": 167,
+      "variable": "Integer"
+    },
+    {
+      "source": 137,
+      "target": 167,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 137,
+      "target": 169,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 138,
+      "target": 139,
+      "variable": "lineStart"
+    },
+    {
+      "source": 138,
+      "target": 154,
+      "variable": "int"
+    },
+    {
+      "source": 138,
+      "target": 167,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 138,
+      "target": 170,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 138,
+      "target": 171,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 138,
+      "target": 172,
+      "variable": "Math"
+    },
+    {
+      "source": 138,
+      "target": 172,
+      "variable": "min"
+    },
+    {
+      "source": 139,
+      "target": 143,
+      "variable": "lineStart"
+    },
+    {
+      "source": 139,
+      "target": 150,
+      "variable": "s"
+    },
+    {
+      "source": 139,
+      "target": 152,
+      "variable": "if"
+    },
+    {
+      "source": 139,
+      "target": 155,
+      "variable": "length"
+    },
+    {
+      "source": 140,
+      "target": 142,
+      "variable": "return"
+    },
+    {
+      "source": 141,
+      "target": 175,
+      "variable": "else"
+    },
+    {
+      "source": 142,
+      "target": 143,
+      "variable": "return"
+    },
+    {
+      "source": 143,
+      "target": 148,
+      "variable": "return"
+    },
+    {
+      "source": 143,
+      "target": 172,
+      "variable": "lineStart"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "the"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "string"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "start"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "of"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "a"
+    },
+    {
+      "source": 148,
+      "target": 150,
+      "variable": "line"
+    },
+    {
+      "source": 148,
+      "target": 151,
+      "variable": "index"
+    },
+    {
+      "source": 148,
+      "target": 152,
+      "variable": "return"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "param"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "start"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "the"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "which"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "to"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "of"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "a"
+    },
+    {
+      "source": 150,
+      "target": 151,
+      "variable": "line"
+    },
+    {
+      "source": 150,
+      "target": 154,
+      "variable": "s"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "the"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "index"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "of"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "start"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "a"
+    },
+    {
+      "source": 151,
+      "target": 152,
+      "variable": "line"
+    },
+    {
+      "source": 151,
+      "target": 159,
+      "variable": "to"
+    },
+    {
+      "source": 152,
+      "target": 154,
+      "variable": "start"
+    },
+    {
+      "source": 152,
+      "target": 155,
+      "variable": "if"
+    },
+    {
+      "source": 152,
+      "target": 156,
+      "variable": "return"
+    },
+    {
+      "source": 152,
+      "target": 165,
+      "variable": "line"
+    },
+    {
+      "source": 154,
+      "target": 155,
+      "variable": "s"
+    },
+    {
+      "source": 154,
+      "target": 158,
+      "variable": "start"
+    },
+    {
+      "source": 154,
+      "target": 166,
+      "variable": "int"
+    },
+    {
+      "source": 155,
+      "target": 158,
+      "variable": "if"
+    },
+    {
+      "source": 155,
+      "target": 162,
+      "variable": "s"
+    },
+    {
+      "source": 155,
+      "target": 162,
+      "variable": "length"
+    },
+    {
+      "source": 156,
+      "target": 159,
+      "variable": "return"
+    },
+    {
+      "source": 158,
+      "target": 162,
+      "variable": "if"
+    },
+    {
+      "source": 158,
+      "target": 162,
+      "variable": "start"
+    },
+    {
+      "source": 159,
+      "target": 160,
+      "variable": "return"
+    },
+    {
+      "source": 160,
+      "target": 163,
+      "variable": "return"
+    },
+    {
+      "source": 162,
+      "target": 166,
+      "variable": "s"
+    },
+    {
+      "source": 162,
+      "target": 166,
+      "variable": "start"
+    },
+    {
+      "source": 162,
+      "target": 173,
+      "variable": "if"
+    },
+    {
+      "source": 162,
+      "target": 173,
+      "variable": "length"
+    },
+    {
+      "source": 163,
+      "target": 174,
+      "variable": "return"
+    },
+    {
+      "source": 165,
+      "target": 166,
+      "variable": "n"
+    },
+    {
+      "source": 165,
+      "target": 168,
+      "variable": "r"
+    },
+    {
+      "source": 166,
+      "target": 167,
+      "variable": "int"
+    },
+    {
+      "source": 166,
+      "target": 167,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 166,
+      "target": 168,
+      "variable": "s"
+    },
+    {
+      "source": 166,
+      "target": 168,
+      "variable": "indexOf"
+    },
+    {
+      "source": 166,
+      "target": 168,
+      "variable": "n"
+    },
+    {
+      "source": 166,
+      "target": 168,
+      "variable": "start"
+    },
+    {
+      "source": 167,
+      "target": 168,
+      "variable": "int"
+    },
+    {
+      "source": 167,
+      "target": 170,
+      "variable": "Integer"
+    },
+    {
+      "source": 167,
+      "target": 170,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 167,
+      "target": 172,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "int"
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "s"
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "indexOf"
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "r"
+    },
+    {
+      "source": 168,
+      "target": 169,
+      "variable": "start"
+    },
+    {
+      "source": 168,
+      "target": 170,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 169,
+      "target": 170,
+      "variable": "int"
+    },
+    {
+      "source": 169,
+      "target": 171,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 169,
+      "target": 173,
+      "variable": "s"
+    },
+    {
+      "source": 170,
+      "target": 171,
+      "variable": "int"
+    },
+    {
+      "source": 170,
+      "target": 171,
+      "variable": "Integer"
+    },
+    {
+      "source": 170,
+      "target": 171,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 170,
+      "target": 172,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 171,
+      "target": 172,
+      "variable": "int"
+    },
+    {
+      "source": 171,
+      "target": 172,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 172,
+      "target": 173,
+      "variable": "lineStart"
+    },
+    {
+      "source": 173,
+      "target": 176,
+      "variable": "lineStart"
+    },
+    {
+      "source": 174,
+      "target": 176,
+      "variable": "return"
+    }
+  ]
+}

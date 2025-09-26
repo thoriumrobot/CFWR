@@ -1,0 +1,432 @@
+{
+  "method_name": "IntroSub_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void test(int[] arr, @LTLengthOf({\"#1\"}) int a) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "// :: error: (assignment)",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "@LTLengthOf({\"arr\"}) int c = a - (-1);",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "@LTEqLengthOf({\"arr\"}) int c1 = a - (-1);",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "@LTLengthOf({\"arr\"}) int d = a - 0;",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "@LTLengthOf({\"arr\"}) int e = a - 7;",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "// :: error: (assignment)",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "@LTLengthOf({\"arr\"}) int f = a - (-7);",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "// :: error: (assignment)",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "@LTEqLengthOf({\"arr\"}) int j = 7;",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "}",
+      "line": 12,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "arr"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "assignment"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "arr"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "arr"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "arr"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "a"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "arr"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "a"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "variable": "error"
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "variable": "assignment"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "arr"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "int"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "arr"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "assignment"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "arr"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "arr"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "arr"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "a"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "arr"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "a"
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "variable": "error"
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "variable": "assignment"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "arr"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "int"
+    }
+  ]
+}

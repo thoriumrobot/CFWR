@@ -1,0 +1,944 @@
+{
+  "method_name": "Polymorphic3_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void ubc_id(",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "int[] a,",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "int[] b,",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "@LTLengthOf(\"#1\") int ai,",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "@LTEqLengthOf(\"#1\") int al,",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "@LTLengthOf({\"#1\", \"#2\"}) int abi,",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "@LTEqLengthOf({\"#1\", \"#2\"}) int abl) {",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "int[] c;",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "@LTLengthOf(\"a\") int ai1 = identity(ai);",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "// :: error: (assignment)",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "@LTLengthOf(\"b\") int ai2 = identity(ai);",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "@LTEqLengthOf(\"a\") int al1 = identity(al);",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "// :: error: (assignment)",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "@LTLengthOf(\"a\") int al2 = identity(al);",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "@LTLengthOf({\"a\", \"b\"}) int abi1 = identity(abi);",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "// :: error: (assignment)",
+      "line": 19,
+      "node_type": "stmt"
+    },
+    {
+      "id": 19,
+      "label": "@LTLengthOf({\"a\", \"b\", \"c\"}) int abi2 = identity(abi);",
+      "line": 20,
+      "node_type": "stmt"
+    },
+    {
+      "id": 20,
+      "label": "",
+      "line": 21,
+      "node_type": "stmt"
+    },
+    {
+      "id": 21,
+      "label": "@LTEqLengthOf({\"a\", \"b\"}) int abl1 = identity(abl);",
+      "line": 22,
+      "node_type": "stmt"
+    },
+    {
+      "id": 22,
+      "label": "// :: error: (assignment)",
+      "line": 23,
+      "node_type": "stmt"
+    },
+    {
+      "id": 23,
+      "label": "@LTEqLengthOf({\"a\", \"b\", \"c\"}) int abl2 = identity(abl);",
+      "line": 24,
+      "node_type": "stmt"
+    },
+    {
+      "id": 24,
+      "label": "}",
+      "line": 25,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 9,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "variable": "b"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "variable": "ai"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 4,
+      "target": 13,
+      "variable": "al"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 5,
+      "target": 17,
+      "variable": "abi"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 6,
+      "target": 21,
+      "variable": "abl"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 19,
+      "variable": "c"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "int"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "identity"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "ai"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "a"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "error"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "assignment"
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "variable": "int"
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "variable": "identity"
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "variable": "b"
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "a"
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "identity"
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "al"
+    },
+    {
+      "source": 13,
+      "target": 21,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "variable": "error"
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "variable": "assignment"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "a"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "int"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "identity"
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "a"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "b"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "int"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "identity"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "abi"
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "variable": "error"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "variable": "assignment"
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "a"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "b"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "int"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "identity"
+    },
+    {
+      "source": 19,
+      "target": 23,
+      "variable": "c"
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "a"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "b"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "int"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "identity"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "abl"
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 9,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "variable": "b"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "variable": "ai"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 4,
+      "target": 13,
+      "variable": "al"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 5,
+      "target": 17,
+      "variable": "abi"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 6,
+      "target": 21,
+      "variable": "abl"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 19,
+      "variable": "c"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "int"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "identity"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "ai"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "a"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "error"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "assignment"
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "variable": "int"
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "variable": "identity"
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "variable": "b"
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "a"
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "identity"
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "variable": "al"
+    },
+    {
+      "source": 13,
+      "target": 21,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "variable": "error"
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "variable": "assignment"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "a"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "int"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "identity"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "a"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "b"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "int"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "identity"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "abi"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "variable": "error"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "variable": "assignment"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "a"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "b"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "int"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "identity"
+    },
+    {
+      "source": 19,
+      "target": 23,
+      "variable": "c"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "a"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "b"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "int"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "identity"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "abl"
+    }
+  ]
+}

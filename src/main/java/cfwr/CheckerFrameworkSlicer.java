@@ -18,15 +18,21 @@ public class CheckerFrameworkSlicer {
     
     private static final String CHECKER_FRAMEWORK_CP = System.getenv("CHECKERFRAMEWORK_CP");
     
+    private static boolean PROCESS_ALL_IF_NO_WARNINGS = false;
+
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.err.println("Usage: java cfwr.CheckerFrameworkSlicer <warnings_file> <output_dir> [java_files...]");
+            System.err.println("Usage: java cfwr.CheckerFrameworkSlicer <warnings_file|- > <output_dir> [java_files_or_dirs...]");
             System.exit(1);
         }
         
         String warningsFile = args[0];
         String outputDir = args[1];
         java.util.List<String> javaFiles = new java.util.ArrayList<String>();
+
+        if ("-".equals(warningsFile)) {
+            PROCESS_ALL_IF_NO_WARNINGS = true;
+        }
         
         // Collect Java files from remaining arguments (files or directories). If none, scan CWD.
         if (args.length > 2) {
@@ -130,10 +136,11 @@ public class CheckerFrameworkSlicer {
             }
         }
         
-        if (fileWarnings.isEmpty()) {
-            System.out.println("No warnings for " + javaFile + ", skipping");
-            return;
-        }
+            boolean noWarns = fileWarnings.isEmpty();
+            if (noWarns && !PROCESS_ALL_IF_NO_WARNINGS) {
+                System.out.println("No warnings for " + javaFile + ", skipping");
+                return;
+            }
         
         // Create output directory
         String fileName = Paths.get(javaFile).getFileName().toString();
@@ -141,43 +148,85 @@ public class CheckerFrameworkSlicer {
         Path sliceDir = Paths.get(outputDir, baseName + "__cf_slice");
         Files.createDirectories(sliceDir);
         
-        // Parse Java file
-        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-        if (compiler == null) {
-            throw new RuntimeException("No Java compiler available");
-        }
-        
-        StandardJavaFileManager fileManager = compiler.getStandardFileManager(null, null, StandardCharsets.UTF_8);
-        
-        // Set up classpath
-        java.util.List<String> options = new java.util.ArrayList<String>();
-        if (CHECKER_FRAMEWORK_CP != null && !CHECKER_FRAMEWORK_CP.isEmpty()) {
-            options.add("-cp");
-            options.add(CHECKER_FRAMEWORK_CP);
-        }
-        
-        Iterable<? extends JavaFileObject> compilationUnits = 
-            fileManager.getJavaFileObjects(javaFile);
-        
-        JavaCompiler.CompilationTask task = compiler.getTask(
-            null, fileManager, null, options, null, compilationUnits);
-        
-        // For now, we'll create a simple placeholder slice without parsing the AST
-        // TODO: Integrate proper Checker Framework CFG Builder
-        
-        // Create a simple slice for testing
-        SliceInfo sliceInfo = createSimpleSlice(javaFile);
-        
-        // Generate CFG with dataflow information
-        String cfgJson = generateSimpleCFGJson(sliceInfo);
-        
-        // Save the slice and CFG
+        // CFG-like method slice: locate enclosing member and extract only that method body text
         String fileBaseName = new File(javaFile).getName();
         String sliceBaseName = fileBaseName.replace(".java", "");
         String sliceFile = outputDir + "/" + sliceBaseName + "_slice.java";
         String cfgFile = outputDir + "/" + sliceBaseName + "_cfg.json";
-        
+
         try {
+            List<String> all = Files.readAllLines(Paths.get(javaFile), StandardCharsets.UTF_8);
+            if (all.isEmpty()) {
+                System.out.println("File empty, skipping: " + javaFile);
+                return;
+            }
+
+            // Build an AST to find the method/field enclosing any warning line
+            JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+            StandardJavaFileManager fm = compiler.getStandardFileManager(null, null, StandardCharsets.UTF_8);
+            Iterable<? extends JavaFileObject> cu = fm.getJavaFileObjects(javaFile);
+            JavacTask task = (JavacTask) compiler.getTask(null, fm, null, java.util.List.of(), null, cu);
+            Iterable<? extends CompilationUnitTree> cuts = task.parse();
+
+            // Collect spans to extract
+            final int[] extractStartRef = new int[]{Integer.MAX_VALUE};
+            final int[] extractEndRef = new int[]{-1};
+            final String[] methodNameRef = new String[]{"slice"};
+            final String[] classNameRef = new String[]{sliceBaseName};
+
+            for (CompilationUnitTree cut : cuts) {
+                Trees trees = Trees.instance(task);
+                new TreePathScanner<Void, Void>() {
+                    @Override
+                    public Void visitClass(ClassTree clazz, Void p) {
+                        return super.visitClass(clazz, p);
+                    }
+                    @Override
+                    public Void visitMethod(MethodTree method, Void p) {
+                        long start = trees.getSourcePositions().getStartPosition(cut, method);
+                        long end = trees.getSourcePositions().getEndPosition(cut, method);
+                        int sLine = (int) cut.getLineMap().getLineNumber(start);
+                        int eLine = (int) cut.getLineMap().getLineNumber(end);
+                        // If any warning falls within this method, select this method
+                        for (WarningInfo w : fileWarnings) {
+                            if (w.line >= sLine && w.line <= eLine) {
+                                if (sLine < extractStartRef[0]) extractStartRef[0] = sLine;
+                                if (eLine > extractEndRef[0]) extractEndRef[0] = eLine;
+                                methodNameRef[0] = method.getName().toString();
+                                ClassTree cls = (ClassTree) getCurrentPath().getParentPath().getLeaf();
+                                classNameRef[0] = cls.getSimpleName().toString();
+                                break;
+                            }
+                        }
+                        return super.visitMethod(method, p);
+                    }
+                }.scan(cut, null);
+            }
+
+            int extractStart = extractStartRef[0];
+            int extractEnd = extractEndRef[0];
+            if (extractStart == Integer.MAX_VALUE || extractEnd == -1) {
+                // If configured, extract whole file; else a small window fallback
+                if (PROCESS_ALL_IF_NO_WARNINGS) {
+                    extractStart = 1;
+                    extractEnd = all.size();
+                } else {
+                    extractStart = Math.max(1, fileWarnings.isEmpty() ? 1 : fileWarnings.get(0).line - 3);
+                    extractEnd = Math.min(all.size(), extractStart + 20);
+                }
+            }
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = extractStart; i <= extractEnd; i++) sb.append(all.get(i - 1)).append('\n');
+
+            SliceInfo sliceInfo = new SliceInfo();
+            sliceInfo.methodName = methodNameRef[0];
+            sliceInfo.className = classNameRef[0];
+            sliceInfo.javaCode = sb.toString();
+
+            // Build CFG with control edges per line and dataflow edges by same-name variables
+            String cfgJson = generateWindowCFGJsonWithDataflow(sliceInfo, extractStart, extractEnd, all);
+
             Files.write(Paths.get(sliceFile), sliceInfo.javaCode.getBytes(StandardCharsets.UTF_8));
             Files.write(Paths.get(cfgFile), cfgJson.getBytes(StandardCharsets.UTF_8));
             System.out.println("Generated slice: " + sliceFile);
@@ -302,6 +351,79 @@ public class CheckerFrameworkSlicer {
         json.append("  ]\n");
         json.append("}");
         return json.toString();
+    }
+
+    /**
+     * Generate a minimal CFG JSON for a contiguous line window.
+     */
+    private static String generateWindowCFGJsonWithDataflow(SliceInfo sliceInfo, int startLine, int endLine, List<String> allLines) {
+        StringBuilder json = new StringBuilder();
+        json.append("{\n");
+        json.append("  \"method_name\": \"").append(sliceInfo.methodName).append("\",\n");
+        json.append("  \"nodes\": [\n");
+        // Create a node per line
+        for (int i = startLine; i <= endLine; i++) {
+            int id = i;
+            String label = escapeJson(trimToMax(allLines.get(i - 1), 200));
+            json.append("    {\"id\": ").append(id).append(", \"label\": \"").append(label).append("\", \"line\": ").append(i).append(", \"node_type\": \"stmt\"}");
+            if (i < endLine) json.append(",");
+            json.append("\n");
+        }
+        json.append("  ],\n");
+        // Control edges: sequential lines
+        json.append("  \"control_edges\": [\n");
+        boolean first = true;
+        for (int i = startLine; i < endLine; i++) {
+            if (!first) json.append(",\n");
+            first = false;
+            json.append("    {\"source\": ").append(i).append(", \"target\": ").append(i + 1).append(", \"type\": \"control\"}");
+        }
+        json.append("\n  ],\n");
+        // Dataflow edges: connect same identifiers across successive occurrences
+        json.append("  \"dataflow_edges\": [\n");
+        Map<String, Integer> lastLineByIdent = new HashMap<String, Integer>();
+        Pattern ident = Pattern.compile("[A-Za-z_][A-Za-z0-9_]*");
+        boolean firstDf = true;
+        for (int i = startLine; i <= endLine; i++) {
+            String line = allLines.get(i - 1);
+            java.util.Set<String> seenInLine = new java.util.HashSet<String>();
+            java.util.regex.Matcher m = ident.matcher(line);
+            while (m.find()) {
+                String name = m.group();
+                if (isJavaKeyword(name)) continue;
+                if (!seenInLine.add(name)) continue; // once per line per ident
+                Integer prev = lastLineByIdent.get(name);
+                if (prev != null) {
+                    if (!firstDf) json.append(",\n");
+                    firstDf = false;
+                    json.append("    {\"source\": ").append(prev).append(", \"target\": ").append(i).append(", \"type\": \"dataflow\", \"var\": \"").append(escapeJson(name)).append("\"}");
+                }
+                lastLineByIdent.put(name, i);
+            }
+        }
+        json.append("\n  ]\n");
+        json.append("}\n");
+        return json.toString();
+    }
+
+    private static boolean isJavaKeyword(String s) {
+        // Minimal keyword set
+        return java.util.Set.of(
+            "abstract","assert","boolean","break","byte","case","catch","char","class","const","continue",
+            "default","do","double","else","enum","extends","final","finally","float","for","goto","if",
+            "implements","import","instanceof","int","interface","long","native","new","package","private","protected",
+            "public","return","short","static","strictfp","super","switch","synchronized","this","throw","throws",
+            "transient","try","void","volatile","while","true","false","null"
+        ).contains(s);
+    }
+
+    private static String escapeJson(String s) {
+        return s.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n");
+    }
+
+    private static String trimToMax(String s, int n) {
+        if (s.length() <= n) return s;
+        return s.substring(0, n);
     }
     
     /**

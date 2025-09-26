@@ -1,0 +1,172 @@
+{
+  "method_name": "SizeVsLength_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public int[] getArray(@NonNegative int size) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "int[] values = new int[size];",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "for (int i = 0; i < size; i++) {",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "values[i] = 22;",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "}",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "return values;",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "}",
+      "line": 7,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "size"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "size"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "values"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "values"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "size"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "size"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "values"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "values"
+    }
+  ]
+}

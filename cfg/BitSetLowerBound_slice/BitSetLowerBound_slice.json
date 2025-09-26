@@ -1,0 +1,254 @@
+{
+  "method_name": "BitSetLowerBound_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "private void m(BitSet b) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "b.set(b.nextClearBit(0));",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "// next set bit does not have to exist",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "// :: error: (argument)",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "b.clear(b.nextSetBit(0));",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "@GTENegativeOne int i = b.nextSetBit(0);",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "@GTENegativeOne int j = b.previousClearBit(-1);",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "@GTENegativeOne int k = b.previousSetBit(-1);",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "}",
+      "line": 10,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "b"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "set"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "b"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "b"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "nextSetBit"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "b"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "b"
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "b"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "set"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "b"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "b"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "nextSetBit"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "b"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "b"
+    }
+  ]
+}

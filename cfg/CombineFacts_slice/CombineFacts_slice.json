@@ -1,0 +1,264 @@
+{
+  "method_name": "CombineFacts_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void test(int[] a1) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "@LTLengthOf(\"a1\") int len = a1.length - 1;",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "int[] a2 = new int[len];",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "a2[len - 1] = 1;",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "a1[len] = 1;",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "// This access should issue an error.",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "// :: error: (array.access.unsafe.high)",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "a2[len] = 1;",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "}",
+      "line": 10,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a1"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "len"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "a1"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "a2"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "len"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "len"
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "variable": "a2"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "len"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "error"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "access"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a1"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "len"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "a1"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "a2"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "len"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "len"
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "variable": "a2"
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "len"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "error"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "access"
+    }
+  ]
+}

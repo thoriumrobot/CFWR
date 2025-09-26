@@ -59,7 +59,7 @@ class RLTrainingPipeline:
             'model_performance': {}
         }
     
-    def run_complete_pipeline(self, slicer_type='cf', model_types=['hgt', 'gbt', 'causal'], 
+    def run_complete_pipeline(self, slicer_type='cf', model_types=['hgt', 'gbt', 'causal', 'dg2n', 'gcn'], 
                             num_episodes=100, checker_type='nullness'):
         """Run the complete RL training pipeline using augmented slices (default behavior)"""
         logger.info("Starting comprehensive RL training pipeline with augmented slices")
@@ -436,8 +436,8 @@ def main():
     parser.add_argument('--models_dir', default='models', help='Directory for trained models')
     parser.add_argument('--slicer', choices=['cf', 'specimin', 'wala'], default='cf',
                        help='Slicer to use (cf=CheckerFrameworkSlicer)')
-    parser.add_argument('--model_types', nargs='+', choices=['hgt', 'gbt', 'causal'], 
-                       default=['hgt', 'gbt', 'causal'], help='Models to train')
+    parser.add_argument('--model_types', nargs='+', choices=['hgt', 'gbt', 'causal', 'dg2n', 'gcn'], 
+                       default=['hgt', 'gbt', 'causal', 'dg2n', 'gcn'], help='Models to train')
     parser.add_argument('--episodes', type=int, default=100, help='Number of training episodes')
     parser.add_argument('--checker_type', choices=['nullness', 'index'], default='nullness',
                        help='Type of Checker Framework checker to use')

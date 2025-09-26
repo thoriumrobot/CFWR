@@ -105,7 +105,8 @@ def load_data():
     for java_file_path in iter_java_files(slices_dir):
         ensure_cfg(java_file_path)
         method_cfgs = load_cfgs(java_file_path)
-        for cfg_data in method_cfgs:
+        for cfg_entry in method_cfgs:
+            cfg_data = cfg_entry.get('data', cfg_entry)
             records = extract_features_and_labels_synthetic(cfg_data)
             data_records.extend(records)
     return pd.DataFrame(data_records)

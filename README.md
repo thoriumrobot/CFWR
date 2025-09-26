@@ -1,5 +1,23 @@
 # Checker Framework Warning Resolver (CFWR)
 
+To train, run:
+
+python pipeline.py --steps all --project_root /home/ubuntu/checker-framework/checker/tests/index --warnings_file /home/ubuntu/CFWR/index1.out --slicer cf
+
+## Parameter-Free (PF) Evaluation Runner
+
+To run node-level RL evaluation on parameter-free Lower Bound Checker annotations (excluding any annotation containing "Bottom"):
+
+```bash
+python3 pipeline.py --pf_eval --pf_dataset_dir test_results/statistical_dataset
+```
+
+- Results are written to:
+  - `test_results/comprehensive_annotation_type_evaluation/comprehensive_annotation_type_evaluation_results.json`
+  - `test_results/comprehensive_annotation_type_evaluation/detailed_annotation_type_evaluation_results.json`
+
+---
+
 A machine learning pipeline for predicting Checker Framework annotation placements in Java code. The system uses Checker Framework warnings to generate code slices, converts them to dataflow-augmented Control Flow Graphs (CFGs), and trains multiple ML models to predict where annotations should be placed.
 
 ## Overview
@@ -10,7 +28,7 @@ CFWR implements an end-to-end pipeline that:
 2. **Slices** code using Checker Framework slicer (default), Specimin, or WALA slicers
 3. **Augments** slices with syntactically correct but irrelevant code (default behavior)
 4. **Converts** slices to dataflow-augmented Control Flow Graphs (CFGs) for structural analysis
-5. **Trains** three different ML models: HGT, GBT, and Causal models
+5. **Trains** multiple ML models: HGT, GBT, Causal, DG2N, GCN, DG-CRF-lite, and GCSN
 6. **Predicts** annotation placements using AST-based analysis
 7. **Places** annotations using AST-based analysis
 
@@ -24,7 +42,8 @@ CFWR implements an end-to-end pipeline that:
 ### **Support**
 - **All Checker Framework annotations**: Including Lower Bound Checker annotations
 - **Multiple slicers**: Checker Framework (default), Specimin, WALA
-- **Three ML models**: HGT, GBT, and Causal models
+- **Core ML models**: HGT, GBT, and Causal
+- **Additional models**: DG2N, GCN, DG-CRF-lite (deterministic gates + hard constraints), and GCSN (gated causal subgraph network)
 - **Flexible prediction**: Individual files, directories, or entire projects
 - **Reinforcement Learning**: RL training with Checker Framework feedback
 
@@ -134,6 +153,21 @@ python predict_on_project.py \
 python hgt.py      # Heterogeneous Graph Transformer
 python gbt.py      # Gradient Boosting Trees  
 python causal_model.py  # Causal inference model
+
+# DG2N (via adapter to .pt graphs)
+python dg2n_adapter.py --cfg_dir cfg_output --out_dir dg2n_data
+python dg2n/train_dg2n.py --data_dir dg2n_data --out_dir models/dg2n
+
+# GCN (homogeneous graph over control+dataflow)
+python gcn_train.py --cfg_dir cfg_output --out_dir models/gcn
+
+# DG-CRF-lite (deterministic feature gates + hard class constraints)
+python dg2n_adapter.py --cfg_dir cfg_output --out_dir dg2n_data
+python train_dgcrf.py --data_dir dg2n_data --out_dir models/dgcrf
+
+# GCSN (feature L0 gates + edge top-k subgraph selection)
+python gcsn_adapter.py --cfg_dir cfg_output --out_dir gcsn_data
+python gcsn/train_gcsn.py --data_dir gcsn_data --out_dir models/gcsn
 ```
 
 #### **4. Individual Model Prediction**
@@ -156,6 +190,30 @@ python predict_causal.py \
   --slices_dir slices_aug \
   --model_path models/causal_model.joblib \
   --out_path predictions_causal.json
+
+# DG2N prediction (per-graph)
+python dg2n/predict_dg2n.py \
+  --ckpt models/dg2n/best_dg2n.pt \
+  --graph_pt dg2n_data/sample.pt \
+  --out_json predictions_dg2n.json
+
+# GCN prediction (per-file)
+python gcn_predict.py \
+  --java_file /path/to/File.java \
+  --model_path models/gcn/best_gcn.pth \
+  --out_path predictions_gcn.json
+
+# DG-CRF-lite prediction (per-graph)
+python predict_dgcrf.py \
+  --ckpt models/dgcrf/best_dgcrf.pt \
+  --graph_pt dg2n_data/sample.pt \
+  --out_json predictions_dgcrf.json
+
+# GCSN prediction (per-graph list)
+python gcsn/predict_gcsn.py \
+  --ckpt models/gcsn/best.pt \
+  --data gcsn_data/test_all.pt \
+  --out_dir predictions_gcsn
 ```
 
 ### **Advanced Options**
@@ -198,6 +256,12 @@ python predict_and_annotate.py \
   --project_root /path/to/project \
   --output_dir /path/to/output \
   --slicer wala
+
+# Soot slicer (bytecode-based) with optional Vineflower decompiler
+python predict_and_annotate.py \
+  --project_root /path/to/project \
+  --output_dir /path/to/output \
+  --slicer soot
 ```
 
 #### **Slice Type Selection**
@@ -610,9 +674,9 @@ python pipeline.py \
   --slicer cf
 
 # 2. Train models (uses augmented slices by default)
-python hgt.py
-python gbt.py  
-python causal_model.py
+  python hgt.py
+  python gbt.py
+  python causal_model.py
 
 # 3. Place annotations with good accuracy
 python place_annotations.py \
@@ -642,7 +706,45 @@ export CFG_OUTPUT_DIR="/path/to/cfg_output"           # CFG output directory
 export MODELS_DIR="/path/to/models"                    # Models directory
 export CHECKERFRAMEWORK_CP="/path/to/checker-jars"    # Checker Framework classpath
 export AUGMENTED_SLICES_DIR="/path/to/slices_aug"     # Augmented slices directory
+export SPECIMIN_JARPATH="/path/to/checker/dist:/path/to/checker/build/libs"  # Optional: helps Specimin/DG2N setup
+
+# Optional: Soot + Vineflower integration (bytecode slicing + decompilation)
+export SOOT_SLICE_CLI="/absolute/path/to/tools/soot_slicer.sh"   # or: export SOOT_JAR="/path/to/soot-slicer-all.jar"
+export VINEFLOWER_JAR="/absolute/path/to/tools/vineflower.jar"   # optional decompiler jar
 ```
+
+### Soot + Vineflower Setup
+
+- Soot enables slicing on bytecode; CFWR integrates it behind `--slicer soot` via the resolver.
+- Vineflower is optional, used for decompilation when the soot slicer supports it.
+
+Quick setup in this repo (prewired scripts):
+
+```bash
+cd /home/ubuntu/CFWR
+# 1) Download Vineflower
+curl -L -o tools/vineflower.jar https://repo1.maven.org/maven2/org/vineflower/vineflower/1.10.1/vineflower-1.10.1.jar
+
+# 2) Use the provided lightweight soot slicer CLI (placeholder copies target source as slice)
+chmod +x tools/soot_slicer.sh
+
+# 3) Export env
+echo 'export SOOT_SLICE_CLI="/home/ubuntu/CFWR/tools/soot_slicer.sh"' >> ~/.bashrc
+echo 'export VINEFLOWER_JAR="/home/ubuntu/CFWR/tools/vineflower.jar"'   >> ~/.bashrc
+source ~/.bashrc
+
+# 4) Run pipeline with soot (will fallback to CF slicer if soot yields no .java slices)
+python3 pipeline.py \
+  --steps all \
+  --project_root /home/ubuntu/checker-framework/checker/tests/index \
+  --warnings_file /home/ubuntu/CFWR/index1.small.out \
+  --slicer soot
+```
+
+Notes:
+- CFWR propagates `SOOT_SLICE_CLI`, `SOOT_JAR`, and `VINEFLOWER_JAR` to the resolver when `--slicer soot` is used.
+- If the soot slicer produces zero `.java` slices, the pipeline automatically falls back to `cf` to keep the workflow moving.
+- The built-in `tools/soot_slicer.sh` is a minimal stub for experimentation. Replace it with a real soot-based slicer (`SOOT_JAR` or your own CLI) to enable true bytecode slicing.
 
 ## Default hyperparameters (selected via parameter-free HPO)
 
@@ -673,3 +775,4 @@ F1 by annotation type:
 | @SearchIndexBottom | 0.000 | 0.000 | 0.000 |
 
 Defaults in this repo are set to the best configurations found in this run (see “Default hyperparameters (selected via parameter-free HPO)”).
+

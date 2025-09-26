@@ -1,0 +1,708 @@
+{
+  "method_name": "SearchIndexTests_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "@SearchIndexFor(\"a\") int y = 7;",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "@LTLengthOf(\"a\") int x = i;",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "}",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "void test2(int[] a, @SearchIndexFor(\"#1\") int xyz) {",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "if (0 > xyz) {",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "@NegativeIndexFor(\"a\") int w = xyz;",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "@NonNegative int y = ~xyz;",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "@LTEqLengthOf(\"a\") int z = ~xyz;",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "}",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "}",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "void test3(int[] a, @SearchIndexFor(\"#1\") int xyz) {",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "if (-1 >= xyz) {",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "@NegativeIndexFor(\"a\") int w = xyz;",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "@NonNegative int y = ~xyz;",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "@LTEqLengthOf(\"a\") int z = ~xyz;",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "}",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "}",
+      "line": 19,
+      "node_type": "stmt"
+    },
+    {
+      "id": 19,
+      "label": "",
+      "line": 20,
+      "node_type": "stmt"
+    },
+    {
+      "id": 20,
+      "label": "void test4(int[] a, @SearchIndexFor(\"#1\") int xyz) {",
+      "line": 21,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "variable": "SearchIndexFor"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "y"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "a"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "xyz"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "a"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 12,
+      "variable": "void"
+    },
+    {
+      "source": 4,
+      "target": 12,
+      "variable": "SearchIndexFor"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "xyz"
+    },
+    {
+      "source": 5,
+      "target": 13,
+      "variable": "if"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "xyz"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "a"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "NegativeIndexFor"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "w"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "xyz"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "variable": "NonNegative"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "variable": "y"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "a"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "xyz"
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "variable": "z"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "variable": "xyz"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "a"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "int"
+    },
+    {
+      "source": 12,
+      "target": 20,
+      "variable": "void"
+    },
+    {
+      "source": 12,
+      "target": 20,
+      "variable": "SearchIndexFor"
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "variable": "xyz"
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "xyz"
+    },
+    {
+      "source": 14,
+      "target": 16,
+      "variable": "a"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "variable": "int"
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "variable": "xyz"
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "variable": "int"
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "variable": "a"
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "variable": "xyz"
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "variable": "SearchIndexFor"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "y"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "a"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "xyz"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "a"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 12,
+      "variable": "void"
+    },
+    {
+      "source": 4,
+      "target": 12,
+      "variable": "SearchIndexFor"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "xyz"
+    },
+    {
+      "source": 5,
+      "target": 13,
+      "variable": "if"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "xyz"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "a"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "NegativeIndexFor"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "w"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "xyz"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "variable": "NonNegative"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "variable": "y"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "a"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "xyz"
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "variable": "z"
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "variable": "xyz"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "a"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "int"
+    },
+    {
+      "source": 12,
+      "target": 20,
+      "variable": "void"
+    },
+    {
+      "source": 12,
+      "target": 20,
+      "variable": "SearchIndexFor"
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "variable": "xyz"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "xyz"
+    },
+    {
+      "source": 14,
+      "target": 16,
+      "variable": "a"
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "variable": "int"
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "variable": "xyz"
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "variable": "int"
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "variable": "a"
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "variable": "xyz"
+    }
+  ]
+}

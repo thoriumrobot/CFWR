@@ -199,6 +199,9 @@ def augment_file(java_path: str, variant_idx: int) -> str:
     with open(java_path, 'r') as f:
         src = f.read()
     
+    # Ensure the slice is a valid compilable Java class before augmentation
+    src = ensure_compilable_class(java_path, src)
+
     src = insert_header_comment(src)
     
     # Add random methods (1-3 methods)
@@ -222,6 +225,33 @@ def write_variant(original_path: str, out_dir: str, variant_idx: int):
     with open(out_path, 'w') as f:
         f.write(augmented)
     return out_path
+
+
+def ensure_compilable_class(java_path: str, src: str) -> str:
+    """Wraps fragment slices into a compilable single-class file if needed.
+    - If no top-level 'class' keyword is found, create: public class <Base> { <src> }
+    - Ensures braces are balanced by appending a closing brace if needed.
+    - If file contains multiple top-level elements without a class, encapsulate them in one class.
+    """
+    # Heuristic: detect a top-level class presence
+    has_class = ' class ' in src or src.strip().startswith('class ') or 'interface ' in src or 'enum ' in src
+    base = os.path.splitext(os.path.basename(java_path))[0]
+    class_name = base if base.isidentifier() else f"Slice{abs(hash(base))}"
+
+    wrapped = src
+    if not has_class:
+        wrapped = "public class {} {{\n{}\n}}".format(class_name, src)
+
+    # Ensure at least one opening and closing brace
+    open_braces = wrapped.count('{')
+    close_braces = wrapped.count('}')
+    if open_braces > close_braces:
+        wrapped = wrapped + ('}' * (open_braces - close_braces))
+    elif close_braces > open_braces:
+        # Prepend missing opening braces minimally
+        wrapped = ('{' * (close_braces - open_braces)) + wrapped
+
+    return wrapped
 
 
 def iter_java_files(root_dir: str):

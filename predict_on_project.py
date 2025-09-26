@@ -303,6 +303,23 @@ def run_causal_predictions(slices_dir, cfg_output_dir, model_path, output_file):
         json.dump(results, f, indent=2)
     print(f"Causal predictions written to {output_file}")
 
+
+def run_nullgtn_predictions(artifact_dir, work_dir, model_key, output_file):
+    """Run nullgtn artifact predictor via wrapper."""
+    import subprocess
+    cmd = [
+        sys.executable, 'predict_nullgtn.py',
+        '--artifact_dir', artifact_dir,
+        '--model_key', model_key,
+        '--work_dir', work_dir,
+        '--out_path', output_file,
+    ]
+    res = subprocess.run(cmd, capture_output=True, text=True, cwd=os.getcwd())
+    if res.returncode != 0:
+        print(f"nullgtn prediction failed: {res.stderr}")
+    else:
+        print(res.stdout)
+
 def generate_warning_based_slices_with_dataflow(project_root, warnings_file, output_dir, slicer_type='cf', use_augmented_slices=True):
     """
     Generate warning-based slices with dataflow-augmented CFGs for prediction.
@@ -400,7 +417,10 @@ def main():
     parser.add_argument('--models_dir', default='models', help='Directory containing trained models')
     parser.add_argument('--output_dir', default='predictions_project', help='Output directory for predictions')
     parser.add_argument('--slicer', choices=['specimin', 'wala', 'cf'], default='cf', help='Slicer to use')
-    parser.add_argument('--models', nargs='+', choices=['hgt', 'gbt', 'causal'], default=['hgt', 'gbt', 'causal'], help='Models to run predictions with')
+    parser.add_argument('--models', nargs='+', choices=['hgt', 'gbt', 'causal', 'nullgtn'], default=['hgt', 'gbt', 'causal'], help='Models to run predictions with')
+    parser.add_argument('--nullgtn_artifact_dir', default='nullgtn-artifact', help='Path to nullgtn-artifact root')
+    parser.add_argument('--nullgtn_model_key', default=os.environ.get('NULLGTN_MODEL_KEY', 'default'), help='Model key for nullgtn (suffix of pickle)')
+    parser.add_argument('--nullgtn_work_dir', default='nullgtn_work', help='Working dir containing temp_output.json and model pickle')
     parser.add_argument('--skip_checker', action='store_true', help='Skip Checker Framework analysis (use existing warnings)')
     parser.add_argument('--warnings_file', help='Path to existing warnings file (if skipping checker)')
     parser.add_argument('--use_augmented_slices', action='store_true', default=True,
@@ -455,19 +475,24 @@ def main():
             'causal': 'causal_clf.joblib'
         }[model_type])
         
-        if not os.path.exists(model_path):
-            print(f"Model {model_path} not found. Skipping {model_type} predictions.")
-            continue
-        
-        output_file = os.path.join(args.output_dir, f'predictions_{model_type}_dataflow.json')
-        
-        print(f"Running {model_type} predictions with dataflow-augmented CFGs")
-        if model_type == 'hgt':
-            run_hgt_predictions(slices_dir, cfg_dir, model_path, output_file)
-        elif model_type == 'gbt':
-            run_gbt_predictions(slices_dir, cfg_dir, model_path, output_file)
-        elif model_type == 'causal':
-            run_causal_predictions(slices_dir, cfg_dir, model_path, output_file)
+        if model_type in ('hgt','gbt','causal'):
+            if not os.path.exists(model_path):
+                print(f"Model {model_path} not found. Skipping {model_type} predictions.")
+                continue
+            output_file = os.path.join(args.output_dir, f'predictions_{model_type}_dataflow.json')
+            print(f"Running {model_type} predictions with dataflow-augmented CFGs")
+            if model_type == 'hgt':
+                run_hgt_predictions(slices_dir, cfg_dir, model_path, output_file)
+            elif model_type == 'gbt':
+                run_gbt_predictions(slices_dir, cfg_dir, model_path, output_file)
+            elif model_type == 'causal':
+                run_causal_predictions(slices_dir, cfg_dir, model_path, output_file)
+        elif model_type == 'nullgtn':
+            # For nullgtn, rely on external artifact; ensure work dir exists
+            os.makedirs(args.nullgtn_work_dir, exist_ok=True)
+            output_file = os.path.join(args.output_dir, 'predictions_nullgtn.json')
+            print("Running nullgtn predictions via artifact wrapper")
+            run_nullgtn_predictions(args.nullgtn_artifact_dir, args.nullgtn_work_dir, args.nullgtn_model_key, output_file)
     
     print(f"\nPrediction pipeline completed. Results saved to {args.output_dir}")
     return 0

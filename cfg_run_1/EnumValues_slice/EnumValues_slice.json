@@ -1,0 +1,264 @@
+{
+  "method_name": "EnumValues_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public static void enumValues() {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "Direction @ArrayLen(4) [] arr4 = Direction.values();",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "Direction[] arr = Direction.values();",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "Direction a = arr[0];",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "Direction b = arr[1];",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "Direction c = arr[2];",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "Direction d = arr[3];",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "// :: error: (array.access.unsafe.high.constant)",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "Direction e = arr[4];",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "}",
+      "line": 10,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "Direction"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "values"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "Direction"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "arr"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "Direction"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "arr"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "Direction"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "arr"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "Direction"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "arr"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "Direction"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "arr"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "Direction"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "values"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "Direction"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "arr"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "Direction"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "arr"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "Direction"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "arr"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "Direction"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "variable": "arr"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "Direction"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "arr"
+    }
+  ]
+}

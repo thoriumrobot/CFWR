@@ -1,0 +1,56 @@
+{
+  "method_name": "ArrayConstructionPositiveLength_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public void makeArray(@Positive int max_values) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "String @MinLen(1) [] a = new String[max_values];",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "}",
+      "line": 3,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "max_values"
+    },
+    {
+      "source": 1,
+      "target": 2
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "max_values"
+    }
+  ]
+}

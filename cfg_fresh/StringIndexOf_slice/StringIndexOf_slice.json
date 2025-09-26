@@ -1,0 +1,1148 @@
+{
+  "method_name": "StringIndexOf_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public static String nocheck(String l, String s) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "int i = l.indexOf(s);",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "// :: error: (argument)",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "return l.substring(0, i) + l.substring(i + s.length());",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "}",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "public static String remove(String l, String s, int from, boolean last) {",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "int i = last ? l.lastIndexOf(s, from) : l.indexOf(s, from);",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "if (i >= 0) {",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "return l.substring(0, i) + l.substring(i + s.length());",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "}",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "return l;",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "}",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "public static String stringLiteral(String l) {",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "int i = l.indexOf(\"constant\");",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "if (i != -1) {",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "return l.substring(0, i) + l.substring(i + \"constant\".length());",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "}",
+      "line": 19,
+      "node_type": "stmt"
+    },
+    {
+      "id": 19,
+      "label": "// :: error: (argument)",
+      "line": 20,
+      "node_type": "stmt"
+    },
+    {
+      "id": 20,
+      "label": "return l.substring(0, i) + l.substring(i + \"constant\".length());",
+      "line": 21,
+      "node_type": "stmt"
+    },
+    {
+      "id": 21,
+      "label": "}",
+      "line": 22,
+      "node_type": "stmt"
+    },
+    {
+      "id": 22,
+      "label": "",
+      "line": 23,
+      "node_type": "stmt"
+    },
+    {
+      "id": 23,
+      "label": "public static char character(String l, char c) {",
+      "line": 24,
+      "node_type": "stmt"
+    },
+    {
+      "id": 24,
+      "label": "int i = l.indexOf(c);",
+      "line": 25,
+      "node_type": "stmt"
+    },
+    {
+      "id": 25,
+      "label": "if (i > -1) {",
+      "line": 26,
+      "node_type": "stmt"
+    },
+    {
+      "id": 26,
+      "label": "return l.charAt(i);",
+      "line": 27,
+      "node_type": "stmt"
+    },
+    {
+      "id": 27,
+      "label": "}",
+      "line": 28,
+      "node_type": "stmt"
+    },
+    {
+      "id": 28,
+      "label": "// :: error: (argument)",
+      "line": 29,
+      "node_type": "stmt"
+    },
+    {
+      "id": 29,
+      "label": "return l.charAt(i);",
+      "line": 30,
+      "node_type": "stmt"
+    },
+    {
+      "id": 30,
+      "label": "}",
+      "line": 31,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "l"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "s"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "public"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "String"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "l"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "s"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "indexOf"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 19,
+      "variable": "error"
+    },
+    {
+      "source": 2,
+      "target": 19,
+      "variable": "argument"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "l"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "s"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "i"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "variable": "return"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "variable": "substring"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "variable": "length"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "last"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "l"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "s"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "from"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "public"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "static"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "String"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "i"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "l"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "s"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "variable": "indexOf"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "i"
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "variable": "if"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "return"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "l"
+    },
+    {
+      "source": 9,
+      "target": 15,
+      "variable": "i"
+    },
+    {
+      "source": 9,
+      "target": 17,
+      "variable": "substring"
+    },
+    {
+      "source": 9,
+      "target": 17,
+      "variable": "length"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "variable": "l"
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "variable": "return"
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "l"
+    },
+    {
+      "source": 14,
+      "target": 23,
+      "variable": "public"
+    },
+    {
+      "source": 14,
+      "target": 23,
+      "variable": "static"
+    },
+    {
+      "source": 14,
+      "target": 23,
+      "variable": "String"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "variable": "i"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "l"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "constant"
+    },
+    {
+      "source": 15,
+      "target": 24,
+      "variable": "int"
+    },
+    {
+      "source": 15,
+      "target": 24,
+      "variable": "indexOf"
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 16,
+      "target": 17,
+      "variable": "i"
+    },
+    {
+      "source": 16,
+      "target": 25,
+      "variable": "if"
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "return"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "l"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "substring"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "i"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "constant"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "length"
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 19,
+      "target": 28,
+      "variable": "error"
+    },
+    {
+      "source": 19,
+      "target": 28,
+      "variable": "argument"
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 20,
+      "target": 23,
+      "variable": "l"
+    },
+    {
+      "source": 20,
+      "target": 24,
+      "variable": "i"
+    },
+    {
+      "source": 20,
+      "target": 26,
+      "variable": "return"
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 23,
+      "target": 24,
+      "variable": "l"
+    },
+    {
+      "source": 23,
+      "target": 24,
+      "variable": "c"
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 24,
+      "target": 25,
+      "variable": "i"
+    },
+    {
+      "source": 24,
+      "target": 26,
+      "variable": "l"
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 25,
+      "target": 26,
+      "variable": "i"
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "variable": "return"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "variable": "l"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "variable": "charAt"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "variable": "i"
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 29,
+      "target": 30
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 29,
+      "target": 30
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "l"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "s"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "public"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "String"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "l"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "s"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "indexOf"
+    },
+    {
+      "source": 2,
+      "target": 19,
+      "variable": "error"
+    },
+    {
+      "source": 2,
+      "target": 19,
+      "variable": "argument"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "l"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "s"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "i"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "variable": "return"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "variable": "substring"
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "variable": "length"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "last"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "l"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "s"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "from"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "public"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "static"
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "variable": "String"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "variable": "i"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "l"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "s"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "variable": "indexOf"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "i"
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "variable": "if"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "return"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "l"
+    },
+    {
+      "source": 9,
+      "target": 15,
+      "variable": "i"
+    },
+    {
+      "source": 9,
+      "target": 17,
+      "variable": "substring"
+    },
+    {
+      "source": 9,
+      "target": 17,
+      "variable": "length"
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "variable": "l"
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "variable": "return"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "l"
+    },
+    {
+      "source": 14,
+      "target": 23,
+      "variable": "public"
+    },
+    {
+      "source": 14,
+      "target": 23,
+      "variable": "static"
+    },
+    {
+      "source": 14,
+      "target": 23,
+      "variable": "String"
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "variable": "i"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "l"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "constant"
+    },
+    {
+      "source": 15,
+      "target": 24,
+      "variable": "int"
+    },
+    {
+      "source": 15,
+      "target": 24,
+      "variable": "indexOf"
+    },
+    {
+      "source": 16,
+      "target": 17,
+      "variable": "i"
+    },
+    {
+      "source": 16,
+      "target": 25,
+      "variable": "if"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "return"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "l"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "substring"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "i"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "constant"
+    },
+    {
+      "source": 17,
+      "target": 20,
+      "variable": "length"
+    },
+    {
+      "source": 19,
+      "target": 28,
+      "variable": "error"
+    },
+    {
+      "source": 19,
+      "target": 28,
+      "variable": "argument"
+    },
+    {
+      "source": 20,
+      "target": 23,
+      "variable": "l"
+    },
+    {
+      "source": 20,
+      "target": 24,
+      "variable": "i"
+    },
+    {
+      "source": 20,
+      "target": 26,
+      "variable": "return"
+    },
+    {
+      "source": 23,
+      "target": 24,
+      "variable": "l"
+    },
+    {
+      "source": 23,
+      "target": 24,
+      "variable": "c"
+    },
+    {
+      "source": 24,
+      "target": 25,
+      "variable": "i"
+    },
+    {
+      "source": 24,
+      "target": 26,
+      "variable": "l"
+    },
+    {
+      "source": 25,
+      "target": 26,
+      "variable": "i"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "variable": "return"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "variable": "l"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "variable": "charAt"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "variable": "i"
+    }
+  ]
+}

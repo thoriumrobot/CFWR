@@ -1,0 +1,610 @@
+{
+  "method_name": "MinMaxIndex_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void indexForOrHigh(String str, @IndexFor(\"#1\") int i1, @IndexOrHigh(\"#1\") int i2) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "str.substring(Math.max(i1, i2));",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "str.substring(Math.min(i1, i2));",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "// :: error: (argument)",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "str.charAt(Math.max(i1, i2));",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "str.charAt(Math.min(i1, i2));",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "}",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "// max does not work with different sequences, min does",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "void twoSequences(String str1, String str2, @IndexFor(\"#1\") int i1, @IndexFor(\"#2\") int i2) {",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "// :: error: (argument)",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "str1.charAt(Math.max(i1, i2));",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "str1.charAt(Math.min(i1, i2));",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "}",
+      "line": 14,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "str"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i1"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i2"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "String"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "IndexFor"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "str"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "substring"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "Math"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "i1"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "i2"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "max"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "str"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "Math"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "i1"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "i2"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "min"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "error"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "argument"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "str"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "charAt"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "Math"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "i1"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "i2"
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "max"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "min"
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "variable": "i1"
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "variable": "i2"
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "variable": "charAt"
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "variable": "Math"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "variable": "max"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "min"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "str1"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "i1"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "i2"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "str1"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "charAt"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "Math"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "i1"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "i2"
+    },
+    {
+      "source": 12,
+      "target": 13
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "str"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i1"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i2"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "String"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "IndexFor"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "str"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "substring"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "Math"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "i1"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "i2"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "max"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "str"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "Math"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "i1"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "i2"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "min"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "error"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "argument"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "str"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "charAt"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "Math"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "i1"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "i2"
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "max"
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "variable": "min"
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "variable": "i1"
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "variable": "i2"
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "variable": "charAt"
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "variable": "Math"
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "variable": "max"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "min"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "str1"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "i1"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "i2"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "str1"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "charAt"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "Math"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "i1"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "i2"
+    }
+  ]
+}

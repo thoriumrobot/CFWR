@@ -1,0 +1,226 @@
+{
+  "method_name": "AndExample_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "private static final @IndexFor(\"iYearInfoCache\") int CACHE_MASK = CACHE_SIZE - 1;",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "private static final String[] iYearInfoCache = new String[CACHE_SIZE];",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "private String getYearInfo(int year) {",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "return iYearInfoCache[year & CACHE_MASK];",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "}",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "}",
+      "line": 8,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "private"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "final"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "iYearInfoCache"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "CACHE_SIZE"
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "variable": "CACHE_MASK"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "private"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "String"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "iYearInfoCache"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "year"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "private"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "final"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "iYearInfoCache"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "CACHE_SIZE"
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "variable": "CACHE_MASK"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "private"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "String"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "iYearInfoCache"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "variable": "year"
+    }
+  ]
+}

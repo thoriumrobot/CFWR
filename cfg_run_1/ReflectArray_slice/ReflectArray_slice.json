@@ -1,0 +1,530 @@
+{
+  "method_name": "ReflectArray_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void testNewInstance(int i) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "// :: error: (argument)",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "Array.newInstance(Object.class, i);",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "if (i >= 0) {",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "Array.newInstance(Object.class, i);",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "}",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "}",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "void testFor(Object a) {",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "for (int i = 0; i < Array.getLength(a); ++i) {",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "Array.setInt(a, i, 1 + Array.getInt(a, i));",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "}",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "}",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "void testMinLen(Object @MinLen(1) [] a) {",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "Array.get(a, 0);",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "// :: error: (argument)",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "Array.get(a, 1);",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "}",
+      "line": 19,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "i"
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 16,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 16,
+      "variable": "argument"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "Array"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "newInstance"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "Object"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "class"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "i"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "Object"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "i"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "Array"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "a"
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "variable": "void"
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "variable": "Object"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "Array"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "a"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "i"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "a"
+    },
+    {
+      "source": 10,
+      "target": 15,
+      "variable": "Array"
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "a"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "Array"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "get"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "a"
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "i"
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 16,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 16,
+      "variable": "argument"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "Array"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "newInstance"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "Object"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "class"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "variable": "i"
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "variable": "Object"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "i"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "Array"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "a"
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "variable": "void"
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "variable": "Object"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "Array"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "a"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "i"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "a"
+    },
+    {
+      "source": 10,
+      "target": 15,
+      "variable": "Array"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "a"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "Array"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "get"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "a"
+    }
+  ]
+}

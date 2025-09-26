@@ -1,0 +1,760 @@
+{
+  "method_name": "ConstantArrays_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void basic_test() {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "int[] b = new int[4];",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "@LTLengthOf(\"b\") int[] a = {0, 1, 2, 3};",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "// :: error: (array.initializer)::error: (assignment)",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "@LTLengthOf(\"b\") int[] a1 = {0, 1, 2, 4};",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "@LTEqLengthOf(\"b\") int[] c = {-1, 4, 3, 1};",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "// :: error: (array.initializer)::error: (assignment)",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "@LTEqLengthOf(\"b\") int[] c2 = {-1, 4, 5, 1};",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "}",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "void offset_test() {",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "int[] b = new int[4];",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "int[] b2 = new int[10];",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "@LTLengthOf(",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "value = {\"b\", \"b2\"},",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "offset = {\"-2\", \"5\"})",
+      "line": 19,
+      "node_type": "stmt"
+    },
+    {
+      "id": 19,
+      "label": "int[] a = {2, 3, 0};",
+      "line": 20,
+      "node_type": "stmt"
+    },
+    {
+      "id": 20,
+      "label": "",
+      "line": 21,
+      "node_type": "stmt"
+    },
+    {
+      "id": 21,
+      "label": "@LTLengthOf(",
+      "line": 22,
+      "node_type": "stmt"
+    },
+    {
+      "id": 22,
+      "label": "value = {\"b\", \"b2\"},",
+      "line": 23,
+      "node_type": "stmt"
+    },
+    {
+      "id": 23,
+      "label": "offset = {\"-2\", \"5\"})",
+      "line": 24,
+      "node_type": "stmt"
+    },
+    {
+      "id": 24,
+      "label": "// :: error: (array.initializer)::error: (assignment)",
+      "line": 25,
+      "node_type": "stmt"
+    },
+    {
+      "id": 25,
+      "label": "int[] a2 = {2, 3, 5};",
+      "line": 26,
+      "node_type": "stmt"
+    },
+    {
+      "id": 26,
+      "label": "",
+      "line": 27,
+      "node_type": "stmt"
+    },
+    {
+      "id": 27,
+      "label": "// Non-constant offsets don't work correctly. See kelloggm#120.",
+      "line": 28,
+      "node_type": "stmt"
+    },
+    {
+      "id": 28,
+      "label": "}",
+      "line": 29,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 13,
+      "variable": "void"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "b"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 14,
+      "variable": "new"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "b"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 19,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "error"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "array"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "initializer"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "assignment"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "b"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 16,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "b"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "int"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 24,
+      "variable": "error"
+    },
+    {
+      "source": 9,
+      "target": 24,
+      "variable": "array"
+    },
+    {
+      "source": 9,
+      "target": 24,
+      "variable": "initializer"
+    },
+    {
+      "source": 9,
+      "target": 24,
+      "variable": "assignment"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "int"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "b"
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "new"
+    },
+    {
+      "source": 14,
+      "target": 17,
+      "variable": "b"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "b2"
+    },
+    {
+      "source": 15,
+      "target": 19,
+      "variable": "int"
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 16,
+      "target": 21,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 17,
+      "target": 22,
+      "variable": "value"
+    },
+    {
+      "source": 17,
+      "target": 22,
+      "variable": "b"
+    },
+    {
+      "source": 17,
+      "target": 22,
+      "variable": "b2"
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 18,
+      "target": 23,
+      "variable": "offset"
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 19,
+      "target": 25,
+      "variable": "int"
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 27,
+      "target": 28
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 27,
+      "target": 28
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 13,
+      "variable": "void"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "b"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 14,
+      "variable": "new"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "b"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 19,
+      "variable": "a"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "error"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "array"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "initializer"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "assignment"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "b"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "int"
+    },
+    {
+      "source": 5,
+      "target": 16,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "b"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "variable": "int"
+    },
+    {
+      "source": 9,
+      "target": 24,
+      "variable": "error"
+    },
+    {
+      "source": 9,
+      "target": 24,
+      "variable": "array"
+    },
+    {
+      "source": 9,
+      "target": 24,
+      "variable": "initializer"
+    },
+    {
+      "source": 9,
+      "target": 24,
+      "variable": "assignment"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "int"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "variable": "b"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "new"
+    },
+    {
+      "source": 14,
+      "target": 17,
+      "variable": "b"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "b2"
+    },
+    {
+      "source": 15,
+      "target": 19,
+      "variable": "int"
+    },
+    {
+      "source": 16,
+      "target": 21,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 17,
+      "target": 22,
+      "variable": "value"
+    },
+    {
+      "source": 17,
+      "target": 22,
+      "variable": "b"
+    },
+    {
+      "source": 17,
+      "target": 22,
+      "variable": "b2"
+    },
+    {
+      "source": 18,
+      "target": 23,
+      "variable": "offset"
+    },
+    {
+      "source": 19,
+      "target": 25,
+      "variable": "int"
+    }
+  ]
+}

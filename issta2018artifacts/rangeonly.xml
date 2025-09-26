@@ -1,0 +1,17 @@
+<FindBugsFilter>
+     <Match>
+       <Bug category="RANGE" />
+     </Match>
+     <Match>
+       <Bug category="SQL"/>
+     </Match>
+     <Match>
+       <Bug pattern="IM_AVERAGE_COMPUTATION_COULD_OVERFLOW"/>
+     </Match>
+     <Match>
+       <Bug pattern="STCAL_STATIC_CALENDAR_INSTANCE"/>
+     </Match>
+     <Match>
+       <Bug pattern="RV_CHECK_FOR_POSITIVE_INDEXOF"/>
+     </Match>     
+</FindBugsFilter>

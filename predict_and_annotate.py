@@ -91,9 +91,10 @@ class IntegratedPipeline:
                 # Determine model file path
                 model_path = self.models_dir / f"{model_type}_model.{'pth' if model_type == 'hgt' else 'joblib'}"
                 
-                if not model_path.exists():
-                    logger.warning(f"Model file not found: {model_path}")
-                    continue
+                if model_type in ('hgt','gbt','causal'):
+                    if not model_path.exists():
+                        logger.warning(f"Model file not found: {model_path}")
+                        continue
                 
                 # Output file for this model's predictions
                 output_file = self.predictions_dir / f"{model_type}_predictions_dataflow.json"
@@ -146,6 +147,31 @@ class IntegratedPipeline:
                     '--out_path', output_file,
                     '--cfg_output_dir', cfg_dir
                 ]
+            elif model_type == 'nullgtn':
+                # Use wrapper; requires env-provided paths
+                artifact_dir = os.environ.get('NULLGTN_ARTIFACT_DIR', os.path.join(os.getcwd(), 'nullgtn-artifact'))
+                work_dir = os.environ.get('NULLGTN_WORK_DIR', os.path.join(self.output_dir, 'temp_pipeline', 'nullgtn_work'))
+                os.makedirs(work_dir, exist_ok=True)
+                model_key = os.environ.get('NULLGTN_MODEL_KEY', 'default')
+                cmd = [
+                    sys.executable, 'predict_nullgtn.py',
+                    '--artifact_dir', artifact_dir,
+                    '--model_key', model_key,
+                    '--work_dir', work_dir,
+                    '--out_path', output_file,
+                ]
+            elif model_type == 'gcn':
+                cmd = [
+                    sys.executable, 'gcn_predict.py',
+                    '--java_file', str(self.project_root),  # For project predictions, prefer predict_on_project.py usage; here we skip
+                    '--model_path', str(self.models_dir / 'gcn' / 'best_gcn.pth'),
+                    '--out_path', output_file,
+                    '--cfg_output_dir', str(cfg_dir)
+                ]
+            elif model_type == 'dg2n':
+                # dg2n not executed at full-project granularity here; prefer predict_on_project.py
+                logger.warning('DG2N not supported in this integrated project-level prediction path; use predict_on_project.py')
+                continue
             else:
                 logger.error(f"Unknown model type: {model_type}")
                 return False

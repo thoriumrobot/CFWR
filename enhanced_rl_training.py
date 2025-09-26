@@ -93,6 +93,12 @@ class EnhancedReinforcementLearningTrainer:
             self.model = self._init_gbt_model()
         elif model_type == 'causal':
             self.model = self._init_causal_model()
+        elif model_type == 'dg2n':
+            # Placeholder minimal NN to satisfy optimizer; DG2N inference is done via external script
+            self.model = self._init_causal_model()
+        elif model_type == 'gcn':
+            # Use minimal NN; inference via gcn_predict script-like path inside RL
+            self.model = self._init_causal_model()
         else:
             raise ValueError(f"Unknown model type: {model_type}")
             
@@ -137,6 +143,10 @@ class EnhancedReinforcementLearningTrainer:
             return self._predict_gbt_locations(cfg_data, threshold)
         elif self.model_type == 'causal':
             return self._predict_causal_locations(cfg_data, threshold)
+        elif self.model_type == 'dg2n':
+            return self._predict_dg2n_locations(cfg_data, threshold)
+        elif self.model_type == 'gcn':
+            return self._predict_gcn_locations(cfg_data, threshold)
     
     def _predict_hgt_locations(self, cfg_data, threshold):
         """Predict annotation locations using HGT model"""
@@ -247,6 +257,89 @@ class EnhancedReinforcementLearningTrainer:
             return []
         except Exception as e:
             logger.error(f"Error in Causal prediction: {e}")
+            return []
+
+    def _predict_dg2n_locations(self, cfg_data, threshold):
+        """Predict annotation locations using DG2N by converting CFG to .pt and running predict_dg2n.py.
+        Returns node line numbers with top-class predictions above threshold.
+        """
+        try:
+            import tempfile
+            from subprocess import run as sp_run
+            import uuid
+            # Write cfg_data to a temp JSON
+            with tempfile.TemporaryDirectory() as td:
+                cfg_path = os.path.join(td, 'graph.json')
+                with open(cfg_path, 'w') as f:
+                    json.dump(cfg_data, f)
+                # Convert to .pt using adapter (operate on dir)
+                adapter_out = os.path.join(td, 'pt')
+                os.makedirs(adapter_out, exist_ok=True)
+                # Save as method.json file name
+                method_name = cfg_data.get('method_name', f'method_{uuid.uuid4().hex}')
+                file_path = os.path.join(td, f'{method_name}.json')
+                with open(file_path, 'w') as f:
+                    json.dump(cfg_data, f)
+                sp_run([sys.executable, os.path.join(os.getcwd(), 'dg2n_adapter.py'), '--cfg_dir', td, '--out_dir', adapter_out], check=False)
+                # Pick first .pt
+                pts = [p for p in os.listdir(adapter_out) if p.endswith('.pt')]
+                if not pts:
+                    return []
+                graph_pt = os.path.join(adapter_out, pts[0])
+                ckpt = os.path.join('models', 'dg2n', 'best_dg2n.pt')
+                out_json = os.path.join(td, 'dg2n_pred.json')
+                sp_run([sys.executable, os.path.join('dg2n', 'predict_dg2n.py'), '--ckpt', ckpt, '--graph_pt', graph_pt, '--out_json', out_json], check=False)
+                if not os.path.exists(out_json):
+                    return []
+                with open(out_json, 'r') as f:
+                    res = json.load(f)
+                # Map node-level predictions to line numbers
+                pred = res.get('pred', [])
+                probs = res.get('probs', [])
+                lines = []
+                nodes = cfg_data.get('nodes', [])
+                for i, node in enumerate(nodes):
+                    if i < len(pred) and i < len(probs):
+                        p1 = probs[i][1] if isinstance(probs[i], list) and len(probs[i]) > 1 else 0.0
+                        if pred[i] == 1 and p1 >= threshold and node.get('line') is not None:
+                            lines.append(node['line'])
+                return lines
+        except Exception as e:
+            logger.error(f"Error in DG2N prediction: {e}")
+            return []
+
+    def _predict_gcn_locations(self, cfg_data, threshold):
+        """Predict lines using the simple GCN: build temp CFG JSON to dir, run gcn_predict.py with models/gcn/best_gcn.pth."""
+        try:
+            import tempfile
+            from subprocess import run as sp_run
+            import uuid
+            with tempfile.TemporaryDirectory() as td:
+                # Write temp Java-like CFG into dir structure and reuse gcn_predict on a synthetic file by mapping directly
+                # Instead, emulate prediction by loading ckpt and running forward here
+                from gcn_train import cfg_to_homograph
+                ckpt_path = os.path.join('models', 'gcn', 'best_gcn.pth')
+                if not os.path.exists(ckpt_path):
+                    return []
+                ckpt = torch.load(ckpt_path, map_location='cpu')
+                from gcn_train import SimpleGCN
+                model = SimpleGCN(in_dim=ckpt['in_dim'], hidden=ckpt['hidden'])
+                model.load_state_dict(ckpt['model_state'])
+                model.eval()
+                data = cfg_to_homograph(cfg_data)
+                if data.x.numel() == 0:
+                    return []
+                with torch.no_grad():
+                    logits = model(data.x, data.edge_index)
+                    probs = torch.softmax(logits, dim=-1)[:, 1]
+                lines = []
+                nodes = cfg_data.get('nodes', [])
+                for i, p in enumerate(probs.tolist()):
+                    if p >= threshold and i < len(nodes) and nodes[i].get('line') is not None:
+                        lines.append(nodes[i]['line'])
+                return lines
+        except Exception as e:
+            logger.error(f"Error in GCN prediction: {e}")
             return []
     
     def place_annotations_advanced(self, java_file, predicted_lines):
@@ -569,7 +662,7 @@ def main():
     parser = argparse.ArgumentParser(description='Enhanced Reinforcement Learning Training for Annotation Placement')
     parser.add_argument('--slices_dir', required=True, help='Directory containing augmented slices')
     parser.add_argument('--cfg_dir', required=True, help='Directory containing CFGs')
-    parser.add_argument('--model_type', choices=['hgt', 'gbt', 'causal'], default='hgt',
+    parser.add_argument('--model_type', choices=['hgt', 'gbt', 'causal', 'dg2n', 'gcn'], default='hgt',
                        help='Type of model to use for RL training')
     parser.add_argument('--episodes', type=int, default=100, help='Number of training episodes')
     parser.add_argument('--batch_size', type=int, default=32, help='Batch size for training')

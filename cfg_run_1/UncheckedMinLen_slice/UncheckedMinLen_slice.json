@@ -1,0 +1,1268 @@
+{
+  "method_name": "UncheckedMinLen_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void addToNonNegative(@NonNegative int l, Object v) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "// :: error: (assignment)",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "Object @MinLen(100) [] o = new Object[l + 1];",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "o[99] = v;",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "}",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "void addToPositive(@Positive int l, Object v) {",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "// :: error: (assignment)",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "Object @MinLen(100) [] o = new Object[l + 1];",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "o[99] = v;",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "}",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "void addToUnboundedIntRange(@IntRange(from = 0) int l, Object v) {",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "// :: error: (assignment)",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "Object @MinLen(100) [] o = new Object[l + 1];",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "o[99] = v;",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "}",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "// Similar code that correctly gives warnings",
+      "line": 19,
+      "node_type": "stmt"
+    },
+    {
+      "id": 19,
+      "label": "void addToPositiveOK(@NonNegative int l, Object v) {",
+      "line": 20,
+      "node_type": "stmt"
+    },
+    {
+      "id": 20,
+      "label": "Object[] o = new Object[l + 1];",
+      "line": 21,
+      "node_type": "stmt"
+    },
+    {
+      "id": 21,
+      "label": "// :: error: (array.access.unsafe.high.constant)",
+      "line": 22,
+      "node_type": "stmt"
+    },
+    {
+      "id": 22,
+      "label": "o[99] = v;",
+      "line": 23,
+      "node_type": "stmt"
+    },
+    {
+      "id": 23,
+      "label": "}",
+      "line": 24,
+      "node_type": "stmt"
+    },
+    {
+      "id": 24,
+      "label": "",
+      "line": 25,
+      "node_type": "stmt"
+    },
+    {
+      "id": 25,
+      "label": "void addToBoundedIntRangeOK(@IntRange(from = 0, to = 1) int l, Object v) {",
+      "line": 26,
+      "node_type": "stmt"
+    },
+    {
+      "id": 26,
+      "label": "// :: error: (assignment)",
+      "line": 27,
+      "node_type": "stmt"
+    },
+    {
+      "id": 27,
+      "label": "Object @MinLen(100) [] o = new Object[l + 1];",
+      "line": 28,
+      "node_type": "stmt"
+    },
+    {
+      "id": 28,
+      "label": "o[99] = v;",
+      "line": 29,
+      "node_type": "stmt"
+    },
+    {
+      "id": 29,
+      "label": "}",
+      "line": 30,
+      "node_type": "stmt"
+    },
+    {
+      "id": 30,
+      "label": "",
+      "line": 31,
+      "node_type": "stmt"
+    },
+    {
+      "id": 31,
+      "label": "void subtractFromPositiveOK(@Positive int l, Object v) {",
+      "line": 32,
+      "node_type": "stmt"
+    },
+    {
+      "id": 32,
+      "label": "// :: error: (assignment)",
+      "line": 33,
+      "node_type": "stmt"
+    },
+    {
+      "id": 33,
+      "label": "Object @MinLen(100) [] o = new Object[l - 1];",
+      "line": 34,
+      "node_type": "stmt"
+    },
+    {
+      "id": 34,
+      "label": "o[99] = v;",
+      "line": 35,
+      "node_type": "stmt"
+    },
+    {
+      "id": 35,
+      "label": "}",
+      "line": 36,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "Object"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "l"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "v"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 19,
+      "variable": "NonNegative"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "assignment"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "o"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "variable": "l"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "variable": "Object"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "MinLen"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "new"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "v"
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "variable": "o"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "Object"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "l"
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "variable": "v"
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "variable": "void"
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 31,
+      "variable": "Positive"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "variable": "error"
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "variable": "assignment"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "o"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "l"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "Object"
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "variable": "MinLen"
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "variable": "new"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 12,
+      "variable": "v"
+    },
+    {
+      "source": 9,
+      "target": 14,
+      "variable": "o"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "Object"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "l"
+    },
+    {
+      "source": 12,
+      "target": 15,
+      "variable": "v"
+    },
+    {
+      "source": 12,
+      "target": 19,
+      "variable": "void"
+    },
+    {
+      "source": 12,
+      "target": 19,
+      "variable": "int"
+    },
+    {
+      "source": 12,
+      "target": 25,
+      "variable": "IntRange"
+    },
+    {
+      "source": 12,
+      "target": 25,
+      "variable": "from"
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 13,
+      "target": 21,
+      "variable": "error"
+    },
+    {
+      "source": 13,
+      "target": 26,
+      "variable": "assignment"
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "o"
+    },
+    {
+      "source": 14,
+      "target": 19,
+      "variable": "l"
+    },
+    {
+      "source": 14,
+      "target": 19,
+      "variable": "Object"
+    },
+    {
+      "source": 14,
+      "target": 20,
+      "variable": "new"
+    },
+    {
+      "source": 14,
+      "target": 27,
+      "variable": "MinLen"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 19,
+      "variable": "v"
+    },
+    {
+      "source": 15,
+      "target": 20,
+      "variable": "o"
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 19,
+      "target": 20,
+      "variable": "Object"
+    },
+    {
+      "source": 19,
+      "target": 20,
+      "variable": "l"
+    },
+    {
+      "source": 19,
+      "target": 22,
+      "variable": "v"
+    },
+    {
+      "source": 19,
+      "target": 25,
+      "variable": "void"
+    },
+    {
+      "source": 19,
+      "target": 25,
+      "variable": "int"
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 20,
+      "target": 22,
+      "variable": "o"
+    },
+    {
+      "source": 20,
+      "target": 25,
+      "variable": "l"
+    },
+    {
+      "source": 20,
+      "target": 25,
+      "variable": "Object"
+    },
+    {
+      "source": 20,
+      "target": 27,
+      "variable": "new"
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 21,
+      "target": 26,
+      "variable": "error"
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 22,
+      "target": 25,
+      "variable": "v"
+    },
+    {
+      "source": 22,
+      "target": 27,
+      "variable": "o"
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "Object"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "l"
+    },
+    {
+      "source": 25,
+      "target": 28,
+      "variable": "v"
+    },
+    {
+      "source": 25,
+      "target": 31,
+      "variable": "void"
+    },
+    {
+      "source": 25,
+      "target": 31,
+      "variable": "int"
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 26,
+      "target": 32,
+      "variable": "error"
+    },
+    {
+      "source": 26,
+      "target": 32,
+      "variable": "assignment"
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 27,
+      "target": 28,
+      "variable": "o"
+    },
+    {
+      "source": 27,
+      "target": 31,
+      "variable": "l"
+    },
+    {
+      "source": 27,
+      "target": 31,
+      "variable": "Object"
+    },
+    {
+      "source": 27,
+      "target": 33,
+      "variable": "MinLen"
+    },
+    {
+      "source": 27,
+      "target": 33,
+      "variable": "new"
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 28,
+      "target": 31,
+      "variable": "v"
+    },
+    {
+      "source": 28,
+      "target": 33,
+      "variable": "o"
+    },
+    {
+      "source": 29,
+      "target": 30
+    },
+    {
+      "source": 30,
+      "target": 31
+    },
+    {
+      "source": 31,
+      "target": 32
+    },
+    {
+      "source": 31,
+      "target": 33,
+      "variable": "Object"
+    },
+    {
+      "source": 31,
+      "target": 33,
+      "variable": "l"
+    },
+    {
+      "source": 31,
+      "target": 34,
+      "variable": "v"
+    },
+    {
+      "source": 32,
+      "target": 33
+    },
+    {
+      "source": 33,
+      "target": 34
+    },
+    {
+      "source": 33,
+      "target": 34,
+      "variable": "o"
+    },
+    {
+      "source": 34,
+      "target": 35
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 29,
+      "target": 30
+    },
+    {
+      "source": 30,
+      "target": 31
+    },
+    {
+      "source": 31,
+      "target": 32
+    },
+    {
+      "source": 32,
+      "target": 33
+    },
+    {
+      "source": 33,
+      "target": 34
+    },
+    {
+      "source": 34,
+      "target": 35
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "Object"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "l"
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "v"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 19,
+      "variable": "NonNegative"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "variable": "assignment"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "o"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "variable": "l"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "variable": "Object"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "MinLen"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "new"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "v"
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "variable": "o"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "Object"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "l"
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "variable": "v"
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "variable": "void"
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 31,
+      "variable": "Positive"
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "variable": "error"
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "variable": "assignment"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "o"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "l"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "variable": "Object"
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "variable": "MinLen"
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "variable": "new"
+    },
+    {
+      "source": 9,
+      "target": 12,
+      "variable": "v"
+    },
+    {
+      "source": 9,
+      "target": 14,
+      "variable": "o"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "Object"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "l"
+    },
+    {
+      "source": 12,
+      "target": 15,
+      "variable": "v"
+    },
+    {
+      "source": 12,
+      "target": 19,
+      "variable": "void"
+    },
+    {
+      "source": 12,
+      "target": 19,
+      "variable": "int"
+    },
+    {
+      "source": 12,
+      "target": 25,
+      "variable": "IntRange"
+    },
+    {
+      "source": 12,
+      "target": 25,
+      "variable": "from"
+    },
+    {
+      "source": 13,
+      "target": 21,
+      "variable": "error"
+    },
+    {
+      "source": 13,
+      "target": 26,
+      "variable": "assignment"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "o"
+    },
+    {
+      "source": 14,
+      "target": 19,
+      "variable": "l"
+    },
+    {
+      "source": 14,
+      "target": 19,
+      "variable": "Object"
+    },
+    {
+      "source": 14,
+      "target": 20,
+      "variable": "new"
+    },
+    {
+      "source": 14,
+      "target": 27,
+      "variable": "MinLen"
+    },
+    {
+      "source": 15,
+      "target": 19,
+      "variable": "v"
+    },
+    {
+      "source": 15,
+      "target": 20,
+      "variable": "o"
+    },
+    {
+      "source": 19,
+      "target": 20,
+      "variable": "Object"
+    },
+    {
+      "source": 19,
+      "target": 20,
+      "variable": "l"
+    },
+    {
+      "source": 19,
+      "target": 22,
+      "variable": "v"
+    },
+    {
+      "source": 19,
+      "target": 25,
+      "variable": "void"
+    },
+    {
+      "source": 19,
+      "target": 25,
+      "variable": "int"
+    },
+    {
+      "source": 20,
+      "target": 22,
+      "variable": "o"
+    },
+    {
+      "source": 20,
+      "target": 25,
+      "variable": "l"
+    },
+    {
+      "source": 20,
+      "target": 25,
+      "variable": "Object"
+    },
+    {
+      "source": 20,
+      "target": 27,
+      "variable": "new"
+    },
+    {
+      "source": 21,
+      "target": 26,
+      "variable": "error"
+    },
+    {
+      "source": 22,
+      "target": 25,
+      "variable": "v"
+    },
+    {
+      "source": 22,
+      "target": 27,
+      "variable": "o"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "Object"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "l"
+    },
+    {
+      "source": 25,
+      "target": 28,
+      "variable": "v"
+    },
+    {
+      "source": 25,
+      "target": 31,
+      "variable": "void"
+    },
+    {
+      "source": 25,
+      "target": 31,
+      "variable": "int"
+    },
+    {
+      "source": 26,
+      "target": 32,
+      "variable": "error"
+    },
+    {
+      "source": 26,
+      "target": 32,
+      "variable": "assignment"
+    },
+    {
+      "source": 27,
+      "target": 28,
+      "variable": "o"
+    },
+    {
+      "source": 27,
+      "target": 31,
+      "variable": "l"
+    },
+    {
+      "source": 27,
+      "target": 31,
+      "variable": "Object"
+    },
+    {
+      "source": 27,
+      "target": 33,
+      "variable": "MinLen"
+    },
+    {
+      "source": 27,
+      "target": 33,
+      "variable": "new"
+    },
+    {
+      "source": 28,
+      "target": 31,
+      "variable": "v"
+    },
+    {
+      "source": 28,
+      "target": 33,
+      "variable": "o"
+    },
+    {
+      "source": 31,
+      "target": 33,
+      "variable": "Object"
+    },
+    {
+      "source": 31,
+      "target": 33,
+      "variable": "l"
+    },
+    {
+      "source": 31,
+      "target": 34,
+      "variable": "v"
+    },
+    {
+      "source": 33,
+      "target": 34,
+      "variable": "o"
+    }
+  ]
+}

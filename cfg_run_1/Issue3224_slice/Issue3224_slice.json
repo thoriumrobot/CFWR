@@ -1,0 +1,320 @@
+{
+  "method_name": "Issue3224_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public static void m5(String @MinLen(1) [] args, String[] otherArray) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "// :: error: (assignment)",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "String @MinLen(1) [] args2 = java.util.Arrays.copyOf(args, otherArray.length);",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "}",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "public static void m6(String @MinLen(1) [] args) {",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "// :: error: (assignment)",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "String @MinLen(1) [] args2 = Arrays.copyOf(args, args.length);",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "}",
+      "line": 9,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "String"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "MinLen"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "args"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "otherArray"
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "variable": "public"
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "variable": "void"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "assignment"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "String"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "MinLen"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "args"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "variable": "args2"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "variable": "Arrays"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "variable": "copyOf"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "variable": "length"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "String"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "MinLen"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "args"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "String"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "MinLen"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "args"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "otherArray"
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "variable": "public"
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "variable": "void"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "error"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "assignment"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "String"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "MinLen"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "args"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "variable": "args2"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "variable": "Arrays"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "variable": "copyOf"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "variable": "length"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "String"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "MinLen"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "args"
+    }
+  ]
+}

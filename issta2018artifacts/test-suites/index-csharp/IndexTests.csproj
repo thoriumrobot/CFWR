@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77F105AB-6617-4E43-88D4-918F47AAE97E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IndexTests</RootNamespace>
+    <AssemblyName>IndexTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CONTRACTS_FULL,REQUIREINV</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <NoWarn>CS0219</NoWarn>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>False</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>False</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>False</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>False</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>False</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>False</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>False</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>False</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions>-infer:!! -maxWarnings:100000 -warnscores:false</CodeContractsExtraAnalysisOptions>
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>3</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AndExample.cs" />
+    <Compile Include="ArrayAssignmentSameLen.cs" />
+    <Compile Include="ArrayConstructionPositiveLength.cs" />
+    <Compile Include="ArrayCopy.cs" />
+    <Compile Include="ArrayCreation.cs" />
+    <Compile Include="ArrayCreationChecks.cs" />
+    <Compile Include="ArrayCreationParam.cs" />
+    <Compile Include="ArrayIntro.cs" />
+    <Compile Include="ArrayIntroWithCast.cs" />
+    <Compile Include="ArrayLength.cs" />
+    <Compile Include="ArrayLength2.cs" />
+    <Compile Include="ArrayLength3.cs" />
+    <Compile Include="ArrayLengthEquality.cs" />
+    <Compile Include="ArrayLengthLBC.cs" />
+    <Compile Include="ArrayLenTest.cs" />
+    <Compile Include="ArrayNull.cs" />
+    <Compile Include="ArraysSort.cs" />
+    <Compile Include="ArrayWrapper.cs" />
+    <Compile Include="BigBinaryExpr.cs" />
+    <Compile Include="BinarySearchTest.cs" />
+    <Compile Include="Boilerplate.cs" />
+    <Compile Include="CastArray.cs" />
+    <Compile Include="CheckAgainstNegativeOne.cs" />
+    <Compile Include="CheckNotNull1.cs" />
+    <Compile Include="CheckNotNull2.cs" />
+    <Compile Include="CombineFacts.cs" />
+    <Compile Include="CompoundAssignmentCheck.cs" />
+    <Compile Include="ConditionalIndex.cs" />
+    <Compile Include="ConstantArrays.cs" />
+    <Compile Include="ConstantOffsets.cs" />
+    <Compile Include="ConstantsIndex.cs" />
+    <Compile Include="Dimension.cs" />
+    <Compile Include="divisionTest.cs" />
+    <Compile Include="EndsWith.cs" />
+    <Compile Include="EndsWith2.cs" />
+    <Compile Include="EnumValues.cs" />
+    <Compile Include="EqualToIndex.cs" />
+    <Compile Include="EqualToTransfer.cs" />
+    <Compile Include="Errors.cs" />
+    <Compile Include="ExampleUsage.cs" />
+    <Compile Include="GreaterThanOrEqualTransfer.cs" />
+    <Compile Include="GreaterThanTransfer.cs" />
+    <Compile Include="HexEncode.cs" />
+    <Compile Include="Index115.cs" />
+    <Compile Include="Index118.cs" />
+    <Compile Include="Index118NoLoop.cs" />
+    <Compile Include="Index132.cs" />
+    <Compile Include="Index166.cs" />
+    <Compile Include="Index167.cs" />
+    <Compile Include="IndexForAverage.cs" />
+    <Compile Include="IndexForTest.cs" />
+    <Compile Include="IndexForTestLBC.cs" />
+    <Compile Include="IndexForTwoArrays.cs" />
+    <Compile Include="IndexForTwoArrays2.cs" />
+    <Compile Include="IndexOrLowTests.cs" />
+    <Compile Include="IndexSameLen.cs" />
+    <Compile Include="IntroAdd.cs" />
+    <Compile Include="IntroAnd.cs" />
+    <Compile Include="IntroRules.cs" />
+    <Compile Include="IntroShift.cs" />
+    <Compile Include="IntroSub.cs" />
+    <Compile Include="Issue1411.cs" />
+    <Compile Include="Issue20.cs" />
+    <Compile Include="Issue21.cs" />
+    <Compile Include="Issue58Minimization.cs" />
+    <Compile Include="Issue60.cs" />
+    <Compile Include="IteratorVoid.cs" />
+    <Compile Include="LBCSubtyping.cs" />
+    <Compile Include="LengthOfArrayMinusOne.cs" />
+    <Compile Include="LengthOfTest.cs" />
+    <Compile Include="LengthTransfer.cs" />
+    <Compile Include="LengthTransfer2.cs" />
+    <Compile Include="LengthTransferForMinLen.cs" />
+    <Compile Include="LessThanLen.cs" />
+    <Compile Include="LessThanOrEqualTransfer.cs" />
+    <Compile Include="LessThanTransfer.cs" />
+    <Compile Include="LiteralArray.cs" />
+    <Compile Include="LiteralString.cs" />
+    <Compile Include="Loops.cs" />
+    <Compile Include="LTLDivide.cs" />
+    <Compile Include="LubIndex.cs" />
+    <Compile Include="MethodOverrides.cs" />
+    <Compile Include="MinLenFieldInvar.cs" />
+    <Compile Include="MinLenFourShenanigans.cs" />
+    <Compile Include="MinLenFromPositive.cs" />
+    <Compile Include="MinLenIndexFor.cs" />
+    <Compile Include="MinLenOneAndLength.cs" />
+    <Compile Include="MinLenSameLenInteraction.cs" />
+    <Compile Include="MinMax.cs" />
+    <Compile Include="MinMaxIndex.cs" />
+    <Compile Include="MLEqualTo.cs" />
+    <Compile Include="NegativeArray.cs" />
+    <Compile Include="NonNegArrayLength.cs" />
+    <Compile Include="NotEqualTransfer.cs" />
+    <Compile Include="ObjectClone.cs" />
+    <Compile Include="Offset97.cs" />
+    <Compile Include="OffsetExample.cs" />
+    <Compile Include="OneLTL.cs" />
+    <Compile Include="OneOrTwo.cs" />
+    <Compile Include="ParserOffsetTest.cs" />
+    <Compile Include="ParsingBug.cs" />
+    <Compile Include="Pilot3ArrayCreation.cs" />
+    <Compile Include="PlusPlusBug.cs" />
+    <Compile Include="PolyCrash.cs" />
+    <Compile Include="PreAndPostDec.cs" />
+    <Compile Include="PrimitiveWrappers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomTest.cs" />
+    <Compile Include="RandomTestLBC.cs" />
+    <Compile Include="RangeIndex.cs" />
+    <Compile Include="RefineEq.cs" />
+    <Compile Include="RefineGT.cs" />
+    <Compile Include="RefineGTE.cs" />
+    <Compile Include="RefineLT.cs" />
+    <Compile Include="RefineLTE.cs" />
+    <Compile Include="RefineLTE2.cs" />
+    <Compile Include="RefinementEq.cs" />
+    <Compile Include="RefinementGT.cs" />
+    <Compile Include="RefinementGTE.cs" />
+    <Compile Include="RefinementLT.cs" />
+    <Compile Include="RefinementLTE.cs" />
+    <Compile Include="RefinementNEq.cs" />
+    <Compile Include="RefineNeq.cs" />
+    <Compile Include="RefineNeqLength.cs" />
+    <Compile Include="Return.cs" />
+    <Compile Include="SameLenAssignmentTransfer.cs" />
+    <Compile Include="SameLenEqualsRefinement.cs" />
+    <Compile Include="SameLenFormalParameter2.cs" />
+    <Compile Include="SameLenLUBStrangeness.cs" />
+    <Compile Include="SameLenManyArrays.cs" />
+    <Compile Include="SameLenNewArrayWithSameLength.cs" />
+    <Compile Include="SameLenSelf.cs" />
+    <Compile Include="SameLenSimpleCase.cs" />
+    <Compile Include="SameLenTripleThreat.cs" />
+    <Compile Include="SameLenWithObjects.cs" />
+    <Compile Include="SearchIndexTests.cs" />
+    <Compile Include="SimpleCollection.cs" />
+    <Compile Include="SimpleTransferAdd.cs" />
+    <Compile Include="SimpleTransferSub.cs" />
+    <Compile Include="SizeVsLength.cs" />
+    <Compile Include="SLSubtyping.cs" />
+    <Compile Include="SpecialTransfersForEquality.cs" />
+    <Compile Include="StringIndexOf.cs" />
+    <Compile Include="StringLength.cs" />
+    <Compile Include="StringMethods.cs" />
+    <Compile Include="StringSameLen.cs" />
+    <Compile Include="SubtractingNonNegatives.cs" />
+    <Compile Include="SwitchDataflowRefinement.cs" />
+    <Compile Include="SwitchTest.cs" />
+    <Compile Include="TestAgainstLength.cs" />
+    <Compile Include="TransferAdd.cs" />
+    <Compile Include="TransferDivide.cs" />
+    <Compile Include="TransferMod.cs" />
+    <Compile Include="TransferSub.cs" />
+    <Compile Include="TransferTimes.cs" />
+    <Compile Include="TypeArrayLengthWithSameLen.cs" />
+    <Compile Include="UBSubtyping.cs" />
+    <Compile Include="UncheckedMinLen.cs" />
+    <Compile Include="UpperBoundRefinement.cs" />
+    <Compile Include="ValueCheckerProblem.cs" />
+    <Compile Include="VarArgsIncompatible.cs" />
+    <Compile Include="VoidType.cs" />
+    <Compile Include="ZeroMinLen.cs" />
+    <Compile Include="_IndexTestHelper.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

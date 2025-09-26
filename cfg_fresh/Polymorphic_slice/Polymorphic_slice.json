@@ -1,0 +1,1226 @@
+{
+  "method_name": "Polymorphic_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void samelen_id(int @SameLen(\"#2\") [] a, int[] a2) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "int[] banana;",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "int @SameLen(\"a2\") [] b = samelen_identity(a);",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "// :: error: (assignment)",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "int @SameLen(\"banana\") [] c = samelen_identity(b);",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "}",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "// UpperBound tests",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "void ubc_id(",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "int[] a,",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "int[] b,",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "@LTLengthOf(\"#1\") int ai,",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "@LTEqLengthOf(\"#1\") int al,",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "@LTLengthOf({\"#1\", \"#2\"}) int abi,",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "@LTEqLengthOf({\"#1\", \"#2\"}) int abl) {",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "int[] c;",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "@LTLengthOf(\"a\") int ai1 = ubc_identity(ai);",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "// :: error: (assignment)",
+      "line": 19,
+      "node_type": "stmt"
+    },
+    {
+      "id": 19,
+      "label": "@LTLengthOf(\"b\") int ai2 = ubc_identity(ai);",
+      "line": 20,
+      "node_type": "stmt"
+    },
+    {
+      "id": 20,
+      "label": "",
+      "line": 21,
+      "node_type": "stmt"
+    },
+    {
+      "id": 21,
+      "label": "@LTEqLengthOf(\"a\") int al1 = ubc_identity(al);",
+      "line": 22,
+      "node_type": "stmt"
+    },
+    {
+      "id": 22,
+      "label": "// :: error: (assignment)",
+      "line": 23,
+      "node_type": "stmt"
+    },
+    {
+      "id": 23,
+      "label": "@LTLengthOf(\"a\") int al2 = ubc_identity(al);",
+      "line": 24,
+      "node_type": "stmt"
+    },
+    {
+      "id": 24,
+      "label": "",
+      "line": 25,
+      "node_type": "stmt"
+    },
+    {
+      "id": 25,
+      "label": "@LTLengthOf({\"a\", \"b\"}) int abi1 = ubc_identity(abi);",
+      "line": 26,
+      "node_type": "stmt"
+    },
+    {
+      "id": 26,
+      "label": "// :: error: (assignment)",
+      "line": 27,
+      "node_type": "stmt"
+    },
+    {
+      "id": 27,
+      "label": "@LTLengthOf({\"a\", \"b\", \"c\"}) int abi2 = ubc_identity(abi);",
+      "line": 28,
+      "node_type": "stmt"
+    },
+    {
+      "id": 28,
+      "label": "",
+      "line": 29,
+      "node_type": "stmt"
+    },
+    {
+      "id": 29,
+      "label": "@LTEqLengthOf({\"a\", \"b\"}) int abl1 = ubc_identity(abl);",
+      "line": 30,
+      "node_type": "stmt"
+    },
+    {
+      "id": 30,
+      "label": "// :: error: (assignment)",
+      "line": 31,
+      "node_type": "stmt"
+    },
+    {
+      "id": 31,
+      "label": "@LTEqLengthOf({\"a\", \"b\", \"c\"}) int abl2 = ubc_identity(abl);",
+      "line": 32,
+      "node_type": "stmt"
+    },
+    {
+      "id": 32,
+      "label": "}",
+      "line": 33,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "SameLen"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "a2"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "variable": "void"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "banana"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "SameLen"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "samelen_identity"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "b"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 18,
+      "variable": "error"
+    },
+    {
+      "source": 3,
+      "target": 18,
+      "variable": "assignment"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 10,
+      "variable": "b"
+    },
+    {
+      "source": 4,
+      "target": 15,
+      "variable": "c"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "int"
+    },
+    {
+      "source": 9,
+      "target": 17,
+      "variable": "a"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "variable": "int"
+    },
+    {
+      "source": 10,
+      "target": 19,
+      "variable": "b"
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "variable": "ai"
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "variable": "int"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 12,
+      "target": 21,
+      "variable": "al"
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "variable": "int"
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 13,
+      "target": 25,
+      "variable": "abi"
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 14,
+      "target": 21,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 14,
+      "target": 29,
+      "variable": "abl"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "int"
+    },
+    {
+      "source": 15,
+      "target": 27,
+      "variable": "c"
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "int"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "ai"
+    },
+    {
+      "source": 17,
+      "target": 21,
+      "variable": "a"
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "variable": "error"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "variable": "assignment"
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "int"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 19,
+      "target": 23,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 19,
+      "target": 25,
+      "variable": "b"
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "a"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "int"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "al"
+    },
+    {
+      "source": 21,
+      "target": 29,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 22,
+      "target": 26,
+      "variable": "error"
+    },
+    {
+      "source": 22,
+      "target": 26,
+      "variable": "assignment"
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "a"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "int"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "a"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "b"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "int"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "abi"
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 26,
+      "target": 30,
+      "variable": "error"
+    },
+    {
+      "source": 26,
+      "target": 30,
+      "variable": "assignment"
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "a"
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "b"
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "int"
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 27,
+      "target": 31,
+      "variable": "c"
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 29,
+      "target": 30
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "a"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "b"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "int"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "abl"
+    },
+    {
+      "source": 30,
+      "target": 31
+    },
+    {
+      "source": 31,
+      "target": 32
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 29,
+      "target": 30
+    },
+    {
+      "source": 30,
+      "target": 31
+    },
+    {
+      "source": 31,
+      "target": 32
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "SameLen"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "a2"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "variable": "void"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "banana"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "int"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "SameLen"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "samelen_identity"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "b"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 18,
+      "variable": "error"
+    },
+    {
+      "source": 3,
+      "target": 18,
+      "variable": "assignment"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "int"
+    },
+    {
+      "source": 4,
+      "target": 10,
+      "variable": "b"
+    },
+    {
+      "source": 4,
+      "target": 15,
+      "variable": "c"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "variable": "int"
+    },
+    {
+      "source": 9,
+      "target": 17,
+      "variable": "a"
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "variable": "int"
+    },
+    {
+      "source": 10,
+      "target": 19,
+      "variable": "b"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "variable": "int"
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "variable": "ai"
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "variable": "int"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 12,
+      "target": 21,
+      "variable": "al"
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "variable": "int"
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 13,
+      "target": 25,
+      "variable": "abi"
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "variable": "int"
+    },
+    {
+      "source": 14,
+      "target": 21,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 14,
+      "target": 29,
+      "variable": "abl"
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "variable": "int"
+    },
+    {
+      "source": 15,
+      "target": 27,
+      "variable": "c"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "int"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 17,
+      "target": 19,
+      "variable": "ai"
+    },
+    {
+      "source": 17,
+      "target": 21,
+      "variable": "a"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "variable": "error"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "variable": "assignment"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "int"
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 19,
+      "target": 23,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 19,
+      "target": 25,
+      "variable": "b"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "a"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "int"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "al"
+    },
+    {
+      "source": 21,
+      "target": 29,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 22,
+      "target": 26,
+      "variable": "error"
+    },
+    {
+      "source": 22,
+      "target": 26,
+      "variable": "assignment"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "a"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "int"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "a"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "b"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "int"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "abi"
+    },
+    {
+      "source": 26,
+      "target": 30,
+      "variable": "error"
+    },
+    {
+      "source": 26,
+      "target": 30,
+      "variable": "assignment"
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "a"
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "b"
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "int"
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 27,
+      "target": 31,
+      "variable": "c"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "LTEqLengthOf"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "a"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "b"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "int"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "ubc_identity"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "abl"
+    }
+  ]
+}

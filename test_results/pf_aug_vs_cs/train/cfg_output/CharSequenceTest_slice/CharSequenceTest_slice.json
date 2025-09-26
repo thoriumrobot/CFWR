@@ -1,0 +1,408 @@
+{
+  "method_name": "CharSequenceTest_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void testAppend(Appendable app, CharSequence cs, @IndexFor(\"#2\") int i) throws IOException {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "app.append(cs, i, i);",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "// :: error: (argument)",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "app.append(cs, 1, 2);",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "}",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "void testAppend(StringWriter app, CharSequence cs, @IndexFor(\"#2\") int i) throws IOException {",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "app.append(cs, i, i);",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "// :: error: (argument)",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "app.append(cs, 1, 2);",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "}",
+      "line": 11,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "app"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "cs"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "testAppend"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "CharSequence"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "IndexFor"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "throws"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "IOException"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "app"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "append"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "cs"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "i"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "error"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "argument"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "app"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "cs"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "append"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "app"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "cs"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "i"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "app"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "append"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "cs"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "app"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "cs"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "testAppend"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "CharSequence"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "IndexFor"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "throws"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "variable": "IOException"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "app"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "append"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "cs"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "variable": "i"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "error"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "argument"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "app"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "cs"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "append"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "app"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "cs"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "variable": "i"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "app"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "append"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "cs"
+    }
+  ]
+}

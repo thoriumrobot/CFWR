@@ -1,0 +1,86 @@
+{
+  "method_name": "Modulo_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "void m1(Object[] a, @IndexOrHigh(\"#1\") int i, @NonNegative int j) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "@IndexFor(\"a\") int k = j % i;",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "}",
+      "line": 3,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "j"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i"
+    },
+    {
+      "source": 1,
+      "target": 2
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "int"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "j"
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "variable": "i"
+    }
+  ]
+}

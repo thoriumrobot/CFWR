@@ -1,0 +1,356 @@
+{
+  "method_name": "OffsetAnnotations_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public static void OffsetAnnotationsReader() throws IOException {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "char[] buffer = new char[10];",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "// :: error: (argument)",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "bufferedReader.read(buffer, 5, 7);",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "}",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "public static void OffsetAnnotationsWriter() throws IOException {",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "char[] buffer = new char[10];",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "// :: error: (argument)",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "bufferedWriter.write(buffer, 5, 7);",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "}",
+      "line": 13,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "public"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "throws"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "IOException"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "new"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "bufferedReader"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "System"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "buffer"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "new"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "char"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "error"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "argument"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "buffer"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "new"
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "variable": "bufferedWriter"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "buffer"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "public"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "static"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "void"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "throws"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "variable": "IOException"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "new"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "bufferedReader"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "System"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "buffer"
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "variable": "new"
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "variable": "char"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "error"
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "variable": "argument"
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "variable": "buffer"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "variable": "new"
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "variable": "bufferedWriter"
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "variable": "buffer"
+    }
+  ]
+}

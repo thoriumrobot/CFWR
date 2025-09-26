@@ -1,6 +1,6 @@
 {
-    "timestamp": "2025-09-26T07:21:03.367365",
-    "dataset_used": "test_results/pf_dataset",
+    "timestamp": "2025-09-26T15:22:58.494215",
+    "dataset_used": "test_results/pf_aug_vs_cs",
     "evaluation_type": "Comprehensive Multi-Class Lower Bound Checker Annotation Type Prediction",
     "target_annotations": [
         "@Positive",
@@ -10,45 +10,45 @@
     "models": {
         "AnnotationTypeGBT": {
             "name": "AnnotationTypeGBT",
-            "accuracy": 0.2,
-            "f1_score_macro": 0.15,
-            "f1_score_weighted": 0.175,
-            "precision": 0.16,
-            "recall": 0.2,
-            "support": 100,
+            "accuracy": 0.2752808988764045,
+            "f1_score_macro": 0.15685052797271595,
+            "f1_score_weighted": 0.1631641663897042,
+            "precision": 0.14344316226338696,
+            "recall": 0.2752808988764045,
+            "support": 178,
             "per_class_f1": {
-                "@GTENegativeOne": 0.2,
-                "@NonNegative": 0.25,
+                "@GTENegativeOne": 0.20253164556962025,
+                "@NonNegative": 0.42487046632124353,
                 "@Positive": 0.0,
                 "NO_ANNOTATION": 0.0
             },
             "annotation_type_f1_scores": {
                 "@Positive": 0.0,
-                "@NonNegative": 0.25,
-                "@GTENegativeOne": 0.2
+                "@NonNegative": 0.42487046632124353,
+                "@GTENegativeOne": 0.20253164556962025
             },
             "confusion_matrix": [
                 [
-                    10,
-                    40,
+                    8,
+                    41,
                     0,
                     0
                 ],
                 [
-                    20,
-                    10,
+                    4,
+                    41,
                     0,
                     0
                 ],
                 [
-                    20,
-                    0,
+                    7,
+                    32,
                     0,
                     0
                 ],
                 [
-                    0,
-                    0,
+                    11,
+                    34,
                     0,
                     0
                 ]
@@ -62,44 +62,44 @@
         },
         "AnnotationTypeHGT": {
             "name": "AnnotationTypeHGT",
-            "accuracy": 0.3,
-            "f1_score_macro": 0.15384615384615385,
-            "f1_score_weighted": 0.13846153846153847,
-            "precision": 0.09,
-            "recall": 0.3,
-            "support": 100,
+            "accuracy": 0.2752808988764045,
+            "f1_score_macro": 0.10792951541850221,
+            "f1_score_weighted": 0.11884373607880018,
+            "precision": 0.07577957328620125,
+            "recall": 0.2752808988764045,
+            "support": 178,
             "per_class_f1": {
-                "@GTENegativeOne": 0.0,
-                "@NonNegative": 0.46153846153846156,
+                "@GTENegativeOne": 0.43171806167400884,
+                "@NonNegative": 0.0,
                 "@Positive": 0.0,
                 "NO_ANNOTATION": 0.0
             },
             "annotation_type_f1_scores": {
                 "@Positive": 0.0,
-                "@NonNegative": 0.46153846153846156,
-                "@GTENegativeOne": 0.0
+                "@NonNegative": 0.0,
+                "@GTENegativeOne": 0.43171806167400884
             },
             "confusion_matrix": [
                 [
+                    49,
                     0,
-                    50,
-                    0,
-                    0
-                ],
-                [
-                    0,
-                    30,
                     0,
                     0
                 ],
                 [
+                    45,
                     0,
-                    20,
                     0,
                     0
                 ],
                 [
+                    39,
                     0,
+                    0,
+                    0
+                ],
+                [
+                    45,
                     0,
                     0,
                     0
@@ -114,45 +114,45 @@
         },
         "AnnotationTypeCausal": {
             "name": "AnnotationTypeCausal",
-            "accuracy": 0.3,
-            "f1_score_macro": 0.15384615384615385,
-            "f1_score_weighted": 0.13846153846153847,
-            "precision": 0.09,
-            "recall": 0.3,
-            "support": 100,
+            "accuracy": 0.25280898876404495,
+            "f1_score_macro": 0.10089686098654709,
+            "f1_score_weighted": 0.10203053358190156,
+            "precision": 0.063912384799899,
+            "recall": 0.25280898876404495,
+            "support": 178,
             "per_class_f1": {
                 "@GTENegativeOne": 0.0,
-                "@NonNegative": 0.46153846153846156,
+                "@NonNegative": 0.40358744394618834,
                 "@Positive": 0.0,
                 "NO_ANNOTATION": 0.0
             },
             "annotation_type_f1_scores": {
                 "@Positive": 0.0,
-                "@NonNegative": 0.46153846153846156,
+                "@NonNegative": 0.40358744394618834,
                 "@GTENegativeOne": 0.0
             },
             "confusion_matrix": [
                 [
                     0,
-                    50,
+                    49,
                     0,
                     0
                 ],
                 [
                     0,
-                    30,
+                    45,
                     0,
                     0
                 ],
                 [
                     0,
-                    20,
+                    39,
                     0,
                     0
                 ],
                 [
                     0,
-                    0,
+                    45,
                     0,
                     0
                 ]
@@ -166,44 +166,44 @@
         },
         "SGCFGNet": {
             "name": "SGCFGNet",
-            "accuracy": 0.4,
-            "f1_score_macro": 0.125,
-            "f1_score_weighted": 0.15,
-            "precision": 0.1,
-            "recall": 0.3,
-            "support": 100,
+            "accuracy": 0.27808988764044945,
+            "f1_score_macro": 0.11755952380952381,
+            "f1_score_weighted": 0.12851123595505617,
+            "precision": 0.1597752808988764,
+            "recall": 0.2752808988764045,
+            "support": 178,
             "per_class_f1": {
-                "@GTENegativeOne": 0.0,
-                "@NonNegative": 0.5,
+                "@GTENegativeOne": 0.42857142857142855,
+                "@NonNegative": 0.041666666666666664,
                 "@Positive": 0.0,
                 "NO_ANNOTATION": 0.0
             },
             "annotation_type_f1_scores": {
-                "@GTENegativeOne": 0.0,
-                "@NonNegative": 0.5,
+                "@GTENegativeOne": 0.42857142857142855,
+                "@NonNegative": 0.041666666666666664,
                 "@Positive": 0.0
             },
             "confusion_matrix": [
                 [
-                    0,
-                    40,
-                    0,
-                    10
-                ],
-                [
-                    0,
-                    30,
+                    48,
+                    1,
                     0,
                     0
                 ],
                 [
-                    0,
-                    20,
+                    44,
+                    1,
                     0,
                     0
                 ],
                 [
+                    38,
+                    1,
                     0,
+                    0
+                ],
+                [
+                    45,
                     0,
                     0,
                     0
@@ -215,12 +215,116 @@
                 "@Positive",
                 "NO_ANNOTATION"
             ]
+        },
+        "GCN": {
+            "name": "GCN",
+            "accuracy": 0.25280898876404495,
+            "f1_score_macro": 0.14848642292652248,
+            "f1_score_weighted": 0.15170459660527844,
+            "precision": 0.18545714668744606,
+            "recall": 0.24157303370786518,
+            "support": 178,
+            "per_class_f1": {
+                "@GTENegativeOne": 0.06896551724137931,
+                "@NonNegative": 0.15384615384615385,
+                "@Positive": 0.0,
+                "NO_ANNOTATION": 0.3711340206185567
+            },
+            "annotation_type_f1_scores": {
+                "@GTENegativeOne": 0.06896551724137931,
+                "@NonNegative": 0.15384615384615385,
+                "@Positive": 0.0
+            },
+            "confusion_matrix": [
+                [
+                    2,
+                    6,
+                    0,
+                    41
+                ],
+                [
+                    1,
+                    5,
+                    0,
+                    39
+                ],
+                [
+                    2,
+                    4,
+                    0,
+                    33
+                ],
+                [
+                    4,
+                    5,
+                    0,
+                    36
+                ]
+            ],
+            "confusion_matrix_labels": [
+                "@GTENegativeOne",
+                "@NonNegative",
+                "@Positive",
+                "NO_ANNOTATION"
+            ]
+        },
+        "DG2N": {
+            "name": "DG2N",
+            "accuracy": 0.2857142857142857,
+            "f1_score_macro": 0.1111111111111111,
+            "f1_score_weighted": 0.12698412698412698,
+            "precision": 0.08163265306122448,
+            "recall": 0.2857142857142857,
+            "support": 126,
+            "per_class_f1": {
+                "@GTENegativeOne": 0.0,
+                "@NonNegative": 0.0,
+                "@Positive": 0.0,
+                "NO_ANNOTATION": 0.4444444444444444
+            },
+            "annotation_type_f1_scores": {
+                "@GTENegativeOne": 0.0,
+                "@NonNegative": 0.0,
+                "@Positive": 0.0
+            },
+            "confusion_matrix": [
+                [
+                    0,
+                    0,
+                    0,
+                    30
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    26
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    34
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    36
+                ]
+            ],
+            "confusion_matrix_labels": [
+                "@GTENegativeOne",
+                "@NonNegative",
+                "@Positive",
+                "NO_ANNOTATION"
+            ]
         }
     },
     "best_performance": {
-        "f1_score": 0.175,
+        "f1_score": 0.1631641663897042,
         "f1_model": "AnnotationTypeGBT",
-        "accuracy": 0.4,
-        "accuracy_model": "SGCFGNet"
+        "accuracy": 0.2857142857142857,
+        "accuracy_model": "DG2N"
     }
 }

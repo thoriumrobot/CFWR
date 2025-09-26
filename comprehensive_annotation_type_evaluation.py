@@ -19,6 +19,12 @@ import torch.nn.functional as F
 from annotation_type_prediction import AnnotationTypeClassifier, AnnotationTypeGBTModel, AnnotationTypeHGTModel, LowerBoundAnnotationType
 from sg_cfgnet import SGCFGNetTrainer
 from annotation_type_causal_model import AnnotationTypeCausalModel
+from torch_geometric.data import Data
+from torch_geometric.loader import DataLoader
+from torch_geometric.nn import GCNConv
+from dg2n.dg2n import DG2N as DG2NModel
+from dg2n.dataio import GraphDirDataset
+import subprocess
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -30,7 +36,7 @@ class ComprehensiveAnnotationTypeEvaluator:
     Focuses on F1 scores by individual annotation type.
     """
     
-    def __init__(self, dataset_dir: str = "test_results/statistical_dataset", parameter_free: bool = False, do_hpo: bool = False):
+    def __init__(self, dataset_dir: str = "test_results/statistical_dataset", parameter_free: bool = False, do_hpo: bool = False, exclude_bottom: bool = True):
         self.dataset_dir = dataset_dir
         self.train_cfg_dir = os.path.join(dataset_dir, "train", "cfg_output")
         self.test_cfg_dir = os.path.join(dataset_dir, "test", "cfg_output")
@@ -40,6 +46,7 @@ class ComprehensiveAnnotationTypeEvaluator:
         self.label_encoder = LabelEncoder()
         self.parameter_free = parameter_free
         self.do_hpo = do_hpo
+        self.exclude_bottom = exclude_bottom
         
         # Label space
         if parameter_free:
@@ -80,9 +87,10 @@ class ComprehensiveAnnotationTypeEvaluator:
             return LowerBoundAnnotationType.GTEN_ONE.value
         if features.has_numeric_type and (features.has_comparison or features.has_loop_context):
             return LowerBoundAnnotationType.NON_NEGATIVE.value
-        # Heuristic spread for diversity
-        h = (features.label_length + features.line_number + features.in_degree + features.out_degree) % 5
-        return label_space[h]
+        # Heuristic spread for diversity (guard index)
+        denom = max(1, len(label_space))
+        h = (features.label_length + features.line_number + features.in_degree + features.out_degree) % denom
+        return label_space[h if 0 <= h < denom else denom - 1]
 
     def _build_pf_training_matrix(self, cfg_files: List[Dict[str, Any]], min_per_class: int = 20) -> Tuple[np.ndarray, np.ndarray]:
         """Extract and balance a parameter-free training matrix (X, y_str)."""
@@ -133,19 +141,20 @@ class ComprehensiveAnnotationTypeEvaluator:
         if not os.path.exists(directory):
             logger.error(f"Directory not found: {directory}")
             return cfg_files
-        for filename in os.listdir(directory):
-            if filename.endswith('.json'):
-                cfg_path = os.path.join(directory, filename)
-                try:
-                    with open(cfg_path, 'r') as f:
-                        cfg_data = json.load(f)
-                        cfg_files.append({
-                            'file': cfg_path,
-                            'method': cfg_data.get('method_name', filename.replace('.json', '')),
-                            'data': cfg_data
-                        })
-                except Exception as e:
-                    logger.warning(f"Error loading CFG {filename}: {e}")
+        for root, _, files in os.walk(directory):
+            for filename in files:
+                if filename.endswith('.json'):
+                    cfg_path = os.path.join(root, filename)
+                    try:
+                        with open(cfg_path, 'r') as f:
+                            cfg_data = json.load(f)
+                            cfg_files.append({
+                                'file': cfg_path,
+                                'method': cfg_data.get('method_name', filename.replace('.json', '')),
+                                'data': cfg_data
+                            })
+                    except Exception as e:
+                        logger.warning(f"Error loading CFG {cfg_path}: {e}")
         logger.info(f"Loaded {len(cfg_files)} CFG files from {directory}")
         return cfg_files
 
@@ -168,11 +177,13 @@ class ComprehensiveAnnotationTypeEvaluator:
                     features = self.classifier.extract_features(node, cfg_data)
                     if self.parameter_free:
                         gt_value = self._remap_to_parameter_free(features)
-                        if gt_value not in self.label_encoder.classes_:
+                        if (self.exclude_bottom and ('bottom' in str(gt_value).lower())) or gt_value not in self.label_encoder.classes_:
                             continue
                     else:
                         annotation_type = self.classifier.determine_annotation_type(features)
                         gt_value = annotation_type.value
+                    if self.exclude_bottom and ('bottom' in str(gt_value).lower()):
+                        continue
                     ground_truth_labels.append(gt_value)
                     node_contexts.append({
                     'file': file_path,
@@ -540,11 +551,186 @@ class ComprehensiveAnnotationTypeEvaluator:
             logger.error(f"Error evaluating SG-CFGNet: {e}")
             results['SGCFGNet'] = self._empty_result("SGCFGNet", [])
 
+        # --- Evaluate GCN (PF multi-class) ---
+        logger.info("\n🧱 Evaluating GCN (PF multi-class) Model...")
+        try:
+            gcn_model = self._train_gcn_pf(train_cfg_files, input_dim, output_dim)
+            if gcn_model is None:
+                results['GCN'] = self._empty_result("GCN", [])
+            else:
+                y_true: List[str] = []
+                y_pred: List[str] = []
+                for cf in test_cfg_files:
+                    cfgd = cf['data']
+                    g = self._build_gcn_graph(cfgd)
+                    if g.x.numel() == 0:
+                        continue
+                    with torch.no_grad():
+                        logits = gcn_model(g.x, g.edge_index)
+                        pred_idx = logits.argmax(dim=-1).cpu().numpy().tolist()
+                    # Build paired lists but only for target nodes
+                    for i, node in enumerate(cfgd.get('nodes', [])):
+                        from node_level_models import NodeClassifier
+                        if not NodeClassifier.is_annotation_target(node):
+                            continue
+                        t_lab = self._pf_label_for_node(node, cfgd)
+                        if i < len(pred_idx):
+                            idx = pred_idx[i]
+                            K = len(self.label_encoder.classes_)
+                            idx = int(idx) % max(1, K)
+                            p_lab = self.label_encoder.classes_[idx]
+                        else:
+                            p_lab = LowerBoundAnnotationType.NO_ANNOTATION.value
+                        if self.exclude_bottom and ('bottom' in str(t_lab).lower()):
+                            continue
+                        y_true.append(t_lab)
+                        y_pred.append(p_lab)
+                results['GCN'] = self._evaluate_predictions(y_true, y_pred, "GCN")
+        except Exception as e:
+            logger.error(f"Error evaluating GCN PF model: {e}")
+            results['GCN'] = self._empty_result("GCN", [])
+
+        # --- Evaluate DG2N (PF multi-class) ---
+        logger.info("\n🧭 Evaluating DG2N (PF multi-class) Model...")
+        try:
+            dg2n_train_dir = os.path.join(self.dataset_dir, 'dg2n_train')
+            dg2n_test_dir = os.path.join(self.dataset_dir, 'dg2n_test')
+            os.makedirs(dg2n_train_dir, exist_ok=True)
+            os.makedirs(dg2n_test_dir, exist_ok=True)
+            # Build DG2N datasets from CFGs via adapter
+            subprocess.run([os.sys.executable, 'dg2n_adapter.py', '--cfg_dir', self.train_cfg_dir, '--out_dir', dg2n_train_dir], check=False)
+            subprocess.run([os.sys.executable, 'dg2n_adapter.py', '--cfg_dir', self.test_cfg_dir, '--out_dir', dg2n_test_dir], check=False)
+            # Train DG2N
+            dg2n_out = os.path.join('models', 'dg2n_pf')
+            os.makedirs(dg2n_out, exist_ok=True)
+            subprocess.run([os.sys.executable, 'dg2n/train_dg2n.py', '--data_dir', dg2n_train_dir, '--out_dir', dg2n_out, '--epochs', '30', '--cpu'], check=False)
+            # Inference on test set
+            ckpt_path = os.path.join(dg2n_out, 'best_dg2n.pt')
+            if not os.path.exists(ckpt_path):
+                logger.error("DG2N checkpoint not found; skipping DG2N eval")
+                results['DG2N'] = self._empty_result('DG2N', [])
+            else:
+                ckpt = torch.load(ckpt_path, map_location='cpu')
+                edge_types = {et: 1 for et in ckpt.get('edge_types', ['cfg', 'dfg'])}
+                model = DG2NModel(in_dim=ckpt['in_dim'], hidden=ckpt['hidden'], num_layers=ckpt['layers'], edge_types=edge_types, num_classes=ckpt['num_classes'], rule_head=None, dropout=0.1)
+                model.load_state_dict(ckpt['model_state'], strict=False)
+                model.eval()
+                ds = GraphDirDataset(dg2n_test_dir)
+                y_true: List[str] = []
+                y_pred: List[str] = []
+                classes = ['NO_ANNOTATION', '@Positive', '@NonNegative', '@GTENegativeOne']
+                for i in range(len(ds)):
+                    sample = ds[i]
+                    x = sample['x'].float()
+                    edge_index_dict = sample['edge_index_dict']
+                    mask = sample.get('mask', (sample['y']>=0))
+                    with torch.no_grad():
+                        logits, _ = model(x, edge_index_dict)
+                        pred_idx = logits.argmax(dim=-1)
+                    # Map only masked nodes to labels
+                    yi_true = sample['y']
+                    for j in range(len(pred_idx)):
+                        if not bool(mask[j]):
+                            continue
+                        t = int(yi_true[j].item())
+                        p = int(pred_idx[j].item())
+                        if t < 0 or t >= len(classes):
+                            continue
+                        y_true.append(classes[t])
+                        y_pred.append(classes[p] if 0 <= p < len(classes) else classes[0])
+                results['DG2N'] = self._evaluate_predictions(y_true, y_pred, 'DG2N')
+        except Exception as e:
+            logger.error(f"Error evaluating DG2N PF model: {e}")
+            results['DG2N'] = self._empty_result("DG2N", [])
+
         # --- Summarize Results ---
         self._print_evaluation_summary(results)
         self._save_results(results)
 
         return results
+
+    # ====== GCN (PF multi-class) helpers ======
+    class _PF_GCN(torch.nn.Module):
+        def __init__(self, in_dim: int, hidden: int, out_dim: int, dropout: float = 0.1):
+            super().__init__()
+            self.conv1 = GCNConv(in_dim, hidden)
+            self.conv2 = GCNConv(hidden, hidden)
+            self.lin = torch.nn.Linear(hidden, out_dim)
+            self.dropout = torch.nn.Dropout(dropout)
+
+        def forward(self, x, edge_index):
+            x = self.conv1(x, edge_index)
+            x = torch.relu(x)
+            x = self.dropout(x)
+            x = self.conv2(x, edge_index)
+            x = torch.relu(x)
+            x = self.dropout(x)
+            return self.lin(x)
+
+    def _pf_label_for_node(self, node: Dict[str, Any], cfg_data: Dict[str, Any]) -> str:
+        from node_level_models import NodeClassifier
+        if not NodeClassifier.is_annotation_target(node):
+            return LowerBoundAnnotationType.NO_ANNOTATION.value
+        feats = self.classifier.extract_features(node, cfg_data)
+        return self._remap_to_parameter_free(feats)
+
+    def _build_gcn_graph(self, cfg_data: Dict[str, Any]) -> Data:
+        # Features from classifier
+        xs: List[List[float]] = []
+        labels_idx: List[int] = []
+        nodes = cfg_data.get('nodes', [])
+        num_nodes = len(nodes)
+        for node in nodes:
+            feats = self.classifier.extract_features(node, cfg_data)
+            xs.append(self.classifier.features_to_vector(feats))
+            lab = self._pf_label_for_node(node, cfg_data)
+            if lab not in self.label_encoder.classes_:
+                lab = LowerBoundAnnotationType.NO_ANNOTATION.value
+            idxs = np.where(self.label_encoder.classes_ == lab)[0]
+            idx = int(idxs[0]) if len(idxs) else 0
+            labels_idx.append(idx)
+        x = torch.tensor(xs, dtype=torch.float32) if xs else torch.zeros((0, 23), dtype=torch.float32)
+        y = torch.tensor(labels_idx, dtype=torch.long) if labels_idx else torch.zeros((0,), dtype=torch.long)
+        # Edges
+        edges = (cfg_data.get('control_edges', []) or []) + (cfg_data.get('dataflow_edges', []) or [])
+        pairs: List[Tuple[int,int]] = []
+        for e in edges:
+            s = int(e.get('source', e.get('from', -1)))
+            t = int(e.get('target', e.get('to', -1)))
+            if 0 <= s < num_nodes and 0 <= t < num_nodes:
+                pairs.append((s, t))
+        if pairs:
+            src = torch.tensor([s for s,_ in pairs], dtype=torch.long)
+            dst = torch.tensor([t for _,t in pairs], dtype=torch.long)
+            edge_index = torch.stack([src, dst], dim=0)
+        else:
+            edge_index = torch.zeros((2, 0), dtype=torch.long)
+        return Data(x=x, y=y, edge_index=edge_index)
+
+    def _train_gcn_pf(self, train_cfg_files: List[Dict[str, Any]], input_dim_hint: int, out_dim: int) -> Any:
+        # Build dataset
+        graphs: List[Data] = []
+        for cf in train_cfg_files:
+            graphs.append(self._build_gcn_graph(cf['data']))
+        graphs = [g for g in graphs if g.x.numel() > 0]
+        if not graphs:
+            return None
+        in_dim = graphs[0].x.size(-1) if graphs[0].x.numel() > 0 else input_dim_hint
+        model = self._PF_GCN(in_dim=in_dim, hidden=128, out_dim=out_dim)
+        device = torch.device('cpu')
+        model.to(device)
+        opt = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)
+        crit = torch.nn.CrossEntropyLoss()
+        loader = DataLoader(graphs, batch_size=1, shuffle=True)
+        for _ in range(30):
+            model.train(); total = 0.0
+            for batch in loader:
+                batch = batch.to(device)
+                logits = model(batch.x, batch.edge_index)
+                loss = crit(logits, batch.y)
+                opt.zero_grad(); loss.backward(); opt.step()
+                total += float(loss.item())
+        return model
 
     def _print_evaluation_summary(self, results: Dict[str, Any]):
         """Print comprehensive evaluation summary with F1 scores by annotation type."""
@@ -666,7 +852,15 @@ class ComprehensiveAnnotationTypeEvaluator:
 
 def main():
     """Run comprehensive annotation type evaluation"""
-    evaluator = ComprehensiveAnnotationTypeEvaluator()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--dataset_dir', default='test_results/statistical_dataset')
+    ap.add_argument('--parameter_free', action='store_true', default=False)
+    ap.add_argument('--hpo', action='store_true', default=False)
+    ap.add_argument('--exclude_bottom', action='store_true', default=True)
+    args = ap.parse_args()
+
+    evaluator = ComprehensiveAnnotationTypeEvaluator(dataset_dir=args.dataset_dir, parameter_free=args.parameter_free, do_hpo=args.hpo, exclude_bottom=args.exclude_bottom)
     results = evaluator.run_comprehensive_evaluation()
     
     if results:

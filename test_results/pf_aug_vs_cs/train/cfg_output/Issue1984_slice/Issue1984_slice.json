@@ -1,0 +1,80 @@
+{
+  "method_name": "Issue1984_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public int m(int[] a, @IntRange(from = 0, to = 12) int i) {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "// :: error: (array.access.unsafe.high.range)",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "return a[i];",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "}",
+      "line": 4,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "i"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "a"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "i"
+    }
+  ]
+}

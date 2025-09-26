@@ -1,0 +1,190 @@
+{
+  "method_name": "StringBuilderOffset_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "public static void OffsetStringBuilder() {",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "StringBuilder stringBuilder = new StringBuilder();",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "char[] chars = new char[10];",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "// :: error: (argument)",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "stringBuilder.append(chars, 5, 7);",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "stringBuilder.append(chars, 5, 4);",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "}",
+      "line": 9,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "new"
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "variable": "stringBuilder"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "chars"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "stringBuilder"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "append"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "chars"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "new"
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "variable": "stringBuilder"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "chars"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "stringBuilder"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "append"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "chars"
+    }
+  ]
+}
