@@ -1,6 +1,8 @@
 .gradle/*
 build/*
 
+nullgtn-artifact/*
+
 # Compiled class file
 *.class
 
