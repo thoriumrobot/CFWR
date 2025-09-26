@@ -1,0 +1,154 @@
+[
+  {
+    "method": "complexMethod",
+    "file": "test_results/model_evaluation/TestDataset.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.30652716755867004
+      },
+      {
+        "line": null,
+        "score": 0.30652716755867004
+      },
+      {
+        "line": 21,
+        "score": 8.000373054528609e-05
+      },
+      {
+        "line": 22,
+        "score": 0.0
+      },
+      {
+        "line": 23,
+        "score": 0.0
+      },
+      {
+        "line": 24,
+        "score": 0.0
+      },
+      {
+        "line": 25,
+        "score": 0.0
+      },
+      {
+        "line": 26,
+        "score": 0.0
+      },
+      {
+        "line": 22,
+        "score": 0.0
+      },
+      {
+        "line": 30,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "mediumMethod",
+    "file": "test_results/model_evaluation/TestDataset.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.30652716755867004
+      },
+      {
+        "line": null,
+        "score": 0.30652716755867004
+      },
+      {
+        "line": 9,
+        "score": 8.000373054528609e-05
+      },
+      {
+        "line": 10,
+        "score": 0.0
+      },
+      {
+        "line": 12,
+        "score": 0.0
+      },
+      {
+        "line": 13,
+        "score": 0.0
+      },
+      {
+        "line": 14,
+        "score": 0.0
+      },
+      {
+        "line": 16,
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "method": "simpleMethod",
+    "file": "test_results/model_evaluation/TestDataset.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.30652716755867004
+      },
+      {
+        "line": null,
+        "score": 0.30652716755867004
+      },
+      {
+        "line": 4,
+        "score": 8.000381058081985e-05
+      }
+    ]
+  },
+  {
+    "method": "multiVariableMethod",
+    "file": "test_results/model_evaluation/TestDataset.java",
+    "pred_lines": [],
+    "scores": [
+      {
+        "line": null,
+        "score": 0.30652716755867004
+      },
+      {
+        "line": null,
+        "score": 0.0
+      },
+      {
+        "line": 35,
+        "score": 8.000373054528609e-05
+      },
+      {
+        "line": 36,
+        "score": 0.0
+      },
+      {
+        "line": 37,
+        "score": 0.0
+      },
+      {
+        "line": 38,
+        "score": 0.0
+      },
+      {
+        "line": 40,
+        "score": 0.0
+      },
+      {
+        "line": 41,
+        "score": 0.0
+      },
+      {
+        "line": 42,
+        "score": 0.0
+      },
+      {
+        "line": 45,
+        "score": 0.0
+      }
+    ]
+  }
+]

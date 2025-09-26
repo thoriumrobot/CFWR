@@ -1,0 +1,4 @@
+test_results/rl_test/TestNullness.java:15: warning: [nullness] return type is @Nullable but method getName() is declared to return @NonNull
+test_results/rl_test/TestNullness.java:19: warning: [nullness] return type is @Nullable but method getValue() is declared to return @NonNull
+test_results/rl_test/TestNullness.java:25: warning: [nullness] dereference of possibly-null reference name
+test_results/rl_test/TestNullness.java:26: warning: [nullness] dereference of possibly-null reference value

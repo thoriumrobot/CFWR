@@ -190,12 +190,17 @@ class AnnotationPlacementStrategy:
         variables = self.analyzer.find_variable_declarations()
         methods = self.analyzer.find_method_declarations()
         
+        print(f"DEBUG: Found {len(variables)} variables, {len(methods)} methods")
+        print(f"DEBUG: Predicted lines: {predicted_lines}")
+        
         for line_num in predicted_lines:
             # Find the best annotation type and placement for this line
             placement = self._determine_annotation_placement(line_num, variables, methods)
+            print(f"DEBUG: Line {line_num} -> placement: {placement}")
             if placement:
                 placements.append(placement)
         
+        print(f"DEBUG: Total placements: {len(placements)}")
         return placements
     
     def _determine_annotation_placement(self, line_num: int, variables: List[Dict], methods: List[Dict]) -> Optional[AnnotationPlacement]:
@@ -225,7 +230,14 @@ class AnnotationPlacementStrategy:
                     placement_strategy='before_method'
                 )
         
-        return None
+        # If no specific element found, place annotation before the line
+        # This handles cases where the line is not a declaration but still needs annotation
+        return AnnotationPlacement(
+            line_number=line_num,
+            annotation_type=AnnotationType.NON_NULL,
+            target_element=f'line_{line_num}',
+            placement_strategy='before_line'
+        )
     
     def _choose_nullness_annotation(self, var: Dict) -> AnnotationType:
         """Choose the appropriate nullness annotation for a variable"""

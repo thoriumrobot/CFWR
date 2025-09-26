@@ -502,18 +502,28 @@ def generate_control_flow_graphs(java_file_path, output_base_dir='cfg_output'):
     """
     Generates control flow graphs for a given Java file.
     """
+    print(f"DEBUG: Parsing Java file: {java_file_path}")
     parsed_java_code = parse_java_file(java_file_path)
     if parsed_java_code is None:
+        print(f"DEBUG: Failed to parse Java file: {java_file_path}")
         return []
+    
+    print(f"DEBUG: Successfully parsed Java file")
     with open(java_file_path, 'r') as f:
         source_lines = f.readlines()
+    print(f"DEBUG: Read {len(source_lines)} source lines")
+    
     method_declarations = extract_method_declarations(parsed_java_code)
-
+    print(f"DEBUG: Found {len(method_declarations)} method declarations")
+    
     cfgs = []
-    for method in method_declarations:
+    for i, method in enumerate(method_declarations):
+        print(f"DEBUG: Processing method {i+1}/{len(method_declarations)}: {method.name}")
         cfg = create_cfg(method, source_lines)
+        print(f"DEBUG: Created CFG for {method.name} with {cfg.number_of_nodes()} nodes, {cfg.number_of_edges()} edges")
         cfgs.append((method.name, cfg))
 
+    print(f"DEBUG: Generated {len(cfgs)} CFGs total")
     return cfgs
 
 def save_cfgs(cfgs, output_dir='cfg_output'):
@@ -576,8 +586,24 @@ if __name__ == '__main__':
     parser.add_argument('--java_file', required=True)
     parser.add_argument('--out_dir', default='cfg_output')
     args = parser.parse_args()
+    
+    print(f"=== CFG GENERATION DEBUG ===")
+    print(f"Input Java file: {args.java_file}")
+    print(f"Output directory: {args.out_dir}")
+    print(f"File exists: {os.path.exists(args.java_file)}")
+    
+    if not os.path.exists(args.java_file):
+        print(f"ERROR: Java file does not exist: {args.java_file}")
+        exit(1)
+    
+    print(f"Starting CFG generation...")
     cfgs = generate_control_flow_graphs(args.java_file, args.out_dir)
+    print(f"Generated {len(cfgs)} CFGs")
+    
     # Save under a per-file subdirectory using the base name
     base = os.path.splitext(os.path.basename(args.java_file))[0]
     out_dir = os.path.join(args.out_dir, base)
+    print(f"Saving CFGs to: {out_dir}")
+    
     save_cfgs(cfgs, out_dir)
+    print(f"CFG generation completed successfully!")

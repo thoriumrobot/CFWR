@@ -1,0 +1,20 @@
+[
+  {
+    "file_path": "clean_test_slice.java",
+    "line_number": 8,
+    "confidence": 0.8,
+    "annotation_type": "@NonNull",
+    "target_element": "x",
+    "context": "int variable",
+    "model_type": "hgt"
+  },
+  {
+    "file_path": "clean_test_slice.java", 
+    "line_number": 9,
+    "confidence": 0.7,
+    "annotation_type": "@NonNull",
+    "target_element": "y",
+    "context": "int variable",
+    "model_type": "hgt"
+  }
+]

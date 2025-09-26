@@ -572,12 +572,14 @@ class ComprehensiveAnnotationPlacer:
             
             try:
                 # Run checker on annotated file
-                warnings = self.evaluator.run_checker_on_file(file_path, checker_types[0])
+                evaluation_result = self.evaluator.evaluate_file(file_path, checker_types[0])
                 
                 validation_results[file_path] = {
-                    'warnings_count': len(warnings),
-                    'warnings': warnings,
-                    'annotations_placed': len(self.placed_annotations[file_path])
+                    'warnings_count': len(evaluation_result.new_warnings),
+                    'warnings': evaluation_result.new_warnings,
+                    'annotations_placed': len(self.placed_annotations[file_path]),
+                    'success': evaluation_result.success,
+                    'compilation_success': evaluation_result.compilation_success
                 }
                 
             except Exception as e:

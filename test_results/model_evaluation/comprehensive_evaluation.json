@@ -1,0 +1,101 @@
+{
+  "training": {
+    "HGT": {
+      "training_time": 4.437520503997803,
+      "success": true
+    },
+    "GBT": {
+      "training_time": 0.7364590167999268,
+      "success": true
+    },
+    "Causal": {
+      "training_time": 1.4200785160064697,
+      "success": true
+    }
+  },
+  "prediction": {
+    "HGT": {
+      "prediction_time": 2.891735076904297,
+      "success": true
+    },
+    "GBT": {
+      "prediction_time": 0.7435243129730225,
+      "success": true
+    },
+    "Causal": {
+      "prediction_time": 1.4747509956359863,
+      "success": true
+    }
+  },
+  "characteristics": {
+    "HGT": {
+      "type": "Graph Neural Network",
+      "strengths": [
+        "Handles graph-structured data naturally",
+        "Captures complex relationships between nodes",
+        "Good for CFG-based analysis",
+        "Can learn from dataflow information"
+      ],
+      "weaknesses": [
+        "Requires more computational resources",
+        "Slower training and inference",
+        "More complex to tune",
+        "Requires graph preprocessing"
+      ],
+      "best_for": "Complex CFG analysis with dataflow information",
+      "complexity": "High"
+    },
+    "GBT": {
+      "type": "Ensemble Learning",
+      "strengths": [
+        "Fast training and prediction",
+        "Handles mixed data types well",
+        "Robust to outliers",
+        "Easy to interpret",
+        "Good baseline performance"
+      ],
+      "weaknesses": [
+        "May overfit on small datasets",
+        "Less effective on graph data",
+        "Requires feature engineering",
+        "Limited by feature representation"
+      ],
+      "best_for": "Quick predictions and baseline comparisons",
+      "complexity": "Medium"
+    },
+    "Causal": {
+      "type": "Neural Network (Simplified)",
+      "strengths": [
+        "Designed for causal inference",
+        "Can learn complex patterns",
+        "Flexible architecture",
+        "Good for structured data"
+      ],
+      "weaknesses": [
+        "Requires large amounts of data",
+        "Can be prone to overfitting",
+        "Less interpretable",
+        "Requires careful tuning"
+      ],
+      "best_for": "Large-scale analysis with sufficient data",
+      "complexity": "Medium-High"
+    }
+  },
+  "rankings": {
+    "training_speed": [
+      "GBT",
+      "Causal",
+      "HGT"
+    ],
+    "prediction_speed": [
+      "GBT",
+      "Causal",
+      "HGT"
+    ],
+    "reliability": [
+      "HGT",
+      "GBT",
+      "Causal"
+    ]
+  }
+}

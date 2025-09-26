@@ -1,0 +1,55 @@
+{
+  "HGT": {
+    "model": "HGT",
+    "total_time": 1.53462815284729,
+    "avg_processing_time": 0,
+    "predictions_count": 0,
+    "avg_prediction": 0,
+    "prediction_std": 0,
+    "success_rate": 0.0
+  },
+  "GBT": {
+    "model": "GBT",
+    "total_time": 0.0677940845489502,
+    "avg_processing_time": 0,
+    "predictions_count": 0,
+    "avg_prediction": 0,
+    "prediction_std": 0,
+    "success_rate": 0.0
+  },
+  "Causal": {
+    "model": "Causal",
+    "total_time": 0.3319871425628662,
+    "avg_processing_time": 0,
+    "predictions_count": 0,
+    "avg_prediction": 0,
+    "prediction_std": 0,
+    "success_rate": 0.0
+  },
+  "comparison": {
+    "total_time_best": "GBT",
+    "total_time_ranking": [
+      "GBT",
+      "Causal",
+      "HGT"
+    ],
+    "avg_processing_time_best": "HGT",
+    "avg_processing_time_ranking": [
+      "HGT",
+      "GBT",
+      "Causal"
+    ],
+    "success_rate_best": "HGT",
+    "success_rate_ranking": [
+      "HGT",
+      "GBT",
+      "Causal"
+    ],
+    "avg_prediction_best": "HGT",
+    "avg_prediction_ranking": [
+      "HGT",
+      "GBT",
+      "Causal"
+    ]
+  }
+}
