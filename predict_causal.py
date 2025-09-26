@@ -57,7 +57,8 @@ def main():
         warnings_output = run_index_checker(java_file)
         annotations = parse_warnings(warnings_output)
         cfgs = load_cfgs(java_file, args.cfg_output_dir)
-        for cfg_data in cfgs:
+        for cfg_file in cfgs:
+            cfg_data = cfg_file['data']
             # Build dataframe with features and labels
             records = extract_features_and_labels(cfg_data, annotations)
             if not records:

@@ -111,7 +111,7 @@ def load_data():
 
 def load_cfgs(java_file, cfg_output_dir=None):
     """
-    Load the saved CFGs for a given Java file.
+    Load the saved CFGs for a given Java file with proper structure for node-level models.
     """
     if cfg_output_dir is None:
         cfg_output_dir = os.environ.get("CFG_OUTPUT_DIR", "cfg_output")
@@ -128,7 +128,12 @@ def load_cfgs(java_file, cfg_output_dir=None):
                     # Add method name to cfg_data for identification
                     cfg_data['method_name'] = os.path.splitext(cfg_file)[0]
                     cfg_data['java_file'] = java_file
-                    method_cfgs.append(cfg_data)
+                    # Wrap in structure expected by node-level models
+                    method_cfgs.append({
+                        'file': cfg_file_path,
+                        'method': cfg_data.get('method_name', 'unknown'),
+                        'data': cfg_data
+                    })
     else:
         print(f"CFG directory {cfg_dir} does not exist for Java file {java_file}")
     return method_cfgs

@@ -170,7 +170,8 @@ def run_hgt_predictions(slices_dir, cfg_output_dir, model_path, output_file):
                 java_file = os.path.join(root, file)
                 try:
                     cfgs = load_cfgs(java_file, cfg_output_dir)
-                    for cfg_data in cfgs:
+                    for cfg_file in cfgs:
+                        cfg_data = cfg_file['data']
                         data = create_heterodata(cfg_data)
                         if data is not None:
                             sample_graphs.append((cfg_data, data))
@@ -203,7 +204,8 @@ def run_hgt_predictions(slices_dir, cfg_output_dir, model_path, output_file):
                 java_file = os.path.join(root, file)
                 try:
                     cfgs = load_cfgs(java_file, cfg_output_dir)
-                    for cfg_data in cfgs:
+                    for cfg_file in cfgs:
+                        cfg_data = cfg_file['data']
                         data = create_heterodata(cfg_data)
                         if data is not None:
                             data = data.to(device)
@@ -239,7 +241,8 @@ def run_gbt_predictions(slices_dir, cfg_output_dir, model_path, output_file):
                 java_file = os.path.join(root, file)
                 try:
                     cfgs = load_cfgs_gbt(java_file, cfg_output_dir)
-                    for cfg_data in cfgs:
+                    for cfg_file in cfgs:
+                        cfg_data = cfg_file['data']
                         feats = extract_features_from_cfg(cfg_data)
                         if feats is not None:
                             X = np.array([feats])
@@ -276,7 +279,8 @@ def run_causal_predictions(slices_dir, cfg_output_dir, model_path, output_file):
                     annotations = parse_warnings(warnings_output)
                     cfgs = load_cfgs_causal(java_file, cfg_output_dir)
                     
-                    for cfg_data in cfgs:
+                    for cfg_file in cfgs:
+                        cfg_data = cfg_file['data']
                         records = extract_features_and_labels(cfg_data, annotations)
                         if records:
                             import pandas as pd

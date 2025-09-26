@@ -1,0 +1,50 @@
+{
+  "HGT": {
+    "model_name": "HGT",
+    "f1_score": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "accuracy": 0.0,
+    "support": 0,
+    "training_time": 0.0,
+    "prediction_time": 0.0,
+    "difficult_cases": [],
+    "confusion_matrix": [
+      [
+        0
+      ]
+    ]
+  },
+  "GBT": {
+    "model_name": "GBT",
+    "f1_score": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "accuracy": 0.0,
+    "support": 0,
+    "training_time": 0.0,
+    "prediction_time": 0.0,
+    "difficult_cases": [],
+    "confusion_matrix": [
+      [
+        0
+      ]
+    ]
+  },
+  "Causal": {
+    "model_name": "Causal",
+    "f1_score": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "accuracy": 0.0,
+    "support": 0,
+    "training_time": 0.0,
+    "prediction_time": 0.0,
+    "difficult_cases": [],
+    "confusion_matrix": [
+      [
+        0
+      ]
+    ]
+  }
+}

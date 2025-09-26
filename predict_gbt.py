@@ -55,7 +55,8 @@ def main():
     
     for java_file in java_files:
         cfgs = load_cfgs(java_file, args.cfg_output_dir)
-        for cfg_data in cfgs:
+        for cfg_file in cfgs:
+            cfg_data = cfg_file['data']
             # Extract features for the entire CFG
             feats = extract_features_from_cfg(cfg_data)
             if feats is None:

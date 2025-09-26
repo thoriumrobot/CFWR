@@ -1,0 +1,86 @@
+{
+  "HGT": {
+    "model": "HGT",
+    "training_time": 0.7251193523406982,
+    "training_result": {
+      "success": true,
+      "final_loss": 0.36285480856895447,
+      "final_accuracy": 1.0,
+      "training_samples": 50,
+      "epochs": 30
+    },
+    "model_saved": true,
+    "model_path": "models_statistical_test/hgt_node_level.pth",
+    "test_results": {
+      "total_targets": 50,
+      "total_predictions": 50,
+      "total_time": 0.03409242630004883,
+      "avg_time_per_cfg": 0.0006818485260009766,
+      "prediction_rate": 1.0
+    }
+  },
+  "GBT": {
+    "model": "GBT",
+    "training_time": 0.04612994194030762,
+    "training_result": {
+      "success": true,
+      "final_accuracy": 0.6,
+      "final_loss": 0.4,
+      "training_samples": 50,
+      "epochs": 1
+    },
+    "model_saved": true,
+    "model_path": "models_statistical_test/gbt_node_level.pkl",
+    "test_results": {
+      "total_targets": 50,
+      "total_predictions": 0,
+      "total_time": 0.03508949279785156,
+      "avg_time_per_cfg": 0.0007017898559570312,
+      "prediction_rate": 0.0
+    }
+  },
+  "Causal": {
+    "model": "Causal",
+    "training_time": 0.029046058654785156,
+    "training_result": {
+      "success": true,
+      "final_loss": 0.21919651329517365,
+      "final_accuracy": 0.9399999976158142,
+      "training_samples": 50,
+      "epochs": 20
+    },
+    "model_saved": true,
+    "model_path": "models_statistical_test/causal_node_level.pth",
+    "test_results": {
+      "total_targets": 50,
+      "total_predictions": 50,
+      "total_time": 0.04406929016113281,
+      "avg_time_per_cfg": 0.0008813858032226563,
+      "prediction_rate": 1.0
+    }
+  },
+  "summary": {
+    "total_models_trained": 3,
+    "successful_models": 3,
+    "failed_models": 0,
+    "total_training_time": 0.800295352935791,
+    "average_training_time": 0.26676511764526367,
+    "model_performance": {
+      "HGT": {
+        "prediction_rate": 1.0,
+        "avg_prediction_time": 0.0006818485260009766,
+        "total_predictions": 50
+      },
+      "GBT": {
+        "prediction_rate": 0.0,
+        "avg_prediction_time": 0.0007017898559570312,
+        "total_predictions": 0
+      },
+      "Causal": {
+        "prediction_rate": 1.0,
+        "avg_prediction_time": 0.0008813858032226563,
+        "total_predictions": 50
+      }
+    }
+  }
+}

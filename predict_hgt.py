@@ -23,7 +23,8 @@ from hgt import HGTModel, create_heterodata, load_cfgs, label_nodes
 def load_graphs_for_file(java_file, cfg_output_dir):
     graphs = []
     cfgs = load_cfgs(java_file, cfg_output_dir)
-    for cfg_data in cfgs:
+    for cfg_file in cfgs:
+        cfg_data = cfg_file['data']
         data = create_heterodata(cfg_data)
         if data is not None:
             graphs.append((cfg_data, data))
