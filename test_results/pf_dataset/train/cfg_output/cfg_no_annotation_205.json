@@ -1,0 +1,60 @@
+{
+  "method_name": "method_NO_ANNOTATION_205",
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "MethodDecl: diff(int a, int b)",
+      "type": "method",
+      "line_number": 2
+    },
+    {
+      "id": 2,
+      "label": "Statement: int result = a - b",
+      "type": "statement",
+      "line_number": 3
+    },
+    {
+      "id": 3,
+      "label": "Return: return result",
+      "type": "return",
+      "line_number": 4
+    },
+    {
+      "id": 4,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 5
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "result"
+    }
+  ]
+}

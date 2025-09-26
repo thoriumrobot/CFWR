@@ -1,0 +1,76 @@
+{
+  "method_name": "no_annotation_needed_52",
+  "pattern_name": "no_annotation_needed",
+  "complexity": "easy",
+  "expected_annotations": {
+    "result": "NO_ANNOTATION"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public int calculateSum(int a, int b)",
+      "type": "variable_declaration",
+      "line_number": 2,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 2,
+      "label": "int result = a + b;  // result needs no annotation",
+      "type": "variable_declaration",
+      "line_number": 3,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": true
+    },
+    {
+      "id": 3,
+      "label": "return Math.abs(result);",
+      "type": "return",
+      "line_number": 4,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 4,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 5
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "dataflow_edges": [],
+  "java_code": "\npublic int calculateSum(int a, int b) {\n    int result = a + b;  // result needs no annotation\n    return Math.abs(result);\n}",
+  "description": "Variable that doesn't need annotation"
+}

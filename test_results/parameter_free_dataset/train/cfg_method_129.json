@@ -1,0 +1,77 @@
+{
+  "method_name": "loop_count_positive_129",
+  "pattern_name": "loop_count_positive",
+  "complexity": "medium",
+  "target_variables": {
+    "count": "@Positive"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public void repeat(int count)",
+      "type": "statement",
+      "line_number": 2,
+      "target_annotation": "@Positive",
+      "is_target": true,
+      "has_numeric_type": true,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": false,
+      "is_variable": true
+    },
+    {
+      "id": 2,
+      "label": "for (int i = 0; i < count; i++)   // count needs @Positive",
+      "type": "statement",
+      "line_number": 3,
+      "target_annotation": "@Positive",
+      "is_target": true,
+      "has_numeric_type": true,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": true,
+      "has_arithmetic": true,
+      "has_method_call": true,
+      "has_loop_context": true,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": true
+    },
+    {
+      "id": 3,
+      "label": "doSomething();",
+      "type": "control",
+      "line_number": 4,
+      "target_annotation": "NO_ANNOTATION",
+      "is_target": false,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": false
+    },
+    {
+      "id": 4,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 6
+    }
+  ],
+  "java_code": "\npublic void repeat(int count) {\n    for (int i = 0; i < count; i++) {  // count needs @Positive\n        doSomething();\n    }\n}"
+}

@@ -1,0 +1,77 @@
+{
+  "method_name": "search_with_bottom_101",
+  "pattern_name": "search_with_bottom",
+  "complexity": "very_hard",
+  "target_variables": {
+    "index": "@SearchIndexBottom"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public String findFirst(List<String> items, String target)",
+      "type": "control",
+      "line_number": 2,
+      "target_annotation": "NO_ANNOTATION",
+      "is_target": false,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": true,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": true,
+      "is_parameter": false,
+      "is_variable": true
+    },
+    {
+      "id": 2,
+      "label": "int index = items.indexOf(target);  // index can be @SearchIndexBottom",
+      "type": "statement",
+      "line_number": 3,
+      "target_annotation": "@SearchIndexBottom",
+      "is_target": true,
+      "has_numeric_type": true,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": true,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": true,
+      "is_parameter": true,
+      "is_variable": true
+    },
+    {
+      "id": 3,
+      "label": "return index == -1 ? null : items.get(index);",
+      "type": "statement",
+      "line_number": 4,
+      "target_annotation": "@SearchIndexBottom",
+      "is_target": true,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": true,
+      "has_arithmetic": true,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": false
+    },
+    {
+      "id": 4,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 5
+    }
+  ],
+  "java_code": "\npublic String findFirst(List<String> items, String target) {\n    int index = items.indexOf(target);  // index can be @SearchIndexBottom\n    return index == -1 ? null : items.get(index);\n}"
+}

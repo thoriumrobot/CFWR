@@ -1,0 +1,29 @@
+{
+  "train_samples": 160,
+  "test_samples": 40,
+  "patterns": [
+    "array_size_positive",
+    "loop_count_positive",
+    "array_index_nonnegative",
+    "length_calculation_nonnegative",
+    "search_result_gte_neg_one",
+    "search_with_bottom",
+    "no_annotation_needed",
+    "counter_no_annotation"
+  ],
+  "parameter_free_annotations": [
+    "NO_ANNOTATION",
+    "@Positive",
+    "@NonNegative",
+    "@GTENegativeOne",
+    "@SearchIndexBottom"
+  ],
+  "annotation_distribution": {
+    "@Positive": 50,
+    "@NonNegative": 50,
+    "@GTENegativeOne": 25,
+    "@SearchIndexBottom": 25,
+    "NO_ANNOTATION": 50
+  },
+  "focus": "Parameter-free Lower Bound Checker annotations only"
+}

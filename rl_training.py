@@ -76,7 +76,7 @@ class ReinforcementLearningTrainer:
         else:
             raise ValueError(f"Unknown model type: {model_type}")
             
-        self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
+        self.optimizer = optim.AdamW(self.model.parameters(), lr=learning_rate, weight_decay=1e-4)
         self.criterion = nn.CrossEntropyLoss()
         
         # Training statistics

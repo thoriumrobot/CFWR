@@ -1,0 +1,71 @@
+{
+  "method_name": "method_@SearchIndexBottom_193",
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "MethodDecl: getOrNull(List items, String t)",
+      "type": "method",
+      "line_number": 2
+    },
+    {
+      "id": 2,
+      "label": "MethodCall: int index = items.indexOf(t)",
+      "type": "statement",
+      "line_number": 3,
+      "has_method_call": true
+    },
+    {
+      "id": 3,
+      "label": "If: if (index >= 0) return items.get(index)",
+      "type": "statement",
+      "line_number": 4
+    },
+    {
+      "id": 4,
+      "label": "Return: return null",
+      "type": "return",
+      "line_number": 5
+    },
+    {
+      "id": 5,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 6
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "index"
+    }
+  ]
+}

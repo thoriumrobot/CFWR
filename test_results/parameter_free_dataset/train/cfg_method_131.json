@@ -1,0 +1,95 @@
+{
+  "method_name": "length_calculation_nonnegative_131",
+  "pattern_name": "length_calculation_nonnegative",
+  "complexity": "hard",
+  "target_variables": {
+    "padding": "@NonNegative"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public String padString(String text, int padding)",
+      "type": "statement",
+      "line_number": 2,
+      "target_annotation": "@NonNegative",
+      "is_target": true,
+      "has_numeric_type": true,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": false,
+      "is_variable": true
+    },
+    {
+      "id": 2,
+      "label": "StringBuilder sb = new StringBuilder(text.length() + padding);  // padding needs @NonNegative",
+      "type": "statement",
+      "line_number": 3,
+      "target_annotation": "@NonNegative",
+      "is_target": true,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": true,
+      "has_comparison": false,
+      "has_arithmetic": true,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": false
+    },
+    {
+      "id": 3,
+      "label": "sb.append(text);",
+      "type": "control",
+      "line_number": 4,
+      "target_annotation": "NO_ANNOTATION",
+      "is_target": false,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": false
+    },
+    {
+      "id": 4,
+      "label": "return sb.toString();",
+      "type": "control",
+      "line_number": 5,
+      "target_annotation": "NO_ANNOTATION",
+      "is_target": false,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": false
+    },
+    {
+      "id": 5,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 6
+    }
+  ],
+  "java_code": "\npublic String padString(String text, int padding) {\n    StringBuilder sb = new StringBuilder(text.length() + padding);  // padding needs @NonNegative\n    sb.append(text);\n    return sb.toString();\n}"
+}

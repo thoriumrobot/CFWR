@@ -1,0 +1,283 @@
+{
+    "timestamp": "2025-09-26T07:13:10.015315",
+    "dataset_used": "test_results/pf_dataset",
+    "evaluation_type": "Comprehensive Multi-Class Lower Bound Checker Annotation Type Prediction",
+    "target_annotations": [
+        "@Positive",
+        "@NonNegative",
+        "@GTENegativeOne",
+        "@SearchIndexBottom"
+    ],
+    "models": {
+        "AnnotationTypeGBT": {
+            "name": "AnnotationTypeGBT",
+            "accuracy": 0.2,
+            "f1_score_macro": 0.15,
+            "f1_score_weighted": 0.175,
+            "precision": 0.16,
+            "recall": 0.2,
+            "support": 100,
+            "per_class_f1": {
+                "@GTENegativeOne": 0.2,
+                "@NonNegative": 0.25,
+                "@Positive": 0.0,
+                "@SearchIndexBottom": 0.0,
+                "NO_ANNOTATION": 0.0
+            },
+            "annotation_type_f1_scores": {
+                "@Positive": 0.0,
+                "@NonNegative": 0.25,
+                "@GTENegativeOne": 0.2,
+                "@SearchIndexBottom": 0.0
+            },
+            "confusion_matrix": [
+                [
+                    10,
+                    40,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    20,
+                    10,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    20,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "confusion_matrix_labels": [
+                "@GTENegativeOne",
+                "@NonNegative",
+                "@Positive",
+                "@SearchIndexBottom",
+                "NO_ANNOTATION"
+            ]
+        },
+        "AnnotationTypeHGT": {
+            "name": "AnnotationTypeHGT",
+            "accuracy": 0.3,
+            "f1_score_macro": 0.15384615384615385,
+            "f1_score_weighted": 0.13846153846153847,
+            "precision": 0.09,
+            "recall": 0.3,
+            "support": 100,
+            "per_class_f1": {
+                "@GTENegativeOne": 0.0,
+                "@NonNegative": 0.46153846153846156,
+                "@Positive": 0.0,
+                "@SearchIndexBottom": 0.0,
+                "NO_ANNOTATION": 0.0
+            },
+            "annotation_type_f1_scores": {
+                "@Positive": 0.0,
+                "@NonNegative": 0.46153846153846156,
+                "@GTENegativeOne": 0.0,
+                "@SearchIndexBottom": 0.0
+            },
+            "confusion_matrix": [
+                [
+                    0,
+                    50,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    30,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    20,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "confusion_matrix_labels": [
+                "@GTENegativeOne",
+                "@NonNegative",
+                "@Positive",
+                "@SearchIndexBottom",
+                "NO_ANNOTATION"
+            ]
+        },
+        "AnnotationTypeCausal": {
+            "name": "AnnotationTypeCausal",
+            "accuracy": 0.3,
+            "f1_score_macro": 0.15384615384615385,
+            "f1_score_weighted": 0.13846153846153847,
+            "precision": 0.09,
+            "recall": 0.3,
+            "support": 100,
+            "per_class_f1": {
+                "@GTENegativeOne": 0.0,
+                "@NonNegative": 0.46153846153846156,
+                "@Positive": 0.0,
+                "@SearchIndexBottom": 0.0,
+                "NO_ANNOTATION": 0.0
+            },
+            "annotation_type_f1_scores": {
+                "@Positive": 0.0,
+                "@NonNegative": 0.46153846153846156,
+                "@GTENegativeOne": 0.0,
+                "@SearchIndexBottom": 0.0
+            },
+            "confusion_matrix": [
+                [
+                    0,
+                    50,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    30,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    20,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "confusion_matrix_labels": [
+                "@GTENegativeOne",
+                "@NonNegative",
+                "@Positive",
+                "@SearchIndexBottom",
+                "NO_ANNOTATION"
+            ]
+        },
+        "SGCFGNet": {
+            "name": "SGCFGNet",
+            "accuracy": 0.4,
+            "f1_score_macro": 0.16666666666666666,
+            "f1_score_weighted": 0.31666666666666665,
+            "precision": 0.6,
+            "recall": 0.4,
+            "support": 100,
+            "per_class_f1": {
+                "@GTENegativeOne": 0.3333333333333333,
+                "@NonNegative": 0.5,
+                "@Positive": 0.0,
+                "@SearchIndexBottom": 0.0,
+                "NO_ANNOTATION": 0.0
+            },
+            "annotation_type_f1_scores": {
+                "@GTENegativeOne": 0.3333333333333333,
+                "@NonNegative": 0.5,
+                "@Positive": 0.0,
+                "@SearchIndexBottom": 0.0
+            },
+            "confusion_matrix": [
+                [
+                    10,
+                    40,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    30,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    20,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "confusion_matrix_labels": [
+                "@GTENegativeOne",
+                "@NonNegative",
+                "@Positive",
+                "@SearchIndexBottom",
+                "NO_ANNOTATION"
+            ]
+        }
+    },
+    "best_performance": {
+        "f1_score": 0.31666666666666665,
+        "f1_model": "SGCFGNet",
+        "accuracy": 0.4,
+        "accuracy_model": "SGCFGNet"
+    }
+}

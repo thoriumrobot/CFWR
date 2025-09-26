@@ -1,0 +1,117 @@
+{
+  "method_name": "search_result_149",
+  "pattern_name": "search_result",
+  "complexity": "hard",
+  "expected_annotations": {
+    "index": "@SearchIndexFor"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public String getItem(List<String> items, String target)",
+      "type": "variable_declaration",
+      "line_number": 2,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": true,
+      "has_arithmetic": false
+    },
+    {
+      "id": 2,
+      "label": "int index = items.indexOf(target);  // index needs @SearchIndexFor(\"items\")",
+      "type": "variable_declaration",
+      "line_number": 3,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": true,
+      "has_comparison": false,
+      "has_arithmetic": true
+    },
+    {
+      "id": 3,
+      "label": "if (index >= 0)",
+      "type": "condition",
+      "line_number": 4,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": true,
+      "has_arithmetic": false
+    },
+    {
+      "id": 4,
+      "label": "return items.get(index);",
+      "type": "return",
+      "line_number": 5,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": true,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 5,
+      "label": "return null;",
+      "type": "return",
+      "line_number": 7,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 6,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 8
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "var_2"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "var_2"
+    }
+  ],
+  "java_code": "\npublic String getItem(List<String> items, String target) {\n    int index = items.indexOf(target);  // index needs @SearchIndexFor(\"items\")\n    if (index >= 0) {\n        return items.get(index);\n    }\n    return null;\n}",
+  "description": "Search result index requiring @SearchIndexFor"
+}

@@ -1,0 +1,3753 @@
+{
+    "AnnotationTypeGBT": {
+        "model": "AnnotationTypeGBT",
+        "accuracy": 0.2,
+        "f1_score_macro": 0.15,
+        "f1_score_weighted": 0.175,
+        "precision": 0.16,
+        "recall": 0.2,
+        "support": 100,
+        "per_class_f1": {
+            "@GTENegativeOne": 0.2,
+            "@NonNegative": 0.25,
+            "@Positive": 0.0,
+            "@SearchIndexBottom": 0.0,
+            "NO_ANNOTATION": 0.0
+        },
+        "annotation_type_f1_scores": {
+            "@Positive": 0.0,
+            "@NonNegative": 0.25,
+            "@GTENegativeOne": 0.2,
+            "@SearchIndexBottom": 0.0
+        },
+        "confusion_matrix": [
+            [
+                10,
+                40,
+                0,
+                0,
+                0
+            ],
+            [
+                20,
+                10,
+                0,
+                0,
+                0
+            ],
+            [
+                20,
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        ],
+        "confusion_matrix_labels": [
+            "@GTENegativeOne",
+            "@NonNegative",
+            "@Positive",
+            "@SearchIndexBottom",
+            "NO_ANNOTATION"
+        ],
+        "classification_report": {
+            "@GTENegativeOne": {
+                "precision": 0.2,
+                "recall": 0.2,
+                "f1-score": 0.2,
+                "support": 50.0
+            },
+            "@NonNegative": {
+                "precision": 0.2,
+                "recall": 0.3333333333333333,
+                "f1-score": 0.25,
+                "support": 30.0
+            },
+            "@Positive": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 20.0
+            },
+            "@SearchIndexBottom": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 0.0
+            },
+            "NO_ANNOTATION": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 0.0
+            },
+            "accuracy": 0.2,
+            "macro avg": {
+                "precision": 0.08,
+                "recall": 0.10666666666666666,
+                "f1-score": 0.09,
+                "support": 100.0
+            },
+            "weighted avg": {
+                "precision": 0.16,
+                "recall": 0.2,
+                "f1-score": 0.175,
+                "support": 100.0
+            }
+        },
+        "detailed_predictions": [
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
+                "method": "method_@GTENegativeOne_26",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
+                "method": "method_@GTENegativeOne_26",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
+                "method": "method_@GTENegativeOne_26",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_3.json",
+                "method": "method_@Positive_3",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
+                "method": "method_NO_ANNOTATION_40",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
+                "method": "method_NO_ANNOTATION_40",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
+                "method": "method_@SearchIndexBottom_33",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
+                "method": "method_@SearchIndexBottom_33",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
+                "method": "method_@NonNegative_11",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
+                "method": "method_@NonNegative_11",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
+                "method": "method_NO_ANNOTATION_44",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
+                "method": "method_NO_ANNOTATION_44",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
+                "method": "method_@SearchIndexBottom_37",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
+                "method": "method_@SearchIndexBottom_37",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
+                "method": "method_@GTENegativeOne_22",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
+                "method": "method_@GTENegativeOne_22",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
+                "method": "method_@GTENegativeOne_22",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_7.json",
+                "method": "method_@Positive_7",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
+                "method": "method_@NonNegative_15",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
+                "method": "method_@NonNegative_15",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
+                "method": "method_@NonNegative_19",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
+                "method": "method_@NonNegative_19",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
+                "method": "method_NO_ANNOTATION_48",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
+                "method": "method_NO_ANNOTATION_48",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
+                "method": "method_@NonNegative_18",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
+                "method": "method_@NonNegative_18",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
+                "method": "method_NO_ANNOTATION_49",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
+                "method": "method_NO_ANNOTATION_49",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
+                "method": "method_@GTENegativeOne_27",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
+                "method": "method_@GTENegativeOne_27",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
+                "method": "method_@GTENegativeOne_27",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_2.json",
+                "method": "method_@Positive_2",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
+                "method": "method_@SearchIndexBottom_32",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
+                "method": "method_@SearchIndexBottom_32",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
+                "method": "method_NO_ANNOTATION_41",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
+                "method": "method_NO_ANNOTATION_41",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
+                "method": "method_@NonNegative_10",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
+                "method": "method_@NonNegative_10",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
+                "method": "method_@SearchIndexBottom_36",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
+                "method": "method_@SearchIndexBottom_36",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
+                "method": "method_NO_ANNOTATION_45",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
+                "method": "method_NO_ANNOTATION_45",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
+                "method": "method_@GTENegativeOne_23",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
+                "method": "method_@GTENegativeOne_23",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
+                "method": "method_@GTENegativeOne_23",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_6.json",
+                "method": "method_@Positive_6",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
+                "method": "method_@NonNegative_14",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
+                "method": "method_@NonNegative_14",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_8.json",
+                "method": "method_@Positive_8",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
+                "method": "method_@SearchIndexBottom_38",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
+                "method": "method_@SearchIndexBottom_38",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
+                "method": "method_@GTENegativeOne_29",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
+                "method": "method_@GTENegativeOne_29",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
+                "method": "method_@GTENegativeOne_29",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
+                "method": "method_@GTENegativeOne_25",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
+                "method": "method_@GTENegativeOne_25",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
+                "method": "method_@GTENegativeOne_25",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_0.json",
+                "method": "method_@Positive_0",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
+                "method": "method_NO_ANNOTATION_43",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
+                "method": "method_NO_ANNOTATION_43",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
+                "method": "method_@SearchIndexBottom_30",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
+                "method": "method_@SearchIndexBottom_30",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
+                "method": "method_@NonNegative_12",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
+                "method": "method_@NonNegative_12",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
+                "method": "method_NO_ANNOTATION_47",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
+                "method": "method_NO_ANNOTATION_47",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
+                "method": "method_@SearchIndexBottom_34",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
+                "method": "method_@SearchIndexBottom_34",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
+                "method": "method_@GTENegativeOne_21",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
+                "method": "method_@GTENegativeOne_21",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
+                "method": "method_@GTENegativeOne_21",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_4.json",
+                "method": "method_@Positive_4",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
+                "method": "method_@NonNegative_16",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
+                "method": "method_@NonNegative_16",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
+                "method": "method_@GTENegativeOne_24",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
+                "method": "method_@GTENegativeOne_24",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
+                "method": "method_@GTENegativeOne_24",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_1.json",
+                "method": "method_@Positive_1",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
+                "method": "method_@SearchIndexBottom_31",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
+                "method": "method_@SearchIndexBottom_31",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
+                "method": "method_NO_ANNOTATION_42",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
+                "method": "method_NO_ANNOTATION_42",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
+                "method": "method_@NonNegative_13",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
+                "method": "method_@NonNegative_13",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
+                "method": "method_@SearchIndexBottom_35",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
+                "method": "method_@SearchIndexBottom_35",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
+                "method": "method_NO_ANNOTATION_46",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
+                "method": "method_NO_ANNOTATION_46",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9953388810526688
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
+                "method": "method_@GTENegativeOne_20",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
+                "method": "method_@GTENegativeOne_20",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
+                "method": "method_@GTENegativeOne_20",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_5.json",
+                "method": "method_@Positive_5",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
+                "method": "method_@NonNegative_17",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
+                "method": "method_@NonNegative_17",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_9.json",
+                "method": "method_@Positive_9",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9441413117783595
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
+                "method": "method_@SearchIndexBottom_39",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.6298491223990872
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
+                "method": "method_@SearchIndexBottom_39",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
+                "method": "method_@GTENegativeOne_28",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@GTENegativeOne",
+                "prediction_confidence": 0.9745070796002413
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
+                "method": "method_@GTENegativeOne_28",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
+                "method": "method_@GTENegativeOne_28",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9980910923283857
+            }
+        ]
+    },
+    "AnnotationTypeHGT": {
+        "model": "AnnotationTypeHGT",
+        "accuracy": 0.3,
+        "f1_score_macro": 0.15384615384615385,
+        "f1_score_weighted": 0.13846153846153847,
+        "precision": 0.09,
+        "recall": 0.3,
+        "support": 100,
+        "per_class_f1": {
+            "@GTENegativeOne": 0.0,
+            "@NonNegative": 0.46153846153846156,
+            "@Positive": 0.0,
+            "@SearchIndexBottom": 0.0,
+            "NO_ANNOTATION": 0.0
+        },
+        "annotation_type_f1_scores": {
+            "@Positive": 0.0,
+            "@NonNegative": 0.46153846153846156,
+            "@GTENegativeOne": 0.0,
+            "@SearchIndexBottom": 0.0
+        },
+        "confusion_matrix": [
+            [
+                0,
+                50,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                30,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                20,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        ],
+        "confusion_matrix_labels": [
+            "@GTENegativeOne",
+            "@NonNegative",
+            "@Positive",
+            "@SearchIndexBottom",
+            "NO_ANNOTATION"
+        ],
+        "classification_report": {
+            "@GTENegativeOne": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 50.0
+            },
+            "@NonNegative": {
+                "precision": 0.3,
+                "recall": 1.0,
+                "f1-score": 0.46153846153846156,
+                "support": 30.0
+            },
+            "@Positive": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 20.0
+            },
+            "@SearchIndexBottom": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 0.0
+            },
+            "NO_ANNOTATION": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 0.0
+            },
+            "accuracy": 0.3,
+            "macro avg": {
+                "precision": 0.06,
+                "recall": 0.2,
+                "f1-score": 0.09230769230769231,
+                "support": 100.0
+            },
+            "weighted avg": {
+                "precision": 0.09,
+                "recall": 0.3,
+                "f1-score": 0.13846153846153847,
+                "support": 100.0
+            }
+        },
+        "detailed_predictions": [
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
+                "method": "method_@GTENegativeOne_26",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
+                "method": "method_@GTENegativeOne_26",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
+                "method": "method_@GTENegativeOne_26",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_3.json",
+                "method": "method_@Positive_3",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
+                "method": "method_NO_ANNOTATION_40",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
+                "method": "method_NO_ANNOTATION_40",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
+                "method": "method_@SearchIndexBottom_33",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
+                "method": "method_@SearchIndexBottom_33",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
+                "method": "method_@NonNegative_11",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
+                "method": "method_@NonNegative_11",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
+                "method": "method_NO_ANNOTATION_44",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
+                "method": "method_NO_ANNOTATION_44",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
+                "method": "method_@SearchIndexBottom_37",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
+                "method": "method_@SearchIndexBottom_37",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
+                "method": "method_@GTENegativeOne_22",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
+                "method": "method_@GTENegativeOne_22",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
+                "method": "method_@GTENegativeOne_22",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_7.json",
+                "method": "method_@Positive_7",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
+                "method": "method_@NonNegative_15",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
+                "method": "method_@NonNegative_15",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
+                "method": "method_@NonNegative_19",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
+                "method": "method_@NonNegative_19",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
+                "method": "method_NO_ANNOTATION_48",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
+                "method": "method_NO_ANNOTATION_48",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
+                "method": "method_@NonNegative_18",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
+                "method": "method_@NonNegative_18",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
+                "method": "method_NO_ANNOTATION_49",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
+                "method": "method_NO_ANNOTATION_49",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
+                "method": "method_@GTENegativeOne_27",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
+                "method": "method_@GTENegativeOne_27",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
+                "method": "method_@GTENegativeOne_27",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_2.json",
+                "method": "method_@Positive_2",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
+                "method": "method_@SearchIndexBottom_32",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
+                "method": "method_@SearchIndexBottom_32",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
+                "method": "method_NO_ANNOTATION_41",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
+                "method": "method_NO_ANNOTATION_41",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
+                "method": "method_@NonNegative_10",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
+                "method": "method_@NonNegative_10",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
+                "method": "method_@SearchIndexBottom_36",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
+                "method": "method_@SearchIndexBottom_36",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
+                "method": "method_NO_ANNOTATION_45",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
+                "method": "method_NO_ANNOTATION_45",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
+                "method": "method_@GTENegativeOne_23",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
+                "method": "method_@GTENegativeOne_23",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
+                "method": "method_@GTENegativeOne_23",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_6.json",
+                "method": "method_@Positive_6",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
+                "method": "method_@NonNegative_14",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
+                "method": "method_@NonNegative_14",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_8.json",
+                "method": "method_@Positive_8",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
+                "method": "method_@SearchIndexBottom_38",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
+                "method": "method_@SearchIndexBottom_38",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
+                "method": "method_@GTENegativeOne_29",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
+                "method": "method_@GTENegativeOne_29",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
+                "method": "method_@GTENegativeOne_29",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
+                "method": "method_@GTENegativeOne_25",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
+                "method": "method_@GTENegativeOne_25",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
+                "method": "method_@GTENegativeOne_25",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_0.json",
+                "method": "method_@Positive_0",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
+                "method": "method_NO_ANNOTATION_43",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
+                "method": "method_NO_ANNOTATION_43",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
+                "method": "method_@SearchIndexBottom_30",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
+                "method": "method_@SearchIndexBottom_30",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
+                "method": "method_@NonNegative_12",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
+                "method": "method_@NonNegative_12",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
+                "method": "method_NO_ANNOTATION_47",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
+                "method": "method_NO_ANNOTATION_47",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
+                "method": "method_@SearchIndexBottom_34",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
+                "method": "method_@SearchIndexBottom_34",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
+                "method": "method_@GTENegativeOne_21",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
+                "method": "method_@GTENegativeOne_21",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
+                "method": "method_@GTENegativeOne_21",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_4.json",
+                "method": "method_@Positive_4",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
+                "method": "method_@NonNegative_16",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
+                "method": "method_@NonNegative_16",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
+                "method": "method_@GTENegativeOne_24",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
+                "method": "method_@GTENegativeOne_24",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
+                "method": "method_@GTENegativeOne_24",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_1.json",
+                "method": "method_@Positive_1",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
+                "method": "method_@SearchIndexBottom_31",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
+                "method": "method_@SearchIndexBottom_31",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
+                "method": "method_NO_ANNOTATION_42",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
+                "method": "method_NO_ANNOTATION_42",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
+                "method": "method_@NonNegative_13",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
+                "method": "method_@NonNegative_13",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
+                "method": "method_@SearchIndexBottom_35",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
+                "method": "method_@SearchIndexBottom_35",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
+                "method": "method_NO_ANNOTATION_46",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5902144908905029
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
+                "method": "method_NO_ANNOTATION_46",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6294909715652466
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
+                "method": "method_@GTENegativeOne_20",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
+                "method": "method_@GTENegativeOne_20",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
+                "method": "method_@GTENegativeOne_20",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_5.json",
+                "method": "method_@Positive_5",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
+                "method": "method_@NonNegative_17",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.589875340461731
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
+                "method": "method_@NonNegative_17",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.627383291721344
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_9.json",
+                "method": "method_@Positive_9",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5977765321731567
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
+                "method": "method_@SearchIndexBottom_39",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5450690984725952
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
+                "method": "method_@SearchIndexBottom_39",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6060953140258789
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
+                "method": "method_@GTENegativeOne_28",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.5663430690765381
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
+                "method": "method_@GTENegativeOne_28",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6751623153686523
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
+                "method": "method_@GTENegativeOne_28",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.6177029609680176
+            }
+        ]
+    },
+    "AnnotationTypeCausal": {
+        "model": "AnnotationTypeCausal",
+        "accuracy": 0.3,
+        "f1_score_macro": 0.15384615384615385,
+        "f1_score_weighted": 0.13846153846153847,
+        "precision": 0.09,
+        "recall": 0.3,
+        "support": 100,
+        "per_class_f1": {
+            "@GTENegativeOne": 0.0,
+            "@NonNegative": 0.46153846153846156,
+            "@Positive": 0.0,
+            "@SearchIndexBottom": 0.0,
+            "NO_ANNOTATION": 0.0
+        },
+        "annotation_type_f1_scores": {
+            "@Positive": 0.0,
+            "@NonNegative": 0.46153846153846156,
+            "@GTENegativeOne": 0.0,
+            "@SearchIndexBottom": 0.0
+        },
+        "confusion_matrix": [
+            [
+                0,
+                50,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                30,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                20,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        ],
+        "confusion_matrix_labels": [
+            "@GTENegativeOne",
+            "@NonNegative",
+            "@Positive",
+            "@SearchIndexBottom",
+            "NO_ANNOTATION"
+        ],
+        "classification_report": {
+            "@GTENegativeOne": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 50.0
+            },
+            "@NonNegative": {
+                "precision": 0.3,
+                "recall": 1.0,
+                "f1-score": 0.46153846153846156,
+                "support": 30.0
+            },
+            "@Positive": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 20.0
+            },
+            "@SearchIndexBottom": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 0.0
+            },
+            "NO_ANNOTATION": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 0.0
+            },
+            "accuracy": 0.3,
+            "macro avg": {
+                "precision": 0.06,
+                "recall": 0.2,
+                "f1-score": 0.09230769230769231,
+                "support": 100.0
+            },
+            "weighted avg": {
+                "precision": 0.09,
+                "recall": 0.3,
+                "f1-score": 0.13846153846153847,
+                "support": 100.0
+            }
+        },
+        "detailed_predictions": [
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
+                "method": "method_@GTENegativeOne_26",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
+                "method": "method_@GTENegativeOne_26",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_26.json",
+                "method": "method_@GTENegativeOne_26",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_3.json",
+                "method": "method_@Positive_3",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
+                "method": "method_NO_ANNOTATION_40",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_40.json",
+                "method": "method_NO_ANNOTATION_40",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
+                "method": "method_@SearchIndexBottom_33",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_33.json",
+                "method": "method_@SearchIndexBottom_33",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
+                "method": "method_@NonNegative_11",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_11.json",
+                "method": "method_@NonNegative_11",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
+                "method": "method_NO_ANNOTATION_44",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_44.json",
+                "method": "method_NO_ANNOTATION_44",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
+                "method": "method_@SearchIndexBottom_37",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_37.json",
+                "method": "method_@SearchIndexBottom_37",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
+                "method": "method_@GTENegativeOne_22",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
+                "method": "method_@GTENegativeOne_22",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_22.json",
+                "method": "method_@GTENegativeOne_22",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_7.json",
+                "method": "method_@Positive_7",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
+                "method": "method_@NonNegative_15",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_15.json",
+                "method": "method_@NonNegative_15",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
+                "method": "method_@NonNegative_19",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_19.json",
+                "method": "method_@NonNegative_19",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
+                "method": "method_NO_ANNOTATION_48",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_48.json",
+                "method": "method_NO_ANNOTATION_48",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
+                "method": "method_@NonNegative_18",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_18.json",
+                "method": "method_@NonNegative_18",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
+                "method": "method_NO_ANNOTATION_49",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_49.json",
+                "method": "method_NO_ANNOTATION_49",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
+                "method": "method_@GTENegativeOne_27",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
+                "method": "method_@GTENegativeOne_27",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_27.json",
+                "method": "method_@GTENegativeOne_27",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_2.json",
+                "method": "method_@Positive_2",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
+                "method": "method_@SearchIndexBottom_32",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_32.json",
+                "method": "method_@SearchIndexBottom_32",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
+                "method": "method_NO_ANNOTATION_41",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_41.json",
+                "method": "method_NO_ANNOTATION_41",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
+                "method": "method_@NonNegative_10",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_10.json",
+                "method": "method_@NonNegative_10",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
+                "method": "method_@SearchIndexBottom_36",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_36.json",
+                "method": "method_@SearchIndexBottom_36",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
+                "method": "method_NO_ANNOTATION_45",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_45.json",
+                "method": "method_NO_ANNOTATION_45",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
+                "method": "method_@GTENegativeOne_23",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
+                "method": "method_@GTENegativeOne_23",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_23.json",
+                "method": "method_@GTENegativeOne_23",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_6.json",
+                "method": "method_@Positive_6",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
+                "method": "method_@NonNegative_14",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_14.json",
+                "method": "method_@NonNegative_14",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_8.json",
+                "method": "method_@Positive_8",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
+                "method": "method_@SearchIndexBottom_38",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_38.json",
+                "method": "method_@SearchIndexBottom_38",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
+                "method": "method_@GTENegativeOne_29",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
+                "method": "method_@GTENegativeOne_29",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_29.json",
+                "method": "method_@GTENegativeOne_29",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
+                "method": "method_@GTENegativeOne_25",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
+                "method": "method_@GTENegativeOne_25",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_25.json",
+                "method": "method_@GTENegativeOne_25",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_0.json",
+                "method": "method_@Positive_0",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
+                "method": "method_NO_ANNOTATION_43",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_43.json",
+                "method": "method_NO_ANNOTATION_43",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
+                "method": "method_@SearchIndexBottom_30",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_30.json",
+                "method": "method_@SearchIndexBottom_30",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
+                "method": "method_@NonNegative_12",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_12.json",
+                "method": "method_@NonNegative_12",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
+                "method": "method_NO_ANNOTATION_47",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_47.json",
+                "method": "method_NO_ANNOTATION_47",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
+                "method": "method_@SearchIndexBottom_34",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_34.json",
+                "method": "method_@SearchIndexBottom_34",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
+                "method": "method_@GTENegativeOne_21",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
+                "method": "method_@GTENegativeOne_21",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_21.json",
+                "method": "method_@GTENegativeOne_21",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_4.json",
+                "method": "method_@Positive_4",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
+                "method": "method_@NonNegative_16",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_16.json",
+                "method": "method_@NonNegative_16",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
+                "method": "method_@GTENegativeOne_24",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
+                "method": "method_@GTENegativeOne_24",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_24.json",
+                "method": "method_@GTENegativeOne_24",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_1.json",
+                "method": "method_@Positive_1",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
+                "method": "method_@SearchIndexBottom_31",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_31.json",
+                "method": "method_@SearchIndexBottom_31",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
+                "method": "method_NO_ANNOTATION_42",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_42.json",
+                "method": "method_NO_ANNOTATION_42",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
+                "method": "method_@NonNegative_13",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_13.json",
+                "method": "method_@NonNegative_13",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
+                "method": "method_@SearchIndexBottom_35",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_35.json",
+                "method": "method_@SearchIndexBottom_35",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
+                "method": "method_NO_ANNOTATION_46",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: diff(int a, int b)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.49890419840812683
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_no_annotation_46.json",
+                "method": "method_NO_ANNOTATION_46",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int result = a - b",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.599619448184967
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
+                "method": "method_@GTENegativeOne_20",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
+                "method": "method_@GTENegativeOne_20",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_20.json",
+                "method": "method_@GTENegativeOne_20",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_5.json",
+                "method": "method_@Positive_5",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
+                "method": "method_@NonNegative_17",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: process(List items, int startIndex)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8372695446014404
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_nonnegative_17.json",
+                "method": "method_@NonNegative_17",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.9366419911384583
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_positive_9.json",
+                "method": "method_@Positive_9",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: createBuffer(int size)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.695096492767334
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
+                "method": "method_@SearchIndexBottom_39",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: getOrNull(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7079704999923706
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_searchindexbottom_39.json",
+                "method": "method_@SearchIndexBottom_39",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "MethodCall: int index = items.indexOf(t)",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7994607090950012
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
+                "method": "method_@GTENegativeOne_28",
+                "node_id": 1,
+                "line_number": 2,
+                "node_type": "method",
+                "node_label": "MethodDecl: find(List items, String t)",
+                "actual_annotation_type": "@Positive",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7413551211357117
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
+                "method": "method_@GTENegativeOne_28",
+                "node_id": 2,
+                "line_number": 3,
+                "node_type": "statement",
+                "node_label": "Statement: int index = -1",
+                "actual_annotation_type": "@GTENegativeOne",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.7249730825424194
+            },
+            {
+                "file": "test_results/pf_dataset/test/cfg_output/cfg_gtenegativeone_28.json",
+                "method": "method_@GTENegativeOne_28",
+                "node_id": 3,
+                "line_number": 4,
+                "node_type": "statement",
+                "node_label": "ForLoop: for (int i = 0; i < items.size(); i++)",
+                "actual_annotation_type": "@NonNegative",
+                "predicted_annotation_type": "@NonNegative",
+                "prediction_confidence": 0.8752674460411072
+            }
+        ]
+    },
+    "SGCFGNet": {
+        "model": "SGCFGNet",
+        "accuracy": 0.4,
+        "f1_score_macro": 0.16666666666666666,
+        "f1_score_weighted": 0.31666666666666665,
+        "precision": 0.6,
+        "recall": 0.4,
+        "support": 100,
+        "per_class_f1": {
+            "@GTENegativeOne": 0.3333333333333333,
+            "@NonNegative": 0.5,
+            "@Positive": 0.0,
+            "@SearchIndexBottom": 0.0,
+            "NO_ANNOTATION": 0.0
+        },
+        "annotation_type_f1_scores": {
+            "@GTENegativeOne": 0.3333333333333333,
+            "@NonNegative": 0.5,
+            "@Positive": 0.0,
+            "@SearchIndexBottom": 0.0
+        },
+        "confusion_matrix": [
+            [
+                10,
+                40,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                30,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                20,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        ],
+        "confusion_matrix_labels": [
+            "@GTENegativeOne",
+            "@NonNegative",
+            "@Positive",
+            "@SearchIndexBottom",
+            "NO_ANNOTATION"
+        ],
+        "classification_report": {
+            "@GTENegativeOne": {
+                "precision": 1.0,
+                "recall": 0.2,
+                "f1-score": 0.3333333333333333,
+                "support": 50.0
+            },
+            "@NonNegative": {
+                "precision": 0.3333333333333333,
+                "recall": 1.0,
+                "f1-score": 0.5,
+                "support": 30.0
+            },
+            "@Positive": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 20.0
+            },
+            "@SearchIndexBottom": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 0.0
+            },
+            "NO_ANNOTATION": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1-score": 0.0,
+                "support": 0.0
+            },
+            "accuracy": 0.4,
+            "macro avg": {
+                "precision": 0.26666666666666666,
+                "recall": 0.24,
+                "f1-score": 0.16666666666666666,
+                "support": 100.0
+            },
+            "weighted avg": {
+                "precision": 0.6,
+                "recall": 0.4,
+                "f1-score": 0.31666666666666665,
+                "support": 100.0
+            }
+        },
+        "detailed_predictions": []
+    }
+}

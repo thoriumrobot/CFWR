@@ -164,12 +164,20 @@ class RLTrainingPipeline:
                 try:
                     # Create output path maintaining directory structure
                     rel_path = os.path.relpath(java_file, slices_dir)
-                    output_path = os.path.join(augmented_dir, rel_path)
-                    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+                    base_name = os.path.splitext(rel_path)[0]
+                    os.makedirs(os.path.dirname(os.path.join(augmented_dir, rel_path)), exist_ok=True)
                     
-                    # Augment the file
-                    augment_file(java_file, output_path)
-                    augmented_count += 1
+                    # Create 10 variants per file (factor of 10)
+                    for variant_idx in range(10):
+                        variant_dir = os.path.join(augmented_dir, f"{base_name}__aug{variant_idx}")
+                        os.makedirs(variant_dir, exist_ok=True)
+                        output_path = os.path.join(variant_dir, os.path.basename(rel_path))
+                        
+                        # Augment the file
+                        augmented_content = augment_file(java_file, variant_idx)
+                        with open(output_path, 'w') as f:
+                            f.write(augmented_content)
+                        augmented_count += 1
                 except Exception as e:
                     logger.warning(f"Failed to augment {java_file}: {e}")
                     continue

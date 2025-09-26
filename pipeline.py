@@ -204,7 +204,7 @@ def main():
     parser.add_argument('--cfwr_root', default=os.getcwd(), help='CFWR root (slice step)')
     parser.add_argument('--original_root', default=ORIGINAL_DIR_DEFAULT, help='Original projects root for bulk prediction')
     parser.add_argument('--augmented_dir', default=AUGMENTED_DIR_DEFAULT, help='Output directory for augmented slices')
-    parser.add_argument('--augment_variants', type=int, default=3, help='Variants per original slice for augmentation')
+    parser.add_argument('--augment_variants', type=int, default=10, help='Variants per original slice for augmentation')
     parser.add_argument('--slicer', default='cf', choices=['cf','wala','specimin'], help='Slicer to use (cf=CheckerFrameworkSlicer, wala, or specimin)')
     args = parser.parse_args()
 

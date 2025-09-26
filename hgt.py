@@ -341,10 +341,10 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = model.to(device)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.005)
+    optimizer = optim.AdamW(model.parameters(), lr=0.001, weight_decay=1e-4)
 
     best_val_loss = float('inf')
-    num_epochs = 20
+    num_epochs = 40
 
     for epoch in range(num_epochs):
         model.train()

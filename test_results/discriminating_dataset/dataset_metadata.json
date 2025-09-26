@@ -1,0 +1,44 @@
+{
+  "train_samples": 200,
+  "test_samples": 50,
+  "patterns": [
+    "array_indexing_simple",
+    "length_validation",
+    "search_result",
+    "no_annotation_needed",
+    "loop_bounds",
+    "substring_operation",
+    "array_creation",
+    "complex_indexing",
+    "misleading_index",
+    "collection_constraints"
+  ],
+  "annotation_types": [
+    "NO_ANNOTATION",
+    "@Positive",
+    "@NonNegative",
+    "@GTENegativeOne",
+    "@MinLen",
+    "@ArrayLen",
+    "@LengthOf",
+    "@LTLengthOf",
+    "@GTLengthOf",
+    "@IndexFor",
+    "@SearchIndexFor",
+    "@SearchIndexBottom"
+  ],
+  "complexity_distribution": {
+    "medium": 93,
+    "very_hard": 43,
+    "easy": 60,
+    "hard": 54
+  },
+  "annotation_distribution": {
+    "@NonNegative": 46,
+    "@IndexFor": 44,
+    "NO_ANNOTATION": 49,
+    "@Positive": 79,
+    "@SearchIndexFor": 24,
+    "@LTLengthOf": 30
+  }
+}

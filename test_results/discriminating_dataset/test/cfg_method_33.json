@@ -1,0 +1,142 @@
+{
+  "method_name": "misleading_index_33",
+  "pattern_name": "misleading_index",
+  "complexity": "very_hard",
+  "expected_annotations": {
+    "lastIndex": "NO_ANNOTATION"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public int findLastOccurrence(List<String> items, String target)",
+      "type": "variable_declaration",
+      "line_number": 2,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": true,
+      "has_arithmetic": false
+    },
+    {
+      "id": 2,
+      "label": "int lastIndex = -1;  // lastIndex can be -1, so NO annotation needed",
+      "type": "variable_declaration",
+      "line_number": 3,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": true
+    },
+    {
+      "id": 3,
+      "label": "for (int i = 0; i < items.size(); i++)",
+      "type": "variable_declaration",
+      "line_number": 4,
+      "has_array_access": false,
+      "has_length_call": true,
+      "has_indexing": false,
+      "has_comparison": true,
+      "has_arithmetic": true
+    },
+    {
+      "id": 4,
+      "label": "if (items.get(i).equals(target))",
+      "type": "condition",
+      "line_number": 5,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": true,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 5,
+      "label": "lastIndex = i;",
+      "type": "assignment",
+      "line_number": 6,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 6,
+      "label": "return lastIndex;",
+      "type": "return",
+      "line_number": 9,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 7,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 10
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "var_1"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "var_1"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "var_2"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "var_3"
+    }
+  ],
+  "java_code": "\npublic int findLastOccurrence(List<String> items, String target) {\n    int lastIndex = -1;  // lastIndex can be -1, so NO annotation needed\n    for (int i = 0; i < items.size(); i++) {\n        if (items.get(i).equals(target)) {\n            lastIndex = i;\n        }\n    }\n    return lastIndex;\n}",
+  "description": "Misleading case where index can be negative"
+}

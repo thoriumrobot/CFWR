@@ -1,49 +1,64 @@
 {
   "HGT": {
-    "model_name": "HGT",
-    "f1_score": 0.0,
-    "precision": 0.0,
-    "recall": 0.0,
-    "accuracy": 0.0,
-    "support": 0,
-    "training_time": 0.0,
-    "prediction_time": 0.0,
+    "model_name": "Node-Level HGT",
+    "f1_score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "accuracy": 1.0,
+    "support": 40,
+    "training_time": 0.7220244407653809,
+    "prediction_time": 0.008455276489257812,
     "difficult_cases": [],
     "confusion_matrix": [
       [
+        30,
         0
+      ],
+      [
+        0,
+        10
       ]
     ]
   },
   "GBT": {
-    "model_name": "GBT",
-    "f1_score": 0.0,
-    "precision": 0.0,
-    "recall": 0.0,
-    "accuracy": 0.0,
-    "support": 0,
-    "training_time": 0.0,
-    "prediction_time": 0.0,
+    "model_name": "Node-Level GBT",
+    "f1_score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "accuracy": 1.0,
+    "support": 40,
+    "training_time": 0.03428840637207031,
+    "prediction_time": 0.00891256332397461,
     "difficult_cases": [],
     "confusion_matrix": [
       [
+        30,
         0
+      ],
+      [
+        0,
+        10
       ]
     ]
   },
   "Causal": {
-    "model_name": "Causal",
-    "f1_score": 0.0,
-    "precision": 0.0,
-    "recall": 0.0,
-    "accuracy": 0.0,
-    "support": 0,
-    "training_time": 0.0,
-    "prediction_time": 0.0,
+    "model_name": "Node-Level Causal",
+    "f1_score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "accuracy": 1.0,
+    "support": 40,
+    "training_time": 0.019464969635009766,
+    "prediction_time": 0.012538433074951172,
     "difficult_cases": [],
     "confusion_matrix": [
       [
+        30,
         0
+      ],
+      [
+        0,
+        10
       ]
     ]
   }

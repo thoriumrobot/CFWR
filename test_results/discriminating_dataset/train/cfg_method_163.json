@@ -1,0 +1,97 @@
+{
+  "method_name": "length_validation_163",
+  "pattern_name": "length_validation",
+  "complexity": "medium",
+  "expected_annotations": {
+    "length": "@Positive"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public String createString(int length)",
+      "type": "variable_declaration",
+      "line_number": 2,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 2,
+      "label": "StringBuilder sb = new StringBuilder(length);  // length needs @Positive",
+      "type": "assignment",
+      "line_number": 3,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": true
+    },
+    {
+      "id": 3,
+      "label": "for (int i = 0; i < length; i++)",
+      "type": "variable_declaration",
+      "line_number": 4,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": true,
+      "has_arithmetic": true
+    },
+    {
+      "id": 4,
+      "label": "return sb.toString();",
+      "type": "return",
+      "line_number": 7,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 5,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 8
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "var_1"
+    }
+  ],
+  "java_code": "\npublic String createString(int length) {\n    StringBuilder sb = new StringBuilder(length);  // length needs @Positive\n    for (int i = 0; i < length; i++) {\n        sb.append('x');\n    }\n    return sb.toString();\n}",
+  "description": "Length parameter requiring @Positive for StringBuilder"
+}

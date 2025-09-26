@@ -1,0 +1,46 @@
+{
+  "method_name": "collection_constraints_37",
+  "pattern_name": "collection_constraints",
+  "complexity": "medium",
+  "expected_annotations": {
+    "minSize": "@Positive"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public void ensureCapacity(List<String> list, int minSize)",
+      "type": "variable_declaration",
+      "line_number": 2,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": true,
+      "has_arithmetic": false
+    },
+    {
+      "id": 2,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 6
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    }
+  ],
+  "dataflow_edges": [],
+  "java_code": "\npublic void ensureCapacity(List<String> list, int minSize) {\n    while (list.size() < minSize) {  // minSize needs @Positive\n        list.add(\"\");\n    }\n}",
+  "description": "Collection minimum size requiring @Positive"
+}

@@ -1,0 +1,12 @@
+{
+  "train_total": 250,
+  "test_total": 50,
+  "classes": [
+    "@Positive",
+    "@NonNegative",
+    "@GTENegativeOne",
+    "@SearchIndexBottom",
+    "NO_ANNOTATION"
+  ],
+  "path": "test_results/pf_dataset"
+}

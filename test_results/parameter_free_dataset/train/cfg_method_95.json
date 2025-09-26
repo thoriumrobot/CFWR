@@ -1,0 +1,77 @@
+{
+  "method_name": "counter_no_annotation_95",
+  "pattern_name": "counter_no_annotation",
+  "complexity": "easy",
+  "target_variables": {
+    "delta": "NO_ANNOTATION"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public void updateCounter()",
+      "type": "control",
+      "line_number": 2,
+      "target_annotation": "NO_ANNOTATION",
+      "is_target": false,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": false,
+      "is_variable": false
+    },
+    {
+      "id": 2,
+      "label": "int delta = getValue() - getPrevious();  // delta can be any value",
+      "type": "statement",
+      "line_number": 3,
+      "target_annotation": "NO_ANNOTATION",
+      "is_target": true,
+      "has_numeric_type": true,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": true,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": true
+    },
+    {
+      "id": 3,
+      "label": "this.counter += delta;",
+      "type": "statement",
+      "line_number": 4,
+      "target_annotation": "NO_ANNOTATION",
+      "is_target": true,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": true,
+      "has_method_call": false,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": false,
+      "is_variable": false
+    },
+    {
+      "id": 4,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 5
+    }
+  ],
+  "java_code": "\npublic void updateCounter() {\n    int delta = getValue() - getPrevious();  // delta can be any value\n    this.counter += delta;\n}"
+}

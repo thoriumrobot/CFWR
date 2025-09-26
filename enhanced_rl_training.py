@@ -96,7 +96,7 @@ class EnhancedReinforcementLearningTrainer:
         else:
             raise ValueError(f"Unknown model type: {model_type}")
             
-        self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate, weight_decay=1e-5)
+        self.optimizer = optim.AdamW(self.model.parameters(), lr=learning_rate, weight_decay=1e-4)
         self.scheduler = optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, mode='max', patience=10, factor=0.5)
         self.criterion = nn.CrossEntropyLoss()
         

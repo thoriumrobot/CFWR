@@ -1,0 +1,95 @@
+{
+  "method_name": "search_result_gte_neg_one_20",
+  "pattern_name": "search_result_gte_neg_one",
+  "complexity": "hard",
+  "target_variables": {
+    "index": "@GTENegativeOne"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public String getItemOrDefault(List<String> items, int index, String defaultValue)",
+      "type": "statement",
+      "line_number": 2,
+      "target_annotation": "@GTENegativeOne",
+      "is_target": true,
+      "has_numeric_type": true,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": true,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": false,
+      "is_variable": true
+    },
+    {
+      "id": 2,
+      "label": "if (index >= -1 && index < items.size())   // index needs @GTENegativeOne",
+      "type": "statement",
+      "line_number": 3,
+      "target_annotation": "@GTENegativeOne",
+      "is_target": true,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": true,
+      "has_comparison": true,
+      "has_arithmetic": true,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": false
+    },
+    {
+      "id": 3,
+      "label": "return index == -1 ? defaultValue : items.get(index);",
+      "type": "statement",
+      "line_number": 4,
+      "target_annotation": "@GTENegativeOne",
+      "is_target": true,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": true,
+      "has_arithmetic": true,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": false
+    },
+    {
+      "id": 4,
+      "label": "return defaultValue;",
+      "type": "control",
+      "line_number": 6,
+      "target_annotation": "NO_ANNOTATION",
+      "is_target": false,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": false,
+      "has_method_call": false,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": false,
+      "is_variable": false
+    },
+    {
+      "id": 5,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 7
+    }
+  ],
+  "java_code": "\npublic String getItemOrDefault(List<String> items, int index, String defaultValue) {\n    if (index >= -1 && index < items.size()) {  // index needs @GTENegativeOne\n        return index == -1 ? defaultValue : items.get(index);\n    }\n    return defaultValue;\n}"
+}

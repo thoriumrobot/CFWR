@@ -1,0 +1,83 @@
+{
+  "method_name": "complex_indexing_112",
+  "pattern_name": "complex_indexing",
+  "complexity": "very_hard",
+  "expected_annotations": {
+    "startIndex": "@NonNegative",
+    "i": "@IndexFor"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public void copyElements(int[] source, int[] dest, int startIndex, int count)",
+      "type": "variable_declaration",
+      "line_number": 2,
+      "has_array_access": true,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 2,
+      "label": "for (int i = 0; i < count; i++)",
+      "type": "variable_declaration",
+      "line_number": 3,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": true,
+      "has_arithmetic": true
+    },
+    {
+      "id": 3,
+      "label": "dest[startIndex + i] = source[i];  // startIndex needs @NonNegative, i needs @IndexFor",
+      "type": "assignment",
+      "line_number": 4,
+      "has_array_access": true,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": true
+    },
+    {
+      "id": 4,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 6
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "var_1"
+    }
+  ],
+  "java_code": "\npublic void copyElements(int[] source, int[] dest, int startIndex, int count) {\n    for (int i = 0; i < count; i++) {\n        dest[startIndex + i] = source[i];  // startIndex needs @NonNegative, i needs @IndexFor\n    }\n}",
+  "description": "Complex indexing with multiple constraints"
+}

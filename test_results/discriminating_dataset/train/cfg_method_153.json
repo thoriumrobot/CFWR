@@ -1,0 +1,61 @@
+{
+  "method_name": "loop_bounds_153",
+  "pattern_name": "loop_bounds",
+  "complexity": "medium",
+  "expected_annotations": {
+    "start": "@NonNegative"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public void processItems(List<String> items, int start)",
+      "type": "variable_declaration",
+      "line_number": 2,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": true,
+      "has_arithmetic": false
+    },
+    {
+      "id": 2,
+      "label": "for (int i = start; i < items.size(); i++)   // start needs @NonNegative",
+      "type": "variable_declaration",
+      "line_number": 3,
+      "has_array_access": false,
+      "has_length_call": true,
+      "has_indexing": false,
+      "has_comparison": true,
+      "has_arithmetic": true
+    },
+    {
+      "id": 3,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 6
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "dataflow_edges": [],
+  "java_code": "\npublic void processItems(List<String> items, int start) {\n    for (int i = start; i < items.size(); i++) {  // start needs @NonNegative\n        System.out.println(items.get(i));\n    }\n}",
+  "description": "Loop start index requiring @NonNegative"
+}

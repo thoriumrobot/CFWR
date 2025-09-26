@@ -319,7 +319,7 @@ class F1ModelEvaluator:
             # Train model
             model = SimpleCausalModel(input_dim=12, hidden_dim=64, num_classes=2)
             criterion = nn.CrossEntropyLoss()
-            optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+            optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=1e-4)
             
             # Convert to tensors
             X_train_tensor = torch.tensor(X_train, dtype=torch.float32)

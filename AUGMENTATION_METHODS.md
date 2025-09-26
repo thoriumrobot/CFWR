@@ -168,7 +168,7 @@ try {
 
 ```bash
 python augment_slices.py --slices_dir slices --out_dir slices_aug \
-    --variants_per_file 3 \
+    --variants_per_file 10 \
     --seed 42 \
     --max_methods 3 \
     --max_statements 2

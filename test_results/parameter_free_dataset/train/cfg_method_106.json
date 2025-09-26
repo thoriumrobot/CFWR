@@ -1,0 +1,77 @@
+{
+  "method_name": "array_index_nonnegative_106",
+  "pattern_name": "array_index_nonnegative",
+  "complexity": "medium",
+  "target_variables": {
+    "startIndex": "@NonNegative"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public void processFrom(List<String> items, int startIndex)",
+      "type": "statement",
+      "line_number": 2,
+      "target_annotation": "@NonNegative",
+      "is_target": true,
+      "has_numeric_type": true,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": true,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": false,
+      "is_variable": true
+    },
+    {
+      "id": 2,
+      "label": "for (int i = startIndex; i < items.size(); i++)   // startIndex needs @NonNegative",
+      "type": "statement",
+      "line_number": 3,
+      "target_annotation": "@NonNegative",
+      "is_target": true,
+      "has_numeric_type": true,
+      "has_array_access": false,
+      "has_length_call": true,
+      "has_comparison": true,
+      "has_arithmetic": true,
+      "has_method_call": true,
+      "has_loop_context": true,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": true
+    },
+    {
+      "id": 3,
+      "label": "process(items.get(i));",
+      "type": "control",
+      "line_number": 4,
+      "target_annotation": "NO_ANNOTATION",
+      "is_target": false,
+      "has_numeric_type": false,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_comparison": false,
+      "has_arithmetic": false,
+      "has_method_call": true,
+      "has_loop_context": false,
+      "has_search_pattern": false,
+      "is_parameter": true,
+      "is_variable": false
+    },
+    {
+      "id": 4,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 6
+    }
+  ],
+  "java_code": "\npublic void processFrom(List<String> items, int startIndex) {\n    for (int i = startIndex; i < items.size(); i++) {  // startIndex needs @NonNegative\n        process(items.get(i));\n    }\n}"
+}

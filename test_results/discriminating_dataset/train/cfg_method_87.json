@@ -1,0 +1,61 @@
+{
+  "method_name": "array_creation_87",
+  "pattern_name": "array_creation",
+  "complexity": "easy",
+  "expected_annotations": {
+    "size": "@Positive"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public int[] createArray(int size)",
+      "type": "variable_declaration",
+      "line_number": 2,
+      "has_array_access": true,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 2,
+      "label": "return new int[size];  // size needs @Positive",
+      "type": "return",
+      "line_number": 3,
+      "has_array_access": true,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": true
+    },
+    {
+      "id": 3,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 4
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "dataflow_edges": [],
+  "java_code": "\npublic int[] createArray(int size) {\n    return new int[size];  // size needs @Positive\n}",
+  "description": "Array size requiring @Positive"
+}

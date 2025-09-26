@@ -1,0 +1,67 @@
+{
+  "method_name": "substring_operation_189",
+  "pattern_name": "substring_operation",
+  "complexity": "hard",
+  "expected_annotations": {
+    "endPos": "@LTLengthOf"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "public String getPrefix(String text, int endPos)",
+      "type": "variable_declaration",
+      "line_number": 2,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": false
+    },
+    {
+      "id": 2,
+      "label": "return text.substring(0, endPos);  // endPos needs @LTLengthOf(\"text\")",
+      "type": "return",
+      "line_number": 3,
+      "has_array_access": false,
+      "has_length_call": false,
+      "has_indexing": false,
+      "has_comparison": false,
+      "has_arithmetic": true
+    },
+    {
+      "id": 3,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 4
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "var_1"
+    }
+  ],
+  "java_code": "\npublic String getPrefix(String text, int endPos) {\n    return text.substring(0, endPos);  // endPos needs @LTLengthOf(\"text\")\n}",
+  "description": "Substring end position requiring @LTLengthOf"
+}

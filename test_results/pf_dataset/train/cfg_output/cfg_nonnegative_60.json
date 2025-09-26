@@ -1,0 +1,66 @@
+{
+  "method_name": "method_@NonNegative_60",
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Entry",
+      "type": "control",
+      "line_number": 1
+    },
+    {
+      "id": 1,
+      "label": "MethodDecl: process(List items, int startIndex)",
+      "type": "method",
+      "line_number": 2,
+      "is_parameter": true
+    },
+    {
+      "id": 2,
+      "label": "ForLoop: for (int i = startIndex; i < items.size(); i++)",
+      "type": "statement",
+      "line_number": 3
+    },
+    {
+      "id": 3,
+      "label": "Statement: items.get(i)",
+      "type": "statement",
+      "line_number": 4
+    },
+    {
+      "id": 4,
+      "label": "Exit",
+      "type": "control",
+      "line_number": 5
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "variable": "startIndex"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "variable": "i"
+    }
+  ]
+}
