@@ -50,7 +50,8 @@ public class CheckerFrameworkWarningResolver {
 
     static String resolverPath;
     static boolean executeCommandFlag = true; // Flag to control command execution
-    static String slicerType = "wala"; // Default slicer type
+    static String slicerType = "cf"; // Default slicer type now uses Checker Framework CFG Builder
+    static String warningsFileGlobal;
     static int speciminLogCount = 0; // limit debug samples
 
     public static void main(String[] args) {
@@ -62,13 +63,14 @@ public class CheckerFrameworkWarningResolver {
 
         String projectRoot = args[0];
         String warningsFilePath = args[1];
+        warningsFileGlobal = warningsFilePath;
         resolverPath = args[2];
         
         // Optional fourth argument for slicer type
         if (args.length >= 4) {
             slicerType = args[3].toLowerCase();
-            if (!slicerType.equals("wala") && !slicerType.equals("specimin")) {
-                System.err.println("Error: slicerType must be 'wala' or 'specimin', got: " + args[3]);
+            if (!slicerType.equals("wala") && !slicerType.equals("specimin") && !slicerType.equals("cf")) {
+                System.err.println("Error: slicerType must be 'cf' (default), 'wala', or 'specimin', got: " + args[3]);
                 return;
             }
         }
@@ -150,9 +152,13 @@ public class CheckerFrameworkWarningResolver {
                 if ("specimin".equals(slicerType)) {
                     command = buildSpeciminCommand(enclosingMember.get(), warning, projectRoot);
                     workingDirectory = Paths.get(resolverPath, "specimin").toString();
-                } else {
+                } else if ("wala".equals(slicerType)) {
                     command = buildWalaSourceCommand(enclosingMember.get(), warning, projectRoot);
                     workingDirectory = Paths.get(resolverPath).toString();
+                } else { // "cf" Checker Framework CFG Builder (default)
+                    command = buildCheckerFrameworkCommand(projectRoot);
+                    // Run CF slicer in the project root so it can scan files when only warnings/output are given
+                    workingDirectory = Paths.get(projectRoot).toString();
                 }
                 
                 if (command != null) {
@@ -349,6 +355,34 @@ public class CheckerFrameworkWarningResolver {
         } catch (Exception ignore) {}
 
         return command;
+    }
+
+    private static List<String> buildCheckerFrameworkCommand(String projectRoot) throws IOException {
+        String warningsFile = warningsFileGlobal != null ? warningsFileGlobal : "index1.out";
+        String outputDir = Paths.get(System.getenv().getOrDefault("SLICES_DIR", "slices")).toAbsolutePath().normalize().toString();
+
+        List<String> cmd = new ArrayList<String>();
+        cmd.add("java");
+        cmd.add("-cp");
+        // Use Gradle runtime classpath via the fat CF slicer jar if available; fall back to classes
+        Path fatJar = Paths.get(resolverPath, "build", "libs", "cf-slicer-all.jar");
+        if (Files.exists(fatJar)) {
+            cmd.add(fatJar.toString());
+            cmd.add("cfwr.CheckerFrameworkSlicer");
+        } else {
+            // Fallback to 'classes/java/main' and runtime classpath
+            String rtCp = System.getProperty("java.class.path");
+            Path classes = Paths.get(resolverPath, "build", "classes", "java", "main");
+            cmd.add(rtCp + File.pathSeparator + classes.toString());
+            cmd.add("cfwr.CheckerFrameworkSlicer");
+        }
+
+        cmd.add(warningsFile);
+        cmd.add(outputDir);
+        // Let the slicer scan for Java files relative to projectRoot
+        cmd.add(Paths.get(projectRoot).toString());
+
+        return cmd;
     }
 
     private static String sanitizeSliceName(String name) {

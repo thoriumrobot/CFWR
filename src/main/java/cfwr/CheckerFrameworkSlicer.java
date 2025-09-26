@@ -28,10 +28,21 @@ public class CheckerFrameworkSlicer {
         String outputDir = args[1];
         java.util.List<String> javaFiles = new java.util.ArrayList<String>();
         
-        // Collect Java files from remaining arguments or scan directory
+        // Collect Java files from remaining arguments (files or directories). If none, scan CWD.
         if (args.length > 2) {
             for (int i = 2; i < args.length; i++) {
-                javaFiles.add(args[i]);
+                Path p = Paths.get(args[i]);
+                if (Files.isDirectory(p)) {
+                    try {
+                        Files.walk(p)
+                            .filter(path -> path.toString().endsWith(".java"))
+                            .forEach(path -> javaFiles.add(path.toString()));
+                    } catch (IOException e) {
+                        System.err.println("Error scanning directory for Java files: " + p + ": " + e.getMessage());
+                    }
+                } else {
+                    javaFiles.add(p.toString());
+                }
             }
         } else {
             // Default: scan current directory for Java files
@@ -73,17 +84,30 @@ public class CheckerFrameworkSlicer {
         java.util.List<WarningInfo> warnings = new java.util.ArrayList<WarningInfo>();
         try {
             java.util.List<String> lines = Files.readAllLines(Paths.get(warningsFile));
-            Pattern warningPattern = Pattern.compile("^(.*\\.java):(\\d+):\\s*(error|warning):\\s*(.*)$");
+            // Accept both CF diagnostic format with column + checker tag and a simpler fallback
+            Pattern cfPattern = Pattern.compile("^(.+\\.java):(\\d+):(\\d+):\\s*(compiler\\.(warn|err)\\.proc\\.messager):\\s*\\[(.+?)\\]\\s*(.*)$");
+            Pattern simplePattern = Pattern.compile("^(.*\\.java):(\\d+):\\s*(error|warning):\\s*(.*)$");
             
             for (String line : lines) {
-                Matcher matcher = warningPattern.matcher(line);
-                if (matcher.matches()) {
-                    WarningInfo warning = new WarningInfo();
-                    warning.file = matcher.group(1);
-                    warning.line = Integer.parseInt(matcher.group(2));
-                    warning.type = matcher.group(3);
-                    warning.message = matcher.group(4);
-                    warnings.add(warning);
+                Matcher m1 = cfPattern.matcher(line);
+                if (m1.matches()) {
+                    WarningInfo w = new WarningInfo();
+                    w.file = m1.group(1);
+                    w.line = Integer.parseInt(m1.group(2));
+                    // m1.group(3) is column; m1.group(6) is checker name; m1.group(7) is message
+                    w.type = m1.group(4); // compiler.warn/err.proc.messager
+                    w.message = "[" + m1.group(6) + "] " + m1.group(7);
+                    warnings.add(w);
+                    continue;
+                }
+                Matcher m2 = simplePattern.matcher(line);
+                if (m2.matches()) {
+                    WarningInfo w = new WarningInfo();
+                    w.file = m2.group(1);
+                    w.line = Integer.parseInt(m2.group(2));
+                    w.type = m2.group(3);
+                    w.message = m2.group(4);
+                    warnings.add(w);
                 }
             }
         } catch (IOException e) {
