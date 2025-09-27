@@ -1,0 +1,321 @@
+{
+  "project_name": "guava",
+  "timestamp": "20250927_214806",
+  "models": {
+    "gcn": {
+      "predictions": [
+        {
+          "line": 45,
+          "confidence": 0.75,
+          "node_type": "method",
+          "label": "public static List<String> getStrings()"
+        },
+        {
+          "line": 67,
+          "confidence": 0.62,
+          "node_type": "variable",
+          "label": "private final Map<String, Object> cache"
+        },
+        {
+          "line": 89,
+          "confidence": 0.81,
+          "node_type": "parameter",
+          "label": "String input parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            45,
+            67,
+            89
+          ],
+          "confidence_scores": [
+            0.75,
+            0.62,
+            0.81
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.7266666666666667
+        }
+      }
+    },
+    "gbt": {
+      "predictions": [
+        {
+          "line": 45,
+          "confidence": 0.9,
+          "node_type": "method",
+          "label": "public static List<String> getStrings()"
+        },
+        {
+          "line": 67,
+          "confidence": 0.77,
+          "node_type": "variable",
+          "label": "private final Map<String, Object> cache"
+        },
+        {
+          "line": 89,
+          "confidence": 0.9600000000000001,
+          "node_type": "parameter",
+          "label": "String input parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            45,
+            67,
+            89
+          ],
+          "confidence_scores": [
+            0.9,
+            0.77,
+            0.9600000000000001
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.8766666666666666
+        }
+      }
+    },
+    "causal": {
+      "predictions": [
+        {
+          "line": 45,
+          "confidence": 0.75,
+          "node_type": "method",
+          "label": "public static List<String> getStrings()"
+        },
+        {
+          "line": 67,
+          "confidence": 0.62,
+          "node_type": "variable",
+          "label": "private final Map<String, Object> cache"
+        },
+        {
+          "line": 89,
+          "confidence": 0.81,
+          "node_type": "parameter",
+          "label": "String input parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            45,
+            67,
+            89
+          ],
+          "confidence_scores": [
+            0.75,
+            0.62,
+            0.81
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.7266666666666667
+        }
+      }
+    },
+    "hgt": {
+      "predictions": [
+        {
+          "line": 45,
+          "confidence": 0.85,
+          "node_type": "method",
+          "label": "public static List<String> getStrings()"
+        },
+        {
+          "line": 67,
+          "confidence": 0.72,
+          "node_type": "variable",
+          "label": "private final Map<String, Object> cache"
+        },
+        {
+          "line": 89,
+          "confidence": 0.91,
+          "node_type": "parameter",
+          "label": "String input parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            45,
+            67,
+            89
+          ],
+          "confidence_scores": [
+            0.85,
+            0.72,
+            0.91
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.8266666666666667
+        }
+      }
+    },
+    "gcsn": {
+      "predictions": [
+        {
+          "line": 45,
+          "confidence": 0.85,
+          "node_type": "method",
+          "label": "public static List<String> getStrings()"
+        },
+        {
+          "line": 67,
+          "confidence": 0.72,
+          "node_type": "variable",
+          "label": "private final Map<String, Object> cache"
+        },
+        {
+          "line": 89,
+          "confidence": 0.91,
+          "node_type": "parameter",
+          "label": "String input parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            45,
+            67,
+            89
+          ],
+          "confidence_scores": [
+            0.85,
+            0.72,
+            0.91
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.8266666666666667
+        }
+      }
+    },
+    "dg2n": {
+      "predictions": [
+        {
+          "line": 45,
+          "confidence": 0.85,
+          "node_type": "method",
+          "label": "public static List<String> getStrings()"
+        },
+        {
+          "line": 67,
+          "confidence": 0.72,
+          "node_type": "variable",
+          "label": "private final Map<String, Object> cache"
+        },
+        {
+          "line": 89,
+          "confidence": 0.91,
+          "node_type": "parameter",
+          "label": "String input parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            45,
+            67,
+            89
+          ],
+          "confidence_scores": [
+            0.85,
+            0.72,
+            0.91
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.8266666666666667
+        }
+      }
+    }
+  },
+  "comparison_summary": {
+    "model_counts": {
+      "gcn": 3,
+      "gbt": 3,
+      "causal": 3,
+      "hgt": 3,
+      "gcsn": 3,
+      "dg2n": 3
+    },
+    "consensus_predictions": [
+      45,
+      67,
+      89
+    ],
+    "unique_predictions": {
+      "gcn": [
+        89,
+        67,
+        45
+      ],
+      "gbt": [
+        89,
+        67,
+        45
+      ],
+      "causal": [
+        89,
+        67,
+        45
+      ],
+      "hgt": [
+        89,
+        67,
+        45
+      ],
+      "gcsn": [
+        89,
+        67,
+        45
+      ],
+      "dg2n": [
+        89,
+        67,
+        45
+      ]
+    },
+    "overall_stats": {
+      "total_unique_lines": 3,
+      "avg_predictions_per_model": 3.0
+    }
+  }
+}

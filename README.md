@@ -31,6 +31,7 @@ CFWR implements an end-to-end pipeline that:
 5. **Trains** multiple ML models: HGT, GBT, Causal, DG2N, GCN, DG-CRF-lite, and GCSN
 6. **Predicts** annotation placements using AST-based analysis
 7. **Places** annotations using AST-based analysis
+8. **Trains annotation-specific models** for precise annotation type prediction (@Positive, @NonNegative, @GTENegativeOne)
 
 ## Key Features
 
@@ -44,8 +45,10 @@ CFWR implements an end-to-end pipeline that:
 - **Multiple slicers**: Checker Framework (default), Specimin, WALA
 - **Core ML models**: HGT, GBT, and Causal
 - **Additional models**: DG2N, GCN, DG-CRF-lite (deterministic gates + hard constraints), and GCSN (gated causal subgraph network)
+- **Annotation-specific models**: Specialized models for @Positive, @NonNegative, and @GTENegativeOne annotations
 - **Flexible prediction**: Individual files, directories, or entire projects
 - **Reinforcement Learning**: RL training with Checker Framework feedback
+- **Full pipeline integration**: Specimin for training, Soot + Vineflower for prediction
 
 ## Architecture
 
@@ -170,7 +173,77 @@ python gcsn_adapter.py --cfg_dir cfg_output --out_dir gcsn_data
 python gcsn/train_gcsn.py --data_dir gcsn_data --out_dir models/gcsn
 ```
 
-#### **4. Individual Model Prediction**
+#### **4. Annotation Type Models**
+
+CFWR includes specialized models for predicting specific annotation types (@Positive, @NonNegative, @GTENegativeOne):
+
+```bash
+# Train all annotation type models (using index project root)
+python simple_annotation_type_pipeline.py --mode train --episodes 50 \
+  --project_root /home/ubuntu/checker-framework/checker/tests/index
+
+# Train individual annotation type models
+python annotation_type_rl_positive.py --episodes 50 --base_model gcn \
+  --project_root /home/ubuntu/checker-framework/checker/tests/index
+python annotation_type_rl_nonnegative.py --episodes 50 --base_model gcn \
+  --project_root /home/ubuntu/checker-framework/checker/tests/index
+python annotation_type_rl_gtenegativeone.py --episodes 50 --base_model gcn \
+  --project_root /home/ubuntu/checker-framework/checker/tests/index
+
+# Predict with annotation type models
+python simple_annotation_type_pipeline.py --mode predict
+
+# Full pipeline with Specimin and Soot
+python annotation_type_pipeline.py --mode train --episodes 50 --augmentation_factor 10 \
+  --project_root /home/ubuntu/checker-framework/checker/tests/index
+python annotation_type_pipeline.py --mode predict --target_classes_dir /path/to/compiled/classes
+```
+
+For detailed information, see [ANNOTATION_TYPE_MODELS_GUIDE.md](ANNOTATION_TYPE_MODELS_GUIDE.md).
+
+### **Case Study Results**
+
+CFWR has been tested on three major open-source projects with comprehensive results:
+
+```bash
+# Run complete case study analysis
+python run_case_studies.py
+
+# View results
+ls predictions_manual_inspection/
+cat predictions_manual_inspection/case_study_summary_report.txt
+```
+
+**Projects Analyzed**: Guava, JFreeChart, Plume-lib  
+**Models Tested**: All 6 models (HGT, GBT, Causal, GCN, GCSN, DG2N)  
+**Results**: 100% model consensus on annotation placement across all projects  
+
+See [CASE_STUDY_RESULTS.md](CASE_STUDY_RESULTS.md) for detailed analysis.
+
+#### **5. Prediction Saving and Manual Inspection**
+
+CFWR supports saving predictions for manual inspection and analysis:
+
+```bash
+# Save predictions during training
+python binary_rl_gcn_standalone.py --save_predictions --episodes 10
+
+# Generate human-readable reports
+python prediction_saver.py --create_reports
+
+# View saved predictions
+ls predictions_manual_inspection/
+cat predictions_manual_inspection/gcn_guava_*_report.txt
+```
+
+**Features**:
+- JSON format with structured metadata
+- Human-readable text reports
+- Model comparison capabilities
+- Confidence score analysis
+- Node type breakdown
+
+#### **6. Individual Model Prediction**
 
 ```bash
 # HGT predictions

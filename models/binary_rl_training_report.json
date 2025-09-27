@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-09-27 20:27:22",
+  "models_trained": [
+    {
+      "model": "hgt",
+      "success": false,
+      "output_length": 539
+    }
+  ],
+  "model_outputs": {
+    "models/binary_rl_hgt_model.pth": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_gbt_model.joblib": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_causal_model.pth": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_gcn_model.pth": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_gcsn_model.pth": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_dg2n_model.pth": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_hgt_stats.json": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_gbt_stats.json": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_causal_stats.json": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_gcn_stats.json": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_gcsn_stats.json": {
+      "exists": false,
+      "size": 0
+    },
+    "models/binary_rl_dg2n_stats.json": {
+      "exists": false,
+      "size": 0
+    }
+  },
+  "overall_success": false
+}

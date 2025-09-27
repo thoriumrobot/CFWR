@@ -1,0 +1,29 @@
+PREDICTION REPORT
+================
+
+Model: hgt
+Project: guava
+Timestamp: 20250927_214806
+
+SUMMARY
+-------
+Total Predictions: 3
+Average Confidence: 0.827
+
+PREDICTION BREAKDOWN BY NODE TYPE
+---------------------------------
+method: 1
+variable: 1
+parameter: 1
+
+DETAILED PREDICTIONS
+-------------------
+1. Line 45: public static List<String> getStrings()...
+   Type: method, Confidence: 0.85
+
+2. Line 67: private final Map<String, Object> cache...
+   Type: variable, Confidence: 0.72
+
+3. Line 89: String input parameter...
+   Type: parameter, Confidence: 0.91
+

@@ -1,0 +1,29 @@
+PREDICTION REPORT
+================
+
+Model: gbt
+Project: plume-lib
+Timestamp: 20250927_214806
+
+SUMMARY
+-------
+Total Predictions: 3
+Average Confidence: 0.807
+
+PREDICTION BREAKDOWN BY NODE TYPE
+---------------------------------
+method: 1
+variable: 1
+parameter: 1
+
+DETAILED PREDICTIONS
+-------------------
+1. Line 12: public static void processFile(File f)...
+   Type: method, Confidence: 0.87
+
+2. Line 78: private final List<String> lines...
+   Type: variable, Confidence: 0.74
+
+3. Line 145: String filename parameter...
+   Type: parameter, Confidence: 0.81
+

@@ -1,0 +1,57 @@
+{
+  "model_name": "causal",
+  "project_name": "plume-lib",
+  "timestamp": "20250927_214806",
+  "metadata": {
+    "model_type": "CAUSAL",
+    "project_path": "case_studies/plume-lib",
+    "hyperparameters": {
+      "learning_rate": 0.005,
+      "episodes": 20,
+      "hidden_dim": 512,
+      "dropout_rate": 0.5
+    }
+  },
+  "predictions": [
+    {
+      "line": 12,
+      "confidence": 0.72,
+      "node_type": "method",
+      "label": "public static void processFile(File f)"
+    },
+    {
+      "line": 78,
+      "confidence": 0.59,
+      "node_type": "variable",
+      "label": "private final List<String> lines"
+    },
+    {
+      "line": 145,
+      "confidence": 0.66,
+      "node_type": "parameter",
+      "label": "String filename parameter"
+    }
+  ],
+  "summary": {
+    "total_predictions": 3,
+    "prediction_types": {
+      "total_count": 3,
+      "line_numbers": [
+        12,
+        78,
+        145
+      ],
+      "confidence_scores": [
+        0.72,
+        0.59,
+        0.66
+      ],
+      "node_types": {
+        "method": 1,
+        "variable": 1,
+        "parameter": 1
+      },
+      "avg_confidence": 0.6566666666666666
+    }
+  }
+}

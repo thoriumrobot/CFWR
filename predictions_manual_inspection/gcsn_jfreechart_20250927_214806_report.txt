@@ -1,0 +1,29 @@
+PREDICTION REPORT
+================
+
+Model: gcsn
+Project: jfreechart
+Timestamp: 20250927_214806
+
+SUMMARY
+-------
+Total Predictions: 3
+Average Confidence: 0.770
+
+PREDICTION BREAKDOWN BY NODE TYPE
+---------------------------------
+method: 1
+variable: 1
+parameter: 1
+
+DETAILED PREDICTIONS
+-------------------
+1. Line 23: public void drawChart(Graphics2D g2d)...
+   Type: method, Confidence: 0.78
+
+2. Line 156: private ChartData dataset...
+   Type: variable, Confidence: 0.65
+
+3. Line 234: double value parameter...
+   Type: parameter, Confidence: 0.88
+

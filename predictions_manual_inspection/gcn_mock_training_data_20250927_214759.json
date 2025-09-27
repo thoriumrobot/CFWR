@@ -1,0 +1,96 @@
+{
+  "model_name": "gcn",
+  "project_name": "mock_training_data",
+  "timestamp": "20250927_214759",
+  "metadata": {
+    "model_type": "GCN",
+    "hyperparameters": {
+      "learning_rate": 0.001,
+      "hidden_dim": 64,
+      "dropout_rate": 0.3,
+      "episodes": 10
+    },
+    "training_stats": {
+      "episodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "rewards": [
+        0.6428571428571429,
+        0.7142857142857143,
+        0.7,
+        0.3,
+        0.36363636363636365,
+        0.7894736842105263,
+        0.5,
+        0.0,
+        0.47058823529411764,
+        0.0
+      ],
+      "warning_changes": [],
+      "accuracy": [],
+      "binary_predictions": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "predictions": [
+    {
+      "line": 10,
+      "confidence": 0.7173715829849243,
+      "node_type": "method",
+      "label": "public void method()"
+    },
+    {
+      "line": 11,
+      "confidence": 0.7714009284973145,
+      "node_type": "variable",
+      "label": "int variable = 5;"
+    },
+    {
+      "line": 12,
+      "confidence": 0.778118371963501,
+      "node_type": "control",
+      "label": "return variable;"
+    }
+  ],
+  "summary": {
+    "total_predictions": 3,
+    "prediction_types": {
+      "total_count": 3,
+      "line_numbers": [
+        10,
+        11,
+        12
+      ],
+      "confidence_scores": [
+        0.7173715829849243,
+        0.7714009284973145,
+        0.778118371963501
+      ],
+      "node_types": {
+        "method": 1,
+        "variable": 1,
+        "control": 1
+      },
+      "avg_confidence": 0.7556302944819132
+    }
+  }
+}

@@ -1,0 +1,29 @@
+PREDICTION REPORT
+================
+
+Model: gcn
+Project: mock_training_data
+Timestamp: 20250927_214759
+
+SUMMARY
+-------
+Total Predictions: 3
+Average Confidence: 0.756
+
+PREDICTION BREAKDOWN BY NODE TYPE
+---------------------------------
+method: 1
+variable: 1
+control: 1
+
+DETAILED PREDICTIONS
+-------------------
+1. Line 10: public void method()...
+   Type: method, Confidence: 0.7173715829849243
+
+2. Line 11: int variable = 5;...
+   Type: variable, Confidence: 0.7714009284973145
+
+3. Line 12: return variable;...
+   Type: control, Confidence: 0.778118371963501
+

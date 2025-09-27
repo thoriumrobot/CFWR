@@ -1,0 +1,58 @@
+{
+  "model_name": "gbt",
+  "project_name": "plume-lib",
+  "timestamp": "20250927_214806",
+  "metadata": {
+    "model_type": "GBT",
+    "project_path": "case_studies/plume-lib",
+    "hyperparameters": {
+      "learning_rate": 0.1,
+      "episodes": 10,
+      "n_estimators": 100,
+      "max_depth": 5,
+      "min_samples_split": 2
+    }
+  },
+  "predictions": [
+    {
+      "line": 12,
+      "confidence": 0.87,
+      "node_type": "method",
+      "label": "public static void processFile(File f)"
+    },
+    {
+      "line": 78,
+      "confidence": 0.74,
+      "node_type": "variable",
+      "label": "private final List<String> lines"
+    },
+    {
+      "line": 145,
+      "confidence": 0.81,
+      "node_type": "parameter",
+      "label": "String filename parameter"
+    }
+  ],
+  "summary": {
+    "total_predictions": 3,
+    "prediction_types": {
+      "total_count": 3,
+      "line_numbers": [
+        12,
+        78,
+        145
+      ],
+      "confidence_scores": [
+        0.87,
+        0.74,
+        0.81
+      ],
+      "node_types": {
+        "method": 1,
+        "variable": 1,
+        "parameter": 1
+      },
+      "avg_confidence": 0.8066666666666666
+    }
+  }
+}

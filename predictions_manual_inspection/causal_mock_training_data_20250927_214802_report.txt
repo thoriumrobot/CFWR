@@ -1,0 +1,29 @@
+PREDICTION REPORT
+================
+
+Model: causal
+Project: mock_training_data
+Timestamp: 20250927_214802
+
+SUMMARY
+-------
+Total Predictions: 3
+Average Confidence: 0.981
+
+PREDICTION BREAKDOWN BY NODE TYPE
+---------------------------------
+method: 1
+variable: 1
+control: 1
+
+DETAILED PREDICTIONS
+-------------------
+1. Line 10: public void method()...
+   Type: method, Confidence: 0.9896997809410095
+
+2. Line 11: int variable = 5;...
+   Type: variable, Confidence: 0.979144275188446
+
+3. Line 12: return variable;...
+   Type: control, Confidence: 0.9751419425010681
+

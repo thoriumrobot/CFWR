@@ -1,0 +1,37 @@
+{
+  "model_name": "gcn",
+  "project_name": "mock_training_data",
+  "timestamp": "20250927_214731",
+  "metadata": {
+    "model_type": "GCN",
+    "hyperparameters": {
+      "learning_rate": 0.001,
+      "hidden_dim": 64,
+      "dropout_rate": 0.3,
+      "episodes": 2
+    },
+    "training_stats": {
+      "episodes": [
+        1,
+        2
+      ],
+      "rewards": [
+        0.0,
+        0.0
+      ],
+      "warning_changes": [],
+      "accuracy": [],
+      "binary_predictions": [
+        0,
+        0
+      ]
+    }
+  },
+  "predictions": [],
+  "summary": {
+    "total_predictions": 0,
+    "prediction_types": {
+      "no_predictions": true
+    }
+  }
+}

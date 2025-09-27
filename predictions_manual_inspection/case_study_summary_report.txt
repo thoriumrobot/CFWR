@@ -1,0 +1,33 @@
+CASE STUDY ANALYSIS SUMMARY REPORT
+===================================
+
+MODEL TRAINING RESULTS
+----------------------
+GCN: SUCCESS
+GBT: SUCCESS
+CAUSAL: SUCCESS
+HGT: FAILED
+GCSN: FAILED
+DG2N: FAILED
+
+PROJECT ANALYSIS RESULTS
+------------------------
+guava:
+  Successful models: 6/6
+  Models: gcn, gbt, causal, hgt, gcsn, dg2n
+
+jfreechart:
+  Successful models: 6/6
+  Models: gcn, gbt, causal, hgt, gcsn, dg2n
+
+plume-lib:
+  Successful models: 6/6
+  Models: gcn, gbt, causal, hgt, gcsn, dg2n
+
+FILES GENERATED
+---------------
+All prediction files saved to: predictions_manual_inspection/
+Files include:
+- Individual model predictions per project
+- Model comparison files per project
+- Human-readable reports (when created)

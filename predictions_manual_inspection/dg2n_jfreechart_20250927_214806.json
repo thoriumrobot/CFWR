@@ -1,0 +1,57 @@
+{
+  "model_name": "dg2n",
+  "project_name": "jfreechart",
+  "timestamp": "20250927_214806",
+  "metadata": {
+    "model_type": "DG2N",
+    "project_path": "case_studies/jfreechart",
+    "hyperparameters": {
+      "learning_rate": 0.01,
+      "episodes": 10,
+      "hidden_dim": 256,
+      "dropout_rate": 0.3
+    }
+  },
+  "predictions": [
+    {
+      "line": 23,
+      "confidence": 0.78,
+      "node_type": "method",
+      "label": "public void drawChart(Graphics2D g2d)"
+    },
+    {
+      "line": 156,
+      "confidence": 0.65,
+      "node_type": "variable",
+      "label": "private ChartData dataset"
+    },
+    {
+      "line": 234,
+      "confidence": 0.88,
+      "node_type": "parameter",
+      "label": "double value parameter"
+    }
+  ],
+  "summary": {
+    "total_predictions": 3,
+    "prediction_types": {
+      "total_count": 3,
+      "line_numbers": [
+        23,
+        156,
+        234
+      ],
+      "confidence_scores": [
+        0.78,
+        0.65,
+        0.88
+      ],
+      "node_types": {
+        "method": 1,
+        "variable": 1,
+        "parameter": 1
+      },
+      "avg_confidence": 0.77
+    }
+  }
+}
