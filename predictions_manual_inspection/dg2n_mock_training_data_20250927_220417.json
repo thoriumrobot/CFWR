@@ -1,0 +1,21 @@
+{
+  "model_name": "dg2n",
+  "project_name": "mock_training_data",
+  "timestamp": "20250927_220417",
+  "metadata": {
+    "model_type": "DG2N",
+    "hyperparameters": {
+      "learning_rate": 0.01,
+      "hidden_dim": 256,
+      "dropout_rate": 0.3,
+      "episodes": 10
+    }
+  },
+  "predictions": [],
+  "summary": {
+    "total_predictions": 0,
+    "prediction_types": {
+      "no_predictions": true
+    }
+  }
+}

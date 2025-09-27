@@ -1,0 +1,57 @@
+{
+  "model_name": "gcsn",
+  "project_name": "guava",
+  "timestamp": "20250927_220417",
+  "metadata": {
+    "model_type": "GCSN",
+    "project_path": "case_studies/guava",
+    "hyperparameters": {
+      "learning_rate": 0.005,
+      "episodes": 10,
+      "hidden_dim": 256,
+      "dropout_rate": 0.5
+    }
+  },
+  "predictions": [
+    {
+      "line": 45,
+      "confidence": 0.85,
+      "node_type": "method",
+      "label": "public static List<String> getStrings()"
+    },
+    {
+      "line": 67,
+      "confidence": 0.72,
+      "node_type": "variable",
+      "label": "private final Map<String, Object> cache"
+    },
+    {
+      "line": 89,
+      "confidence": 0.91,
+      "node_type": "parameter",
+      "label": "String input parameter"
+    }
+  ],
+  "summary": {
+    "total_predictions": 3,
+    "prediction_types": {
+      "total_count": 3,
+      "line_numbers": [
+        45,
+        67,
+        89
+      ],
+      "confidence_scores": [
+        0.85,
+        0.72,
+        0.91
+      ],
+      "node_types": {
+        "method": 1,
+        "variable": 1,
+        "parameter": 1
+      },
+      "avg_confidence": 0.8266666666666667
+    }
+  }
+}

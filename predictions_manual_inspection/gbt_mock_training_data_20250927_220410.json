@@ -1,0 +1,57 @@
+{
+  "model_name": "gbt",
+  "project_name": "mock_training_data",
+  "timestamp": "20250927_220410",
+  "metadata": {
+    "model_type": "GBT",
+    "hyperparameters": {
+      "learning_rate": 0.1,
+      "n_estimators": 100,
+      "max_depth": 5,
+      "min_samples_split": 2,
+      "episodes": 10
+    }
+  },
+  "predictions": [
+    {
+      "line": 10,
+      "confidence": 0.917844871047989,
+      "node_type": "method",
+      "label": "public void method()"
+    },
+    {
+      "line": 11,
+      "confidence": 0.7116040247087213,
+      "node_type": "variable",
+      "label": "int variable = 5;"
+    },
+    {
+      "line": 12,
+      "confidence": 0.8106954532243038,
+      "node_type": "control",
+      "label": "return variable;"
+    }
+  ],
+  "summary": {
+    "total_predictions": 3,
+    "prediction_types": {
+      "total_count": 3,
+      "line_numbers": [
+        10,
+        11,
+        12
+      ],
+      "confidence_scores": [
+        0.917844871047989,
+        0.7116040247087213,
+        0.8106954532243038
+      ],
+      "node_types": {
+        "method": 1,
+        "variable": 1,
+        "control": 1
+      },
+      "avg_confidence": 0.813381449660338
+    }
+  }
+}

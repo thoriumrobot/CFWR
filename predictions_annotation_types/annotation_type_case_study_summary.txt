@@ -1,0 +1,37 @@
+ANNOTATION TYPE CASE STUDY ANALYSIS SUMMARY
+==========================================
+
+ANNOTATION TYPE MODEL TRAINING RESULTS
+-------------------------------------
+@Positive (POSITIVE): SUCCESS
+@NonNegative (NONNEGATIVE): SUCCESS
+@GTENegativeOne (GTENEGATIVEONE): SUCCESS
+
+PROJECT ANALYSIS RESULTS
+------------------------
+guava:
+  Successful models: 3/3
+  Models: positive, nonnegative, gtenegativeone
+
+jfreechart:
+  Successful models: 3/3
+  Models: positive, nonnegative, gtenegativeone
+
+plume-lib:
+  Successful models: 3/3
+  Models: positive, nonnegative, gtenegativeone
+
+ANNOTATION TYPE COVERAGE
+------------------------
+This analysis covers the three main Lower Bound Checker annotation types:
+- @Positive: Values that must be positive (> 0)
+- @NonNegative: Values that must be non-negative (>= 0)
+- @GTENegativeOne: Values that must be >= -1
+
+FILES GENERATED
+---------------
+All annotation type prediction files saved to: predictions_annotation_types/
+Files include:
+- Individual annotation type predictions per project
+- Annotation type comparison files per project
+- Human-readable reports for manual inspection

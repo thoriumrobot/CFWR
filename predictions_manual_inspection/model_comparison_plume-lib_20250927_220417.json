@@ -1,0 +1,321 @@
+{
+  "project_name": "plume-lib",
+  "timestamp": "20250927_220417",
+  "models": {
+    "gcn": {
+      "predictions": [
+        {
+          "line": 12,
+          "confidence": 0.72,
+          "node_type": "method",
+          "label": "public static void processFile(File f)"
+        },
+        {
+          "line": 78,
+          "confidence": 0.59,
+          "node_type": "variable",
+          "label": "private final List<String> lines"
+        },
+        {
+          "line": 145,
+          "confidence": 0.66,
+          "node_type": "parameter",
+          "label": "String filename parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            12,
+            78,
+            145
+          ],
+          "confidence_scores": [
+            0.72,
+            0.59,
+            0.66
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.6566666666666666
+        }
+      }
+    },
+    "gbt": {
+      "predictions": [
+        {
+          "line": 12,
+          "confidence": 0.87,
+          "node_type": "method",
+          "label": "public static void processFile(File f)"
+        },
+        {
+          "line": 78,
+          "confidence": 0.74,
+          "node_type": "variable",
+          "label": "private final List<String> lines"
+        },
+        {
+          "line": 145,
+          "confidence": 0.81,
+          "node_type": "parameter",
+          "label": "String filename parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            12,
+            78,
+            145
+          ],
+          "confidence_scores": [
+            0.87,
+            0.74,
+            0.81
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.8066666666666666
+        }
+      }
+    },
+    "causal": {
+      "predictions": [
+        {
+          "line": 12,
+          "confidence": 0.72,
+          "node_type": "method",
+          "label": "public static void processFile(File f)"
+        },
+        {
+          "line": 78,
+          "confidence": 0.59,
+          "node_type": "variable",
+          "label": "private final List<String> lines"
+        },
+        {
+          "line": 145,
+          "confidence": 0.66,
+          "node_type": "parameter",
+          "label": "String filename parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            12,
+            78,
+            145
+          ],
+          "confidence_scores": [
+            0.72,
+            0.59,
+            0.66
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.6566666666666666
+        }
+      }
+    },
+    "hgt": {
+      "predictions": [
+        {
+          "line": 12,
+          "confidence": 0.82,
+          "node_type": "method",
+          "label": "public static void processFile(File f)"
+        },
+        {
+          "line": 78,
+          "confidence": 0.69,
+          "node_type": "variable",
+          "label": "private final List<String> lines"
+        },
+        {
+          "line": 145,
+          "confidence": 0.76,
+          "node_type": "parameter",
+          "label": "String filename parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            12,
+            78,
+            145
+          ],
+          "confidence_scores": [
+            0.82,
+            0.69,
+            0.76
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.7566666666666667
+        }
+      }
+    },
+    "gcsn": {
+      "predictions": [
+        {
+          "line": 12,
+          "confidence": 0.82,
+          "node_type": "method",
+          "label": "public static void processFile(File f)"
+        },
+        {
+          "line": 78,
+          "confidence": 0.69,
+          "node_type": "variable",
+          "label": "private final List<String> lines"
+        },
+        {
+          "line": 145,
+          "confidence": 0.76,
+          "node_type": "parameter",
+          "label": "String filename parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            12,
+            78,
+            145
+          ],
+          "confidence_scores": [
+            0.82,
+            0.69,
+            0.76
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.7566666666666667
+        }
+      }
+    },
+    "dg2n": {
+      "predictions": [
+        {
+          "line": 12,
+          "confidence": 0.82,
+          "node_type": "method",
+          "label": "public static void processFile(File f)"
+        },
+        {
+          "line": 78,
+          "confidence": 0.69,
+          "node_type": "variable",
+          "label": "private final List<String> lines"
+        },
+        {
+          "line": 145,
+          "confidence": 0.76,
+          "node_type": "parameter",
+          "label": "String filename parameter"
+        }
+      ],
+      "summary": {
+        "total_predictions": 3,
+        "prediction_types": {
+          "total_count": 3,
+          "line_numbers": [
+            12,
+            78,
+            145
+          ],
+          "confidence_scores": [
+            0.82,
+            0.69,
+            0.76
+          ],
+          "node_types": {
+            "method": 1,
+            "variable": 1,
+            "parameter": 1
+          },
+          "avg_confidence": 0.7566666666666667
+        }
+      }
+    }
+  },
+  "comparison_summary": {
+    "model_counts": {
+      "gcn": 3,
+      "gbt": 3,
+      "causal": 3,
+      "hgt": 3,
+      "gcsn": 3,
+      "dg2n": 3
+    },
+    "consensus_predictions": [
+      12,
+      78,
+      145
+    ],
+    "unique_predictions": {
+      "gcn": [
+        145,
+        12,
+        78
+      ],
+      "gbt": [
+        145,
+        12,
+        78
+      ],
+      "causal": [
+        145,
+        12,
+        78
+      ],
+      "hgt": [
+        145,
+        12,
+        78
+      ],
+      "gcsn": [
+        145,
+        12,
+        78
+      ],
+      "dg2n": [
+        145,
+        12,
+        78
+      ]
+    },
+    "overall_stats": {
+      "total_unique_lines": 3,
+      "avg_predictions_per_model": 3.0
+    }
+  }
+}

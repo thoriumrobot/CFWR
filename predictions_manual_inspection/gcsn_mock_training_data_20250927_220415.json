@@ -1,0 +1,21 @@
+{
+  "model_name": "gcsn",
+  "project_name": "mock_training_data",
+  "timestamp": "20250927_220415",
+  "metadata": {
+    "model_type": "GCSN",
+    "hyperparameters": {
+      "learning_rate": 0.005,
+      "hidden_dim": 256,
+      "dropout_rate": 0.5,
+      "episodes": 10
+    }
+  },
+  "predictions": [],
+  "summary": {
+    "total_predictions": 0,
+    "prediction_types": {
+      "no_predictions": true
+    }
+  }
+}

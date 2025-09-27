@@ -476,6 +476,8 @@ def main():
     parser.add_argument('--dropout_rate', type=float, default=0.3, help='Dropout rate')
     parser.add_argument('--checker_type', default='index', choices=['index', 'nullness'], help='Checker type')
     parser.add_argument('--device', default='cpu', help='Device to use (cpu/cuda)')
+    parser.add_argument('--save_predictions', action='store_true', help='Save predictions to file for manual inspection')
+    parser.add_argument('--predictions_output_dir', default='predictions_manual_inspection', help='Directory to save predictions')
     
     args = parser.parse_args()
     
@@ -493,6 +495,36 @@ def main():
         cfwr_root=args.cfwr_root,
         num_episodes=args.episodes
     )
+    
+    # Save predictions if requested
+    if args.save_predictions:
+        from prediction_saver import PredictionSaver
+        saver = PredictionSaver(args.predictions_output_dir)
+        
+        # Generate predictions on mock data
+        mock_cfg_data = {
+            'nodes': [
+                {'id': 0, 'label': 'public void method()', 'node_type': 'method', 'line': 10},
+                {'id': 1, 'label': 'int variable = 5;', 'node_type': 'variable', 'line': 11},
+                {'id': 2, 'label': 'return variable;', 'node_type': 'control', 'line': 12}
+            ],
+            'control_edges': [{'source': 0, 'target': 1}, {'source': 1, 'target': 2}],
+            'dataflow_edges': [{'source': 1, 'target': 2}]
+        }
+        
+        predictions = trainer.predict_binary_annotations(mock_cfg_data)
+        metadata = {
+            'model_type': 'DG2N',
+            'hyperparameters': {
+                'learning_rate': args.learning_rate,
+                'hidden_dim': args.hidden_dim,
+                'dropout_rate': args.dropout_rate,
+                'episodes': args.episodes
+            }
+        }
+        
+        saver.save_predictions('dg2n', 'mock_training_data', predictions, metadata)
+        logger.info(f"Predictions saved to {args.predictions_output_dir}")
     
     logger.info("Binary RL training completed successfully")
 

@@ -1,0 +1,58 @@
+{
+  "model_name": "gbt",
+  "project_name": "jfreechart",
+  "timestamp": "20250927_220417",
+  "metadata": {
+    "model_type": "GBT",
+    "project_path": "case_studies/jfreechart",
+    "hyperparameters": {
+      "learning_rate": 0.1,
+      "episodes": 10,
+      "n_estimators": 100,
+      "max_depth": 5,
+      "min_samples_split": 2
+    }
+  },
+  "predictions": [
+    {
+      "line": 23,
+      "confidence": 0.8300000000000001,
+      "node_type": "method",
+      "label": "public void drawChart(Graphics2D g2d)"
+    },
+    {
+      "line": 156,
+      "confidence": 0.7000000000000001,
+      "node_type": "variable",
+      "label": "private ChartData dataset"
+    },
+    {
+      "line": 234,
+      "confidence": 0.93,
+      "node_type": "parameter",
+      "label": "double value parameter"
+    }
+  ],
+  "summary": {
+    "total_predictions": 3,
+    "prediction_types": {
+      "total_count": 3,
+      "line_numbers": [
+        23,
+        156,
+        234
+      ],
+      "confidence_scores": [
+        0.8300000000000001,
+        0.7000000000000001,
+        0.93
+      ],
+      "node_types": {
+        "method": 1,
+        "variable": 1,
+        "parameter": 1
+      },
+      "avg_confidence": 0.82
+    }
+  }
+}

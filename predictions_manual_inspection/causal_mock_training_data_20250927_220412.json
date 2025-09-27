@@ -1,0 +1,56 @@
+{
+  "model_name": "causal",
+  "project_name": "mock_training_data",
+  "timestamp": "20250927_220412",
+  "metadata": {
+    "model_type": "CAUSAL",
+    "hyperparameters": {
+      "learning_rate": 0.005,
+      "hidden_dim": 512,
+      "dropout_rate": 0.5,
+      "episodes": 20
+    }
+  },
+  "predictions": [
+    {
+      "line": 10,
+      "confidence": 0.9976807832717896,
+      "node_type": "method",
+      "label": "public void method()"
+    },
+    {
+      "line": 11,
+      "confidence": 0.994722843170166,
+      "node_type": "variable",
+      "label": "int variable = 5;"
+    },
+    {
+      "line": 12,
+      "confidence": 0.9924323558807373,
+      "node_type": "control",
+      "label": "return variable;"
+    }
+  ],
+  "summary": {
+    "total_predictions": 3,
+    "prediction_types": {
+      "total_count": 3,
+      "line_numbers": [
+        10,
+        11,
+        12
+      ],
+      "confidence_scores": [
+        0.9976807832717896,
+        0.994722843170166,
+        0.9924323558807373
+      ],
+      "node_types": {
+        "method": 1,
+        "variable": 1,
+        "control": 1
+      },
+      "avg_confidence": 0.9949453274408976
+    }
+  }
+}

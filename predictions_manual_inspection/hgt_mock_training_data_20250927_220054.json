@@ -1,0 +1,21 @@
+{
+  "model_name": "hgt",
+  "project_name": "mock_training_data",
+  "timestamp": "20250927_220054",
+  "metadata": {
+    "model_type": "HGT",
+    "hyperparameters": {
+      "learning_rate": 0.001,
+      "hidden_dim": 128,
+      "dropout_rate": 0.5,
+      "episodes": 2
+    }
+  },
+  "predictions": [],
+  "summary": {
+    "total_predictions": 0,
+    "prediction_types": {
+      "no_predictions": true
+    }
+  }
+}
