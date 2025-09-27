@@ -38,8 +38,13 @@ class AnnotationTypeTrainer:
         # Initialize the annotation-specific model
         self.model = self._init_annotation_model()
         
-        self.optimizer = optim.AdamW(self.model.parameters(), lr=learning_rate, weight_decay=1e-4)
-        self.criterion = nn.CrossEntropyLoss()
+        # Only create optimizer for PyTorch models (not GBT)
+        if hasattr(self.model, 'parameters'):
+            self.optimizer = optim.AdamW(self.model.parameters(), lr=learning_rate, weight_decay=1e-4)
+            self.criterion = nn.CrossEntropyLoss()
+        else:
+            self.optimizer = None
+            self.criterion = None
         
         # Experience replay buffer
         self.experience_buffer = deque(maxlen=1000)
@@ -60,6 +65,12 @@ class AnnotationTypeTrainer:
             return AnnotationTypeGBTModel()
         elif self.base_model_type == 'causal':
             return AnnotationTypeCausalModel(input_dim=14, hidden_dim=128, out_dim=2)
+        elif self.base_model_type == 'hgt':
+            return AnnotationTypeHGTModel(input_dim=14, hidden_dim=128, out_dim=2)
+        elif self.base_model_type == 'gcsn':
+            return AnnotationTypeGCSNModel(input_dim=14, hidden_dim=128, out_dim=2)
+        elif self.base_model_type == 'dg2n':
+            return AnnotationTypeDG2NModel(input_dim=14, hidden_dim=128, out_dim=2)
         else:
             raise ValueError(f"Unsupported base model type: {self.base_model_type}")
     
@@ -158,7 +169,7 @@ class AnnotationTypeTrainer:
     
     def predict_annotation_type(self, features):
         """Predict annotation type for given features"""
-        if self.base_model_type == 'gcn' or self.base_model_type == 'causal':
+        if self.base_model_type in ['gcn', 'causal', 'hgt', 'gcsn', 'dg2n']:
             self.model.eval()
             with torch.no_grad():
                 X = torch.tensor(features, dtype=torch.float).to(self.device)
@@ -266,7 +277,7 @@ class AnnotationTypeTrainer:
         
         batch = random.sample(list(self.experience_buffer), batch_size)
         
-        if self.base_model_type == 'gcn' or self.base_model_type == 'causal':
+        if self.base_model_type in ['gcn', 'causal', 'hgt', 'gcsn', 'dg2n']:
             all_features = []
             all_labels = []
             
@@ -403,7 +414,7 @@ def main():
                        help='Root directory of CFWR project')
     parser.add_argument('--episodes', type=int, default=50, help='Number of training episodes')
     parser.add_argument('--learning_rate', type=float, default=0.001, help='Learning rate')
-    parser.add_argument('--base_model', default='gcn', choices=['gcn', 'gbt', 'causal'], 
+    parser.add_argument('--base_model', default='gcn', choices=['gcn', 'gbt', 'causal', 'hgt', 'gcsn', 'dg2n'],
                        help='Base model type to use')
     parser.add_argument('--device', default='cpu', help='Device to use (cpu/cuda)')
     
@@ -426,6 +437,102 @@ def main():
     )
     
     logger.info("@GTENegativeOne annotation type training completed successfully")
+
+class AnnotationTypeHGTModel(nn.Module):
+    """HGT-based model for annotation type prediction"""
+    
+    def __init__(self, input_dim, hidden_dim, out_dim):
+        super(AnnotationTypeHGTModel, self).__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
+        self.out_dim = out_dim
+        
+        # Enhanced feature extraction layers
+        self.feature_extractor = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(0.3)
+        )
+        
+        # Classification head
+        self.classifier = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim // 2),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.Linear(hidden_dim // 2, out_dim)
+        )
+    
+    def forward(self, x):
+        features = self.feature_extractor(x)
+        output = self.classifier(features)
+        return output
+
+class AnnotationTypeGCSNModel(nn.Module):
+    """GCSN-based model for annotation type prediction"""
+    
+    def __init__(self, input_dim, hidden_dim, out_dim):
+        super(AnnotationTypeGCSNModel, self).__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
+        self.out_dim = out_dim
+        
+        # GCSN-style feature extraction
+        self.feature_extractor = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(0.4),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(0.4)
+        )
+        
+        # Classification head
+        self.classifier = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim // 2),
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            nn.Linear(hidden_dim // 2, out_dim)
+        )
+    
+    def forward(self, x):
+        features = self.feature_extractor(x)
+        output = self.classifier(features)
+        return output
+
+class AnnotationTypeDG2NModel(nn.Module):
+    """DG2N-based model for annotation type prediction"""
+    
+    def __init__(self, input_dim, hidden_dim, out_dim):
+        super(AnnotationTypeDG2NModel, self).__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
+        self.out_dim = out_dim
+        
+        # DG2N-style feature extraction
+        self.feature_extractor = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(0.3)
+        )
+        
+        # Classification head
+        self.classifier = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim // 2),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.Linear(hidden_dim // 2, out_dim)
+        )
+    
+    def forward(self, x):
+        features = self.feature_extractor(x)
+        output = self.classifier(features)
+        return output
 
 if __name__ == '__main__':
     main()

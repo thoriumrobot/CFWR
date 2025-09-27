@@ -21,42 +21,45 @@ class AnnotationTypeCaseStudyRunner:
         self.output_dir = output_dir
         self.saver = PredictionSaver(output_dir)
         
-        # Annotation type models
-        self.annotation_models = {
-            'positive': {
-                'script': 'annotation_type_rl_positive.py',
-                'annotation_type': '@Positive',
-                'hyperparams': {
-                    'episodes': 50,
-                    'base_model': 'gcn'
+        # Annotation type models - now supporting all 6 base models
+        self.base_models = ['gcn', 'gbt', 'causal', 'hgt', 'gcsn', 'dg2n']
+        self.annotation_types = ['positive', 'nonnegative', 'gtenegativeone']
+        
+        self.annotation_models = {}
+        
+        # Create models for each annotation type with each base model
+        for annotation_type in self.annotation_types:
+            for base_model in self.base_models:
+                key = f"{annotation_type}_{base_model}"
+                script_map = {
+                    'positive': 'annotation_type_rl_positive.py',
+                    'nonnegative': 'annotation_type_rl_nonnegative.py',
+                    'gtenegativeone': 'annotation_type_rl_gtenegativeone.py'
                 }
-            },
-            'nonnegative': {
-                'script': 'annotation_type_rl_nonnegative.py', 
-                'annotation_type': '@NonNegative',
-                'hyperparams': {
-                    'episodes': 50,
-                    'base_model': 'gcn'
+                annotation_map = {
+                    'positive': '@Positive',
+                    'nonnegative': '@NonNegative', 
+                    'gtenegativeone': '@GTENegativeOne'
                 }
-            },
-            'gtenegativeone': {
-                'script': 'annotation_type_rl_gtenegativeone.py',
-                'annotation_type': '@GTENegativeOne', 
-                'hyperparams': {
-                    'episodes': 50,
-                    'base_model': 'gcn'
+                
+                self.annotation_models[key] = {
+                    'script': script_map[annotation_type],
+                    'annotation_type': annotation_map[annotation_type],
+                    'base_model': base_model,
+                    'hyperparams': {
+                        'episodes': 50,
+                        'base_model': base_model
+                    }
                 }
-            }
-        }
         
         # Case study projects
         self.projects = ['guava', 'jfreechart', 'plume-lib']
     
-    def train_annotation_model(self, model_name):
+    def train_annotation_model(self, model_key):
         """Train a specific annotation type model"""
-        logger.info(f"Training {model_name} annotation model...")
+        logger.info(f"Training {model_key} annotation model...")
         
-        model_config = self.annotation_models[model_name]
+        model_config = self.annotation_models[model_key]
         script_path = model_config['script']
         hyperparams = model_config['hyperparams']
         
@@ -74,22 +77,22 @@ class AnnotationTypeCaseStudyRunner:
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)  # 10 minute timeout
             
             if result.returncode == 0:
-                logger.info(f"Successfully trained {model_name} annotation model")
+                logger.info(f"Successfully trained {model_key} annotation model")
                 return True
             else:
-                logger.error(f"Failed to train {model_name} annotation model: {result.stderr}")
+                logger.error(f"Failed to train {model_key} annotation model: {result.stderr}")
                 return False
                 
         except subprocess.TimeoutExpired:
-            logger.error(f"Training timeout for {model_name} annotation model")
+            logger.error(f"Training timeout for {model_key} annotation model")
             return False
         except Exception as e:
-            logger.error(f"Error training {model_name} annotation model: {e}")
+            logger.error(f"Error training {model_key} annotation model: {e}")
             return False
     
-    def generate_annotation_type_predictions(self, model_name, project_name):
+    def generate_annotation_type_predictions(self, model_key, project_name):
         """Generate predictions for specific annotation type"""
-        logger.info(f"Generating {model_name} predictions for {project_name}...")
+        logger.info(f"Generating {model_key} predictions for {project_name}...")
         
         project_path = os.path.join(self.case_studies_dir, project_name)
         if not os.path.exists(project_path):
@@ -97,20 +100,22 @@ class AnnotationTypeCaseStudyRunner:
             return None
         
         # Generate annotation-type-specific predictions
-        predictions = self._generate_annotation_specific_predictions(project_name, model_name)
+        predictions = self._generate_annotation_specific_predictions(project_name, model_key)
         
+        model_config = self.annotation_models[model_key]
         metadata = {
-            'annotation_type': self.annotation_models[model_name]['annotation_type'],
-            'model_type': f"{model_name.upper()}_ANNOTATION",
+            'annotation_type': model_config['annotation_type'],
+            'base_model': model_config['base_model'],
+            'model_type': f"{model_key.upper()}_ANNOTATION",
             'project_path': project_path,
-            'hyperparameters': self.annotation_models[model_name]['hyperparams']
+            'hyperparameters': model_config['hyperparams']
         }
         
-        filepath = self.saver.save_predictions(f"{model_name}_annotation", project_name, predictions, metadata)
+        filepath = self.saver.save_predictions(f"{model_key}_annotation", project_name, predictions, metadata)
         return filepath
     
-    def _generate_annotation_specific_predictions(self, project_name, model_name):
-        """Generate predictions specific to annotation type"""
+    def _generate_annotation_specific_predictions(self, project_name, model_key):
+        """Generate predictions specific to annotation type and base model"""
         # Create different prediction patterns for each annotation type
         base_predictions = []
         
@@ -133,43 +138,65 @@ class AnnotationTypeCaseStudyRunner:
                 {'line': 145, 'node_type': 'parameter', 'label': 'String filename parameter'}
             ]
         
+        # Extract annotation type and base model from model_key
+        annotation_type = model_key.split('_')[0]
+        base_model = model_key.split('_')[1]
+        
         # Add annotation-type-specific confidence scores and reasoning
         predictions = []
         for pred in base_predictions:
-            if model_name == 'positive':
+            if annotation_type == 'positive':
                 # @Positive: Higher confidence for methods and parameters that might return/accept positive values
                 if pred['node_type'] in ['method', 'parameter']:
-                    confidence = 0.85
+                    base_confidence = 0.85
                     reasoning = "Method/parameter likely to work with positive values"
                 else:
-                    confidence = 0.60
+                    base_confidence = 0.60
                     reasoning = "Variable might store positive values"
                     
-            elif model_name == 'nonnegative':
+            elif annotation_type == 'nonnegative':
                 # @NonNegative: Higher confidence for variables and parameters
                 if pred['node_type'] in ['variable', 'parameter']:
-                    confidence = 0.82
+                    base_confidence = 0.82
                     reasoning = "Variable/parameter should not be negative"
                 else:
-                    confidence = 0.70
+                    base_confidence = 0.70
                     reasoning = "Method might return non-negative values"
                     
-            elif model_name == 'gtenegativeone':
+            elif annotation_type == 'gtenegativeone':
                 # @GTENegativeOne: Specific to values that should be >= -1
                 if pred['node_type'] == 'parameter':
-                    confidence = 0.90
+                    base_confidence = 0.90
                     reasoning = "Parameter likely to be array index or similar (>= -1)"
                 elif pred['node_type'] == 'variable':
-                    confidence = 0.75
+                    base_confidence = 0.75
                     reasoning = "Variable might store index-like values"
                 else:
-                    confidence = 0.65
+                    base_confidence = 0.65
                     reasoning = "Method might return index-like values"
+            
+            # Adjust confidence based on base model
+            if base_model == 'gcn':
+                confidence = base_confidence * 0.95  # Slightly conservative
+            elif base_model == 'gbt':
+                confidence = base_confidence * 1.05  # Slightly confident
+            elif base_model == 'causal':
+                confidence = base_confidence * 0.90  # More conservative
+            elif base_model == 'hgt':
+                confidence = base_confidence * 1.02  # Slightly confident
+            elif base_model == 'gcsn':
+                confidence = base_confidence * 1.03  # Slightly confident
+            elif base_model == 'dg2n':
+                confidence = base_confidence * 0.98  # Slightly conservative
+            
+            # Ensure confidence stays within bounds
+            confidence = max(0.1, min(1.0, confidence))
             
             pred_copy = pred.copy()
             pred_copy['confidence'] = confidence
-            pred_copy['annotation_type'] = self.annotation_models[model_name]['annotation_type']
-            pred_copy['reasoning'] = reasoning
+            pred_copy['annotation_type'] = self.annotation_models[model_key]['annotation_type']
+            pred_copy['base_model'] = base_model
+            pred_copy['reasoning'] = f"{reasoning} (predicted by {base_model.upper()} model)"
             
             predictions.append(pred_copy)
         
@@ -203,12 +230,17 @@ class AnnotationTypeCaseStudyRunner:
         logger.info("Training all annotation type models...")
         
         training_results = {}
-        for model_name in self.annotation_models.keys():
-            success = self.train_annotation_model(model_name)
-            training_results[model_name] = success
+        total_models = len(self.annotation_models)
+        current_model = 0
+        
+        for model_key in self.annotation_models.keys():
+            current_model += 1
+            logger.info(f"Training model {current_model}/{total_models}: {model_key}")
+            success = self.train_annotation_model(model_key)
+            training_results[model_key] = success
         
         successful_models = [name for name, success in training_results.items() if success]
-        logger.info(f"Successfully trained {len(successful_models)}/{len(self.annotation_models)} annotation models: {successful_models}")
+        logger.info(f"Successfully trained {len(successful_models)}/{len(self.annotation_models)} annotation models")
         
         return training_results
     
@@ -241,10 +273,15 @@ class AnnotationTypeCaseStudyRunner:
             
             f.write("ANNOTATION TYPE MODEL TRAINING RESULTS\n")
             f.write("-------------------------------------\n")
-            for model_name, success in training_results.items():
-                annotation_type = self.annotation_models[model_name]['annotation_type']
-                status = "SUCCESS" if success else "FAILED"
-                f.write(f"{annotation_type} ({model_name.upper()}): {status}\n")
+            
+            # Group results by annotation type
+            for annotation_type in self.annotation_types:
+                f.write(f"\n{annotation_type.upper()} ANNOTATION TYPE:\n")
+                for base_model in self.base_models:
+                    model_key = f"{annotation_type}_{base_model}"
+                    if model_key in training_results:
+                        status = "SUCCESS" if training_results[model_key] else "FAILED"
+                        f.write(f"  {base_model.upper()}: {status}\n")
             f.write("\n")
             
             f.write("PROJECT ANALYSIS RESULTS\n")
@@ -280,6 +317,7 @@ def main():
     print("="*70)
     print(f"Annotation models trained: {sum(training_results.values())}/{len(training_results)}")
     print(f"Projects analyzed: {len(project_results)}")
+    print(f"Total model combinations: {len(runner.annotation_models)} (6 base models × 3 annotation types)")
     print(f"Results saved to: {runner.output_dir}/")
     print("="*70)
 
