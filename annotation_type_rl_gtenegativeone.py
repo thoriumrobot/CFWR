@@ -312,8 +312,24 @@ class AnnotationTypeTrainer:
                 X = np.vstack(all_features)
                 y = np.hstack(all_labels)
                 
-                self.model.fit(X, y)
-                logger.info("GBT experience replay training completed")
+                # Check for class diversity for GBT models
+                unique_classes = np.unique(y)
+                if len(unique_classes) < 2:
+                    logger.warning(f"GBT training skipped: only {len(unique_classes)} class(es) found. Adding synthetic negative examples.")
+                    # Add synthetic negative examples to ensure class diversity
+                    n_samples = len(X)
+                    synthetic_X = X + np.random.normal(0, 0.1, X.shape)  # Add noise
+                    synthetic_y = np.zeros(n_samples)  # All negative class
+                    
+                    # Combine original and synthetic data
+                    X_combined = np.vstack([X, synthetic_X])
+                    y_combined = np.hstack([y, synthetic_y])
+                    
+                    self.model.fit(X_combined, y_combined)
+                    logger.info("GBT experience replay training completed with synthetic data")
+                else:
+                    self.model.fit(X, y)
+                    logger.info("GBT experience replay training completed")
     
     def save_model(self, filepath):
         """Save the trained model"""

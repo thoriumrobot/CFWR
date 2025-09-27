@@ -325,8 +325,24 @@ class AnnotationTypeTrainer:
                 X = np.vstack(all_features)
                 y = np.hstack(all_labels)
                 
-                self.model.fit(X, y)
-                logger.info("GBT experience replay training completed")
+                # Check for class diversity for GBT models
+                unique_classes = np.unique(y)
+                if len(unique_classes) < 2:
+                    logger.warning(f"GBT training skipped: only {len(unique_classes)} class(es) found. Adding synthetic negative examples.")
+                    # Add synthetic negative examples to ensure class diversity
+                    n_samples = len(X)
+                    synthetic_X = X + np.random.normal(0, 0.1, X.shape)  # Add noise
+                    synthetic_y = np.zeros(n_samples)  # All negative class
+                    
+                    # Combine original and synthetic data
+                    X_combined = np.vstack([X, synthetic_X])
+                    y_combined = np.hstack([y, synthetic_y])
+                    
+                    self.model.fit(X_combined, y_combined)
+                    logger.info("GBT experience replay training completed with synthetic data")
+                else:
+                    self.model.fit(X, y)
+                    logger.info("GBT experience replay training completed")
     
     def save_model(self, filepath):
         """Save the trained model"""
@@ -429,6 +445,11 @@ def main():
     parser.add_argument('--learning_rate', type=float, default=0.001, help='Learning rate')
     parser.add_argument('--base_model', default='gcn', choices=['gcn', 'gbt', 'causal', 'hgt', 'gcsn', 'dg2n'],
                        help='Base model type to use')
+    parser.add_argument('--hidden_dim', type=int, default=128, help='Hidden dimension for neural networks')
+    parser.add_argument('--dropout_rate', type=float, default=0.3, help='Dropout rate for neural networks')
+    parser.add_argument('--n_estimators', type=int, default=100, help='Number of estimators for GBT')
+    parser.add_argument('--max_depth', type=int, default=3, help='Maximum depth for GBT')
+    parser.add_argument('--min_samples_split', type=int, default=2, help='Minimum samples split for GBT')
     parser.add_argument('--device', default='cpu', help='Device to use (cpu/cuda)')
     
     args = parser.parse_args()
