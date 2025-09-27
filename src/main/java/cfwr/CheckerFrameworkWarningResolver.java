@@ -383,7 +383,7 @@ public class CheckerFrameworkWarningResolver {
         cmd.add("java");
         cmd.add("-cp");
         // Use Gradle runtime classpath via the fat CF slicer jar if available; fall back to classes
-        Path fatJar = Paths.get(resolverPath, "build", "libs", "cf-slicer-all.jar");
+        Path fatJar = Paths.get(resolverPath, "build", "libs", "CFWR-all.jar");
         if (Files.exists(fatJar)) {
             cmd.add(fatJar.toString());
             cmd.add("cfwr.CheckerFrameworkSlicer");
@@ -676,6 +676,12 @@ public class CheckerFrameworkWarningResolver {
         if (vineflowerJar != null && !vineflowerJar.isBlank()) {
             cmd.add("--decompiler");
             cmd.add(vineflowerJar);
+        }
+        
+        // Add prediction mode for annotation placement
+        String predictionMode = System.getenv("SOOT_PREDICTION_MODE");
+        if (predictionMode != null && !predictionMode.isBlank()) {
+            cmd.add("--prediction-mode");
         }
 
         return cmd;

@@ -1,0 +1,6 @@
+// Fallback slice manifest
+target_file: /tmp/tmpyq7d3o11/src/main/java/com/example/ArrayTest.java
+target_line: 15
+member: com.example.ArrayTest#testLoop(int[])
+slice_type: fallback
+lines: 10-20

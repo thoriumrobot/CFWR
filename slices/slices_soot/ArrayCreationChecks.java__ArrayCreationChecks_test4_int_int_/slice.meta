@@ -1,0 +1,4 @@
+method=ArrayCreationChecks#test4(int,int)
+line=27
+source=/home/ubuntu/checker-framework/checker/tests/index/ArrayCreationChecks.java
+slice_type=source_fallback

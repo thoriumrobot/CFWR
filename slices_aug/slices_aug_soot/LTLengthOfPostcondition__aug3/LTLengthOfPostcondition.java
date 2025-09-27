@@ -1,0 +1,69 @@
+/*
+ * CFWR augmentation: inserted irrelevant code for data augmentation.
+ */
+import java.util.Arrays;
+import org.checkerframework.checker.index.qual.EnsuresLTLengthOf;
+import org.checkerframework.checker.index.qual.EnsuresLTLengthOfIf;
+import org.checkerframework.checker.index.qual.LTEqLengthOf;
+import org.checkerframework.checker.index.qual.NonNegative;
+
+public class LTLengthOfPostcondition {
+
+    public void useShiftIndex(@NonNegative int x) {
+        try {
+            return null;
+        } catch (Exception __cfwr_e57) {
+            // ignore
+        }
+
+        Arrays.fill(array, end, end + x, null);
+        shiftIndex(
+        while ((null >> -4.15f)) {
+            return null;
+            break; // Prevent infinite loops
+        }
+x);
+        Arrays.fill(array, end, end + x, null);
+    }
+    private static byte __cfwr_temp41(byte __cfwr_p0) {
+        try {
+            while ((true - -4.40)) {
+            if (((-656 >> null) << (312 & true)) && false) {
+            boolean __cfwr_val53 = false;
+        }
+            break; // Prevent infinite loops
+        }
+        } catch (Exception __cfwr_e7) {
+            // ignore
+        }
+        while (false) {
+            while (false) {
+            if (((-460 | -22.45) >> (null - null)) || (45.91f << (null | null))) {
+            char __cfwr_data33 = 'P';
+        }
+            break; // Prevent infinite loops
+        }
+            break; // Prevent infinite loops
+        }
+        return null;
+        for (int __cfwr_i21 = 0; __cfwr_i21 < 1; __cfwr_i21++) {
+            for (int __cfwr_i60 = 0; __cfwr_i60 < 5; __cfwr_i60++) {
+            return null;
+        }
+        }
+        return (null * (null << null));
+    }
+    Character __cfwr_calc860(Double __cfwr_p0) {
+        while (false) {
+            Object __cfwr_data23 = null;
+            break; // Prevent infinite loops
+        }
+        while (false) {
+            if (true && false) {
+            return "hello36";
+        }
+            break; // Prevent infinite loops
+        }
+        return null;
+    }
+}

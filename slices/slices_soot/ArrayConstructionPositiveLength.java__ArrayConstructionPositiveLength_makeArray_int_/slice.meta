@@ -1,0 +1,4 @@
+method=ArrayConstructionPositiveLength#makeArray(int)
+line=9
+source=/home/ubuntu/checker-framework/checker/tests/index/ArrayConstructionPositiveLength.java
+slice_type=source_fallback

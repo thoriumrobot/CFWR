@@ -47,6 +47,12 @@ dependencies {
   // Your parser
   implementation 'com.github.javaparser:javaparser-core:3.26.2'
 
+  // Soot for bytecode analysis and slicing
+  implementation 'org.soot-oss:soot:4.4.1'
+  
+  // Vineflower decompiler (optional)
+  implementation 'org.vineflower:vineflower:1.10.1'
+
   // --- Tests (choose JUnit 5 or 4; here we use JUnit 5) ---
   testImplementation 'org.junit.jupiter:junit-jupiter:5.10.3'
   testImplementation 'org.junit.jupiter:junit-jupiter-params:5.10.3'

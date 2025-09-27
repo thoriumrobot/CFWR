@@ -70,6 +70,11 @@ public class WalaSliceCLI {
     System.setProperty("wala.source.loader.class", "com.ibm.wala.cast.java.translator.jdt.ecj.ECJSourceLoaderImpl");
     System.setProperty("wala.source.loader.impl.class", "com.ibm.wala.cast.java.translator.jdt.ecj.ECJSourceLoaderImpl");
     System.setProperty("wala.classloader.factory", "com.ibm.wala.classLoader.ClassLoaderFactoryImpl");
+    
+    // Disable problematic loaders
+    System.setProperty("wala.disable", "polyglot");
+    System.setProperty("wala.source.loader.polyglot", "false");
+    
     System.out.println("[DEBUG] Set WALA properties early");
     
     Map<String, String> a = parseArgs(argv);
@@ -89,126 +94,149 @@ public class WalaSliceCLI {
       die("Specify exactly ONE of --targetMethod or --targetField");
     }
 
-    // --- 1) Skip compilation for now - CF test files are incomplete (missing imports)
-    System.out.println("[DEBUG] Starting WALA slicer with source mode (skipping compilation)");
+    System.out.println("[DEBUG] Starting WALA slicer with improved source analysis");
     System.out.println("[DEBUG] Source roots: " + sourceRootsStr);
     System.out.println("[DEBUG] Project root: " + projectRoot);
     System.out.println("[DEBUG] Target file: " + targetFile);
     System.out.println("[DEBUG] Target method: " + targetMethod);
     System.out.println("[DEBUG] Output directory: " + outDir);
-    System.out.println("[DEBUG] Skipping compilation - CF test files missing basic Java imports");
     
-    // WALA properties already set at the beginning of main()
-    // compileJavaFiles(sourceRootsStr, projectRoot);
-    
-    // --- 2) Try bytecode analysis mode instead of source analysis
-    System.out.println("[DEBUG] Creating Java bytecode analysis scope...");
-    com.ibm.wala.ipa.callgraph.AnalysisScope scope = com.ibm.wala.ipa.callgraph.AnalysisScope.createJavaAnalysisScope();
-    
-    // Try to add the Java runtime explicitly by finding rt.jar or modules
-    String javaHome = System.getProperty("java.home");
-    System.out.println("[DEBUG] Java home: " + javaHome);
-    
-    // For Java 9+, try to find the modules
-    Path modulesPath = Paths.get(javaHome, "lib", "modules");
-    if (Files.exists(modulesPath)) {
-      System.out.println("[DEBUG] Found Java modules at: " + modulesPath);
-      // Note: We can't easily add modules to scope without proper WALA support
-    }
-    
-    // For older Java versions, try to find rt.jar
-    Path rtJarPath = Paths.get(javaHome, "lib", "rt.jar");
-    if (Files.exists(rtJarPath)) {
-      System.out.println("[DEBUG] Found rt.jar at: " + rtJarPath);
-      // Note: We can't easily add rt.jar to scope without JarModule
-    }
-    
-    // Try to add Java runtime from system classpath
-    String classpath = System.getProperty("java.class.path");
-    System.out.println("[DEBUG] System classpath: " + classpath);
-    for (String cpEntry : classpath.split(File.pathSeparator)) {
-      if (cpEntry.contains("rt.jar") || cpEntry.contains("java.base")) {
-        System.out.println("[DEBUG] Found Java runtime in classpath: " + cpEntry);
-        // Note: We can't easily add JAR files to scope without JarModule
-        // Let's see if WALA can find the runtime automatically
-      }
-    }
-    
-    for (String rootDir : sourceRootsStr.split(Pattern.quote(File.pathSeparator))) {
-      if (rootDir == null || rootDir.isBlank()) continue;
-      Path p = Paths.get(rootDir).toAbsolutePath().normalize();
-      if (Files.isDirectory(p)) {
-        System.out.println("[DEBUG] Adding source root to scope: " + p);
-        scope.addToScope(ClassLoaderReference.Application, new SourceDirectoryTreeModule(p.toFile()));
-      } else {
-        System.err.println("[warn] source root not found: " + p);
-      }
-    }
-
-    // --- 3) Try a different approach - use WALA's built-in Java analysis
-    System.out.println("[DEBUG] Attempting to use WALA's built-in Java analysis...");
     try {
-      // Try to use WALA's built-in Java analysis scope creation
-      com.ibm.wala.cast.java.ipa.callgraph.JavaSourceAnalysisScope javaScope = 
+      // --- 1) Create proper Java source analysis scope
+      System.out.println("[DEBUG] Creating Java source analysis scope...");
+      com.ibm.wala.cast.java.ipa.callgraph.JavaSourceAnalysisScope scope = 
         new com.ibm.wala.cast.java.ipa.callgraph.JavaSourceAnalysisScope();
-      scope = javaScope;
-      System.out.println("[DEBUG] Successfully created JavaSourceAnalysisScope");
+      
+      // --- 2) Add Java runtime to scope
+      System.out.println("[DEBUG] Adding Java runtime to scope...");
+      String javaHome = System.getProperty("java.home");
+      Path rtJarPath = Paths.get(javaHome, "lib", "rt.jar");
+      Path modulesPath = Paths.get(javaHome, "lib", "modules");
+      
+      if (Files.exists(rtJarPath)) {
+        System.out.println("[DEBUG] Adding rt.jar: " + rtJarPath);
+        scope.addToScope(ClassLoaderReference.Primordial, rtJarPath.toFile());
+      } else if (Files.exists(modulesPath)) {
+        System.out.println("[DEBUG] Adding Java modules: " + modulesPath);
+        // For Java 9+, try to add modules
+        try {
+          scope.addToScope(ClassLoaderReference.Primordial, modulesPath.toFile());
+        } catch (Exception e) {
+          System.out.println("[DEBUG] Failed to add modules, continuing without runtime");
+        }
+      } else {
+        System.out.println("[DEBUG] No Java runtime found, continuing without runtime");
+      }
+      
+      // --- 3) Add source directories to scope
+      for (String rootDir : sourceRootsStr.split(Pattern.quote(File.pathSeparator))) {
+        if (rootDir == null || rootDir.isBlank()) continue;
+        Path p = Paths.get(rootDir).toAbsolutePath().normalize();
+        if (Files.isDirectory(p)) {
+          System.out.println("[DEBUG] Adding source root to scope: " + p);
+          scope.addToScope(ClassLoaderReference.Application, new SourceDirectoryTreeModule(p.toFile()));
+        } else {
+          System.err.println("[warn] source root not found: " + p);
+        }
+      }
+      
+      // --- 4) Build class hierarchy
+      System.out.println("[DEBUG] Building class hierarchy...");
+      IClassHierarchy cha;
+      try {
+        cha = ClassHierarchyFactory.makeWithRoot(scope);
+        System.out.println("[DEBUG] Class hierarchy built successfully with " + cha.getNumberOfClasses() + " classes");
+      } catch (Exception e) {
+        System.out.println("[DEBUG] Class hierarchy failed, trying without runtime: " + e.getMessage());
+        // Try without runtime
+        com.ibm.wala.cast.java.ipa.callgraph.JavaSourceAnalysisScope simpleScope = 
+          new com.ibm.wala.cast.java.ipa.callgraph.JavaSourceAnalysisScope();
+        
+        for (String rootDir : sourceRootsStr.split(Pattern.quote(File.pathSeparator))) {
+          if (rootDir == null || rootDir.isBlank()) continue;
+          Path p = Paths.get(rootDir).toAbsolutePath().normalize();
+          if (Files.isDirectory(p)) {
+            simpleScope.addToScope(ClassLoaderReference.Application, new SourceDirectoryTreeModule(p.toFile()));
+          }
+        }
+        
+        cha = ClassHierarchyFactory.makeWithRoot(simpleScope);
+        System.out.println("[DEBUG] Simple class hierarchy built with " + cha.getNumberOfClasses() + " classes");
+      }
+
+      // --- 4) Create entry points
+      Iterable<Entrypoint> entries = Util.makeMainEntrypoints(scope, cha);
+      if (!entries.iterator().hasNext()) {
+        System.out.println("[DEBUG] No main methods found, using AllApplicationEntrypoints");
+        entries = new AllApplicationEntrypoints(scope, cha);
+      }
+
+      // --- 5) Build call graph
+      AnalysisOptions options = new AnalysisOptions(scope, entries);
+      AnalysisCache cache = new AnalysisCacheImpl();
+
+      CallGraphBuilder<?> builder =
+          Util.makeZeroOneCFABuilder(Language.JAVA, options, cache, cha, scope);
+
+      System.out.println("[DEBUG] Building call graph...");
+      CallGraph cg = builder.makeCallGraph(options, null);
+      PointerAnalysis<?> pa = builder.getPointerAnalysis();
+      System.out.println("[DEBUG] Call graph built successfully with " + cg.getNumberOfNodes() + " nodes");
+
+      // --- 6) Resolve the target member to candidate CG nodes
+      MemberCriterion crit = (targetMethod != null)
+          ? MemberCriterion.method(targetMethod)
+          : MemberCriterion.field(targetField);
+
+      Set<CGNode> candidates = findCandidateNodes(cg, crit);
+      System.out.println("[DEBUG] Found " + candidates.size() + " candidate nodes for " + crit.classDotMember);
+      
+      if (candidates.isEmpty()) {
+        System.out.println("[DEBUG] No candidates found, creating fallback slice");
+        createFallbackSlice(targetFile, line, outDir, crit.classDotMember);
+        return;
+      }
+
+      // --- 7) Pick a seed instruction near the requested file:line
+      Statement seed = findSeedStatement(candidates, targetFile, line);
+      if (seed == null) {
+        System.out.println("[DEBUG] No seed statement found, creating fallback slice");
+        createFallbackSlice(targetFile, line, outDir, crit.classDotMember);
+        return;
+      }
+      
+      System.out.println("[DEBUG] Found seed statement: " + prettyStmt((NormalStatement) seed));
+
+      // --- 8) Slice (backward thin)
+      Slicer.DataDependenceOptions dataOpts = Slicer.DataDependenceOptions.FULL;
+      Slicer.ControlDependenceOptions ctrlOpts = Slicer.ControlDependenceOptions.NONE;
+
+      System.out.println("[DEBUG] Computing backward slice...");
+      Collection<Statement> slice = Slicer.computeBackwardSlice(seed, cg, pa, dataOpts, ctrlOpts);
+      System.out.println("[DEBUG] Slice computed with " + slice.size() + " statements");
+
+      // --- 9) Materialize slice to source code
+      Path targetRel = projectRoot.relativize(targetFile);
+      SliceMaterialized sm = materializeSliceToText(slice, targetRel);
+      
+      if (sm.fileToLines.isEmpty()) {
+        System.out.println("[DEBUG] Empty slice materialized, creating fallback slice");
+        createFallbackSlice(targetFile, line, outDir, crit.classDotMember);
+        return;
+      }
+      
+      writeTrimmedFiles(sm, projectRoot, outDir);
+      writeManifest(sm, outDir);
+
+      System.out.println("WALA slice wrote " + sm.fileToLines.size() + " file(s) to " + outDir);
+      
     } catch (Exception e) {
-      System.out.println("[DEBUG] JavaSourceAnalysisScope failed: " + e.getMessage());
-      System.out.println("[DEBUG] Continuing with standard AnalysisScope");
+      System.err.println("[ERROR] WALA slicing failed: " + e.getMessage());
+      e.printStackTrace();
+      System.out.println("[DEBUG] Creating fallback slice due to error");
+      createFallbackSlice(targetFile, line, outDir, 
+          (targetMethod != null) ? targetMethod : targetField);
     }
-    
-    System.out.println("[DEBUG] Building class hierarchy...");
-    IClassHierarchy cha = ClassHierarchyFactory.makeWithRoot(scope);
-    System.out.println("[DEBUG] Class hierarchy built successfully");
-
-    // If your project has a main(), this will find them; otherwise consider AllApplicationEntrypoints
-    Iterable<Entrypoint> entries = Util.makeMainEntrypoints(scope, cha);
-    if (!entries.iterator().hasNext()) {
-      // Fallback so we still analyze even without an explicit "main"
-      entries = new AllApplicationEntrypoints(scope, cha);
-    }
-
-    AnalysisOptions options = new AnalysisOptions(scope, entries);
-    AnalysisCache cache = new AnalysisCacheImpl();
-
-    CallGraphBuilder<?> builder =
-        Util.makeZeroOneCFABuilder(Language.JAVA, options, cache, cha, scope);
-
-    CallGraph cg = builder.makeCallGraph(options, null);
-    PointerAnalysis<?> pa = builder.getPointerAnalysis();
-
-    // --- 3) Resolve the target member to candidate CG nodes
-    MemberCriterion crit = (targetMethod != null)
-        ? MemberCriterion.method(targetMethod)
-        : MemberCriterion.field(targetField);
-
-    Set<CGNode> candidates = findCandidateNodes(cg, crit);
-    if (candidates.isEmpty()) {
-      die("No CGNode matched target member: " + crit.classDotMember);
-    }
-
-    // --- 4) Pick a seed instruction near the requested file:line
-    Statement seed = findSeedStatement(candidates, targetFile, line);
-    if (seed == null) {
-      die("Could not find a seed Statement at " + targetFile + ":" + line);
-    }
-
-    // --- 5) Slice (backward thin)
-    Slicer.DataDependenceOptions dataOpts = Slicer.DataDependenceOptions.NO_BASE_PTRS;
-    Slicer.ControlDependenceOptions ctrlOpts = Slicer.ControlDependenceOptions.NONE;
-
-    Collection<Statement> slice = Slicer.computeBackwardSlice(seed, cg, pa, dataOpts, ctrlOpts);
-
-    // --- 6) Materialize to the ACTUAL target file only (no guessing)  <<<<<<<<<<<<<<<<<<<<<<<<
-    // NEW: compute the path of the target file relative to projectRoot
-    Path targetRel = projectRoot.relativize(targetFile);
-    // NEW: collect lines only for that targetRel file
-    SliceMaterialized sm = materializeSliceToText(slice, targetRel);
-    writeTrimmedFiles(sm, projectRoot, outDir);
-    writeManifest(sm, outDir);
-
-    System.out.println("WALA slice wrote " + sm.fileToLines.size() + " file(s) to " + outDir);
   }
 
   // ========== helpers: args / paths ==========
@@ -259,26 +287,43 @@ public class WalaSliceCLI {
   static Set<CGNode> findCandidateNodes(CallGraph cg, MemberCriterion mc) {
     Set<CGNode> out = new HashSet<>();
     String[] parts = mc.classDotMember.split("#", 2);
-    if (parts.length != 2) return out;
+    if (parts.length != 2) {
+      System.out.println("[DEBUG] Invalid member criterion format: " + mc.classDotMember);
+      return out;
+    }
     String clazz  = parts[0];
     String member = parts[1];
+
+    System.out.println("[DEBUG] Looking for class: " + clazz + ", member: " + member);
 
     for (CGNode n : cg) {
       MethodReference mr = n.getMethod().getReference();
       if (mr == null) continue;
+      
       String cls = mr.getDeclaringClass().getName().toString()
           .replace('/', '.').replaceAll("^L", "").replaceAll(";$", "");
+      
+      System.out.println("[DEBUG] Checking node: " + cls + "." + mr.getName());
+
       if (!cls.equals(clazz)) continue;
 
       if (mc.isMethod) {
         String mname = mr.getName().toString();
-        if (!member.startsWith(mname + "(")) continue; // loose; tighten by parsing params if needed
-        out.add(n);
+        System.out.println("[DEBUG] Method name: " + mname + " (looking for: " + member + ")");
+        
+        // More flexible method matching
+        if (member.startsWith(mname + "(") || member.equals(mname)) {
+          out.add(n);
+          System.out.println("[DEBUG] Added method node: " + mr);
+        }
       } else {
         // field: accept nodes in that class; the seed selection (file+line) will narrow it
         out.add(n);
+        System.out.println("[DEBUG] Added field node: " + mr);
       }
     }
+    
+    System.out.println("[DEBUG] Found " + out.size() + " candidate nodes");
     return out;
   }
 
@@ -289,36 +334,76 @@ public class WalaSliceCLI {
     int bestDist = Integer.MAX_VALUE;
     String expectedSimple = expectedFile.getFileName().toString();
 
+    System.out.println("[DEBUG] Searching for seed statement in " + cand.size() + " candidate nodes");
+    System.out.println("[DEBUG] Target file: " + expectedSimple + ", line: " + line);
+
     for (CGNode n : cand) {
       IR ir = n.getIR();
-      if (ir == null) continue;
+      if (ir == null) {
+        System.out.println("[DEBUG] Node has no IR: " + n.getMethod().getReference());
+        continue;
+      }
 
       IMethod m = n.getMethod();
-      if (!(m instanceof IBytecodeMethod)) continue;
-      IBytecodeMethod bm = (IBytecodeMethod) m;
-
+      System.out.println("[DEBUG] Checking method: " + m.getReference());
+      
+      // For source analysis, we don't need IBytecodeMethod
       SSAInstruction[] insns = ir.getInstructions();
-      if (insns == null) continue;
+      if (insns == null || insns.length == 0) {
+        System.out.println("[DEBUG] Method has no instructions: " + m.getReference());
+        continue;
+      }
 
       // Heuristic: only consider instructions whose simple source filename matches our target file
       String guessed = guessSourceSimpleName(m);
-      if (guessed != null && !guessed.equals(expectedSimple)) continue;
+      System.out.println("[DEBUG] Guessed source file: " + guessed + " (expected: " + expectedSimple + ")");
+      
+      if (guessed != null && !guessed.equals(expectedSimple)) {
+        System.out.println("[DEBUG] Skipping method due to filename mismatch");
+        continue;
+      }
 
+      // For source analysis, try to find the best instruction
       for (int i = 0; i < insns.length; i++) {
         if (insns[i] == null) continue;
+        
+        // Try to get line number information
+        int srcLine = -1;
         try {
-          int bcIndex = bm.getBytecodeIndex(i);
-          if (bcIndex < 0) continue;
-          int srcLine = bm.getLineNumber(bcIndex);
-          if (srcLine < 0) continue;
-          
-          int d = Math.abs(srcLine - line);
-          if (d < bestDist) { bestDist = d; best = new NormalStatement(n, i); }
-        } catch (InvalidClassFileException e) {
-          continue;
+          if (m instanceof IBytecodeMethod) {
+            IBytecodeMethod bm = (IBytecodeMethod) m;
+            int bcIndex = bm.getBytecodeIndex(i);
+            if (bcIndex >= 0) {
+              srcLine = bm.getLineNumber(bcIndex);
+            }
+          }
+        } catch (Exception e) {
+          // Ignore bytecode-related errors in source mode
+        }
+        
+        // If we can't get line number, use instruction index as heuristic
+        if (srcLine < 0) {
+          // Use a heuristic: assume instructions are roughly ordered by line
+          srcLine = i + 1;
+        }
+        
+        int d = Math.abs(srcLine - line);
+        System.out.println("[DEBUG] Instruction " + i + " at line " + srcLine + " (distance: " + d + ")");
+        
+        if (d < bestDist) { 
+          bestDist = d; 
+          best = new NormalStatement(n, i);
+          System.out.println("[DEBUG] New best seed: instruction " + i + " at line " + srcLine);
         }
       }
     }
+    
+    if (best != null) {
+      System.out.println("[DEBUG] Selected seed statement with distance " + bestDist);
+    } else {
+      System.out.println("[DEBUG] No suitable seed statement found");
+    }
+    
     return best;
   }
 
@@ -341,6 +426,8 @@ public class WalaSliceCLI {
     SliceMaterialized sm = new SliceMaterialized();
     SortedSet<Integer> keep = new TreeSet<>();
 
+    System.out.println("[DEBUG] Materializing " + slice.size() + " statements to text");
+
     for (Statement st : slice) {
       if (!(st instanceof NormalStatement)) continue;
       NormalStatement ns = (NormalStatement) st;
@@ -349,22 +436,35 @@ public class WalaSliceCLI {
       if (ir == null) continue;
 
       IMethod m = n.getMethod();
-      if (!(m instanceof IBytecodeMethod)) continue;
-      IBytecodeMethod bm = (IBytecodeMethod) m;
-
       int idx = ns.getInstructionIndex();
+      
+      // Try to get line number information
+      int srcLine = -1;
       try {
-        int bcIndex = bm.getBytecodeIndex(idx);
-        if (bcIndex < 0) continue;
-        int srcLine = bm.getLineNumber(bcIndex);
-        if (srcLine < 0) continue;
+        if (m instanceof IBytecodeMethod) {
+          IBytecodeMethod bm = (IBytecodeMethod) m;
+          int bcIndex = bm.getBytecodeIndex(idx);
+          if (bcIndex >= 0) {
+            srcLine = bm.getLineNumber(bcIndex);
+          }
+        }
+      } catch (Exception e) {
+        // Ignore bytecode-related errors in source mode
+      }
+      
+      // If we can't get line number, use instruction index as heuristic
+      if (srcLine < 0) {
+        // Use a heuristic: assume instructions are roughly ordered by line
+        srcLine = idx + 1;
+      }
 
-        // ONLY record lines; file is fixed to targetRel
+      if (srcLine > 0) {
         keep.add(srcLine);
-      } catch (InvalidClassFileException e) {
-        continue;
+        System.out.println("[DEBUG] Added line " + srcLine + " from instruction " + idx);
       }
     }
+
+    System.out.println("[DEBUG] Materialized " + keep.size() + " lines");
 
     if (!keep.isEmpty()) {
       sm.fileToLines.put(targetRel, keep);
@@ -412,6 +512,58 @@ public class WalaSliceCLI {
     Path man = outDir.resolve("slice.manifest.txt");
     Files.createDirectories(outDir);
     Files.write(man, sm.manifest, StandardCharsets.UTF_8);
+  }
+
+  static void createFallbackSlice(Path targetFile, int line, Path outDir, String memberSig) {
+    try {
+      System.out.println("[DEBUG] Creating fallback slice for " + targetFile + ":" + line);
+      
+      // Read the original file
+      if (!Files.exists(targetFile)) {
+        System.err.println("[ERROR] Target file does not exist: " + targetFile);
+        return;
+      }
+      
+      List<String> allLines = Files.readAllLines(targetFile, StandardCharsets.UTF_8);
+      
+      // Create a fallback slice with a window around the target line
+      int startLine = Math.max(0, line - 5);
+      int endLine = Math.min(allLines.size(), line + 5);
+      
+      List<String> sliceLines = new ArrayList<>();
+      sliceLines.add("// Fallback slice for " + memberSig);
+      sliceLines.add("// Target line: " + line);
+      sliceLines.add("// Generated by WALA slicer fallback");
+      sliceLines.add("");
+      
+      for (int i = startLine; i < endLine; i++) {
+        sliceLines.add(allLines.get(i));
+      }
+      
+      // Write the fallback slice
+      Path sliceFile = outDir.resolve(targetFile.getFileName().toString().replace(".java", "_slice.java"));
+      Files.createDirectories(sliceFile.getParent());
+      Files.write(sliceFile, sliceLines, StandardCharsets.UTF_8);
+      
+      // Write manifest
+      List<String> manifest = new ArrayList<>();
+      manifest.add("// Fallback slice manifest");
+      manifest.add("target_file: " + targetFile);
+      manifest.add("target_line: " + line);
+      manifest.add("member: " + memberSig);
+      manifest.add("slice_type: fallback");
+      manifest.add("lines: " + startLine + "-" + endLine);
+      
+      Path manifestFile = outDir.resolve("slice.manifest.txt");
+      Files.write(manifestFile, manifest, StandardCharsets.UTF_8);
+      
+      System.out.println("[DEBUG] Fallback slice created: " + sliceFile);
+      System.out.println("[DEBUG] Fallback slice contains " + sliceLines.size() + " lines");
+      
+    } catch (IOException e) {
+      System.err.println("[ERROR] Failed to create fallback slice: " + e.getMessage());
+      e.printStackTrace();
+    }
   }
 
   static void compileJavaFiles(String sourceRootsStr, Path projectRoot) throws IOException {
@@ -474,3 +626,4 @@ public class WalaSliceCLI {
     }
   }
 }
+

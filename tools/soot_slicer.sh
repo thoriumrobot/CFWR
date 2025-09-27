@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Simple placeholder Soot-based slicer interface
+# Soot-based slicer interface for CFWR
+# Uses the Java-based SootSlicer for proper bytecode slicing
 # Accepts:
 #   --projectRoot <path>
 #   --targetFile <relative-or-abs .java>
@@ -16,6 +17,7 @@ LINE_NO=""
 OUTPUT_DIR=""
 MEMBER_SIG=""
 DECOMPILER_JAR=""
+PREDICTION_MODE=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -25,6 +27,7 @@ while [[ $# -gt 0 ]]; do
     --output)      OUTPUT_DIR="$2"; shift 2;;
     --member)      MEMBER_SIG="$2"; shift 2;;
     --decompiler)  DECOMPILER_JAR="$2"; shift 2;;
+    --prediction-mode) PREDICTION_MODE="--prediction-mode"; shift 1;;
     *) echo "[soot_slicer] Unknown arg: $1"; shift 1;;
   esac
 done
@@ -36,30 +39,40 @@ fi
 
 mkdir -p "$OUTPUT_DIR"
 
-# Normalize TARGET_FILE to absolute
-if [[ "$TARGET_FILE" != /* ]]; then
-  SRC_ABS="${PROJECT_ROOT%/}/$TARGET_FILE"
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CFWR_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Check if the SootSlicer JAR exists
+SOOT_JAR="$CFWR_ROOT/build/libs/CFWR-all.jar"
+if [[ ! -f "$SOOT_JAR" ]]; then
+  echo "[soot_slicer] SootSlicer JAR not found at $SOOT_JAR" >&2
+  echo "[soot_slicer] Please run './gradlew build' first" >&2
+  exit 1
+fi
+
+# Build the command to run the Java-based SootSlicer
+CMD=("java" "-cp" "$SOOT_JAR" "cfwr.SootSlicer")
+CMD+=("--projectRoot" "$PROJECT_ROOT")
+CMD+=("--targetFile" "$TARGET_FILE")
+CMD+=("--line" "$LINE_NO")
+CMD+=("--output" "$OUTPUT_DIR")
+CMD+=("--member" "$MEMBER_SIG")
+
+if [[ -n "$DECOMPILER_JAR" ]]; then
+  CMD+=("--decompiler" "$DECOMPILER_JAR")
+fi
+
+if [[ -n "$PREDICTION_MODE" ]]; then
+  CMD+=("$PREDICTION_MODE")
+fi
+
+echo "[soot_slicer] Running: ${CMD[*]}"
+
+# Execute the SootSlicer
+if "${CMD[@]}"; then
+  echo "[soot_slicer] Slicing completed successfully"
 else
-  SRC_ABS="$TARGET_FILE"
+  echo "[soot_slicer] Slicing failed, exit code: $?" >&2
+  exit 1
 fi
-
-if [[ ! -f "$SRC_ABS" ]]; then
-  echo "[soot_slicer] Source file not found: $SRC_ABS" >&2
-  # Create a placeholder slice to avoid downstream blanks
-  echo "// placeholder slice (source not found) for $MEMBER_SIG" > "$OUTPUT_DIR/slice.java"
-  exit 0
-fi
-
-# Heuristic: copy the source file into the output dir as a minimal slice
-BASENAME=$(basename "$SRC_ABS")
-cp -f "$SRC_ABS" "$OUTPUT_DIR/$BASENAME"
-
-# Also write a small metadata file to help debugging
-cat > "$OUTPUT_DIR/slice.meta" << META
-member=$MEMBER_SIG
-line=$LINE_NO
-source=$SRC_ABS
-META
-
-echo "[soot_slicer] Wrote slice: $OUTPUT_DIR/$BASENAME"
-exit 0

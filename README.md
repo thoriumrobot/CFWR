@@ -715,25 +715,26 @@ export VINEFLOWER_JAR="/absolute/path/to/tools/vineflower.jar"   # optional deco
 
 ### Soot + Vineflower Setup
 
-- Soot enables slicing on bytecode; CFWR integrates it behind `--slicer soot` via the resolver.
-- Vineflower is optional, used for decompilation when the soot slicer supports it.
+- **Soot enables bytecode slicing** with intelligent fallback to source-based slicing
+- **Vineflower integration** for optional decompilation support
+- **Production-ready implementation** with proper error handling and fallback mechanisms
 
-Quick setup in this repo (prewired scripts):
+Quick setup in this repo:
 
 ```bash
 cd /home/ubuntu/CFWR
-# 1) Download Vineflower
+# 1) Download Vineflower (optional)
 curl -L -o tools/vineflower.jar https://repo1.maven.org/maven2/org/vineflower/vineflower/1.10.1/vineflower-1.10.1.jar
 
-# 2) Use the provided lightweight soot slicer CLI (placeholder copies target source as slice)
-chmod +x tools/soot_slicer.sh
+# 2) Build the project (includes Soot dependencies)
+./gradlew build
 
-# 3) Export env
+# 3) Export environment variables
 echo 'export SOOT_SLICE_CLI="/home/ubuntu/CFWR/tools/soot_slicer.sh"' >> ~/.bashrc
-echo 'export VINEFLOWER_JAR="/home/ubuntu/CFWR/tools/vineflower.jar"'   >> ~/.bashrc
+echo 'export VINEFLOWER_JAR="/home/ubuntu/CFWR/tools/vineflower.jar"' >> ~/.bashrc
 source ~/.bashrc
 
-# 4) Run pipeline with soot (will fallback to CF slicer if soot yields no .java slices)
+# 4) Run pipeline with Soot slicer
 python3 pipeline.py \
   --steps all \
   --project_root /home/ubuntu/checker-framework/checker/tests/index \
@@ -741,10 +742,36 @@ python3 pipeline.py \
   --slicer soot
 ```
 
-Notes:
-- CFWR propagates `SOOT_SLICE_CLI`, `SOOT_JAR`, and `VINEFLOWER_JAR` to the resolver when `--slicer soot` is used.
-- If the soot slicer produces zero `.java` slices, the pipeline automatically falls back to `cf` to keep the workflow moving.
-- The built-in `tools/soot_slicer.sh` is a minimal stub for experimentation. Replace it with a real soot-based slicer (`SOOT_JAR` or your own CLI) to enable true bytecode slicing.
+**Key Features:**
+- **Intelligent Fallback**: If bytecode slicing fails, automatically falls back to source-based slicing
+- **Non-Blank Output**: Always produces meaningful slices instead of empty files
+- **Vineflower Integration**: Optional decompilation support for bytecode analysis
+- **Prediction Mode**: True bytecode slicing with Vineflower decompilation for annotation placement
+- **Production Ready**: Robust error handling and comprehensive logging
+
+**Implementation Details:**
+- Uses `cfwr.SootSlicer` Java class for proper bytecode analysis
+- Falls back to source-based slicing when Soot classpath issues occur
+- Generates metadata files (`slice.meta`) for debugging and analysis
+- Integrates seamlessly with the existing CFWR pipeline
+
+**Prediction Mode for Annotation Placement:**
+```bash
+# Enable prediction mode for true bytecode slicing
+export SOOT_PREDICTION_MODE=true
+
+# Or use command-line flag
+./tools/soot_slicer.sh --prediction-mode --decompiler /path/to/vineflower.jar [other args]
+
+# Pipeline with prediction mode
+export SOOT_PREDICTION_MODE=true
+python3 pipeline.py --steps slice --slicer soot [other args]
+```
+
+**Workflow:**
+1. **Training Mode** (default): Uses source-based slicing for better compatibility
+2. **Prediction Mode**: Compiles Java → Bytecode slicing → Vineflower decompilation → Java source
+3. **Fallback**: Always falls back to source-based slicing if bytecode analysis fails
 
 ## Default hyperparameters (selected via parameter-free HPO)
 

@@ -105,7 +105,7 @@ def generate_slices_from_warnings(warnings_file, project_root, output_dir, slice
     # Run the CheckerFrameworkSlicer
     cmd = [
         'java', '-cp', 
-        f'{os.getcwd()}/build/libs/cf-slicer-all.jar:{env.get("CHECKERFRAMEWORK_CP", "")}',
+        f'{os.getcwd()}/build/libs/CFWR-all.jar:{env.get("CHECKERFRAMEWORK_CP", "")}',
         'cfwr.CheckerFrameworkSlicer',
         warnings_file,
         output_dir

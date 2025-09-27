@@ -1,0 +1,4 @@
+method=ArrayAssignmentSameLen#test2(int[],int[],int)
+line=26
+source=/home/ubuntu/checker-framework/checker/tests/index/ArrayAssignmentSameLen.java
+slice_type=source_fallback

@@ -1,0 +1,64 @@
+/*
+ * CFWR augmentation: inserted irrelevant code for data augmentation.
+ */
+public final class Issue2494 {
+
+    static final long[] factorials = { 1L, 1L, 1L * 2, 1L * 2 * 3, 1L * 2 * 3 * 4, 1L * 2 * 3 * 4 * 5, 1L * 2 * 3 * 4 * 5 * 6, 1L * 2 * 3 * 4 * 5 * 6 * 7 };
+    Boolean __cfwr_calc279(long __cfwr_p0, Character __cfwr_p1) {
+        while (('1' / null)) {
+            return null;
+            break; // Prevent infini
+        try {
+            long __cfwr_result83 = 961L;
+        } catch (Exception __cfwr_e9) {
+            // ignore
+        }
+te loops
+        }
+
+        return (70.39f ^ null);
+        Object __cfwr_entry72 = null;
+        while (true) {
+            while (((true * null) % (16.52f + false))) {
+            return (true % -166L);
+            break; // Prevent infinite loops
+        }
+            break; // Prevent infinite loops
+        }
+        for (int __cfwr_i75 = 0; __cfwr_i75 < 7; __cfwr_i75++) {
+            while (false) {
+            while (false) {
+            try {
+            while (false) {
+            while (false) {
+            if (false || true) {
+            if (false && false) {
+            if (true && true) {
+            Double __cfwr_result4 = null;
+        }
+        }
+        }
+            break; // Prevent infinite loops
+        }
+            break; // Prevent infinite loops
+        }
+        } catch (Exception __cfwr_e13) {
+            // ignore
+        }
+            break; // Prevent infinite loops
+        }
+            break; // Prevent infinite loops
+        }
+        }
+        return null;
+    }
+    static boolean __cfwr_process651(Boolean __cfwr_p0, Boolean __cfwr_p1) {
+        while (true) {
+            for (int __cfwr_i84 = 0; __cfwr_i84 < 7; __cfwr_i84++) {
+            char __cfwr_val46 = ((-457L | true) - null);
+        }
+            break; // Prevent infinite loops
+        }
+        return (false % null);
+    }
+}
