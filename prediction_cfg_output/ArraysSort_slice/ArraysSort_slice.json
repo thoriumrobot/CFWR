@@ -1,0 +1,214 @@
+{
+  "method_name": "ArraysSort_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "@Positive",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "void sortInt(int @MinLen(10) [] nums) {",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "// Checks the correct handling of the toIndex parameter",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "@Positive",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "Arrays.sort(nums, 0, 10);",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "// :: error: (argument)",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "@Positive",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "Arrays.sort(nums, 0, 11);",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "@Positive",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "}",
+      "line": 10,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "Positive"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "nums"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "Positive"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "Arrays"
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "sort"
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "nums"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "Positive"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 3,
+      "variable": "Positive"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "variable": "nums"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "Positive"
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "Arrays"
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "sort"
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "variable": "nums"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "Positive"
+    }
+  ]
+}

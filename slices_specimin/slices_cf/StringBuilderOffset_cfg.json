@@ -1,0 +1,48 @@
+{
+  "method_name": "OffsetStringBuilder",
+  "nodes": [
+    {"id": 3, "label": "    @Positive", "line": 3, "node_type": "stmt"},
+    {"id": 4, "label": "  public static void OffsetStringBuilder() {", "line": 4, "node_type": "stmt"},
+    {"id": 5, "label": "    @Positive", "line": 5, "node_type": "stmt"},
+    {"id": 6, "label": "    StringBuilder stringBuilder = new StringBuilder();", "line": 6, "node_type": "stmt"},
+    {"id": 7, "label": "    @Positive", "line": 7, "node_type": "stmt"},
+    {"id": 8, "label": "    char[] chars = new char[10];", "line": 8, "node_type": "stmt"},
+    {"id": 9, "label": "", "line": 9, "node_type": "stmt"},
+    {"id": 10, "label": "    // :: error: (argument)", "line": 10, "node_type": "stmt"},
+    {"id": 11, "label": "    @Positive", "line": 11, "node_type": "stmt"},
+    {"id": 12, "label": "    stringBuilder.append(chars, 5, 7);", "line": 12, "node_type": "stmt"},
+    {"id": 13, "label": "", "line": 13, "node_type": "stmt"},
+    {"id": 14, "label": "    @Positive", "line": 14, "node_type": "stmt"},
+    {"id": 15, "label": "    stringBuilder.append(chars, 5, 4);", "line": 15, "node_type": "stmt"},
+    {"id": 16, "label": "    @Positive", "line": 16, "node_type": "stmt"},
+    {"id": 17, "label": "  }", "line": 17, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 3, "target": 4, "type": "control"},
+    {"source": 4, "target": 5, "type": "control"},
+    {"source": 5, "target": 6, "type": "control"},
+    {"source": 6, "target": 7, "type": "control"},
+    {"source": 7, "target": 8, "type": "control"},
+    {"source": 8, "target": 9, "type": "control"},
+    {"source": 9, "target": 10, "type": "control"},
+    {"source": 10, "target": 11, "type": "control"},
+    {"source": 11, "target": 12, "type": "control"},
+    {"source": 12, "target": 13, "type": "control"},
+    {"source": 13, "target": 14, "type": "control"},
+    {"source": 14, "target": 15, "type": "control"},
+    {"source": 15, "target": 16, "type": "control"},
+    {"source": 16, "target": 17, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 3, "target": 5, "type": "dataflow", "var": "Positive"},
+    {"source": 5, "target": 7, "type": "dataflow", "var": "Positive"},
+    {"source": 7, "target": 11, "type": "dataflow", "var": "Positive"},
+    {"source": 6, "target": 12, "type": "dataflow", "var": "stringBuilder"},
+    {"source": 8, "target": 12, "type": "dataflow", "var": "chars"},
+    {"source": 11, "target": 14, "type": "dataflow", "var": "Positive"},
+    {"source": 12, "target": 15, "type": "dataflow", "var": "stringBuilder"},
+    {"source": 12, "target": 15, "type": "dataflow", "var": "append"},
+    {"source": 12, "target": 15, "type": "dataflow", "var": "chars"},
+    {"source": 14, "target": 16, "type": "dataflow", "var": "Positive"}
+  ]
+}

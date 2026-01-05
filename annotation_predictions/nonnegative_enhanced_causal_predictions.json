@@ -1,0 +1,22 @@
+{
+  "model_name": "nonnegative_enhanced_causal",
+  "annotation_type": "nonnegative",
+  "base_model": "enhanced_causal",
+  "parameters": {
+    "learning_rate": 0.001,
+    "hidden_dim": 256,
+    "dropout_rate": 0.3,
+    "episodes": 20
+  },
+  "metrics": {
+    "final_reward": null,
+    "avg_reward": 0,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0,
+    "episode_rewards": []
+  },
+  "execution_time": 2.564244270324707,
+  "timestamp": "2025-09-27T23:32:38.280240",
+  "output": ""
+}

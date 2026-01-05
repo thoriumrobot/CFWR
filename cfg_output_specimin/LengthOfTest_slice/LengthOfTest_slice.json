@@ -1,0 +1,288 @@
+{
+  "method_name": "LengthOfTest_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "@Positive",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "void foo(int[] a, @LengthOf(\"#1\") int x) {",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "@Positive",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "@IndexOrHigh(\"a\") int y = x;",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "// :: error: (assignment)",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "@Positive",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "@IndexFor(\"a\") int w = x;",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "@Positive",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "@LengthOf(\"a\") int z = a.length;",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "@Positive",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "}",
+      "line": 11,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "Positive"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "x"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "LengthOf"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "Positive"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "x"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "Positive"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "a"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "Positive"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "Positive"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "x"
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "variable": "LengthOf"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "Positive"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "x"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "Positive"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "a"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "int"
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "variable": "Positive"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "annotation_type": "@NonNegative",
+  "base_model_type": "dg2n",
+  "final_train_loss": 0.007370813982561231,
+  "final_val_loss": 3.6415146589279175,
+  "final_train_accuracy": 1.0,
+  "final_val_accuracy": 0.3333333333333333,
+  "best_val_loss": 2.1791178584098816,
+  "epochs": 10,
+  "max_nodes": 1000,
+  "max_edges": 2000,
+  "training_samples": 3,
+  "validation_samples": 3
+}

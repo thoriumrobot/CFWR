@@ -1,0 +1,250 @@
+{
+  "method_name": "IndexForAverage_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "@Positive",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "public static void bug2(int[] a, @IndexFor(\"#1\") int i, @IndexFor(\"#1\") int j) {",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "@Positive",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "@LTLengthOf(\"a\") int k = ((i - 1) + j) / 2;",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "// :: error: (assignment)",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "@Positive",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "@LTLengthOf(\"a\") int h = ((i + 1) + j) / 2;",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "@Positive",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "}",
+      "line": 9,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "Positive"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "j"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "Positive"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "i"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "j"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "Positive"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "Positive"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "a"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "i"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "j"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "variable": "Positive"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "a"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "i"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "variable": "j"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "variable": "Positive"
+    }
+  ]
+}

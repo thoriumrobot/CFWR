@@ -1,0 +1,19 @@
+{
+  "method_name": "badParam",
+  "nodes": [
+    {"id": 14, "label": "    @Positive", "line": 14, "node_type": "stmt"},
+    {"id": 15, "label": "  void badParam(", "line": 15, "node_type": "stmt"},
+    {"id": 16, "label": "      // :: error: (different.length.sequences.offsets)", "line": 16, "node_type": "stmt"},
+    {"id": 17, "label": "    @Positive", "line": 17, "node_type": "stmt"},
+    {"id": 18, "label": "              value = {\"a\", \"b\"},", "line": 18, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 14, "target": 15, "type": "control"},
+    {"source": 15, "target": 16, "type": "control"},
+    {"source": 16, "target": 17, "type": "control"},
+    {"source": 17, "target": 18, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 14, "target": 17, "type": "dataflow", "var": "Positive"}
+  ]
+}

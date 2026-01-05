@@ -1,27 +1,30 @@
 {
-  "timestamp": "2025-09-27 20:42:04",
+  "timestamp": "2025-10-06 18:00:12",
   "mode": "predict",
   "project_root": "/home/ubuntu/checker-framework/checker/tests/index",
   "models_trained": [
     {
       "annotation_type": "@Positive",
+      "base_model_type": "enhanced_hybrid",
       "model_file": "/home/ubuntu/CFWR/models_annotation_types/positive_model.pth",
-      "episodes": 3,
-      "final_reward": 0.20905287461705307,
+      "episodes": 5,
+      "final_reward": 0.2884332205188501,
       "success": true
     },
     {
       "annotation_type": "@NonNegative",
+      "base_model_type": "enhanced_hybrid",
       "model_file": "/home/ubuntu/CFWR/models_annotation_types/nonnegative_model.pth",
-      "episodes": 3,
-      "final_reward": 1.2214505853793478,
+      "episodes": 5,
+      "final_reward": 0.08987437912564797,
       "success": true
     },
     {
       "annotation_type": "@GTENegativeOne",
+      "base_model_type": "enhanced_hybrid",
       "model_file": "/home/ubuntu/CFWR/models_annotation_types/gtenegativeone_model.pth",
-      "episodes": 3,
-      "final_reward": 1.187996182314581,
+      "episodes": 5,
+      "final_reward": 1.2053298241395782,
       "success": true
     }
   ],
@@ -82,9 +85,24 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LessThanCustomCollection_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:07"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Polymorphic2_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:29"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/TypeArrayLengthWithSameLen.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/UBSubtyping_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:05"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/zip/GZIPOutputStream.java",
@@ -120,6 +138,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/com/sun/org/apache/xpath/internal/NodeSet.java",
       "predictions_count": 8,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/StringLength_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:25"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/awt/Button.java",
@@ -182,6 +205,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/StringBuilderOffset_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:13"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/javax/swing/plaf/nimbus/DerivedColor.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -232,9 +260,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Dimension_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:00"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/time/Year.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/StringIndexOf_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:14"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/concurrent/ConcurrentSkipListMap.java",
@@ -245,6 +283,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/sun/security/util/DerValue.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Loops_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:24"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/sun/print/PSStreamPrintService.java",
@@ -267,6 +310,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LessThanValue_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:18"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/concurrent/ScheduledThreadPoolExecutor.java",
       "predictions_count": 6,
       "timestamp": "2025-09-27 20:42:04"
@@ -275,6 +323,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/awt/image/ComponentColorModel.java",
       "predictions_count": 9,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/IndexForVarargs_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:35"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/Issue2494.java",
@@ -335,6 +388,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/ImmutableCollections.java",
       "predictions_count": 30,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LessThanLen_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:09"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/concurrent/DelayQueue.java",
@@ -422,9 +480,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ArrayAssignmentSameLen_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:33"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/javax/swing/text/html/HTMLEditorKit.java",
       "predictions_count": 12,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/PlusPlusBug_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:26"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/jdk.jlink/share/classes/jdk/tools/jlink/plugin/ResourcePool.java",
@@ -467,6 +535,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RandomTest_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:34"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/com/sun/org/apache/xerces/internal/xs/datatypes/ByteList.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
@@ -487,9 +560,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/CustomContractWithArgs_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:12"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/lang/StringBuffer.java",
       "predictions_count": 31,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ArrayWrapper_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:03"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/sun/security/x509/X500Name.java",
@@ -597,6 +680,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/OffsetExample_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:31"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/jdk.compiler/share/classes/com/sun/tools/javac/comp/Resolve.java",
       "predictions_count": 7,
       "timestamp": "2025-09-27 20:42:04"
@@ -647,6 +735,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ArrayIntro_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:21"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/AbstractSequentialList.java",
       "predictions_count": 6,
       "timestamp": "2025-09-27 20:42:04"
@@ -660,6 +753,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/ArrayAssignmentSameLen.java",
       "predictions_count": 8,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/PrimitiveWrappers_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:30"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/ParserOffsetTest.java",
@@ -727,6 +825,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LessThanFloat_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:20"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.logging/share/classes/java/util/logging/LogManager.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -735,6 +838,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/security/AlgorithmParameterGeneratorSpi.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/IntroSub_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:01"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/jdk.javadoc/share/classes/jdk/javadoc/internal/doclets/toolkit/Content.java",
@@ -777,9 +885,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Issue2452_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:26"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/StaticInitializer.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/CharSequenceTest_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:17"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/javax/swing/text/Document.java",
@@ -790,6 +908,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/sun/security/x509/RDN.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ArraysSort_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:08"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/lang/Thread.java",
@@ -807,6 +930,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Issue2420_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:09"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/PrimitiveWrappers.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -815,6 +943,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/awt/GridBagLayout.java",
       "predictions_count": 5,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/BinomialTest_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:02"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/jdk.dynalink/share/classes/jdk/dynalink/NamespaceOperation.java",
@@ -857,6 +990,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/UBPoly_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:12"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/UncheckedMinLen.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
@@ -870,6 +1008,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/ListLowerBound.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RefineNeqLength_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:23"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/HexEncode.java",
@@ -907,6 +1050,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Polymorphic3_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:11"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/javax/print/attribute/Size2DSyntax.java",
       "predictions_count": 3,
       "timestamp": "2025-09-27 20:42:04"
@@ -930,6 +1078,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/IndexIntValVsConstant.java",
       "predictions_count": 3,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/IntroAnd_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:25"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/javax/print/attribute/HashAttributeSet.java",
@@ -1092,9 +1245,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Modulo_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:05"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/RefineGT.java",
       "predictions_count": 12,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LTLengthOfPostcondition_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:27"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.naming/share/classes/javax/naming/directory/BasicAttributes.java",
@@ -1130,6 +1293,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/javax/swing/tree/DefaultTreeSelectionModel.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ArrayConstructionPositiveLength_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:04"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/SwitchTest.java",
@@ -1177,9 +1345,24 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/IndexForTest_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:28"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/IndexForVarargs.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RefineLTE2_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:08"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LengthOfArrayMinusOne_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:07"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/windows/classes/sun/nio/fs/WindowsPath.java",
@@ -1217,6 +1400,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/BasicSubsequence2_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:14"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.naming/share/classes/javax/naming/ldap/Rdn.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -1225,6 +1413,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/utils/IdealGraphVisualizer/Filter/src/main/java/com/sun/hotspot/igv/filter/FilterChain.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ErrorMessageCheck_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:27"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/javax/swing/AbstractButton.java",
@@ -1307,9 +1500,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RangeIndex_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:17"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/nio/channels/SocketChannel.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LessThanBug_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:19"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/io/PrintStream.java",
@@ -1345,6 +1548,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/time/OffsetDateTime.java",
       "predictions_count": 10,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/GuavaPrimitives_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:25"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.management/share/classes/java/lang/management/ThreadMXBean.java",
@@ -1430,6 +1638,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/com/sun/org/apache/xerces/internal/util/NamespaceSupport.java",
       "predictions_count": 5,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/SLSubtyping_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:02"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/LessThanLen.java",
@@ -1527,6 +1740,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LessThanLenBug_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:28"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/jdk.internal.vm.ci/share/classes/jdk.vm.ci.code/src/jdk/vm/ci/code/BytecodePosition.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -1545,6 +1763,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/net/Socket.java",
       "predictions_count": 4,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Index118_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:11"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/ZeroMinLen.java",
@@ -1577,6 +1800,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Polymorphic_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:19"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/SameLenTripleThreat.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
@@ -1587,9 +1815,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Issue1984_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:20"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/sun/text/RuleBasedBreakIterator.java",
       "predictions_count": 8,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Index176_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:10"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/Dictionary.java",
@@ -1602,6 +1840,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/BasicSubsequence3_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:20"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/AbstractCollection.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -1612,9 +1855,24 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ConstantsIndex_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:21"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ConstantArrays_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:14"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/RefineNeqLength.java",
       "predictions_count": 8,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/CombineFacts_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:24"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/concurrent/atomic/AtomicLongArray.java",
@@ -1652,6 +1910,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Issue2029_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:06"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/jdk/internal/icu/impl/UnicodeSetStringSpan.java",
       "predictions_count": 13,
       "timestamp": "2025-09-27 20:42:04"
@@ -1660,6 +1923,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/nio/channels/AsynchronousFileChannel.java",
       "predictions_count": 4,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/GreaterThanTransfer_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:11"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/javax/swing/JTextField.java",
@@ -1705,6 +1973,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/awt/BasicStroke.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Issue3224_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:50:59"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/com/sun/org/apache/bcel/internal/generic/LocalVariableGen.java",
@@ -1762,9 +2035,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/IndexForAverage_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:00"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/time/LocalDateTime.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RefineEq_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:12"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/nio/channels/AsynchronousChannelGroup.java",
@@ -1872,6 +2155,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/EnumValues_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:13"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/beans/VetoableChangeSupport.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -1907,6 +2195,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RefineGTE_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:15"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/zip/Deflater.java",
       "predictions_count": 4,
       "timestamp": "2025-09-27 20:42:04"
@@ -1940,6 +2233,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/ListSet.java",
       "predictions_count": 4,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/BitSetLowerBound_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:00"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/Objects.java",
@@ -2002,9 +2300,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/StringOffsetTest_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:29"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/lang/invoke/MethodHandleImpl.java",
       "predictions_count": 13,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/MinMaxIndex_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:07"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/PredecrementTest.java",
@@ -2037,6 +2345,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Issue2494_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:22"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/Polymorphic3.java",
       "predictions_count": 13,
       "timestamp": "2025-09-27 20:42:04"
@@ -2057,6 +2370,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/StringMethods_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:30"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/jdk.compiler/share/classes/com/sun/tools/javac/tree/TreeInfo.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
@@ -2070,6 +2388,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/nio/file/Path.java",
       "predictions_count": 3,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/EqualToTransfer_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:22"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/lang/Long.java",
@@ -2187,6 +2510,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RefineLT_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:02"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/SameLenManyArrays.java",
       "predictions_count": 6,
       "timestamp": "2025-09-27 20:42:04"
@@ -2225,6 +2553,16 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/unix/classes/sun/nio/fs/UnixPath.java",
       "predictions_count": 3,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/OneOrTwo_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:27"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ParserOffsetTest_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:15"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/jdk.internal.vm.ci/share/classes/jdk.vm.ci.code/src/jdk/vm/ci/code/StackSlot.java",
@@ -2267,6 +2605,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/IndexIssue6046_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:33"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/org/w3c/dom/NamedNodeMap.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
@@ -2275,6 +2618,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/SearchIndexTests.java",
       "predictions_count": 20,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/SameLenFormalParameter2_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:17"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/sun/text/CompactByteArray.java",
@@ -2305,6 +2653,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/ArrayLength2.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/UBLiteralFlow_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:34"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/nio/charset/CoderResult.java",
@@ -2367,6 +2720,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/MinLenIndexFor_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:16"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/jdk.javadoc/share/classes/jdk/javadoc/internal/doclets/formats/html/markup/ContentBuilder.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -2415,6 +2773,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/IndexForTwoArrays2.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RefineSubtrahend_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:30"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/concurrent/CopyOnWriteArrayList.java",
@@ -2492,6 +2855,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/IndexOrLowTests_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:26"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/javax/crypto/spec/RC5ParameterSpec.java",
       "predictions_count": 4,
       "timestamp": "2025-09-27 20:42:04"
@@ -2522,6 +2890,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/SameLenLUBStrangeness_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:10"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/LinkedHashSet.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
@@ -2545,6 +2918,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/io/CharArrayWriter.java",
       "predictions_count": 6,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LessThanOrEqualTransfer_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:29"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/com/sun/org/apache/xerces/internal/impl/dtd/XMLContentSpec.java",
@@ -2580,6 +2958,16 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/jdk.javadoc/share/classes/jdk/javadoc/internal/doclets/formats/html/markup/Text.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/SpecialTransfersForEquality_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:28"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/MinLenFromPositive_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:24"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/SimpleCollection.java",
@@ -2622,6 +3010,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/SkipBufferedReader_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:13"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/SimpleTimeZone.java",
       "predictions_count": 9,
       "timestamp": "2025-09-27 20:42:04"
@@ -2642,9 +3035,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/PreAndPostDec_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:18"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/io/ByteArrayInputStream.java",
       "predictions_count": 4,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/IntroAdd_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:03"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/com/sun/org/apache/bcel/internal/generic/InstructionList.java",
@@ -2747,6 +3150,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LessThanFloatLiteral_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:01"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/lang/String.java",
       "predictions_count": 42,
       "timestamp": "2025-09-27 20:42:04"
@@ -2772,6 +3180,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Issue194_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:22"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/awt/image/MultiPixelPackedSampleModel.java",
       "predictions_count": 6,
       "timestamp": "2025-09-27 20:42:04"
@@ -2782,14 +3195,19 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RefineGT_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:12"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/Issue194.java",
       "predictions_count": 3,
       "timestamp": "2025-09-27 20:42:04"
     },
     {
-      "file": "/home/ubuntu/checker-framework/checker/tests/index/AndExample.java",
-      "predictions_count": 2,
-      "timestamp": "2025-09-27 20:42:04"
+      "file": "/home/ubuntu/CFWR/slices_soot/AndExample.java__AndExample_getYearInfo_int_/AndExample.java",
+      "predictions_count": 28,
+      "timestamp": "2025-09-29 12:00:02"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/ShiftRightAverage.java",
@@ -2817,6 +3235,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/NotEqualTransfer_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:16"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/io/BufferedOutputStream.java",
       "predictions_count": 3,
       "timestamp": "2025-09-27 20:42:04"
@@ -2840,6 +3263,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/PlumeFailMin.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/InvalidSubsequence_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:21"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/Errors.java",
@@ -2872,6 +3300,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ReflectArray_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:02"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/lang/Enum.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -2880,6 +3313,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/com/sun/org/apache/xerces/internal/jaxp/validation/SoftReferenceGrammarPool.java",
       "predictions_count": 3,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/AndExample_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:22"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/Issue3224.java",
@@ -2937,6 +3375,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/SearchIndexTests_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:23"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/jar/JarInputStream.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -2952,6 +3395,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ArrayCreationChecks_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:33"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.sql/share/classes/java/sql/Statement.java",
       "predictions_count": 8,
       "timestamp": "2025-09-27 20:42:04"
@@ -2962,9 +3410,14 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/BasicSubsequence_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:32"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/StringMethods.java",
       "predictions_count": 2,
-      "timestamp": "2025-09-27 20:42:04"
+      "timestamp": "2025-09-29 00:26:02"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/beans/ChangeListenerMap.java",
@@ -3012,6 +3465,16 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/MinLenFieldInvar_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:15"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/MinLenOneAndLength_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:09"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/awt/Cursor.java",
       "predictions_count": 8,
       "timestamp": "2025-09-27 20:42:04"
@@ -3020,6 +3483,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/CheckAgainstNegativeOne.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LengthOfTest_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:19"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/security/Security.java",
@@ -3065,6 +3533,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/sun/util/calendar/ImmutableGregorianDate.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/OnlyCheckSubsequenceWhenAssigningToArray_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:08"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/com/sun/org/apache/xerces/internal/impl/xs/XSElementDecl.java",
@@ -3192,6 +3665,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/NegativeArray_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:31"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/awt/geom/CubicCurve2D.java",
       "predictions_count": 4,
       "timestamp": "2025-09-27 20:42:04"
@@ -3252,6 +3730,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/GreaterThanOrEqualTransfer_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:15"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/PlusPlusBug.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -3275,6 +3758,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/javax/swing/table/AbstractTableModel.java",
       "predictions_count": 3,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/OffsetAnnotations_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:04"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/Arrays.java",
@@ -3322,6 +3810,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/IndexForTestLBC_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:20"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/Timer.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
@@ -3342,6 +3835,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ExampleUsage_slice.java",
+      "predictions_count": 6,
+      "timestamp": "2025-09-29 12:51:10"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/util/zip/Adler32.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
@@ -3350,6 +3848,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/LBCSubtyping.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RefineNeq_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:50:59"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/java/text/Collator.java",
@@ -3407,6 +3910,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ShiftRightAverage_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:07"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/ArrayCopy.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -3422,6 +3930,16 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/SubtractingNonNegatives_slice.java",
+      "predictions_count": 9,
+      "timestamp": "2025-09-29 12:51:31"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/LessThanDec_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:33"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.logging/share/classes/java/util/logging/LogRecord.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
@@ -3435,6 +3953,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/sun/nio/ch/FileChannelImpl.java",
       "predictions_count": 7,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Errors_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:05"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/ArrayWrapper.java",
@@ -3497,6 +4020,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/RepeatLTLengthOfWithError_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:32"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.xml/share/classes/com/sun/org/apache/xml/internal/utils/StringToStringTableVector.java",
       "predictions_count": 3,
       "timestamp": "2025-09-27 20:42:04"
@@ -3520,6 +4048,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/VarLteVar.java",
       "predictions_count": 9,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/NotEnoughOffsets_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:03"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/windows/classes/sun/print/Win32PrintService.java",
@@ -3597,6 +4130,11 @@
       "timestamp": "2025-09-27 20:42:04"
     },
     {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/Index167_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:18"
+    },
+    {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.desktop/share/classes/java/awt/image/LookupTable.java",
       "predictions_count": 2,
       "timestamp": "2025-09-27 20:42:04"
@@ -3610,6 +4148,11 @@
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.naming/share/classes/javax/naming/ldap/StartTlsRequest.java",
       "predictions_count": 1,
       "timestamp": "2025-09-27 20:42:04"
+    },
+    {
+      "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/ZeroMinLen_slice.java",
+      "predictions_count": 3,
+      "timestamp": "2025-09-29 12:51:29"
     },
     {
       "file": "/home/ubuntu/checker-framework/checker/tests/index/annotated-jdk/src/java.base/share/classes/sun/nio/ch/Util.java",

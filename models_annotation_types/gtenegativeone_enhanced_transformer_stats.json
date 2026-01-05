@@ -1,0 +1,14 @@
+{
+  "annotation_type": "@GTENegativeOne",
+  "base_model_type": "enhanced_transformer",
+  "final_train_loss": 0.6730495989322662,
+  "final_val_loss": 0.5639376789331436,
+  "final_train_accuracy": 0.6666666666666666,
+  "final_val_accuracy": 0.6666666666666666,
+  "best_val_loss": 0.562720850110054,
+  "epochs": 10,
+  "max_nodes": 1000,
+  "max_edges": 2000,
+  "training_samples": 3,
+  "validation_samples": 3
+}

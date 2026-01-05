@@ -1,0 +1,33 @@
+{
+  "method_name": "m1",
+  "nodes": [
+    {"id": 8, "label": "    @Positive", "line": 8, "node_type": "stmt"},
+    {"id": 9, "label": "  public void m1(int @MinLen(1) [] a, int[] b) {", "line": 9, "node_type": "stmt"},
+    {"id": 10, "label": "    @Positive", "line": 10, "node_type": "stmt"},
+    {"id": 11, "label": "    @IndexFor(\"a\") int i = a.length / 2;", "line": 11, "node_type": "stmt"},
+    {"id": 12, "label": "    // :: error: (assignment)", "line": 12, "node_type": "stmt"},
+    {"id": 13, "label": "    @Positive", "line": 13, "node_type": "stmt"},
+    {"id": 14, "label": "    @IndexFor(\"b\") int j = b.length / 2;", "line": 14, "node_type": "stmt"},
+    {"id": 15, "label": "    @Positive", "line": 15, "node_type": "stmt"},
+    {"id": 16, "label": "  }", "line": 16, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 8, "target": 9, "type": "control"},
+    {"source": 9, "target": 10, "type": "control"},
+    {"source": 10, "target": 11, "type": "control"},
+    {"source": 11, "target": 12, "type": "control"},
+    {"source": 12, "target": 13, "type": "control"},
+    {"source": 13, "target": 14, "type": "control"},
+    {"source": 14, "target": 15, "type": "control"},
+    {"source": 15, "target": 16, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 8, "target": 10, "type": "dataflow", "var": "Positive"},
+    {"source": 9, "target": 11, "type": "dataflow", "var": "a"},
+    {"source": 10, "target": 13, "type": "dataflow", "var": "Positive"},
+    {"source": 11, "target": 14, "type": "dataflow", "var": "IndexFor"},
+    {"source": 9, "target": 14, "type": "dataflow", "var": "b"},
+    {"source": 11, "target": 14, "type": "dataflow", "var": "length"},
+    {"source": 13, "target": 15, "type": "dataflow", "var": "Positive"}
+  ]
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "annotation_type": "positive",
+    "base_model": "enhanced_causal",
+    "params": {
+      "learning_rate": 0.001,
+      "hidden_dim": 256,
+      "dropout_rate": 0.3,
+      "episodes": 20
+    },
+    "final_reward": null,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0.0,
+    "status": "success"
+  },
+  {
+    "annotation_type": "nonnegative",
+    "base_model": "enhanced_causal",
+    "params": {
+      "learning_rate": 0.005,
+      "hidden_dim": 256,
+      "dropout_rate": 0.2,
+      "episodes": 20
+    },
+    "final_reward": null,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0.0,
+    "status": "success"
+  },
+  {
+    "annotation_type": "gtenegativeone",
+    "base_model": "enhanced_causal",
+    "params": {
+      "learning_rate": 0.001,
+      "hidden_dim": 256,
+      "dropout_rate": 0.3,
+      "episodes": 20
+    },
+    "final_reward": null,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0.0,
+    "status": "success"
+  }
+]

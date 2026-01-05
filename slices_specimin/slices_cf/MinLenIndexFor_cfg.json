@@ -1,0 +1,30 @@
+{
+  "method_name": "test",
+  "nodes": [
+    {"id": 13, "label": "    @Positive", "line": 13, "node_type": "stmt"},
+    {"id": 14, "label": "  void test(@IndexFor(\"this.arrayLen2\") int i) {", "line": 14, "node_type": "stmt"},
+    {"id": 15, "label": "    @Positive", "line": 15, "node_type": "stmt"},
+    {"id": 16, "label": "    int j = arrayLen2[i];", "line": 16, "node_type": "stmt"},
+    {"id": 17, "label": "    @Positive", "line": 17, "node_type": "stmt"},
+    {"id": 18, "label": "    int j2 = arrayLen2[1];", "line": 18, "node_type": "stmt"},
+    {"id": 19, "label": "    @Positive", "line": 19, "node_type": "stmt"},
+    {"id": 20, "label": "  }", "line": 20, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 13, "target": 14, "type": "control"},
+    {"source": 14, "target": 15, "type": "control"},
+    {"source": 15, "target": 16, "type": "control"},
+    {"source": 16, "target": 17, "type": "control"},
+    {"source": 17, "target": 18, "type": "control"},
+    {"source": 18, "target": 19, "type": "control"},
+    {"source": 19, "target": 20, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 13, "target": 15, "type": "dataflow", "var": "Positive"},
+    {"source": 14, "target": 16, "type": "dataflow", "var": "arrayLen2"},
+    {"source": 14, "target": 16, "type": "dataflow", "var": "i"},
+    {"source": 15, "target": 17, "type": "dataflow", "var": "Positive"},
+    {"source": 16, "target": 18, "type": "dataflow", "var": "arrayLen2"},
+    {"source": 17, "target": 19, "type": "dataflow", "var": "Positive"}
+  ]
+}

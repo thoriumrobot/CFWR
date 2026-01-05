@@ -1,0 +1,90 @@
+{
+  "file": "/home/ubuntu/CFWR/prediction_slices/slices_cf/PlusPlusBug_slice.java",
+  "predictions": [
+    {
+      "line": 1,
+      "annotation_type": "@NonNegative",
+      "confidence": 0.7888616323471069,
+      "features": [
+        1.0,
+        2.0,
+        0.07692307233810425,
+        -0.2863551080226898,
+        0.33876657485961914,
+        -0.36325564980506897,
+        -0.1168026477098465,
+        0.1842668205499649,
+        0.40824827551841736,
+        0.11109968274831772,
+        -0.06091871112585068,
+        0.0,
+        0.2916666865348816,
+        0.0,
+        0.19212965667247772
+      ],
+      "reason": "@NonNegative expected (predicted by enhanced EnhancedGCNModel with 0.789 confidence) (using large CFG support)",
+      "model_type": "enhanced_gcn",
+      "training_type": "legacy"
+    },
+    {
+      "line": 1,
+      "annotation_type": "@NonNegative",
+      "confidence": 0.7888616323471069,
+      "features": [
+        1.0,
+        2.0,
+        0.07692307233810425,
+        -0.2863551080226898,
+        0.33876657485961914,
+        -0.36325564980506897,
+        -0.1168026477098465,
+        0.1842668205499649,
+        0.40824827551841736,
+        0.11109968274831772,
+        -0.06091871112585068,
+        0.0,
+        0.2916666865348816,
+        0.0,
+        0.19212965667247772
+      ],
+      "reason": "@NonNegative expected (predicted by enhanced EnhancedGCNModel with 0.789 confidence) (using large CFG support)",
+      "model_type": "enhanced_gcn",
+      "training_type": "legacy"
+    },
+    {
+      "line": 1,
+      "annotation_type": "@NonNegative",
+      "confidence": 0.7888616323471069,
+      "features": [
+        1.0,
+        2.0,
+        0.07692307233810425,
+        -0.2863551080226898,
+        0.33876657485961914,
+        -0.36325564980506897,
+        -0.1168026477098465,
+        0.1842668205499649,
+        0.40824827551841736,
+        0.11109968274831772,
+        -0.06091871112585068,
+        0.0,
+        0.2916666865348816,
+        0.0,
+        0.19212965667247772
+      ],
+      "reason": "@NonNegative expected (predicted by enhanced EnhancedGCNModel with 0.789 confidence) (using large CFG support)",
+      "model_type": "enhanced_gcn",
+      "training_type": "legacy"
+    }
+  ],
+  "timestamp": "2025-09-29 12:51:26",
+  "model_type": "legacy_models",
+  "training_data": "legacy_training",
+  "balance_ratio": "unknown",
+  "feature_dimensions": 15,
+  "pipeline_version": "legacy_pipeline",
+  "total_predictions": 3,
+  "annotation_types": [
+    "@NonNegative"
+  ]
+}

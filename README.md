@@ -279,7 +279,9 @@ See [CASE_STUDY_RESULTS.md](CASE_STUDY_RESULTS.md) for detailed analysis.
 
 #### **5. Prediction Saving and Manual Inspection**
 
-CFWR supports saving predictions for manual inspection and analysis:
+CFWR supports comprehensive prediction saving for manual inspection and analysis across both binary RL models and annotation type models:
+
+##### **Binary RL Model Predictions**
 
 ```bash
 # Save predictions during training
@@ -293,12 +295,94 @@ ls predictions_manual_inspection/
 cat predictions_manual_inspection/gcn_guava_*_report.txt
 ```
 
-**Features**:
-- JSON format with structured metadata
-- Human-readable text reports
-- Model comparison capabilities
-- Confidence score analysis
-- Node type breakdown
+##### **Annotation Type Model Predictions**
+
+The most comprehensive way to save annotation type model predictions is through the case studies script:
+
+```bash
+# Run annotation type case studies (automatically saves predictions)
+python annotation_type_case_studies.py
+
+# View saved annotation type predictions
+ls predictions_annotation_types/
+cat predictions_annotation_types/annotation_type_case_study_summary.txt
+
+# Examine specific model predictions
+cat predictions_annotation_types/positive_gcn_annotation_guava_*.json
+```
+
+**Individual Annotation Type Model Training with Prediction Saving**:
+
+```bash
+# Train and save predictions for @Positive annotations with GCN base model
+python annotation_type_rl_positive.py --episodes 50 --base_model gcn \
+  --project_root /home/ubuntu/checker-framework/checker/tests/index
+
+# Train and save predictions for @NonNegative annotations with GBT base model  
+python annotation_type_rl_nonnegative.py --episodes 50 --base_model gbt \
+  --project_root /home/ubuntu/checker-framework/checker/tests/index
+
+# Train and save predictions for @GTENegativeOne annotations with Causal base model
+python annotation_type_rl_gtenegativeone.py --episodes 50 --base_model causal \
+  --project_root /home/ubuntu/checker-framework/checker/tests/index
+```
+
+##### **Prediction Output Locations**
+
+- **Binary RL Predictions**: `predictions_manual_inspection/`
+- **Annotation Type Predictions**: `predictions_annotation_types/`
+- **Individual Model Files**: Format: `{model_name}_{project}_{timestamp}.json`
+- **Comparison Files**: `model_comparison_{project}_{timestamp}.json`
+- **Summary Reports**: `annotation_type_case_study_summary.txt`
+
+##### **Manual Inspection Tools**
+
+```bash
+# Generate human-readable reports for all models
+python prediction_saver.py --create_reports
+
+# View summary reports
+cat predictions_manual_inspection/case_study_summary_report.txt
+cat predictions_annotation_types/annotation_type_case_study_summary.txt
+
+# Examine specific model predictions with confidence scores
+cat predictions_annotation_types/positive_gcn_annotation_guava_*.json
+```
+
+##### **Prediction Data Structure**
+
+Saved predictions include comprehensive metadata and analysis:
+
+```json
+{
+  "model_name": "positive_gcn_annotation",
+  "project_name": "guava", 
+  "timestamp": "20250927_214806",
+  "metadata": {
+    "annotation_type": "@Positive",
+    "base_model": "gcn",
+    "hyperparameters": {...}
+  },
+  "predictions": [...],
+  "summary": {
+    "total_predictions": 3,
+    "prediction_types": {
+      "avg_confidence": 0.767,
+      "node_types": {"method": 1, "variable": 1, "parameter": 1}
+    }
+  }
+}
+```
+
+##### **Key Features**
+
+- **JSON format** with structured metadata and predictions
+- **Human-readable reports** for manual inspection
+- **Model comparison capabilities** across different annotation types
+- **Confidence score analysis** and node type breakdown
+- **Timestamped files** for version control
+- **Comprehensive coverage**: All 18 annotation type model combinations (3 annotation types × 6 base models)
+- **Specialized predictions**: Each model optimized for specific Lower Bound Checker annotations (@Positive, @NonNegative, @GTENegativeOne)
 
 #### **6. Individual Model Prediction**
 

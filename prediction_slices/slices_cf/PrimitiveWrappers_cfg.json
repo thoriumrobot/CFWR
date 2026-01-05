@@ -1,0 +1,25 @@
+{
+  "method_name": "int_Integer_access_equivalent",
+  "nodes": [
+    {"id": 12, "label": "    @Positive", "line": 12, "node_type": "stmt"},
+    {"id": 13, "label": "  void int_Integer_access_equivalent(@IndexFor(\"#3\") Integer i, @IndexFor(\"#3\") int j, int[] a) {", "line": 13, "node_type": "stmt"},
+    {"id": 14, "label": "    @Positive", "line": 14, "node_type": "stmt"},
+    {"id": 15, "label": "    a[i] = a[j];", "line": 15, "node_type": "stmt"},
+    {"id": 16, "label": "    @Positive", "line": 16, "node_type": "stmt"},
+    {"id": 17, "label": "  }", "line": 17, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 12, "target": 13, "type": "control"},
+    {"source": 13, "target": 14, "type": "control"},
+    {"source": 14, "target": 15, "type": "control"},
+    {"source": 15, "target": 16, "type": "control"},
+    {"source": 16, "target": 17, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 12, "target": 14, "type": "dataflow", "var": "Positive"},
+    {"source": 13, "target": 15, "type": "dataflow", "var": "a"},
+    {"source": 13, "target": 15, "type": "dataflow", "var": "i"},
+    {"source": 13, "target": 15, "type": "dataflow", "var": "j"},
+    {"source": 14, "target": 16, "type": "dataflow", "var": "Positive"}
+  ]
+}

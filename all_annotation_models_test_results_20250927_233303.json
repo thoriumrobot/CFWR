@@ -1,0 +1,418 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-27T23:32:11.587803",
+    "total_models": 21,
+    "tested_models": [
+      "positive_gcn",
+      "positive_gbt",
+      "positive_causal",
+      "positive_enhanced_causal",
+      "positive_hgt",
+      "positive_gcsn",
+      "positive_dg2n",
+      "nonnegative_gcn",
+      "nonnegative_gbt",
+      "nonnegative_causal",
+      "nonnegative_enhanced_causal",
+      "nonnegative_hgt",
+      "nonnegative_gcsn",
+      "nonnegative_dg2n",
+      "gtenegativeone_gcn",
+      "gtenegativeone_gbt",
+      "gtenegativeone_causal",
+      "gtenegativeone_enhanced_causal",
+      "gtenegativeone_hgt",
+      "gtenegativeone_gcsn",
+      "gtenegativeone_dg2n"
+    ],
+    "completed_tests": 42,
+    "completion_rate": 2.0
+  },
+  "positive": {
+    "gcn": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.530668020248413,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "gbt": {
+      "params": {
+        "learning_rate": 0.001,
+        "n_estimators": 100,
+        "max_depth": 3,
+        "min_samples_split": 2,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 1.7316288948059082,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "causal": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.61157488822937,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "enhanced_causal": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 256,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.5978734493255615,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "hgt": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.511202096939087,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "gcsn": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.5271663665771484,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "dg2n": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.6082875728607178,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    }
+  },
+  "nonnegative": {
+    "gcn": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.761992931365967,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "gbt": {
+      "params": {
+        "learning_rate": 0.001,
+        "n_estimators": 100,
+        "max_depth": 3,
+        "min_samples_split": 2,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 1.7143135070800781,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "causal": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.5322775840759277,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "enhanced_causal": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 256,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.564474582672119,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "hgt": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.582085132598877,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "gcsn": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.7102766036987305,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "dg2n": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.5415477752685547,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    }
+  },
+  "gtenegativeone": {
+    "gcn": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.521332025527954,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "gbt": {
+      "params": {
+        "learning_rate": 0.001,
+        "n_estimators": 100,
+        "max_depth": 3,
+        "min_samples_split": 2,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 1.79013991355896,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "causal": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.5961694717407227,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "enhanced_causal": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 256,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.5496573448181152,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "hgt": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.541912078857422,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "gcsn": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.5495352745056152,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    },
+    "dg2n": {
+      "params": {
+        "learning_rate": 0.001,
+        "hidden_dim": 128,
+        "dropout_rate": 0.3,
+        "episodes": 20
+      },
+      "final_reward": null,
+      "avg_reward": null,
+      "total_predictions": null,
+      "accuracy": null,
+      "score": 0.0,
+      "episode_rewards": [],
+      "execution_time": 2.561155080795288,
+      "predictions_file": null,
+      "status": "error",
+      "error": "unsupported format string passed to NoneType.__format__"
+    }
+  }
+}

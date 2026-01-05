@@ -1,0 +1,32 @@
+{
+  "method_name": "test",
+  "nodes": [
+    {"id": 13, "label": "    @Positive", "line": 13, "node_type": "stmt"},
+    {"id": 14, "label": "  void test(@BottomVal int x) {", "line": 14, "node_type": "stmt"},
+    {"id": 15, "label": "    @Positive", "line": 15, "node_type": "stmt"},
+    {"id": 16, "label": "    int[] a = new int[Integer.valueOf(getOneOrTwo())];", "line": 16, "node_type": "stmt"},
+    {"id": 17, "label": "    // :: error: (array.length.negative)", "line": 17, "node_type": "stmt"},
+    {"id": 18, "label": "    @Positive", "line": 18, "node_type": "stmt"},
+    {"id": 19, "label": "    int[] b = new int[Integer.valueOf(x)];", "line": 19, "node_type": "stmt"},
+    {"id": 20, "label": "    @Positive", "line": 20, "node_type": "stmt"},
+    {"id": 21, "label": "  }", "line": 21, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 13, "target": 14, "type": "control"},
+    {"source": 14, "target": 15, "type": "control"},
+    {"source": 15, "target": 16, "type": "control"},
+    {"source": 16, "target": 17, "type": "control"},
+    {"source": 17, "target": 18, "type": "control"},
+    {"source": 18, "target": 19, "type": "control"},
+    {"source": 19, "target": 20, "type": "control"},
+    {"source": 20, "target": 21, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 13, "target": 15, "type": "dataflow", "var": "Positive"},
+    {"source": 15, "target": 18, "type": "dataflow", "var": "Positive"},
+    {"source": 16, "target": 19, "type": "dataflow", "var": "Integer"},
+    {"source": 16, "target": 19, "type": "dataflow", "var": "valueOf"},
+    {"source": 14, "target": 19, "type": "dataflow", "var": "x"},
+    {"source": 18, "target": 20, "type": "dataflow", "var": "Positive"}
+  ]
+}

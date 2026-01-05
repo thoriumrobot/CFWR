@@ -1,0 +1,22 @@
+{
+  "model_name": "positive_dg2n",
+  "annotation_type": "positive",
+  "base_model": "dg2n",
+  "parameters": {
+    "learning_rate": 0.001,
+    "hidden_dim": 128,
+    "dropout_rate": 0.3,
+    "episodes": 20
+  },
+  "metrics": {
+    "final_reward": null,
+    "avg_reward": 0,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0,
+    "episode_rewards": []
+  },
+  "execution_time": 2.6080880165100098,
+  "timestamp": "2025-09-27T23:32:28.706801",
+  "output": ""
+}

@@ -1,0 +1,14 @@
+{
+  "annotation_type": "@GTENegativeOne",
+  "base_model_type": "enhanced_graph_causal",
+  "final_train_loss": 0.6253507286310196,
+  "final_val_loss": 2.112097978591919,
+  "final_train_accuracy": 0.6666666666666666,
+  "final_val_accuracy": 0.0,
+  "best_val_loss": 1.5263011455535889,
+  "epochs": 10,
+  "max_nodes": 1000,
+  "max_edges": 2000,
+  "training_samples": 3,
+  "validation_samples": 3
+}

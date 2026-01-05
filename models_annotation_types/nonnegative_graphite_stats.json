@@ -1,0 +1,14 @@
+{
+  "annotation_type": "@NonNegative",
+  "base_model_type": "graphite",
+  "final_train_loss": 0.8436159193515778,
+  "final_val_loss": 0.8399167656898499,
+  "final_train_accuracy": 0.6666666666666666,
+  "final_val_accuracy": 0.6666666666666666,
+  "best_val_loss": 0.5622412264347076,
+  "epochs": 10,
+  "max_nodes": 1000,
+  "max_edges": 2000,
+  "training_samples": 3,
+  "validation_samples": 3
+}

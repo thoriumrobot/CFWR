@@ -1,0 +1,51 @@
+/*
+ * CFWR augmentation: inserted irrelevant code for data augmentation.
+ */
+public class SkipBufferedReader_slice {
+    @Positive
+  public static void method() throws IOException {
+    @Positive
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+    // :: error: (argument)
+    @Positive
+    bufferedReader.skip(-1);
+
+    @Positive
+    bufferedReader.skip(1);
+    @Positive
+  }
+
+    long __cfwr_calc433(float __cfwr_p0, float __cfwr_p1, int __cfwr_p2) {
+        return (87 * 487);
+
+        while (true) {
+            if (((null * 'B') ^ 598) && true) {
+            if (true && true) {
+            for (int __cfwr_i90 = 0; __cfwr_i90 < 5; __cfwr_i90++) {
+            if (false && false) {
+            if (true && true) {
+            for (int __cfwr_i85 = 0; __cfwr_i85 < 9; __cfwr_i85++) {
+            if ((-988L / 319) && false) {
+            double __cfwr_var86 = ((-762L & '0') % -908L);
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+            break; // Prevent infinite loops
+        }
+        return (-83.58f - -38L);
+    }
+    private static byte __cfwr_handle489(Long __cfwr_p0, double __cfwr_p1) {
+        while (true) {
+            if (true || true) {
+            boolean __cfwr_result44 = true;
+        }
+            break; // Prevent infinite loops
+        }
+        return null;
+    }
+}

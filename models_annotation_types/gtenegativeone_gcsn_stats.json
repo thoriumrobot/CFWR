@@ -1,0 +1,14 @@
+{
+  "annotation_type": "@GTENegativeOne",
+  "base_model_type": "gcsn",
+  "final_train_loss": 0.6372971162199974,
+  "final_val_loss": 1.6969231963157654,
+  "final_train_accuracy": 0.6666666666666666,
+  "final_val_accuracy": 0.3333333333333333,
+  "best_val_loss": 1.0855589136481285,
+  "epochs": 10,
+  "max_nodes": 1000,
+  "max_edges": 2000,
+  "training_samples": 3,
+  "validation_samples": 3
+}

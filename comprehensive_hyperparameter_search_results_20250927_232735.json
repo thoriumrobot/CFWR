@@ -1,0 +1,1797 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-27T23:23:19.056361",
+    "total_models": 21,
+    "models_tested": [
+      "positive_gcn",
+      "positive_gbt",
+      "positive_causal",
+      "positive_enhanced_causal",
+      "positive_hgt",
+      "positive_gcsn",
+      "positive_dg2n",
+      "nonnegative_gcn",
+      "nonnegative_gbt",
+      "nonnegative_causal",
+      "nonnegative_enhanced_causal",
+      "nonnegative_hgt",
+      "nonnegative_gcsn",
+      "nonnegative_dg2n",
+      "gtenegativeone_gcn",
+      "gtenegativeone_gbt",
+      "gtenegativeone_causal",
+      "gtenegativeone_enhanced_causal",
+      "gtenegativeone_hgt",
+      "gtenegativeone_gcsn",
+      "gtenegativeone_dg2n"
+    ],
+    "search_completed": true,
+    "total_tests": 105,
+    "completed_tests": 105,
+    "completion_rate": 1.0
+  },
+  "positive": {
+    "gcn": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4280600547790527,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4124326705932617,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4614310264587402,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.372492551803589,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.452047348022461,
+          "status": "success"
+        }
+      ]
+    },
+    "gbt": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 2,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.600083589553833,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 2,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.6562750339508057,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 2,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.756007432937622,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 5,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.602189302444458,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 5,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.6409118175506592,
+          "status": "success"
+        }
+      ]
+    },
+    "causal": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4168860912323,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4376814365386963,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4133615493774414,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.3997466564178467,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4595680236816406,
+          "status": "success"
+        }
+      ]
+    },
+    "enhanced_causal": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.478003740310669,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.482846736907959,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5814356803894043,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.2,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4780263900756836,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.2,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.437030553817749,
+          "status": "success"
+        }
+      ]
+    },
+    "hgt": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4355080127716064,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4314441680908203,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5372533798217773,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4345805644989014,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.461179733276367,
+          "status": "success"
+        }
+      ]
+    },
+    "gcsn": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.445906400680542,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.562493324279785,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.531679630279541,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.4044570922851562,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.523343324661255,
+          "status": "success"
+        }
+      ]
+    },
+    "dg2n": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5247104167938232,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5526368618011475,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5960195064544678,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5812790393829346,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 3.0679030418395996,
+          "status": "success"
+        }
+      ]
+    }
+  },
+  "nonnegative": {
+    "gcn": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.585838794708252,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.6832594871520996,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5837180614471436,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5731594562530518,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.576927423477173,
+          "status": "success"
+        }
+      ]
+    },
+    "gbt": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 2,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.7652113437652588,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 2,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.9430525302886963,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 2,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.8662447929382324,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 5,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.7263290882110596,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 5,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.7677347660064697,
+          "status": "success"
+        }
+      ]
+    },
+    "causal": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.6154911518096924,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.603273391723633,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5754053592681885,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.558042049407959,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5509262084960938,
+          "status": "success"
+        }
+      ]
+    },
+    "enhanced_causal": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5756304264068604,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.593309164047241,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.6006157398223877,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.2,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5911738872528076,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.2,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.6210622787475586,
+          "status": "success"
+        }
+      ]
+    },
+    "hgt": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.55928111076355,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.595459461212158,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.570117473602295,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5117580890655518,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5667903423309326,
+          "status": "success"
+        }
+      ]
+    },
+    "gcsn": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5475378036499023,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5830490589141846,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5680344104766846,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.594419479370117,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5566442012786865,
+          "status": "success"
+        }
+      ]
+    },
+    "dg2n": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.614603281021118,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5582494735717773,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.644653797149658,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5689382553100586,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.624309778213501,
+          "status": "success"
+        }
+      ]
+    }
+  },
+  "gtenegativeone": {
+    "gcn": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5444233417510986,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5801475048065186,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.620148181915283,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5867550373077393,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.905317544937134,
+          "status": "success"
+        }
+      ]
+    },
+    "gbt": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 2,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.7282509803771973,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 2,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.80301833152771,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 2,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.8723673820495605,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 5,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.7274317741394043,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "n_estimators": 50,
+            "max_depth": 3,
+            "min_samples_split": 5,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 1.762131690979004,
+          "status": "success"
+        }
+      ]
+    },
+    "causal": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.744767904281616,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.531388521194458,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.61445951461792,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5196316242218018,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.614914655685425,
+          "status": "success"
+        }
+      ]
+    },
+    "enhanced_causal": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5509603023529053,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.584275722503662,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.6176578998565674,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.2,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5414252281188965,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 128,
+            "dropout_rate": 0.2,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.6270556449890137,
+          "status": "success"
+        }
+      ]
+    },
+    "hgt": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.6623313426971436,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5868523120880127,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.6596224308013916,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.7401247024536133,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.546229839324951,
+          "status": "success"
+        }
+      ]
+    },
+    "gcsn": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5456631183624268,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5259933471679688,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.572207450866699,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5865023136138916,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5490026473999023,
+          "status": "success"
+        }
+      ]
+    },
+    "dg2n": {
+      "best_params": null,
+      "best_score": 0.0,
+      "best_reward": null,
+      "best_predictions": null,
+      "best_accuracy": null,
+      "best_execution_time": null,
+      "successful_runs": 0,
+      "total_runs": 5,
+      "success_rate": 0.0,
+      "all_results": [
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5315277576446533,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5579335689544678,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.1,
+            "episodes": 100
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.5695581436157227,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 20
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.54522967338562,
+          "status": "success"
+        },
+        {
+          "params": {
+            "learning_rate": 0.001,
+            "hidden_dim": 64,
+            "dropout_rate": 0.3,
+            "episodes": 50
+          },
+          "final_reward": null,
+          "total_predictions": null,
+          "accuracy": null,
+          "score": 0.0,
+          "execution_time": 2.557248830795288,
+          "status": "success"
+        }
+      ]
+    }
+  }
+}

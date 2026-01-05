@@ -1,0 +1,22 @@
+{
+  "method_name": "call",
+  "nodes": [
+    {"id": 11, "label": "    @Positive", "line": 11, "node_type": "stmt"},
+    {"id": 12, "label": "  void call() {", "line": 12, "node_type": "stmt"},
+    {"id": 13, "label": "    @Positive", "line": 13, "node_type": "stmt"},
+    {"id": 14, "label": "    bug(30, 1);", "line": 14, "node_type": "stmt"},
+    {"id": 15, "label": "    @Positive", "line": 15, "node_type": "stmt"},
+    {"id": 16, "label": "  }", "line": 16, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 11, "target": 12, "type": "control"},
+    {"source": 12, "target": 13, "type": "control"},
+    {"source": 13, "target": 14, "type": "control"},
+    {"source": 14, "target": 15, "type": "control"},
+    {"source": 15, "target": 16, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 11, "target": 13, "type": "dataflow", "var": "Positive"},
+    {"source": 13, "target": 15, "type": "dataflow", "var": "Positive"}
+  ]
+}

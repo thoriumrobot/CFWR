@@ -1,0 +1,109 @@
+/*
+ * CFWR augmentation: inserted irrelevant code for data augmentation.
+ */
+public class RefineNeqLength_slice {
+    @Positive
+  void refineNeqLength(int[] array, @IndexOrHigh("#1") int i) {
+        if (false || true) {
+            for (int __cfwr_i38 = 0; __cfwr_i38 < 10; __cfwr_i38++) {
+            long __cfwr_entry76 = 726L;
+        }
+        }
+
+    // Refines i <= array.length to i < array.length
+    @Positive
+    if (i != array.length) {
+    @Positive
+      refineNeqLengthMOne(array, i);
+    @Positive
+    }
+    // No refinement
+    @Positive
+    if (i != array.length - 1) {
+      // :: error: (argument)
+    @Positive
+      refineNeqLengthMOne(array, i);
+    @Positive
+    }
+    @Positive
+  }
+
+    @Positive
+  void refineNeqLengthMOne(int[] array, @IndexFor("#1") int i) {
+    // Refines i < array.length to i < array.length - 1
+    @Positive
+    if (i != array.length - 1) {
+    @Positive
+      refineNeqLengthMTwo(array, i);
+      // :: error: (argument)
+    @Positive
+      refineNeqLengthMThree(array, i);
+    @Positive
+    }
+    @Positive
+  }
+
+    @Positive
+  void refineNeqLengthMTwo(int[] array, @NonNegative @LTOMLengthOf("#1") int i) {
+    // Refines i < array.length - 1 to i < array.length - 2
+    @Positive
+    if (i != array.length - 2) {
+    @Positive
+      refineNeqLengthMThree(array, i);
+    @Positive
+    }
+    // No refinement
+    @Positive
+    if (i != array.length - 1) {
+      // :: error: (argument)
+    @Positive
+      refineNeqLengthMThree(array, i);
+    @Positive
+    }
+    @Positive
+  }
+
+    @Positive
+  void refineNeqLengthMTwoNonLiteral(
+    @Positive
+      int[] array,
+    @Positive
+      @NonNegative @LTOMLengthOf("#1") int i,
+    @Positive
+      @IntVal(3) int c3,
+    @Positive
+      @IntVal({2, 3}) int c23) {
+    // Refines i < array.length - 1 to i < array.length - 2
+    @Positive
+    if (i != array.length - (5 - c3)) {
+    @Positive
+      refineNeqLengthMThree(array, i);
+    @Positive
+    }
+    // No refinement
+    @Positive
+    if (i != array.length - c23) {
+      // :: error: (argument)
+    @Positive
+      refineNeqLengthMThree(array, i);
+    @Positive
+    }
+    @Positive
+  }
+
+    Long __cfwr_util890(Character __cfwr_p0, float __cfwr_p1) {
+        while (false) {
+            Long __cfwr_entry47 = null;
+            break; // Prevent infinite loops
+        }
+        return null;
+    }
+    protected static double __cfwr_process50(byte __cfwr_p0, boolean __cfwr_p1, int __cfwr_p2) {
+        if (false || true) {
+            if (false || true) {
+            return (null ^ (-16L | 'a'));
+        }
+        }
+        return -71.28;
+    }
+}

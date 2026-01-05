@@ -1,0 +1,22 @@
+{
+  "model_name": "nonnegative_hgt",
+  "annotation_type": "nonnegative",
+  "base_model": "hgt",
+  "parameters": {
+    "learning_rate": 0.001,
+    "hidden_dim": 128,
+    "dropout_rate": 0.3,
+    "episodes": 20
+  },
+  "metrics": {
+    "final_reward": null,
+    "avg_reward": 0,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0,
+    "episode_rewards": []
+  },
+  "execution_time": 2.581804037094116,
+  "timestamp": "2025-09-27T23:32:40.862362",
+  "output": ""
+}

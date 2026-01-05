@@ -1,0 +1,14 @@
+{
+  "annotation_type": "@Positive",
+  "base_model_type": "enhanced_transformer",
+  "final_train_loss": 0.8447022959589958,
+  "final_val_loss": 3.0284165143966675,
+  "final_train_accuracy": 0.6666666666666666,
+  "final_val_accuracy": 0.0,
+  "best_val_loss": 2.4463084936141968,
+  "epochs": 10,
+  "max_nodes": 1000,
+  "max_edges": 2000,
+  "training_samples": 3,
+  "validation_samples": 3
+}

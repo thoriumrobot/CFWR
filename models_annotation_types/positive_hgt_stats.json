@@ -1,0 +1,14 @@
+{
+  "annotation_type": "@Positive",
+  "base_model_type": "hgt",
+  "final_train_loss": 0.6700630970299244,
+  "final_val_loss": 0.7063867188990116,
+  "final_train_accuracy": 0.6666666666666666,
+  "final_val_accuracy": 0.6666666666666666,
+  "best_val_loss": 0.6860411316156387,
+  "epochs": 10,
+  "max_nodes": 1000,
+  "max_edges": 2000,
+  "training_samples": 3,
+  "validation_samples": 3
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "annotation_type": "positive",
+    "base_model": "enhanced_causal",
+    "params": {
+      "learning_rate": 0.001,
+      "hidden_dim": 256,
+      "dropout_rate": 0.3,
+      "episodes": 20
+    },
+    "final_reward": null,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0.0,
+    "status": "success"
+  },
+  {
+    "annotation_type": "nonnegative",
+    "base_model": "enhanced_causal",
+    "params": {
+      "learning_rate": 0.005,
+      "hidden_dim": 256,
+      "dropout_rate": 0.2,
+      "episodes": 20
+    },
+    "final_reward": null,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0.0,
+    "status": "failed",
+    "error": "usage: annotation_type_rl_nonnegative.py [-h] [--project_root PROJECT_ROOT]\n                                         [--warnings_file WARNINGS_FILE]\n                                         [--cfwr_root CFWR_ROOT]\n                                         [--episodes EPISODES]\n                                         [--learning_rate LEARNING_RATE]\n                                         [--base_model {gcn,gbt,causal,enhanced_causal,hgt,gcsn,dg2n}]\n                                         [--device DEVICE]\nannotation_type_rl_nonnegative.py: error: unrecognized arguments: --hidden_dim 256 --dropout_rate 0.2\n"
+  },
+  {
+    "annotation_type": "gtenegativeone",
+    "base_model": "enhanced_causal",
+    "params": {
+      "learning_rate": 0.001,
+      "hidden_dim": 256,
+      "dropout_rate": 0.3,
+      "episodes": 20
+    },
+    "final_reward": null,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0.0,
+    "status": "failed",
+    "error": "usage: annotation_type_rl_gtenegativeone.py [-h] [--project_root PROJECT_ROOT]\n                                            [--warnings_file WARNINGS_FILE]\n                                            [--cfwr_root CFWR_ROOT]\n                                            [--episodes EPISODES]\n                                            [--learning_rate LEARNING_RATE]\n                                            [--base_model {gcn,gbt,causal,enhanced_causal,hgt,gcsn,dg2n}]\n                                            [--device DEVICE]\nannotation_type_rl_gtenegativeone.py: error: unrecognized arguments: --hidden_dim 256 --dropout_rate 0.3\n"
+  }
+]

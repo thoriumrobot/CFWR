@@ -1,0 +1,25 @@
+{
+  "method_name": "m1",
+  "nodes": [
+    {"id": 17, "label": "    @Positive", "line": 17, "node_type": "stmt"},
+    {"id": 18, "label": "  void m1(Object[] a, @IndexOrHigh(\"#1\") int i, @NonNegative int j) {", "line": 18, "node_type": "stmt"},
+    {"id": 19, "label": "    @Positive", "line": 19, "node_type": "stmt"},
+    {"id": 20, "label": "    @IndexFor(\"a\") int k = j % i;", "line": 20, "node_type": "stmt"},
+    {"id": 21, "label": "    @Positive", "line": 21, "node_type": "stmt"},
+    {"id": 22, "label": "  }", "line": 22, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 17, "target": 18, "type": "control"},
+    {"source": 18, "target": 19, "type": "control"},
+    {"source": 19, "target": 20, "type": "control"},
+    {"source": 20, "target": 21, "type": "control"},
+    {"source": 21, "target": 22, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 17, "target": 19, "type": "dataflow", "var": "Positive"},
+    {"source": 18, "target": 20, "type": "dataflow", "var": "a"},
+    {"source": 18, "target": 20, "type": "dataflow", "var": "j"},
+    {"source": 18, "target": 20, "type": "dataflow", "var": "i"},
+    {"source": 19, "target": 21, "type": "dataflow", "var": "Positive"}
+  ]
+}

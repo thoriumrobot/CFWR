@@ -1,0 +1,22 @@
+{
+  "model_name": "gtenegativeone_causal",
+  "annotation_type": "gtenegativeone",
+  "base_model": "causal",
+  "parameters": {
+    "learning_rate": 0.001,
+    "hidden_dim": 128,
+    "dropout_rate": 0.3,
+    "episodes": 20
+  },
+  "metrics": {
+    "final_reward": null,
+    "avg_reward": 0,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0,
+    "episode_rewards": []
+  },
+  "execution_time": 2.595914840698242,
+  "timestamp": "2025-09-27T23:32:53.022402",
+  "output": ""
+}

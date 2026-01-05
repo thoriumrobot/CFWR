@@ -1,0 +1,30 @@
+{
+  "method_name": "testMethodInvocation",
+  "nodes": [
+    {"id": 10, "label": "    @Positive", "line": 10, "node_type": "stmt"},
+    {"id": 11, "label": "  public void testMethodInvocation() {", "line": 11, "node_type": "stmt"},
+    {"id": 12, "label": "    @Positive", "line": 12, "node_type": "stmt"},
+    {"id": 13, "label": "    requiresIndex(\"012345\", 5);", "line": 13, "node_type": "stmt"},
+    {"id": 14, "label": "    // :: error: (argument)", "line": 14, "node_type": "stmt"},
+    {"id": 15, "label": "    @Positive", "line": 15, "node_type": "stmt"},
+    {"id": 16, "label": "    requiresIndex(\"012345\", 6);", "line": 16, "node_type": "stmt"},
+    {"id": 17, "label": "    @Positive", "line": 17, "node_type": "stmt"},
+    {"id": 18, "label": "  }", "line": 18, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 10, "target": 11, "type": "control"},
+    {"source": 11, "target": 12, "type": "control"},
+    {"source": 12, "target": 13, "type": "control"},
+    {"source": 13, "target": 14, "type": "control"},
+    {"source": 14, "target": 15, "type": "control"},
+    {"source": 15, "target": 16, "type": "control"},
+    {"source": 16, "target": 17, "type": "control"},
+    {"source": 17, "target": 18, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 10, "target": 12, "type": "dataflow", "var": "Positive"},
+    {"source": 12, "target": 15, "type": "dataflow", "var": "Positive"},
+    {"source": 13, "target": 16, "type": "dataflow", "var": "requiresIndex"},
+    {"source": 15, "target": 17, "type": "dataflow", "var": "Positive"}
+  ]
+}

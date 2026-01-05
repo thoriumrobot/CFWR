@@ -1,0 +1,4308 @@
+{
+  "method_name": "UBLiteralFlow_slice",
+  "java_file": null,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "@Positive",
+      "line": 1,
+      "node_type": "stmt"
+    },
+    {
+      "id": 1,
+      "label": "private static @IndexOrLow(\"#1\") int lineStartIndexPartial(",
+      "line": 2,
+      "node_type": "stmt"
+    },
+    {
+      "id": 2,
+      "label": "@Positive",
+      "line": 3,
+      "node_type": "stmt"
+    },
+    {
+      "id": 3,
+      "label": "String s, @GTENegativeOne int lineStart) {",
+      "line": 4,
+      "node_type": "stmt"
+    },
+    {
+      "id": 4,
+      "label": "@Positive",
+      "line": 5,
+      "node_type": "stmt"
+    },
+    {
+      "id": 5,
+      "label": "int result;",
+      "line": 6,
+      "node_type": "stmt"
+    },
+    {
+      "id": 6,
+      "label": "@Positive",
+      "line": 7,
+      "node_type": "stmt"
+    },
+    {
+      "id": 7,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 8,
+      "node_type": "stmt"
+    },
+    {
+      "id": 8,
+      "label": "@Positive",
+      "line": 9,
+      "node_type": "stmt"
+    },
+    {
+      "id": 9,
+      "label": "result = -1;",
+      "line": 10,
+      "node_type": "stmt"
+    },
+    {
+      "id": 10,
+      "label": "@Positive",
+      "line": 11,
+      "node_type": "stmt"
+    },
+    {
+      "id": 11,
+      "label": "} else {",
+      "line": 12,
+      "node_type": "stmt"
+    },
+    {
+      "id": 12,
+      "label": "@Positive",
+      "line": 13,
+      "node_type": "stmt"
+    },
+    {
+      "id": 13,
+      "label": "result = lineStart;",
+      "line": 14,
+      "node_type": "stmt"
+    },
+    {
+      "id": 14,
+      "label": "@Positive",
+      "line": 15,
+      "node_type": "stmt"
+    },
+    {
+      "id": 15,
+      "label": "}",
+      "line": 16,
+      "node_type": "stmt"
+    },
+    {
+      "id": 16,
+      "label": "@Positive",
+      "line": 17,
+      "node_type": "stmt"
+    },
+    {
+      "id": 17,
+      "label": "return result;",
+      "line": 18,
+      "node_type": "stmt"
+    },
+    {
+      "id": 18,
+      "label": "@Positive",
+      "line": 19,
+      "node_type": "stmt"
+    },
+    {
+      "id": 19,
+      "label": "}",
+      "line": 20,
+      "node_type": "stmt"
+    },
+    {
+      "id": 20,
+      "label": "",
+      "line": 21,
+      "node_type": "stmt"
+    },
+    {
+      "id": 21,
+      "label": "@Positive",
+      "line": 22,
+      "node_type": "stmt"
+    },
+    {
+      "id": 22,
+      "label": "private static @LTLengthOf(\"#1\") int lineStartIndexPartial2(",
+      "line": 23,
+      "node_type": "stmt"
+    },
+    {
+      "id": 23,
+      "label": "@Positive",
+      "line": 24,
+      "node_type": "stmt"
+    },
+    {
+      "id": 24,
+      "label": "String s, @GTENegativeOne int lineStart) {",
+      "line": 25,
+      "node_type": "stmt"
+    },
+    {
+      "id": 25,
+      "label": "@Positive",
+      "line": 26,
+      "node_type": "stmt"
+    },
+    {
+      "id": 26,
+      "label": "int result;",
+      "line": 27,
+      "node_type": "stmt"
+    },
+    {
+      "id": 27,
+      "label": "@Positive",
+      "line": 28,
+      "node_type": "stmt"
+    },
+    {
+      "id": 28,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 29,
+      "node_type": "stmt"
+    },
+    {
+      "id": 29,
+      "label": "@Positive",
+      "line": 30,
+      "node_type": "stmt"
+    },
+    {
+      "id": 30,
+      "label": "result = -1;",
+      "line": 31,
+      "node_type": "stmt"
+    },
+    {
+      "id": 31,
+      "label": "@Positive",
+      "line": 32,
+      "node_type": "stmt"
+    },
+    {
+      "id": 32,
+      "label": "} else {",
+      "line": 33,
+      "node_type": "stmt"
+    },
+    {
+      "id": 33,
+      "label": "@Positive",
+      "line": 34,
+      "node_type": "stmt"
+    },
+    {
+      "id": 34,
+      "label": "result = lineStart;",
+      "line": 35,
+      "node_type": "stmt"
+    },
+    {
+      "id": 35,
+      "label": "@Positive",
+      "line": 36,
+      "node_type": "stmt"
+    },
+    {
+      "id": 36,
+      "label": "}",
+      "line": 37,
+      "node_type": "stmt"
+    },
+    {
+      "id": 37,
+      "label": "@Positive",
+      "line": 38,
+      "node_type": "stmt"
+    },
+    {
+      "id": 38,
+      "label": "return result;",
+      "line": 39,
+      "node_type": "stmt"
+    },
+    {
+      "id": 39,
+      "label": "@Positive",
+      "line": 40,
+      "node_type": "stmt"
+    },
+    {
+      "id": 40,
+      "label": "}",
+      "line": 41,
+      "node_type": "stmt"
+    },
+    {
+      "id": 41,
+      "label": "",
+      "line": 42,
+      "node_type": "stmt"
+    },
+    {
+      "id": 42,
+      "label": "@Positive",
+      "line": 43,
+      "node_type": "stmt"
+    },
+    {
+      "id": 43,
+      "label": "private static @LTLengthOf(value = \"#1\", offset = \"1\") int lineStartIndexPartial3(",
+      "line": 44,
+      "node_type": "stmt"
+    },
+    {
+      "id": 44,
+      "label": "@Positive",
+      "line": 45,
+      "node_type": "stmt"
+    },
+    {
+      "id": 45,
+      "label": "String s, @GTENegativeOne int lineStart) {",
+      "line": 46,
+      "node_type": "stmt"
+    },
+    {
+      "id": 46,
+      "label": "@Positive",
+      "line": 47,
+      "node_type": "stmt"
+    },
+    {
+      "id": 47,
+      "label": "int result;",
+      "line": 48,
+      "node_type": "stmt"
+    },
+    {
+      "id": 48,
+      "label": "@Positive",
+      "line": 49,
+      "node_type": "stmt"
+    },
+    {
+      "id": 49,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 50,
+      "node_type": "stmt"
+    },
+    {
+      "id": 50,
+      "label": "@Positive",
+      "line": 51,
+      "node_type": "stmt"
+    },
+    {
+      "id": 51,
+      "label": "result = -1;",
+      "line": 52,
+      "node_type": "stmt"
+    },
+    {
+      "id": 52,
+      "label": "@Positive",
+      "line": 53,
+      "node_type": "stmt"
+    },
+    {
+      "id": 53,
+      "label": "} else {",
+      "line": 54,
+      "node_type": "stmt"
+    },
+    {
+      "id": 54,
+      "label": "@Positive",
+      "line": 55,
+      "node_type": "stmt"
+    },
+    {
+      "id": 55,
+      "label": "result = lineStart;",
+      "line": 56,
+      "node_type": "stmt"
+    },
+    {
+      "id": 56,
+      "label": "@Positive",
+      "line": 57,
+      "node_type": "stmt"
+    },
+    {
+      "id": 57,
+      "label": "}",
+      "line": 58,
+      "node_type": "stmt"
+    },
+    {
+      "id": 58,
+      "label": "// :: error: (return)",
+      "line": 59,
+      "node_type": "stmt"
+    },
+    {
+      "id": 59,
+      "label": "@Positive",
+      "line": 60,
+      "node_type": "stmt"
+    },
+    {
+      "id": 60,
+      "label": "return result;",
+      "line": 61,
+      "node_type": "stmt"
+    },
+    {
+      "id": 61,
+      "label": "@Positive",
+      "line": 62,
+      "node_type": "stmt"
+    },
+    {
+      "id": 62,
+      "label": "}",
+      "line": 63,
+      "node_type": "stmt"
+    },
+    {
+      "id": 63,
+      "label": "",
+      "line": 64,
+      "node_type": "stmt"
+    },
+    {
+      "id": 64,
+      "label": "@Positive",
+      "line": 65,
+      "node_type": "stmt"
+    },
+    {
+      "id": 65,
+      "label": "private static @LTLengthOf(value = \"#1\", offset = \"-1\") int lineStartIndexPartial4(",
+      "line": 66,
+      "node_type": "stmt"
+    },
+    {
+      "id": 66,
+      "label": "@Positive",
+      "line": 67,
+      "node_type": "stmt"
+    },
+    {
+      "id": 67,
+      "label": "String s, @GTENegativeOne int lineStart) {",
+      "line": 68,
+      "node_type": "stmt"
+    },
+    {
+      "id": 68,
+      "label": "@Positive",
+      "line": 69,
+      "node_type": "stmt"
+    },
+    {
+      "id": 69,
+      "label": "int result;",
+      "line": 70,
+      "node_type": "stmt"
+    },
+    {
+      "id": 70,
+      "label": "@Positive",
+      "line": 71,
+      "node_type": "stmt"
+    },
+    {
+      "id": 71,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 72,
+      "node_type": "stmt"
+    },
+    {
+      "id": 72,
+      "label": "@Positive",
+      "line": 73,
+      "node_type": "stmt"
+    },
+    {
+      "id": 73,
+      "label": "result = -1;",
+      "line": 74,
+      "node_type": "stmt"
+    },
+    {
+      "id": 74,
+      "label": "@Positive",
+      "line": 75,
+      "node_type": "stmt"
+    },
+    {
+      "id": 75,
+      "label": "} else {",
+      "line": 76,
+      "node_type": "stmt"
+    },
+    {
+      "id": 76,
+      "label": "@Positive",
+      "line": 77,
+      "node_type": "stmt"
+    },
+    {
+      "id": 77,
+      "label": "result = lineStart;",
+      "line": 78,
+      "node_type": "stmt"
+    },
+    {
+      "id": 78,
+      "label": "@Positive",
+      "line": 79,
+      "node_type": "stmt"
+    },
+    {
+      "id": 79,
+      "label": "}",
+      "line": 80,
+      "node_type": "stmt"
+    },
+    {
+      "id": 80,
+      "label": "@Positive",
+      "line": 81,
+      "node_type": "stmt"
+    },
+    {
+      "id": 81,
+      "label": "return result;",
+      "line": 82,
+      "node_type": "stmt"
+    },
+    {
+      "id": 82,
+      "label": "@Positive",
+      "line": 83,
+      "node_type": "stmt"
+    },
+    {
+      "id": 83,
+      "label": "}",
+      "line": 84,
+      "node_type": "stmt"
+    },
+    {
+      "id": 84,
+      "label": "",
+      "line": 85,
+      "node_type": "stmt"
+    },
+    {
+      "id": 85,
+      "label": "/**",
+      "line": 86,
+      "node_type": "stmt"
+    },
+    {
+      "id": 86,
+      "label": "@Positive",
+      "line": 87,
+      "node_type": "stmt"
+    },
+    {
+      "id": 87,
+      "label": "* Given a string, return the index of the start of a line, after {@code start}.",
+      "line": 88,
+      "node_type": "stmt"
+    },
+    {
+      "id": 88,
+      "label": "@Positive",
+      "line": 89,
+      "node_type": "stmt"
+    },
+    {
+      "id": 89,
+      "label": "*",
+      "line": 90,
+      "node_type": "stmt"
+    },
+    {
+      "id": 90,
+      "label": "@Positive",
+      "line": 91,
+      "node_type": "stmt"
+    },
+    {
+      "id": 91,
+      "label": "* @param s the string in which to find the start of a line",
+      "line": 92,
+      "node_type": "stmt"
+    },
+    {
+      "id": 92,
+      "label": "@Positive",
+      "line": 93,
+      "node_type": "stmt"
+    },
+    {
+      "id": 93,
+      "label": "* @param start the index at which to start looking for the start of a line",
+      "line": 94,
+      "node_type": "stmt"
+    },
+    {
+      "id": 94,
+      "label": "@Positive",
+      "line": 95,
+      "node_type": "stmt"
+    },
+    {
+      "id": 95,
+      "label": "* @return the index of the start of a line, or -1 if no such exists",
+      "line": 96,
+      "node_type": "stmt"
+    },
+    {
+      "id": 96,
+      "label": "@Positive",
+      "line": 97,
+      "node_type": "stmt"
+    },
+    {
+      "id": 97,
+      "label": "*/",
+      "line": 98,
+      "node_type": "stmt"
+    },
+    {
+      "id": 98,
+      "label": "@Positive",
+      "line": 99,
+      "node_type": "stmt"
+    },
+    {
+      "id": 99,
+      "label": "private static @IndexOrLow(\"#1\") int lineStartIndex(String s, int start) {",
+      "line": 100,
+      "node_type": "stmt"
+    },
+    {
+      "id": 100,
+      "label": "@Positive",
+      "line": 101,
+      "node_type": "stmt"
+    },
+    {
+      "id": 101,
+      "label": "if (s.length() == 0) {",
+      "line": 102,
+      "node_type": "stmt"
+    },
+    {
+      "id": 102,
+      "label": "@Positive",
+      "line": 103,
+      "node_type": "stmt"
+    },
+    {
+      "id": 103,
+      "label": "return -1;",
+      "line": 104,
+      "node_type": "stmt"
+    },
+    {
+      "id": 104,
+      "label": "@Positive",
+      "line": 105,
+      "node_type": "stmt"
+    },
+    {
+      "id": 105,
+      "label": "}",
+      "line": 106,
+      "node_type": "stmt"
+    },
+    {
+      "id": 106,
+      "label": "@Positive",
+      "line": 107,
+      "node_type": "stmt"
+    },
+    {
+      "id": 107,
+      "label": "if (start == 0) {",
+      "line": 108,
+      "node_type": "stmt"
+    },
+    {
+      "id": 108,
+      "label": "// It doesn't make sense to call this routine with 0, but return 0 anyway.",
+      "line": 109,
+      "node_type": "stmt"
+    },
+    {
+      "id": 109,
+      "label": "@Positive",
+      "line": 110,
+      "node_type": "stmt"
+    },
+    {
+      "id": 110,
+      "label": "return 0;",
+      "line": 111,
+      "node_type": "stmt"
+    },
+    {
+      "id": 111,
+      "label": "@Positive",
+      "line": 112,
+      "node_type": "stmt"
+    },
+    {
+      "id": 112,
+      "label": "}",
+      "line": 113,
+      "node_type": "stmt"
+    },
+    {
+      "id": 113,
+      "label": "@Positive",
+      "line": 114,
+      "node_type": "stmt"
+    },
+    {
+      "id": 114,
+      "label": "if (start > s.length()) {",
+      "line": 115,
+      "node_type": "stmt"
+    },
+    {
+      "id": 115,
+      "label": "@Positive",
+      "line": 116,
+      "node_type": "stmt"
+    },
+    {
+      "id": 116,
+      "label": "return -1;",
+      "line": 117,
+      "node_type": "stmt"
+    },
+    {
+      "id": 117,
+      "label": "@Positive",
+      "line": 118,
+      "node_type": "stmt"
+    },
+    {
+      "id": 118,
+      "label": "}",
+      "line": 119,
+      "node_type": "stmt"
+    },
+    {
+      "id": 119,
+      "label": "// possible line terminators:  \"\\n\", \"\\r\\n\", \"\\r\".",
+      "line": 120,
+      "node_type": "stmt"
+    },
+    {
+      "id": 120,
+      "label": "@Positive",
+      "line": 121,
+      "node_type": "stmt"
+    },
+    {
+      "id": 121,
+      "label": "int newlinePos = s.indexOf(\"\\n\", start - 1);",
+      "line": 122,
+      "node_type": "stmt"
+    },
+    {
+      "id": 122,
+      "label": "@Positive",
+      "line": 123,
+      "node_type": "stmt"
+    },
+    {
+      "id": 123,
+      "label": "int afterNewline = (newlinePos == -1) ? Integer.MAX_VALUE : newlinePos + 1;",
+      "line": 124,
+      "node_type": "stmt"
+    },
+    {
+      "id": 124,
+      "label": "@Positive",
+      "line": 125,
+      "node_type": "stmt"
+    },
+    {
+      "id": 125,
+      "label": "int returnPos1 = s.indexOf(\"\\r\\n\", start - 2);",
+      "line": 126,
+      "node_type": "stmt"
+    },
+    {
+      "id": 126,
+      "label": "@Positive",
+      "line": 127,
+      "node_type": "stmt"
+    },
+    {
+      "id": 127,
+      "label": "int returnPos2 = s.indexOf(\"\\r\", start - 1);",
+      "line": 128,
+      "node_type": "stmt"
+    },
+    {
+      "id": 128,
+      "label": "@Positive",
+      "line": 129,
+      "node_type": "stmt"
+    },
+    {
+      "id": 129,
+      "label": "int afterReturn1 = (returnPos1 == -1) ? Integer.MAX_VALUE : returnPos1 + 2;",
+      "line": 130,
+      "node_type": "stmt"
+    },
+    {
+      "id": 130,
+      "label": "@Positive",
+      "line": 131,
+      "node_type": "stmt"
+    },
+    {
+      "id": 131,
+      "label": "int afterReturn2 = (returnPos2 == -1) ? Integer.MAX_VALUE : returnPos2 + 1;",
+      "line": 132,
+      "node_type": "stmt"
+    },
+    {
+      "id": 132,
+      "label": "@Positive",
+      "line": 133,
+      "node_type": "stmt"
+    },
+    {
+      "id": 133,
+      "label": "int lineStart = Math.min(afterNewline, Math.min(afterReturn1, afterReturn2));",
+      "line": 134,
+      "node_type": "stmt"
+    },
+    {
+      "id": 134,
+      "label": "@Positive",
+      "line": 135,
+      "node_type": "stmt"
+    },
+    {
+      "id": 135,
+      "label": "if (lineStart >= s.length()) {",
+      "line": 136,
+      "node_type": "stmt"
+    },
+    {
+      "id": 136,
+      "label": "@Positive",
+      "line": 137,
+      "node_type": "stmt"
+    },
+    {
+      "id": 137,
+      "label": "return -1;",
+      "line": 138,
+      "node_type": "stmt"
+    },
+    {
+      "id": 138,
+      "label": "@Positive",
+      "line": 139,
+      "node_type": "stmt"
+    },
+    {
+      "id": 139,
+      "label": "} else {",
+      "line": 140,
+      "node_type": "stmt"
+    },
+    {
+      "id": 140,
+      "label": "@Positive",
+      "line": 141,
+      "node_type": "stmt"
+    },
+    {
+      "id": 141,
+      "label": "return lineStart;",
+      "line": 142,
+      "node_type": "stmt"
+    },
+    {
+      "id": 142,
+      "label": "@Positive",
+      "line": 143,
+      "node_type": "stmt"
+    },
+    {
+      "id": 143,
+      "label": "}",
+      "line": 144,
+      "node_type": "stmt"
+    },
+    {
+      "id": 144,
+      "label": "@Positive",
+      "line": 145,
+      "node_type": "stmt"
+    },
+    {
+      "id": 145,
+      "label": "}",
+      "line": 146,
+      "node_type": "stmt"
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "Positive"
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 22,
+      "variable": "private"
+    },
+    {
+      "source": 1,
+      "target": 22,
+      "variable": "static"
+    },
+    {
+      "source": 1,
+      "target": 99,
+      "variable": "IndexOrLow"
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "Positive"
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "lineStart"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "s"
+    },
+    {
+      "source": 3,
+      "target": 24,
+      "variable": "String"
+    },
+    {
+      "source": 3,
+      "target": 24,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "Positive"
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "variable": "result"
+    },
+    {
+      "source": 5,
+      "target": 22,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "Positive"
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "variable": "lineStart"
+    },
+    {
+      "source": 7,
+      "target": 24,
+      "variable": "s"
+    },
+    {
+      "source": 7,
+      "target": 28,
+      "variable": "if"
+    },
+    {
+      "source": 7,
+      "target": 28,
+      "variable": "length"
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "Positive"
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "result"
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 10,
+      "target": 12,
+      "variable": "Positive"
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 11,
+      "target": 32,
+      "variable": "else"
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "Positive"
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "variable": "result"
+    },
+    {
+      "source": 13,
+      "target": 24,
+      "variable": "lineStart"
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 14,
+      "target": 16,
+      "variable": "Positive"
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 16,
+      "target": 18,
+      "variable": "Positive"
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 17,
+      "target": 26,
+      "variable": "result"
+    },
+    {
+      "source": 17,
+      "target": 38,
+      "variable": "return"
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 18,
+      "target": 21,
+      "variable": "Positive"
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "Positive"
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 22,
+      "target": 24,
+      "variable": "int"
+    },
+    {
+      "source": 22,
+      "target": 43,
+      "variable": "private"
+    },
+    {
+      "source": 22,
+      "target": 43,
+      "variable": "static"
+    },
+    {
+      "source": 22,
+      "target": 43,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "Positive"
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 24,
+      "target": 26,
+      "variable": "int"
+    },
+    {
+      "source": 24,
+      "target": 28,
+      "variable": "lineStart"
+    },
+    {
+      "source": 24,
+      "target": 28,
+      "variable": "s"
+    },
+    {
+      "source": 24,
+      "target": 45,
+      "variable": "String"
+    },
+    {
+      "source": 24,
+      "target": 45,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "Positive"
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 26,
+      "target": 30,
+      "variable": "result"
+    },
+    {
+      "source": 26,
+      "target": 43,
+      "variable": "int"
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "Positive"
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 28,
+      "target": 34,
+      "variable": "lineStart"
+    },
+    {
+      "source": 28,
+      "target": 45,
+      "variable": "s"
+    },
+    {
+      "source": 28,
+      "target": 49,
+      "variable": "if"
+    },
+    {
+      "source": 28,
+      "target": 49,
+      "variable": "length"
+    },
+    {
+      "source": 29,
+      "target": 30
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "Positive"
+    },
+    {
+      "source": 30,
+      "target": 31
+    },
+    {
+      "source": 30,
+      "target": 34,
+      "variable": "result"
+    },
+    {
+      "source": 31,
+      "target": 32
+    },
+    {
+      "source": 31,
+      "target": 33,
+      "variable": "Positive"
+    },
+    {
+      "source": 32,
+      "target": 33
+    },
+    {
+      "source": 32,
+      "target": 53,
+      "variable": "else"
+    },
+    {
+      "source": 33,
+      "target": 34
+    },
+    {
+      "source": 33,
+      "target": 35,
+      "variable": "Positive"
+    },
+    {
+      "source": 34,
+      "target": 35
+    },
+    {
+      "source": 34,
+      "target": 38,
+      "variable": "result"
+    },
+    {
+      "source": 34,
+      "target": 45,
+      "variable": "lineStart"
+    },
+    {
+      "source": 35,
+      "target": 36
+    },
+    {
+      "source": 35,
+      "target": 37,
+      "variable": "Positive"
+    },
+    {
+      "source": 36,
+      "target": 37
+    },
+    {
+      "source": 37,
+      "target": 38
+    },
+    {
+      "source": 37,
+      "target": 39,
+      "variable": "Positive"
+    },
+    {
+      "source": 38,
+      "target": 39
+    },
+    {
+      "source": 38,
+      "target": 47,
+      "variable": "result"
+    },
+    {
+      "source": 38,
+      "target": 58,
+      "variable": "return"
+    },
+    {
+      "source": 39,
+      "target": 40
+    },
+    {
+      "source": 39,
+      "target": 42,
+      "variable": "Positive"
+    },
+    {
+      "source": 40,
+      "target": 41
+    },
+    {
+      "source": 41,
+      "target": 42
+    },
+    {
+      "source": 42,
+      "target": 43
+    },
+    {
+      "source": 42,
+      "target": 44,
+      "variable": "Positive"
+    },
+    {
+      "source": 43,
+      "target": 44
+    },
+    {
+      "source": 43,
+      "target": 45,
+      "variable": "int"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "private"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "static"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "value"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "offset"
+    },
+    {
+      "source": 44,
+      "target": 45
+    },
+    {
+      "source": 44,
+      "target": 46,
+      "variable": "Positive"
+    },
+    {
+      "source": 45,
+      "target": 46
+    },
+    {
+      "source": 45,
+      "target": 47,
+      "variable": "int"
+    },
+    {
+      "source": 45,
+      "target": 49,
+      "variable": "lineStart"
+    },
+    {
+      "source": 45,
+      "target": 49,
+      "variable": "s"
+    },
+    {
+      "source": 45,
+      "target": 67,
+      "variable": "String"
+    },
+    {
+      "source": 45,
+      "target": 67,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 46,
+      "target": 47
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "Positive"
+    },
+    {
+      "source": 47,
+      "target": 48
+    },
+    {
+      "source": 47,
+      "target": 51,
+      "variable": "result"
+    },
+    {
+      "source": 47,
+      "target": 65,
+      "variable": "int"
+    },
+    {
+      "source": 48,
+      "target": 49
+    },
+    {
+      "source": 48,
+      "target": 50,
+      "variable": "Positive"
+    },
+    {
+      "source": 49,
+      "target": 50
+    },
+    {
+      "source": 49,
+      "target": 55,
+      "variable": "lineStart"
+    },
+    {
+      "source": 49,
+      "target": 67,
+      "variable": "s"
+    },
+    {
+      "source": 49,
+      "target": 71,
+      "variable": "if"
+    },
+    {
+      "source": 49,
+      "target": 71,
+      "variable": "length"
+    },
+    {
+      "source": 50,
+      "target": 51
+    },
+    {
+      "source": 50,
+      "target": 52,
+      "variable": "Positive"
+    },
+    {
+      "source": 51,
+      "target": 52
+    },
+    {
+      "source": 51,
+      "target": 55,
+      "variable": "result"
+    },
+    {
+      "source": 52,
+      "target": 53
+    },
+    {
+      "source": 52,
+      "target": 54,
+      "variable": "Positive"
+    },
+    {
+      "source": 53,
+      "target": 54
+    },
+    {
+      "source": 53,
+      "target": 75,
+      "variable": "else"
+    },
+    {
+      "source": 54,
+      "target": 55
+    },
+    {
+      "source": 54,
+      "target": 56,
+      "variable": "Positive"
+    },
+    {
+      "source": 55,
+      "target": 56
+    },
+    {
+      "source": 55,
+      "target": 60,
+      "variable": "result"
+    },
+    {
+      "source": 55,
+      "target": 67,
+      "variable": "lineStart"
+    },
+    {
+      "source": 56,
+      "target": 57
+    },
+    {
+      "source": 56,
+      "target": 59,
+      "variable": "Positive"
+    },
+    {
+      "source": 57,
+      "target": 58
+    },
+    {
+      "source": 58,
+      "target": 59
+    },
+    {
+      "source": 58,
+      "target": 60,
+      "variable": "return"
+    },
+    {
+      "source": 59,
+      "target": 60
+    },
+    {
+      "source": 59,
+      "target": 61,
+      "variable": "Positive"
+    },
+    {
+      "source": 60,
+      "target": 61
+    },
+    {
+      "source": 60,
+      "target": 69,
+      "variable": "result"
+    },
+    {
+      "source": 60,
+      "target": 81,
+      "variable": "return"
+    },
+    {
+      "source": 61,
+      "target": 62
+    },
+    {
+      "source": 61,
+      "target": 64,
+      "variable": "Positive"
+    },
+    {
+      "source": 62,
+      "target": 63
+    },
+    {
+      "source": 63,
+      "target": 64
+    },
+    {
+      "source": 64,
+      "target": 65
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "Positive"
+    },
+    {
+      "source": 65,
+      "target": 66
+    },
+    {
+      "source": 65,
+      "target": 67,
+      "variable": "int"
+    },
+    {
+      "source": 65,
+      "target": 99,
+      "variable": "private"
+    },
+    {
+      "source": 65,
+      "target": 99,
+      "variable": "static"
+    },
+    {
+      "source": 66,
+      "target": 67
+    },
+    {
+      "source": 66,
+      "target": 68,
+      "variable": "Positive"
+    },
+    {
+      "source": 67,
+      "target": 68
+    },
+    {
+      "source": 67,
+      "target": 69,
+      "variable": "int"
+    },
+    {
+      "source": 67,
+      "target": 71,
+      "variable": "lineStart"
+    },
+    {
+      "source": 67,
+      "target": 71,
+      "variable": "s"
+    },
+    {
+      "source": 67,
+      "target": 99,
+      "variable": "String"
+    },
+    {
+      "source": 68,
+      "target": 69
+    },
+    {
+      "source": 68,
+      "target": 70,
+      "variable": "Positive"
+    },
+    {
+      "source": 69,
+      "target": 70
+    },
+    {
+      "source": 69,
+      "target": 73,
+      "variable": "result"
+    },
+    {
+      "source": 69,
+      "target": 99,
+      "variable": "int"
+    },
+    {
+      "source": 70,
+      "target": 71
+    },
+    {
+      "source": 70,
+      "target": 72,
+      "variable": "Positive"
+    },
+    {
+      "source": 71,
+      "target": 72
+    },
+    {
+      "source": 71,
+      "target": 77,
+      "variable": "lineStart"
+    },
+    {
+      "source": 71,
+      "target": 91,
+      "variable": "s"
+    },
+    {
+      "source": 71,
+      "target": 95,
+      "variable": "if"
+    },
+    {
+      "source": 71,
+      "target": 101,
+      "variable": "length"
+    },
+    {
+      "source": 72,
+      "target": 73
+    },
+    {
+      "source": 72,
+      "target": 74,
+      "variable": "Positive"
+    },
+    {
+      "source": 73,
+      "target": 74
+    },
+    {
+      "source": 73,
+      "target": 77,
+      "variable": "result"
+    },
+    {
+      "source": 74,
+      "target": 75
+    },
+    {
+      "source": 74,
+      "target": 76,
+      "variable": "Positive"
+    },
+    {
+      "source": 75,
+      "target": 76
+    },
+    {
+      "source": 75,
+      "target": 139,
+      "variable": "else"
+    },
+    {
+      "source": 76,
+      "target": 77
+    },
+    {
+      "source": 76,
+      "target": 78,
+      "variable": "Positive"
+    },
+    {
+      "source": 77,
+      "target": 78
+    },
+    {
+      "source": 77,
+      "target": 81,
+      "variable": "result"
+    },
+    {
+      "source": 77,
+      "target": 133,
+      "variable": "lineStart"
+    },
+    {
+      "source": 78,
+      "target": 79
+    },
+    {
+      "source": 78,
+      "target": 80,
+      "variable": "Positive"
+    },
+    {
+      "source": 79,
+      "target": 80
+    },
+    {
+      "source": 80,
+      "target": 81
+    },
+    {
+      "source": 80,
+      "target": 82,
+      "variable": "Positive"
+    },
+    {
+      "source": 81,
+      "target": 82
+    },
+    {
+      "source": 81,
+      "target": 87,
+      "variable": "return"
+    },
+    {
+      "source": 82,
+      "target": 83
+    },
+    {
+      "source": 82,
+      "target": 86,
+      "variable": "Positive"
+    },
+    {
+      "source": 83,
+      "target": 84
+    },
+    {
+      "source": 84,
+      "target": 85
+    },
+    {
+      "source": 85,
+      "target": 86
+    },
+    {
+      "source": 86,
+      "target": 87
+    },
+    {
+      "source": 86,
+      "target": 88,
+      "variable": "Positive"
+    },
+    {
+      "source": 87,
+      "target": 88
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "the"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "string"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "start"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "of"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "a"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "line"
+    },
+    {
+      "source": 87,
+      "target": 93,
+      "variable": "index"
+    },
+    {
+      "source": 87,
+      "target": 95,
+      "variable": "return"
+    },
+    {
+      "source": 88,
+      "target": 89
+    },
+    {
+      "source": 88,
+      "target": 90,
+      "variable": "Positive"
+    },
+    {
+      "source": 89,
+      "target": 90
+    },
+    {
+      "source": 90,
+      "target": 91
+    },
+    {
+      "source": 90,
+      "target": 92,
+      "variable": "Positive"
+    },
+    {
+      "source": 91,
+      "target": 92
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "param"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "start"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "the"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "which"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "to"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "of"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "a"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "line"
+    },
+    {
+      "source": 91,
+      "target": 99,
+      "variable": "s"
+    },
+    {
+      "source": 92,
+      "target": 93
+    },
+    {
+      "source": 92,
+      "target": 94,
+      "variable": "Positive"
+    },
+    {
+      "source": 93,
+      "target": 94
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "the"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "index"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "of"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "start"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "a"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "line"
+    },
+    {
+      "source": 93,
+      "target": 108,
+      "variable": "to"
+    },
+    {
+      "source": 94,
+      "target": 95
+    },
+    {
+      "source": 94,
+      "target": 96,
+      "variable": "Positive"
+    },
+    {
+      "source": 95,
+      "target": 96
+    },
+    {
+      "source": 95,
+      "target": 99,
+      "variable": "start"
+    },
+    {
+      "source": 95,
+      "target": 101,
+      "variable": "if"
+    },
+    {
+      "source": 95,
+      "target": 103,
+      "variable": "return"
+    },
+    {
+      "source": 95,
+      "target": 119,
+      "variable": "line"
+    },
+    {
+      "source": 96,
+      "target": 97
+    },
+    {
+      "source": 96,
+      "target": 98,
+      "variable": "Positive"
+    },
+    {
+      "source": 97,
+      "target": 98
+    },
+    {
+      "source": 98,
+      "target": 99
+    },
+    {
+      "source": 98,
+      "target": 100,
+      "variable": "Positive"
+    },
+    {
+      "source": 99,
+      "target": 100
+    },
+    {
+      "source": 99,
+      "target": 101,
+      "variable": "s"
+    },
+    {
+      "source": 99,
+      "target": 107,
+      "variable": "start"
+    },
+    {
+      "source": 99,
+      "target": 121,
+      "variable": "int"
+    },
+    {
+      "source": 100,
+      "target": 101
+    },
+    {
+      "source": 100,
+      "target": 102,
+      "variable": "Positive"
+    },
+    {
+      "source": 101,
+      "target": 102
+    },
+    {
+      "source": 101,
+      "target": 107,
+      "variable": "if"
+    },
+    {
+      "source": 101,
+      "target": 114,
+      "variable": "s"
+    },
+    {
+      "source": 101,
+      "target": 114,
+      "variable": "length"
+    },
+    {
+      "source": 102,
+      "target": 103
+    },
+    {
+      "source": 102,
+      "target": 104,
+      "variable": "Positive"
+    },
+    {
+      "source": 103,
+      "target": 104
+    },
+    {
+      "source": 103,
+      "target": 108,
+      "variable": "return"
+    },
+    {
+      "source": 104,
+      "target": 105
+    },
+    {
+      "source": 104,
+      "target": 106,
+      "variable": "Positive"
+    },
+    {
+      "source": 105,
+      "target": 106
+    },
+    {
+      "source": 106,
+      "target": 107
+    },
+    {
+      "source": 106,
+      "target": 109,
+      "variable": "Positive"
+    },
+    {
+      "source": 107,
+      "target": 108
+    },
+    {
+      "source": 107,
+      "target": 114,
+      "variable": "if"
+    },
+    {
+      "source": 107,
+      "target": 114,
+      "variable": "start"
+    },
+    {
+      "source": 108,
+      "target": 109
+    },
+    {
+      "source": 108,
+      "target": 110,
+      "variable": "return"
+    },
+    {
+      "source": 109,
+      "target": 110
+    },
+    {
+      "source": 109,
+      "target": 111,
+      "variable": "Positive"
+    },
+    {
+      "source": 110,
+      "target": 111
+    },
+    {
+      "source": 110,
+      "target": 116,
+      "variable": "return"
+    },
+    {
+      "source": 111,
+      "target": 112
+    },
+    {
+      "source": 111,
+      "target": 113,
+      "variable": "Positive"
+    },
+    {
+      "source": 112,
+      "target": 113
+    },
+    {
+      "source": 113,
+      "target": 114
+    },
+    {
+      "source": 113,
+      "target": 115,
+      "variable": "Positive"
+    },
+    {
+      "source": 114,
+      "target": 115
+    },
+    {
+      "source": 114,
+      "target": 121,
+      "variable": "s"
+    },
+    {
+      "source": 114,
+      "target": 121,
+      "variable": "start"
+    },
+    {
+      "source": 114,
+      "target": 135,
+      "variable": "if"
+    },
+    {
+      "source": 114,
+      "target": 135,
+      "variable": "length"
+    },
+    {
+      "source": 115,
+      "target": 116
+    },
+    {
+      "source": 115,
+      "target": 117,
+      "variable": "Positive"
+    },
+    {
+      "source": 116,
+      "target": 117
+    },
+    {
+      "source": 116,
+      "target": 137,
+      "variable": "return"
+    },
+    {
+      "source": 117,
+      "target": 118
+    },
+    {
+      "source": 117,
+      "target": 120,
+      "variable": "Positive"
+    },
+    {
+      "source": 118,
+      "target": 119
+    },
+    {
+      "source": 119,
+      "target": 120
+    },
+    {
+      "source": 119,
+      "target": 121,
+      "variable": "n"
+    },
+    {
+      "source": 119,
+      "target": 125,
+      "variable": "r"
+    },
+    {
+      "source": 120,
+      "target": 121
+    },
+    {
+      "source": 120,
+      "target": 122,
+      "variable": "Positive"
+    },
+    {
+      "source": 121,
+      "target": 122
+    },
+    {
+      "source": 121,
+      "target": 123,
+      "variable": "int"
+    },
+    {
+      "source": 121,
+      "target": 123,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 121,
+      "target": 125,
+      "variable": "s"
+    },
+    {
+      "source": 121,
+      "target": 125,
+      "variable": "indexOf"
+    },
+    {
+      "source": 121,
+      "target": 125,
+      "variable": "n"
+    },
+    {
+      "source": 121,
+      "target": 125,
+      "variable": "start"
+    },
+    {
+      "source": 122,
+      "target": 123
+    },
+    {
+      "source": 122,
+      "target": 124,
+      "variable": "Positive"
+    },
+    {
+      "source": 123,
+      "target": 124
+    },
+    {
+      "source": 123,
+      "target": 125,
+      "variable": "int"
+    },
+    {
+      "source": 123,
+      "target": 129,
+      "variable": "Integer"
+    },
+    {
+      "source": 123,
+      "target": 129,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 123,
+      "target": 133,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 124,
+      "target": 125
+    },
+    {
+      "source": 124,
+      "target": 126,
+      "variable": "Positive"
+    },
+    {
+      "source": 125,
+      "target": 126
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "int"
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "s"
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "indexOf"
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "r"
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "start"
+    },
+    {
+      "source": 125,
+      "target": 129,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 126,
+      "target": 127
+    },
+    {
+      "source": 126,
+      "target": 128,
+      "variable": "Positive"
+    },
+    {
+      "source": 127,
+      "target": 128
+    },
+    {
+      "source": 127,
+      "target": 129,
+      "variable": "int"
+    },
+    {
+      "source": 127,
+      "target": 131,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 127,
+      "target": 135,
+      "variable": "s"
+    },
+    {
+      "source": 128,
+      "target": 129
+    },
+    {
+      "source": 128,
+      "target": 130,
+      "variable": "Positive"
+    },
+    {
+      "source": 129,
+      "target": 130
+    },
+    {
+      "source": 129,
+      "target": 131,
+      "variable": "int"
+    },
+    {
+      "source": 129,
+      "target": 131,
+      "variable": "Integer"
+    },
+    {
+      "source": 129,
+      "target": 131,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 129,
+      "target": 133,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 130,
+      "target": 131
+    },
+    {
+      "source": 130,
+      "target": 132,
+      "variable": "Positive"
+    },
+    {
+      "source": 131,
+      "target": 132
+    },
+    {
+      "source": 131,
+      "target": 133,
+      "variable": "int"
+    },
+    {
+      "source": 131,
+      "target": 133,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 132,
+      "target": 133
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "Positive"
+    },
+    {
+      "source": 133,
+      "target": 134
+    },
+    {
+      "source": 133,
+      "target": 135,
+      "variable": "lineStart"
+    },
+    {
+      "source": 134,
+      "target": 135
+    },
+    {
+      "source": 134,
+      "target": 136,
+      "variable": "Positive"
+    },
+    {
+      "source": 135,
+      "target": 136
+    },
+    {
+      "source": 135,
+      "target": 141,
+      "variable": "lineStart"
+    },
+    {
+      "source": 136,
+      "target": 137
+    },
+    {
+      "source": 136,
+      "target": 138,
+      "variable": "Positive"
+    },
+    {
+      "source": 137,
+      "target": 138
+    },
+    {
+      "source": 137,
+      "target": 141,
+      "variable": "return"
+    },
+    {
+      "source": 138,
+      "target": 139
+    },
+    {
+      "source": 138,
+      "target": 140,
+      "variable": "Positive"
+    },
+    {
+      "source": 139,
+      "target": 140
+    },
+    {
+      "source": 140,
+      "target": 141
+    },
+    {
+      "source": 140,
+      "target": 142,
+      "variable": "Positive"
+    },
+    {
+      "source": 141,
+      "target": 142
+    },
+    {
+      "source": 142,
+      "target": 143
+    },
+    {
+      "source": 142,
+      "target": 144,
+      "variable": "Positive"
+    },
+    {
+      "source": 143,
+      "target": 144
+    },
+    {
+      "source": 144,
+      "target": 145
+    }
+  ],
+  "control_edges": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 14
+    },
+    {
+      "source": 14,
+      "target": 15
+    },
+    {
+      "source": 15,
+      "target": 16
+    },
+    {
+      "source": 16,
+      "target": 17
+    },
+    {
+      "source": 17,
+      "target": 18
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 20
+    },
+    {
+      "source": 20,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 24
+    },
+    {
+      "source": 24,
+      "target": 25
+    },
+    {
+      "source": 25,
+      "target": 26
+    },
+    {
+      "source": 26,
+      "target": 27
+    },
+    {
+      "source": 27,
+      "target": 28
+    },
+    {
+      "source": 28,
+      "target": 29
+    },
+    {
+      "source": 29,
+      "target": 30
+    },
+    {
+      "source": 30,
+      "target": 31
+    },
+    {
+      "source": 31,
+      "target": 32
+    },
+    {
+      "source": 32,
+      "target": 33
+    },
+    {
+      "source": 33,
+      "target": 34
+    },
+    {
+      "source": 34,
+      "target": 35
+    },
+    {
+      "source": 35,
+      "target": 36
+    },
+    {
+      "source": 36,
+      "target": 37
+    },
+    {
+      "source": 37,
+      "target": 38
+    },
+    {
+      "source": 38,
+      "target": 39
+    },
+    {
+      "source": 39,
+      "target": 40
+    },
+    {
+      "source": 40,
+      "target": 41
+    },
+    {
+      "source": 41,
+      "target": 42
+    },
+    {
+      "source": 42,
+      "target": 43
+    },
+    {
+      "source": 43,
+      "target": 44
+    },
+    {
+      "source": 44,
+      "target": 45
+    },
+    {
+      "source": 45,
+      "target": 46
+    },
+    {
+      "source": 46,
+      "target": 47
+    },
+    {
+      "source": 47,
+      "target": 48
+    },
+    {
+      "source": 48,
+      "target": 49
+    },
+    {
+      "source": 49,
+      "target": 50
+    },
+    {
+      "source": 50,
+      "target": 51
+    },
+    {
+      "source": 51,
+      "target": 52
+    },
+    {
+      "source": 52,
+      "target": 53
+    },
+    {
+      "source": 53,
+      "target": 54
+    },
+    {
+      "source": 54,
+      "target": 55
+    },
+    {
+      "source": 55,
+      "target": 56
+    },
+    {
+      "source": 56,
+      "target": 57
+    },
+    {
+      "source": 57,
+      "target": 58
+    },
+    {
+      "source": 58,
+      "target": 59
+    },
+    {
+      "source": 59,
+      "target": 60
+    },
+    {
+      "source": 60,
+      "target": 61
+    },
+    {
+      "source": 61,
+      "target": 62
+    },
+    {
+      "source": 62,
+      "target": 63
+    },
+    {
+      "source": 63,
+      "target": 64
+    },
+    {
+      "source": 64,
+      "target": 65
+    },
+    {
+      "source": 65,
+      "target": 66
+    },
+    {
+      "source": 66,
+      "target": 67
+    },
+    {
+      "source": 67,
+      "target": 68
+    },
+    {
+      "source": 68,
+      "target": 69
+    },
+    {
+      "source": 69,
+      "target": 70
+    },
+    {
+      "source": 70,
+      "target": 71
+    },
+    {
+      "source": 71,
+      "target": 72
+    },
+    {
+      "source": 72,
+      "target": 73
+    },
+    {
+      "source": 73,
+      "target": 74
+    },
+    {
+      "source": 74,
+      "target": 75
+    },
+    {
+      "source": 75,
+      "target": 76
+    },
+    {
+      "source": 76,
+      "target": 77
+    },
+    {
+      "source": 77,
+      "target": 78
+    },
+    {
+      "source": 78,
+      "target": 79
+    },
+    {
+      "source": 79,
+      "target": 80
+    },
+    {
+      "source": 80,
+      "target": 81
+    },
+    {
+      "source": 81,
+      "target": 82
+    },
+    {
+      "source": 82,
+      "target": 83
+    },
+    {
+      "source": 83,
+      "target": 84
+    },
+    {
+      "source": 84,
+      "target": 85
+    },
+    {
+      "source": 85,
+      "target": 86
+    },
+    {
+      "source": 86,
+      "target": 87
+    },
+    {
+      "source": 87,
+      "target": 88
+    },
+    {
+      "source": 88,
+      "target": 89
+    },
+    {
+      "source": 89,
+      "target": 90
+    },
+    {
+      "source": 90,
+      "target": 91
+    },
+    {
+      "source": 91,
+      "target": 92
+    },
+    {
+      "source": 92,
+      "target": 93
+    },
+    {
+      "source": 93,
+      "target": 94
+    },
+    {
+      "source": 94,
+      "target": 95
+    },
+    {
+      "source": 95,
+      "target": 96
+    },
+    {
+      "source": 96,
+      "target": 97
+    },
+    {
+      "source": 97,
+      "target": 98
+    },
+    {
+      "source": 98,
+      "target": 99
+    },
+    {
+      "source": 99,
+      "target": 100
+    },
+    {
+      "source": 100,
+      "target": 101
+    },
+    {
+      "source": 101,
+      "target": 102
+    },
+    {
+      "source": 102,
+      "target": 103
+    },
+    {
+      "source": 103,
+      "target": 104
+    },
+    {
+      "source": 104,
+      "target": 105
+    },
+    {
+      "source": 105,
+      "target": 106
+    },
+    {
+      "source": 106,
+      "target": 107
+    },
+    {
+      "source": 107,
+      "target": 108
+    },
+    {
+      "source": 108,
+      "target": 109
+    },
+    {
+      "source": 109,
+      "target": 110
+    },
+    {
+      "source": 110,
+      "target": 111
+    },
+    {
+      "source": 111,
+      "target": 112
+    },
+    {
+      "source": 112,
+      "target": 113
+    },
+    {
+      "source": 113,
+      "target": 114
+    },
+    {
+      "source": 114,
+      "target": 115
+    },
+    {
+      "source": 115,
+      "target": 116
+    },
+    {
+      "source": 116,
+      "target": 117
+    },
+    {
+      "source": 117,
+      "target": 118
+    },
+    {
+      "source": 118,
+      "target": 119
+    },
+    {
+      "source": 119,
+      "target": 120
+    },
+    {
+      "source": 120,
+      "target": 121
+    },
+    {
+      "source": 121,
+      "target": 122
+    },
+    {
+      "source": 122,
+      "target": 123
+    },
+    {
+      "source": 123,
+      "target": 124
+    },
+    {
+      "source": 124,
+      "target": 125
+    },
+    {
+      "source": 125,
+      "target": 126
+    },
+    {
+      "source": 126,
+      "target": 127
+    },
+    {
+      "source": 127,
+      "target": 128
+    },
+    {
+      "source": 128,
+      "target": 129
+    },
+    {
+      "source": 129,
+      "target": 130
+    },
+    {
+      "source": 130,
+      "target": 131
+    },
+    {
+      "source": 131,
+      "target": 132
+    },
+    {
+      "source": 132,
+      "target": 133
+    },
+    {
+      "source": 133,
+      "target": 134
+    },
+    {
+      "source": 134,
+      "target": 135
+    },
+    {
+      "source": 135,
+      "target": 136
+    },
+    {
+      "source": 136,
+      "target": 137
+    },
+    {
+      "source": 137,
+      "target": 138
+    },
+    {
+      "source": 138,
+      "target": 139
+    },
+    {
+      "source": 139,
+      "target": 140
+    },
+    {
+      "source": 140,
+      "target": 141
+    },
+    {
+      "source": 141,
+      "target": 142
+    },
+    {
+      "source": 142,
+      "target": 143
+    },
+    {
+      "source": 143,
+      "target": 144
+    },
+    {
+      "source": 144,
+      "target": 145
+    }
+  ],
+  "dataflow_edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "variable": "Positive"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "variable": "int"
+    },
+    {
+      "source": 1,
+      "target": 22,
+      "variable": "private"
+    },
+    {
+      "source": 1,
+      "target": 22,
+      "variable": "static"
+    },
+    {
+      "source": 1,
+      "target": 99,
+      "variable": "IndexOrLow"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "variable": "Positive"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "variable": "int"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "lineStart"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "variable": "s"
+    },
+    {
+      "source": 3,
+      "target": 24,
+      "variable": "String"
+    },
+    {
+      "source": 3,
+      "target": 24,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "variable": "Positive"
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "variable": "result"
+    },
+    {
+      "source": 5,
+      "target": 22,
+      "variable": "int"
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "variable": "Positive"
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "variable": "lineStart"
+    },
+    {
+      "source": 7,
+      "target": 24,
+      "variable": "s"
+    },
+    {
+      "source": 7,
+      "target": 28,
+      "variable": "if"
+    },
+    {
+      "source": 7,
+      "target": 28,
+      "variable": "length"
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "variable": "Positive"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "variable": "result"
+    },
+    {
+      "source": 10,
+      "target": 12,
+      "variable": "Positive"
+    },
+    {
+      "source": 11,
+      "target": 32,
+      "variable": "else"
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "variable": "Positive"
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "variable": "result"
+    },
+    {
+      "source": 13,
+      "target": 24,
+      "variable": "lineStart"
+    },
+    {
+      "source": 14,
+      "target": 16,
+      "variable": "Positive"
+    },
+    {
+      "source": 16,
+      "target": 18,
+      "variable": "Positive"
+    },
+    {
+      "source": 17,
+      "target": 26,
+      "variable": "result"
+    },
+    {
+      "source": 17,
+      "target": 38,
+      "variable": "return"
+    },
+    {
+      "source": 18,
+      "target": 21,
+      "variable": "Positive"
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "variable": "Positive"
+    },
+    {
+      "source": 22,
+      "target": 24,
+      "variable": "int"
+    },
+    {
+      "source": 22,
+      "target": 43,
+      "variable": "private"
+    },
+    {
+      "source": 22,
+      "target": 43,
+      "variable": "static"
+    },
+    {
+      "source": 22,
+      "target": 43,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "variable": "Positive"
+    },
+    {
+      "source": 24,
+      "target": 26,
+      "variable": "int"
+    },
+    {
+      "source": 24,
+      "target": 28,
+      "variable": "lineStart"
+    },
+    {
+      "source": 24,
+      "target": 28,
+      "variable": "s"
+    },
+    {
+      "source": 24,
+      "target": 45,
+      "variable": "String"
+    },
+    {
+      "source": 24,
+      "target": 45,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 25,
+      "target": 27,
+      "variable": "Positive"
+    },
+    {
+      "source": 26,
+      "target": 30,
+      "variable": "result"
+    },
+    {
+      "source": 26,
+      "target": 43,
+      "variable": "int"
+    },
+    {
+      "source": 27,
+      "target": 29,
+      "variable": "Positive"
+    },
+    {
+      "source": 28,
+      "target": 34,
+      "variable": "lineStart"
+    },
+    {
+      "source": 28,
+      "target": 45,
+      "variable": "s"
+    },
+    {
+      "source": 28,
+      "target": 49,
+      "variable": "if"
+    },
+    {
+      "source": 28,
+      "target": 49,
+      "variable": "length"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "variable": "Positive"
+    },
+    {
+      "source": 30,
+      "target": 34,
+      "variable": "result"
+    },
+    {
+      "source": 31,
+      "target": 33,
+      "variable": "Positive"
+    },
+    {
+      "source": 32,
+      "target": 53,
+      "variable": "else"
+    },
+    {
+      "source": 33,
+      "target": 35,
+      "variable": "Positive"
+    },
+    {
+      "source": 34,
+      "target": 38,
+      "variable": "result"
+    },
+    {
+      "source": 34,
+      "target": 45,
+      "variable": "lineStart"
+    },
+    {
+      "source": 35,
+      "target": 37,
+      "variable": "Positive"
+    },
+    {
+      "source": 37,
+      "target": 39,
+      "variable": "Positive"
+    },
+    {
+      "source": 38,
+      "target": 47,
+      "variable": "result"
+    },
+    {
+      "source": 38,
+      "target": 58,
+      "variable": "return"
+    },
+    {
+      "source": 39,
+      "target": 42,
+      "variable": "Positive"
+    },
+    {
+      "source": 42,
+      "target": 44,
+      "variable": "Positive"
+    },
+    {
+      "source": 43,
+      "target": 45,
+      "variable": "int"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "private"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "static"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "LTLengthOf"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "value"
+    },
+    {
+      "source": 43,
+      "target": 65,
+      "variable": "offset"
+    },
+    {
+      "source": 44,
+      "target": 46,
+      "variable": "Positive"
+    },
+    {
+      "source": 45,
+      "target": 47,
+      "variable": "int"
+    },
+    {
+      "source": 45,
+      "target": 49,
+      "variable": "lineStart"
+    },
+    {
+      "source": 45,
+      "target": 49,
+      "variable": "s"
+    },
+    {
+      "source": 45,
+      "target": 67,
+      "variable": "String"
+    },
+    {
+      "source": 45,
+      "target": 67,
+      "variable": "GTENegativeOne"
+    },
+    {
+      "source": 46,
+      "target": 48,
+      "variable": "Positive"
+    },
+    {
+      "source": 47,
+      "target": 51,
+      "variable": "result"
+    },
+    {
+      "source": 47,
+      "target": 65,
+      "variable": "int"
+    },
+    {
+      "source": 48,
+      "target": 50,
+      "variable": "Positive"
+    },
+    {
+      "source": 49,
+      "target": 55,
+      "variable": "lineStart"
+    },
+    {
+      "source": 49,
+      "target": 67,
+      "variable": "s"
+    },
+    {
+      "source": 49,
+      "target": 71,
+      "variable": "if"
+    },
+    {
+      "source": 49,
+      "target": 71,
+      "variable": "length"
+    },
+    {
+      "source": 50,
+      "target": 52,
+      "variable": "Positive"
+    },
+    {
+      "source": 51,
+      "target": 55,
+      "variable": "result"
+    },
+    {
+      "source": 52,
+      "target": 54,
+      "variable": "Positive"
+    },
+    {
+      "source": 53,
+      "target": 75,
+      "variable": "else"
+    },
+    {
+      "source": 54,
+      "target": 56,
+      "variable": "Positive"
+    },
+    {
+      "source": 55,
+      "target": 60,
+      "variable": "result"
+    },
+    {
+      "source": 55,
+      "target": 67,
+      "variable": "lineStart"
+    },
+    {
+      "source": 56,
+      "target": 59,
+      "variable": "Positive"
+    },
+    {
+      "source": 58,
+      "target": 60,
+      "variable": "return"
+    },
+    {
+      "source": 59,
+      "target": 61,
+      "variable": "Positive"
+    },
+    {
+      "source": 60,
+      "target": 69,
+      "variable": "result"
+    },
+    {
+      "source": 60,
+      "target": 81,
+      "variable": "return"
+    },
+    {
+      "source": 61,
+      "target": 64,
+      "variable": "Positive"
+    },
+    {
+      "source": 64,
+      "target": 66,
+      "variable": "Positive"
+    },
+    {
+      "source": 65,
+      "target": 67,
+      "variable": "int"
+    },
+    {
+      "source": 65,
+      "target": 99,
+      "variable": "private"
+    },
+    {
+      "source": 65,
+      "target": 99,
+      "variable": "static"
+    },
+    {
+      "source": 66,
+      "target": 68,
+      "variable": "Positive"
+    },
+    {
+      "source": 67,
+      "target": 69,
+      "variable": "int"
+    },
+    {
+      "source": 67,
+      "target": 71,
+      "variable": "lineStart"
+    },
+    {
+      "source": 67,
+      "target": 71,
+      "variable": "s"
+    },
+    {
+      "source": 67,
+      "target": 99,
+      "variable": "String"
+    },
+    {
+      "source": 68,
+      "target": 70,
+      "variable": "Positive"
+    },
+    {
+      "source": 69,
+      "target": 73,
+      "variable": "result"
+    },
+    {
+      "source": 69,
+      "target": 99,
+      "variable": "int"
+    },
+    {
+      "source": 70,
+      "target": 72,
+      "variable": "Positive"
+    },
+    {
+      "source": 71,
+      "target": 77,
+      "variable": "lineStart"
+    },
+    {
+      "source": 71,
+      "target": 91,
+      "variable": "s"
+    },
+    {
+      "source": 71,
+      "target": 95,
+      "variable": "if"
+    },
+    {
+      "source": 71,
+      "target": 101,
+      "variable": "length"
+    },
+    {
+      "source": 72,
+      "target": 74,
+      "variable": "Positive"
+    },
+    {
+      "source": 73,
+      "target": 77,
+      "variable": "result"
+    },
+    {
+      "source": 74,
+      "target": 76,
+      "variable": "Positive"
+    },
+    {
+      "source": 75,
+      "target": 139,
+      "variable": "else"
+    },
+    {
+      "source": 76,
+      "target": 78,
+      "variable": "Positive"
+    },
+    {
+      "source": 77,
+      "target": 81,
+      "variable": "result"
+    },
+    {
+      "source": 77,
+      "target": 133,
+      "variable": "lineStart"
+    },
+    {
+      "source": 78,
+      "target": 80,
+      "variable": "Positive"
+    },
+    {
+      "source": 80,
+      "target": 82,
+      "variable": "Positive"
+    },
+    {
+      "source": 81,
+      "target": 87,
+      "variable": "return"
+    },
+    {
+      "source": 82,
+      "target": 86,
+      "variable": "Positive"
+    },
+    {
+      "source": 86,
+      "target": 88,
+      "variable": "Positive"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "the"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "string"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "start"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "of"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "a"
+    },
+    {
+      "source": 87,
+      "target": 91,
+      "variable": "line"
+    },
+    {
+      "source": 87,
+      "target": 93,
+      "variable": "index"
+    },
+    {
+      "source": 87,
+      "target": 95,
+      "variable": "return"
+    },
+    {
+      "source": 88,
+      "target": 90,
+      "variable": "Positive"
+    },
+    {
+      "source": 90,
+      "target": 92,
+      "variable": "Positive"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "param"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "start"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "the"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "which"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "to"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "of"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "a"
+    },
+    {
+      "source": 91,
+      "target": 93,
+      "variable": "line"
+    },
+    {
+      "source": 91,
+      "target": 99,
+      "variable": "s"
+    },
+    {
+      "source": 92,
+      "target": 94,
+      "variable": "Positive"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "the"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "index"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "of"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "start"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "a"
+    },
+    {
+      "source": 93,
+      "target": 95,
+      "variable": "line"
+    },
+    {
+      "source": 93,
+      "target": 108,
+      "variable": "to"
+    },
+    {
+      "source": 94,
+      "target": 96,
+      "variable": "Positive"
+    },
+    {
+      "source": 95,
+      "target": 99,
+      "variable": "start"
+    },
+    {
+      "source": 95,
+      "target": 101,
+      "variable": "if"
+    },
+    {
+      "source": 95,
+      "target": 103,
+      "variable": "return"
+    },
+    {
+      "source": 95,
+      "target": 119,
+      "variable": "line"
+    },
+    {
+      "source": 96,
+      "target": 98,
+      "variable": "Positive"
+    },
+    {
+      "source": 98,
+      "target": 100,
+      "variable": "Positive"
+    },
+    {
+      "source": 99,
+      "target": 101,
+      "variable": "s"
+    },
+    {
+      "source": 99,
+      "target": 107,
+      "variable": "start"
+    },
+    {
+      "source": 99,
+      "target": 121,
+      "variable": "int"
+    },
+    {
+      "source": 100,
+      "target": 102,
+      "variable": "Positive"
+    },
+    {
+      "source": 101,
+      "target": 107,
+      "variable": "if"
+    },
+    {
+      "source": 101,
+      "target": 114,
+      "variable": "s"
+    },
+    {
+      "source": 101,
+      "target": 114,
+      "variable": "length"
+    },
+    {
+      "source": 102,
+      "target": 104,
+      "variable": "Positive"
+    },
+    {
+      "source": 103,
+      "target": 108,
+      "variable": "return"
+    },
+    {
+      "source": 104,
+      "target": 106,
+      "variable": "Positive"
+    },
+    {
+      "source": 106,
+      "target": 109,
+      "variable": "Positive"
+    },
+    {
+      "source": 107,
+      "target": 114,
+      "variable": "if"
+    },
+    {
+      "source": 107,
+      "target": 114,
+      "variable": "start"
+    },
+    {
+      "source": 108,
+      "target": 110,
+      "variable": "return"
+    },
+    {
+      "source": 109,
+      "target": 111,
+      "variable": "Positive"
+    },
+    {
+      "source": 110,
+      "target": 116,
+      "variable": "return"
+    },
+    {
+      "source": 111,
+      "target": 113,
+      "variable": "Positive"
+    },
+    {
+      "source": 113,
+      "target": 115,
+      "variable": "Positive"
+    },
+    {
+      "source": 114,
+      "target": 121,
+      "variable": "s"
+    },
+    {
+      "source": 114,
+      "target": 121,
+      "variable": "start"
+    },
+    {
+      "source": 114,
+      "target": 135,
+      "variable": "if"
+    },
+    {
+      "source": 114,
+      "target": 135,
+      "variable": "length"
+    },
+    {
+      "source": 115,
+      "target": 117,
+      "variable": "Positive"
+    },
+    {
+      "source": 116,
+      "target": 137,
+      "variable": "return"
+    },
+    {
+      "source": 117,
+      "target": 120,
+      "variable": "Positive"
+    },
+    {
+      "source": 119,
+      "target": 121,
+      "variable": "n"
+    },
+    {
+      "source": 119,
+      "target": 125,
+      "variable": "r"
+    },
+    {
+      "source": 120,
+      "target": 122,
+      "variable": "Positive"
+    },
+    {
+      "source": 121,
+      "target": 123,
+      "variable": "int"
+    },
+    {
+      "source": 121,
+      "target": 123,
+      "variable": "newlinePos"
+    },
+    {
+      "source": 121,
+      "target": 125,
+      "variable": "s"
+    },
+    {
+      "source": 121,
+      "target": 125,
+      "variable": "indexOf"
+    },
+    {
+      "source": 121,
+      "target": 125,
+      "variable": "n"
+    },
+    {
+      "source": 121,
+      "target": 125,
+      "variable": "start"
+    },
+    {
+      "source": 122,
+      "target": 124,
+      "variable": "Positive"
+    },
+    {
+      "source": 123,
+      "target": 125,
+      "variable": "int"
+    },
+    {
+      "source": 123,
+      "target": 129,
+      "variable": "Integer"
+    },
+    {
+      "source": 123,
+      "target": 129,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 123,
+      "target": 133,
+      "variable": "afterNewline"
+    },
+    {
+      "source": 124,
+      "target": 126,
+      "variable": "Positive"
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "int"
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "s"
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "indexOf"
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "r"
+    },
+    {
+      "source": 125,
+      "target": 127,
+      "variable": "start"
+    },
+    {
+      "source": 125,
+      "target": 129,
+      "variable": "returnPos1"
+    },
+    {
+      "source": 126,
+      "target": 128,
+      "variable": "Positive"
+    },
+    {
+      "source": 127,
+      "target": 129,
+      "variable": "int"
+    },
+    {
+      "source": 127,
+      "target": 131,
+      "variable": "returnPos2"
+    },
+    {
+      "source": 127,
+      "target": 135,
+      "variable": "s"
+    },
+    {
+      "source": 128,
+      "target": 130,
+      "variable": "Positive"
+    },
+    {
+      "source": 129,
+      "target": 131,
+      "variable": "int"
+    },
+    {
+      "source": 129,
+      "target": 131,
+      "variable": "Integer"
+    },
+    {
+      "source": 129,
+      "target": 131,
+      "variable": "MAX_VALUE"
+    },
+    {
+      "source": 129,
+      "target": 133,
+      "variable": "afterReturn1"
+    },
+    {
+      "source": 130,
+      "target": 132,
+      "variable": "Positive"
+    },
+    {
+      "source": 131,
+      "target": 133,
+      "variable": "int"
+    },
+    {
+      "source": 131,
+      "target": 133,
+      "variable": "afterReturn2"
+    },
+    {
+      "source": 132,
+      "target": 134,
+      "variable": "Positive"
+    },
+    {
+      "source": 133,
+      "target": 135,
+      "variable": "lineStart"
+    },
+    {
+      "source": 134,
+      "target": 136,
+      "variable": "Positive"
+    },
+    {
+      "source": 135,
+      "target": 141,
+      "variable": "lineStart"
+    },
+    {
+      "source": 136,
+      "target": 138,
+      "variable": "Positive"
+    },
+    {
+      "source": 137,
+      "target": 141,
+      "variable": "return"
+    },
+    {
+      "source": 138,
+      "target": 140,
+      "variable": "Positive"
+    },
+    {
+      "source": 140,
+      "target": 142,
+      "variable": "Positive"
+    },
+    {
+      "source": 142,
+      "target": 144,
+      "variable": "Positive"
+    }
+  ]
+}

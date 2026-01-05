@@ -1,0 +1,36 @@
+{
+  "method_name": "OffsetAnnotationsReader",
+  "nodes": [
+    {"id": 6, "label": "    @Positive", "line": 6, "node_type": "stmt"},
+    {"id": 7, "label": "  public static void OffsetAnnotationsReader() throws IOException {", "line": 7, "node_type": "stmt"},
+    {"id": 8, "label": "    @Positive", "line": 8, "node_type": "stmt"},
+    {"id": 9, "label": "    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));", "line": 9, "node_type": "stmt"},
+    {"id": 10, "label": "    @Positive", "line": 10, "node_type": "stmt"},
+    {"id": 11, "label": "    char[] buffer = new char[10];", "line": 11, "node_type": "stmt"},
+    {"id": 12, "label": "    // :: error: (argument)", "line": 12, "node_type": "stmt"},
+    {"id": 13, "label": "    @Positive", "line": 13, "node_type": "stmt"},
+    {"id": 14, "label": "    bufferedReader.read(buffer, 5, 7);", "line": 14, "node_type": "stmt"},
+    {"id": 15, "label": "    @Positive", "line": 15, "node_type": "stmt"},
+    {"id": 16, "label": "  }", "line": 16, "node_type": "stmt"}
+  ],
+  "control_edges": [
+    {"source": 6, "target": 7, "type": "control"},
+    {"source": 7, "target": 8, "type": "control"},
+    {"source": 8, "target": 9, "type": "control"},
+    {"source": 9, "target": 10, "type": "control"},
+    {"source": 10, "target": 11, "type": "control"},
+    {"source": 11, "target": 12, "type": "control"},
+    {"source": 12, "target": 13, "type": "control"},
+    {"source": 13, "target": 14, "type": "control"},
+    {"source": 14, "target": 15, "type": "control"},
+    {"source": 15, "target": 16, "type": "control"}
+  ],
+  "dataflow_edges": [
+    {"source": 6, "target": 8, "type": "dataflow", "var": "Positive"},
+    {"source": 8, "target": 10, "type": "dataflow", "var": "Positive"},
+    {"source": 10, "target": 13, "type": "dataflow", "var": "Positive"},
+    {"source": 9, "target": 14, "type": "dataflow", "var": "bufferedReader"},
+    {"source": 11, "target": 14, "type": "dataflow", "var": "buffer"},
+    {"source": 13, "target": 15, "type": "dataflow", "var": "Positive"}
+  ]
+}

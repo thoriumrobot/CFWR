@@ -1,0 +1,23 @@
+{
+  "model_name": "nonnegative_gbt",
+  "annotation_type": "nonnegative",
+  "base_model": "gbt",
+  "parameters": {
+    "learning_rate": 0.001,
+    "n_estimators": 100,
+    "max_depth": 3,
+    "min_samples_split": 2,
+    "episodes": 20
+  },
+  "metrics": {
+    "final_reward": null,
+    "avg_reward": 0,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0,
+    "episode_rewards": []
+  },
+  "execution_time": 1.714090347290039,
+  "timestamp": "2025-09-27T23:32:33.183284",
+  "output": ""
+}

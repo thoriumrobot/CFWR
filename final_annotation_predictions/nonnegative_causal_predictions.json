@@ -1,0 +1,22 @@
+{
+  "model_name": "nonnegative_causal",
+  "annotation_type": "nonnegative",
+  "base_model": "causal",
+  "parameters": {
+    "learning_rate": 0.001,
+    "hidden_dim": 128,
+    "dropout_rate": 0.3,
+    "episodes": 10
+  },
+  "test_result": {
+    "status": "success",
+    "final_reward": null,
+    "avg_reward": 0,
+    "total_predictions": null,
+    "accuracy": null,
+    "score": 0,
+    "episode_rewards": [],
+    "output": ""
+  },
+  "timestamp": "2025-09-27T23:35:36.197376"
+}

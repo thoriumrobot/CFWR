@@ -1,0 +1,14 @@
+{
+  "annotation_type": "@Positive",
+  "base_model_type": "enhanced_gcn",
+  "final_train_loss": 0.5873658135533333,
+  "final_val_loss": 0.8854689970612526,
+  "final_train_accuracy": 0.6666666666666666,
+  "final_val_accuracy": 0.3333333333333333,
+  "best_val_loss": 0.8287124186754227,
+  "epochs": 10,
+  "max_nodes": 1000,
+  "max_edges": 2000,
+  "training_samples": 3,
+  "validation_samples": 3
+}
